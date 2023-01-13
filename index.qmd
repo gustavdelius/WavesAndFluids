@@ -1,0 +1,27 @@
+---
+nocite: |
+  @knobel_introduction_1999,
+  @milne-thomson_theoretical_2013,
+  @landau_fluid_2013,
+  @pert_introductory_2013,
+  @acheson_elementary_1990,
+  @simmons_differential_nodate,
+  @batchelor_introduction_2000,
+  @paterson_first_1983,
+  @coulson_waves:_1977,
+  @baldock_mathematical_1983,
+  @bernard_fluid_2015,
+  @braithwaite_essential_2017
+---
+  
+# Welcome {.unnumbered}
+
+In this module we will explore the the dynamics of continuous media, focusing on elementary fluid dynamics and the motion of waves. This lays the foundations for the full development of fluid dynamics in years 3 and 4, as well as for modules on electromagnetism and quantum mechanics. The mathematical techniques of vector calculus are employed and further developed, as are Fourier methods and methods from complex analysis.
+
+The material in this module consists of two topics: Waves and Fluids. We will spend the first half of the term on Waves and the second half on Fluids. The topics are linked by the fact that both use partial differential equations to describe real-world phenomena in space and time. Of course they share this feature with a large part of Applied Mathematics. So you will meet the ideas and methods introduced in this module again and again in future Applied Mathematics modules. In some sense, the actual subject matter of this module is less important than the way of thinking that it introduces.
+
+The module is meant to prepare you for going out into the world and confronting new phenomena with the power of mathematics, not only in physics, but in biology, ecology, medicine, sociology, economics, and other areas. There will be many modules in the third and fourth year of you studies that will deepen that ability.
+
+Throughout this module, we shall use SI units: length is measured in meters (m), time in seconds (s), mass in kilograms (kg).
+
+These notes will be periodically revised. Whenever you spot something that is not quite right, please email me at [gustav.delius\@york.ac.uk](mailto:gustav.delius@york.ac.uk) or submit your correction in the correction form at <https://forms.gle/w17c19vWnM7wpLpz7>.

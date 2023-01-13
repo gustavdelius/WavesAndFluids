@@ -1,0 +1,165 @@
+# Deriving the wave equation for a string
+
+::: {.content-hidden}
+$$
+{{< include _macros.tex >}}
+$$
+:::
+
+## Introduction
+The reason why waves are so fundamentally important is that waves are the way
+information is propagating. Some waves that propagate information are obvious:
+sound waves, light and radio waves, electric waves travelling along our neurons.
+Others are less obvious. Even if I communicate with you by shooting a particle
+at you, this too is described by a wave, as you will learn in quantum mechanics.
+Gravitational effects are communicated via gravitational waves.
+
+Because waves propagate at a finite speed, also information can only propagate
+at that wave speed. This has profound impacts, as you know from the theory of
+special relativity. For example, we can look back into the past because some of
+the light waves emitted shortly after the big bang 16 billion years ago are only
+now arriving here, strongly red-shifted and thus detectable as microwaves.
+
+Studying waves is also of great practical importance. They play an important
+part in our technological world. Improvements in our understanding of how to
+generate and control electromagnetic waves, for example, has led to radio, radar
+and mobile phones. Understanding how a pest propagates in the form of an
+invasion wave into so-far uninfected territory allows us to prepare adequate
+interventions. Understanding how density waves form in traffic flow, leading to
+traffic jams, allows us to design interventions that lead to smoother traffic
+flow.
+
+
+
+## Why waves on a string?
+
+The great diversity of waves in nature means that we need to choose some
+concrete wave phenomenon to concentrate on to start our investigation. In this
+module we will concentrate on the waves on a string (think of a guitar string)
+and generalise to waves on a membrane (think of the membrane of a drum). By
+studying this in detail you will develop the intuition and the skills that will
+allow you to understand other wave phenomena later. We'll come back to waves at
+the end of the part on Fluid Dynamics when we study waves on the surface of a
+fluid.
+
+Personally I like studying vibrating strings because they are at the foundation
+of superstring theory. This is a "Theory of Everything" that posits that
+elementary particles are actually tiny strings, with different vibrational
+states corresponding to different elementary particles. As a Ph.D. student I
+showed how, if these strings  move in certain higher-dimensional group
+supermanifolds, they behave like the elementary particles of our standard model
+of particle physics, including the chiral fermions. If we ignore the bit about
+group supermanifolds for the moment, the maths behind string theory is no more
+complicated than the maths we will discuss in this module and the partner module
+on quantum mechanics.
+
+We consider a flexible, elastic string of linear density $\rho$ (mass per unit length), which undergoes small _transverse_
+vibrations. (For example, it can be a guitar string.) The transverse vibrations
+mean that the displacements of each small element of the string is perpendicular to its length.
+We assume that the string does not move _longitudinally_ (i.e. parallel to its length).
+Let $y(x, t)$ be its displacement from equilibrium
+position at time $t$ and position $x$ (see Fig. @fig-string1). 
+
+![A string stretched in the $x$-direction and vibrating in the $y$-direction.](string1.png){#fig-string1}
+
+The string is sufficiently simple, that we can understand it by pure thought. We
+will derive from first principles a PDE that describes its motion (the wave
+equation) and then solve it for various initial conditions. I find it amazing
+that this is possible.
+
+To derive the equation of motion of the string we first need to discuss the
+force acting on it which we will do in the next section. Then in the section
+after that we can plug this into Newton's second law and out pops the wave
+equation.
+
+
+## Linearized tension force
+
+We consider a small segment of the string between any two
+points $x$ and at $x+\delta x$ as shown in Fig. @fig-string2. 
+We want to determine the force that is acting on this segment, so that
+we can later determine its motion using Newton's second law.
+We will concentrate on only the tension force of the string and ignore
+less important effects like gravity, friction, or stiffness. 
+
+We assume that the tension force $\boldsymbol{T}(x)$ has constant magnitude
+throughout the string: $|\boldsymbol{T}(x)|=T$. However its direction varies
+along the string, because it always acts in the tangential direction. At
+interior points the tension force pulling to one side will balance that pulling
+in the other direction. The net tension force on the segment will thus be
+determined by the tension forces at its ends. We have drawn these forces
+schematically in Figure @fig-string2 where we have also split them into their
+$x$ and $y$ components.
+
+![The tension forces acting on a segment of the string between $x$ and $x+\delta x$.](string2.png){#fig-string2}
+
+The total force acting on the segment is
+$$\boldsymbol{F} = \boldsymbol{T}(x+\delta x)-\boldsymbol{T}(x).$${#eq-1}
+We first consider the $y$ component
+$$T_y(x) = T\sin\theta(x),$${#eq-2}
+where $\theta(x)$ is the angle that the string makes with the horizontal at $x$.
+The slope of the string at $x$ is
+$$\frac{\partial y}{\partial x} = \tan\theta(x).$${#eq-3}
+We are now going to simplify the expressions by assuming that the slope and thus
+$\theta$ is small, $\theta<<1$. Then, by Taylor expansion,
+$$\sin\theta = \theta + O(\theta^3), ~~~\tan\theta = \theta + O(\theta^2).$${#eq-4}
+We ignore all terms that are higher order in $\theta$. This is known as the
+linear approximation. It is done very often, because it leads to linear
+equations that are so much easier to solve. So
+$$\begin{split}
+F_y&=T_y(x+\delta x) - T_y(x) \\
+&= T\sin\theta(x+\delta x) -T\sin\theta(x)\\
+&\approx T\left(\theta(x+\delta x)-\theta(x)\right).
+\end{split}$$ {#eq-fy}
+We do another Taylor expansion and ignore higher-order terms in $\delta x$,
+which is fine because we want to look at only an infinitesimally small segment
+of string.
+$$\begin{split}\theta(x+\delta x)&=\theta(x)+\delta x\frac{\partial\theta}{\partial x}+O(\delta x)^2\\
+&\approx \theta(x)+\delta x\frac{\partial\theta}{\partial x}.\end{split}$${#eq-6}
+Substituting this into @eq-fy gives
+$$F_y\approx T \delta x\frac{\partial\theta}{\partial x}.$${#eq-7}
+We would like to express this in terms of $y$ instead of $\theta$, which we can do by observing that
+$$\theta\approx\tan\theta=\frac{\partial y}{\partial x},$${#eq-8}
+so we finally have
+$$F_y\approx T\,\delta x\,\frac{\partial^2 y}{\partial x^2}.$${#eq-9}
+
+We deal with the $x$ component of the force similarly, using the Taylor expansion of $\cos\theta=1+O(\theta^2)$:
+$$\begin{split}F_x&=T_x(x+\delta x)-T_x(x)\\
+&=T\cos\theta(x+\delta_x)-T\cos\theta(x)\\
+&\approx T-T=0.\end{split}$${#eq-10}
+So in our approximation of small slope, there is no movement in the $x$ direction. The string vibrates purely
+transversally.
+
+## Wave equation from Newton's 2nd law
+
+To determine the motion in the $y$ direction we use Newton's second law
+$$m a_y = F_y,$${#eq-11}
+where $a_y$ is the acceleration in the $y$ direction,
+$$a_y=\frac{\partial^2 y}{\partial t^2}$${#eq-12}
+and  $m$ is the mass of the infinitesimal segment which is obtained as the density times the length,
+$$m=\rho \delta x.$${#eq-13}
+We assume that density $\rho$ is constant along the string.
+Plugging this together with our expression for $F_y$ into Newton's second law gives
+$$\rho\delta x\frac{\partial^2 y}{\partial t^2}=T\delta x\frac{\partial^2 y}{\partial x^2}.$${#eq-14}
+We can cancel the $\delta x$ and divide by $\rho$ which finally gives us the wave equation
+$$\frac{\partial^2 y}{\partial t^2}=c^2\frac{\partial^2 y}{\partial x^2}$${#eq-15}
+with __wave speed__
+$$c=\sqrt{\frac{T}{\rho}}.$${#eq-16}
+Why we call the constant $c$ the wave speed will become clear in the next lecture.
+
+## Checking dimensions
+
+After having derived an equation, it is always wise to check that its dimensions work out correctly.
+
+We use square brackets to denote the dimension of a quantity. So $[y]=L$ says
+that $y$ has dimension of length, $[m]=M$ says that $m$ has dimension of mass,
+and $[t]=T$ says that $t$ has dimension of time.
+^[Note the conflict of notation where we used $T$ for the tension force while it
+is also the conventional symbol for the dimension of time. Such conflicts happen
+from time to time -- the context determines the meaning of the symbol.]
+The dimension of both sides of an equation has to agree, so
+$$\left[\frac{\partial^2 y}{\partial t^2}\right]=\frac{L}{T^2}=[c^2]\left[\frac{\partial^2 y}{\partial x^2}\right]=[c^2]\frac{1}{L}.$${#eq-17}
+This shows that $[c]=L/T$, so it has the dimension of a velocity. Because $T$ is
+a force we have $[T]=ML/T^2$. The density $\rho$ has $[\rho]=M/L$. So
+$$[c]=\left[\sqrt{\frac{T}{\rho}}\right]=\sqrt{\frac{ML/T^2}{M/L}}=\sqrt{\frac{L^2}{T^2}}=\frac{L}{T}.$${#eq-18}
+This completes our check of the dimensions.

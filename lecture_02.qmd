@@ -1,0 +1,183 @@
+# d'Alembert's solution
+
+::: {.content-hidden}
+$$
+{{< include _macros.tex >}}
+$$
+:::
+
+First, we consider an infinitely long string (this is physically justified if we
+consider waves propagating far away from any boundaries). Mathematically, this
+means that we are looking for solutions of the wave equation on the whole real
+line $-\infty<x<+\infty$.
+
+## Wave equation in light-cone coordinates
+
+We consider the wave equation
+$$
+ \partial_t^2 y - c^2\, \partial_{x}^2 y=0, \quad \hbox{for} \quad -\infty<x<+\infty.
+$${#eq-waveeq6}
+Note that I have switched to the convenient notation using subscripts on
+derivatives to specify the variable with respect to which we are
+differentiating.
+ 
+Let's rewrite it using the _characteristic coordinates_ (also known as
+light-cone coordinates)
+$$
+  \xi=x+ct,\quad \eta=x-ct.
+$${#eq-charcoor}
+By this we mean that for any function $y$ that depends on the variables $x$ and
+$t$ we can introduce a function $\tilde{y}$ that depends on the variables $\xi$
+and $\eta$ in such a way that it has the same values as $y$:
+$$
+y(x,t)=\tilde{y}(\xi(x,t), \eta(x,t)) \text{ for all }x,t.
+$${#eq-2.3}
+It is a conventional abuse of notation to drop the tilde and denote both functions by $y$. We will follow this abuse of notation. 
+
+We need to express the derivatives with respect to $t$ and $x$ via the
+derivatives with respect to $\xi$ and $\eta$. This is done using the chain rule:
+$$
+\partial_t \, y =\frac{\partial {y}}{\partial {\xi}} \, \frac{\partial \xi}{\partial t} +
+\frac{\partial {y}}{\partial {\eta}} \, \frac{\partial \eta}{\partial t}= c \left( \partial_{\xi} -  \partial_{\eta}\right) {y}
+$${#eq-2.4}
+and
+$$
+\partial_x \, y =\frac{\partial \tilde{y}}{\partial {\xi}} \, \frac{\partial \xi}{\partial x} +
+\frac{\partial \tilde{y}}{\partial {\eta}} \, \frac{\partial \eta}{\partial x}= \left( \partial_{\xi} +  \partial_{\eta}\right) \tilde{y}.
+$${#eq-2.5}
+Hence
+$$
+ \partial_t = c \left( \partial_{\xi} -  \partial_{\eta}\right),~~~
+ \partial_x =  \partial_{\xi} +  \partial_{\eta}.
+$$
+Substituting these into the wave equation, we find that
+$$
+c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y - c^2\left(\partial_{\xi} + \partial_{\eta}\right)^2 y = 0.
+$${#eq-2.7}
+Expanding the squares and cancelling terms gives
+$$
+-4c^2 \partial_{\xi} \partial_{\eta} y = 0.
+$${#eq-2.7}
+We can divide both sides by the nonzero constant $-4c^2$. Thus the wave
+equation simplifies to
+$$
+\partial_{\xi} \partial_{\eta} y = 0 .
+$$ {#eq-waveeq7}
+
+## General solution of wave equation
+
+The wave equation in light-cone variables is really easy to solve. First, we
+integrate  @eq-waveeq7 in the variable $\xi$ ^[Note that when we integrate a
+function of two variables in one of the two variable, we need to add (to the
+result) an arbitrary function of the other variable. This is similar to adding a
+constant of integration when we integrate a function of one variable.]:
+$$
+\int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi = 0 \quad \Leftrightarrow \quad \partial_{\eta} y(\xi,\eta) = F(\eta)
+$${#eq-waveeq8}
+where $F$ is an arbitrary function of one variable ^[you can verify that this is
+true by direct differentiation of @eq-waveeq8 with respect to $\xi$]. Then we
+integrate  @eq-waveeq8 in the variable $\eta$:
+$$\begin{split}
+ y(\xi,\eta) &= \int \partial_{\eta} y(\xi,\eta)\,d\eta\\
+ &= \int F(\eta) d\eta +g(\xi)\\
+ &= f(\eta) + g(\xi),
+\end{split}$${#eq-waveeq9}
+where $g(\xi)$ is an arbitrary function of one variable and $f'(\eta)=F(\eta)$.
+Note that since $F$ is arbitrary, so is $f$. 
+
+Returning to variables $x$ and $t$, we can write the general solution of the
+wave equation as
+$$
+y(x,t) = f(x-ct) + g(x+ct)
+$${#eq-waveGS}
+where $f$ and $g$ are arbitrary functions of one variable.
+
+## Travelling waves
+We will now gain an initial understanding of this solution by visualising the
+two special cases where either $f$ or $g$ are zero.
+
+If $g = 0$, then $y(x,t)=f(x-ct)$. At $t=0$, the string has the shape described
+by the graph $y=f(x)$. At time $t>0$, it will have the same shape relative to
+the variable $\eta=x-ct$: $y=f(\eta)$. Since $x=\eta + ct$, this means that the
+graph of $y$ as a function of $x$ for a fixed $t>0$ is the graph of $f(x)$
+shifted to the _right_ (in the direction of positive $x$) by distance $ct$.
+
+If $f = 0$, then $y(x,t)=g(x+ct)$. At $t=0$, the string has the shape described
+by the graph $y=g(x)$. At time $t>0$, it will have the same shape relative to
+the variable $\xi=x+ct$: $y=g(\xi)$. Since $x=\xi - ct$, this means that the
+graph of $y$ as a function of $x$ for a fixed $t>0$ is the graph of $g(x)$
+shifted to the _left_ (in the direction of negative $x$) by distance $ct$.
+
+Thus, $f(x-ct)$ and $g(x+ct)$ describe waves that propagate (without changing
+shape) to the right and to the left, respectively, and the general solution
+@eq-waveGS represent the sum of such waves.
+
+## Initial value problem  and d'Alembert's formula
+
+The initial-value problem is to solve the wave equation
+$$
+  \partial_t^2 y - c^2 \partial_x^2 y =0
+$${#eq-WE_a}
+for $-\infty <x<+\infty$ and $0<t<+\infty$ with the initial conditions
+$$
+   y(x,0)=y_0(x),\quad \partial_t y(x,0)=v_0(x)
+$${#eq-WE_b}
+for $-\infty <x<+\infty$, where $y_0$ and $v_0$ are given functions of $x$. The
+first of the two initial conditions prescribes the initial displacement of the
+string, the second the initial velocity.
+
+The solution of this initial value problem can be found by substituting the
+general solution @eq-waveGS into the initial conditions. This gives
+$$y_0(x)=f(x)+g(x),$${#eq-IC1}
+$$v_0(x)=-cf'(x) + cg'(x).$${#eq-IC2}
+So we have two equations for the two unknown functions $f$ and $g$. To solve
+them, we first integrate  @eq-IC2:
+$$
+-c f(x)+c g(x) = \int_0^x v_0(s)ds + a = V(x)
+$${#eq-IC3}
+where $a$ is an integration constant and $V(x)$ is just introduced to save
+writing below.
+
+Next, we add and subtract @eq-IC1 and @eq-IC3 divided by $c.$ This results in
+$$
+\begin{array}{l}
+y_0(x)-\frac{1}{c} \, V(x)=2 \, f(x)\\
+y_0(x)+\frac{1}{c} \, V(x)=2 \, g(x) 
+\end{array} \qquad \Rightarrow \qquad
+\begin{array}{l}
+f(x)=\frac{1}{2} \, y_0(x) - \frac{1}{2c} \, V(x) \\
+g(x)=\frac{1}{2} \, y_0(x) + \frac{1}{2c} \, V(x)
+\end{array}
+$$
+Substituting these into the formula for the general solution, we get
+$$
+y(x,t)=\frac{1}{2} \, y_0(x-ct) - \frac{1}{2c} \, V(x-ct) +
+\frac{1}{2} \, y_0(x+ct) + \frac{1}{2c} \, V(x+ct)
+$$
+or
+$$
+y(x,t)=\frac{1}{2} \left[ y_0(x-ct) + y_0(x+ct)\right]+ \frac{1}{2c} \left[ V(x+ct) - V(x-ct)\right]
+$$
+Note that only the difference $\left[ V(x+ct) - V(x-ct)\right]$ appears so the
+integration constant cancels and also we can combine the two integrals into one
+because
+$$\begin{split}
+V(x+ct) - V(x-ct)&=\int\limits_0^{x+ct}v_0(s)\, ds - \int\limits_0^{x-ct}v_0(s)\, ds\\
+&=\int\limits_{x-ct}^{x+ct}v_0(s)\, ds .
+\end{split}$$
+Finally, we have
+$$\label{dAlem}
+  y(x,t)=\frac12 [y_0(x+ct)+y_0(x-ct)]+
+  \frac{1}{2c}
+  \int\limits_{x-ct}^{x+ct}v_0(s)\,ds.
+$$
+This is the solution formula for the initial-value problem (@eq-WE_a, @eq-WE_b) and it is called the __d'Alembert formula__.
+
+
+__Remark.__ Once we have the d'Alembert formula, we can consider solutions of
+the initial-value problem (@eq-WE_a, @eq-WE_b) corresponding to piecewise
+smooth (or even piecewise continuous) initial functions $y_0(x)$ and $v_0(x)$.
+This will result in _generalised solutions_ of the wave equation which are
+defined everywhere in the upper half of the $(x,t)$ plane except for a finite
+number of lines where values of $y(x,t)$ and/or its first derivatives are
+discontinuous.
