@@ -19,6 +19,13 @@ book:
   downloads: pdf
   sidebar:
     subtitle: Lecture notes
+    tools: 
+      - icon: mortarboard-fill
+        href: https://maths.york.ac.uk/moodle/course/view.php?id=2497
+        text: Moodle page
+      - icon: bug-fill
+        href: https://forms.gle/w17c19vWnM7wpLpz7
+        text: Submit a correction
   chapters:
     - index.qmd
     - part: waves.qmd
@@ -34,6 +41,7 @@ format:
     theme: cosmo
     reference-location: margin
     cap-location: margin
+    link-external-newwindow: true
   pdf:
     documentclass: scrreport
 
