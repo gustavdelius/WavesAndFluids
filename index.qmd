@@ -22,7 +22,11 @@ notes corresponds to one lecture.
 
 These notes will be periodically revised. Whenever you spot something that is not quite right, please email me at [gustav.delius\@york.ac.uk](mailto:gustav.delius@york.ac.uk) or submit your correction in the correction form at <https://forms.gle/w17c19vWnM7wpLpz7>.
 
+::: {.content-visible unless-format="pdf"}
+
 If you want to print these notes you should download the [pdf version](Waves-and-Fluids.pdf).
+
+:::
 
 The material in this module consists of two topics: Waves and Fluids. We will spend the first half of the term on Waves and the second half on Fluids. The topics are linked by the fact that both use partial differential equations to describe real-world phenomena in space and time. Of course they share this feature with a large part of Applied Mathematics. So you will meet the ideas and methods introduced in this module again and again in future Applied Mathematics modules. In some sense, the actual subject matter of this module is less important than the way of thinking that it introduces.
 

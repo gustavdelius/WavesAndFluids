@@ -21,8 +21,10 @@ book:
     subtitle: Lecture notes
   chapters:
     - index.qmd
-    - lecture_01.qmd
-    - lecture_02.qmd
+    - part: waves.qmd
+      chapters:
+      - lecture_01.qmd
+      - lecture_02.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -30,13 +32,11 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    reference-location: margin
+    cap-location: margin
   pdf:
     documentclass: scrreport
 
 toc: true
 number-sections: true
 crossref-eq-prefix: Eq.
-
-
-comments:
-  hypothesis: true

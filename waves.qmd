@@ -1,0 +1,24 @@
+# Waves
+
+Waves are so fundamentally important because waves are the only way
+information can propagate in this universe. 
+Some waves that propagate information are obvious:
+sound waves, light and radio waves, electric waves travelling along our neurons.
+Others are less obvious: even if I communicate with you by shooting a particle
+at you, this is described by a wave, as you will learn in quantum mechanics.
+Gravitational effects are communicated via gravitational waves.
+
+Because waves propagate at a finite speed, also information can only propagate
+at that wave speed. This has profound impacts, as you know from the theory of
+special relativity. For example, we can look far back into the past because some of
+the light waves emitted shortly after the big bang 16 billion years ago are only
+now arriving here, strongly red-shifted and thus detectable as microwaves.
+
+Studying waves is also of great practical importance. They play an important
+part in our technological world. Improvements in our understanding of how to
+generate and control electromagnetic waves, for example, has led to radio, radar
+and mobile phones. Understanding how a pest propagates in the form of an
+invasion wave into so-far uninfected territory allows us to prepare adequate
+interventions. Understanding how density waves form in traffic flow, leading to
+traffic jams, allows us to design interventions that lead to smoother traffic
+flow.

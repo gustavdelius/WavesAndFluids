@@ -61,13 +61,12 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,16 +103,26 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lecture_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lecture_02.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></a>
   </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -136,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -187,16 +196,16 @@ c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y - c^2\left(\partial_{\xi} +
 \partial_{\xi} \partial_{\eta} y = 0 .
 \tag{2.9}\]</span></span></p>
 </section>
-<section id="general-solution-of-wave-equation" class="level2" data-number="2.2">
+<section id="general-solution-of-wave-equation" class="level2 page-columns page-full" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="general-solution-of-wave-equation"><span class="header-section-number">2.2</span> General solution of wave equation</h2>
-<p>The wave equation in light-cone variables is really easy to solve. First, we integrate <a href="#eq-waveeq7">Eq.&nbsp;<span>2.9</span></a> in the variable <span class="math inline">\(\xi\)</span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span id="eq-waveeq8"><span class="math display">\[\begin{split}
+<div class="page-columns page-full"><p>The wave equation in light-cone variables is really easy to solve. First, we integrate <a href="#eq-waveeq7">Eq.&nbsp;<span>2.9</span></a> in the variable <span class="math inline">\(\xi\)</span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span id="eq-waveeq8"><span class="math display">\[\begin{split}
 \int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi &amp;= 0\\
 \Leftrightarrow \quad \partial_{\eta} y(\xi,\eta) &amp;= F(\eta)
 \end{split} \tag{2.10}\]</span></span> where <span class="math inline">\(F\)</span> is an arbitrary function of one variable <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Then we integrate <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> in the variable <span class="math inline">\(\eta\)</span>: <span id="eq-waveeq9"><span class="math display">\[\begin{split}
 y(\xi,\eta) &amp;= \int \partial_{\eta} y(\xi,\eta)\,d\eta\\
 &amp;= \int F(\eta) d\eta +g(\xi)\\
 &amp;= f(\eta) + g(\xi),
-\end{split} \tag{2.11}\]</span></span> where <span class="math inline">\(g(\xi)\)</span> is an arbitrary function of one variable and <span class="math inline">\(f'(\eta)=F(\eta)\)</span>. Note that since <span class="math inline">\(F\)</span> is arbitrary, so is <span class="math inline">\(f\)</span>.</p>
+\end{split} \tag{2.11}\]</span></span> where <span class="math inline">\(g(\xi)\)</span> is an arbitrary function of one variable and <span class="math inline">\(f'(\eta)=F(\eta)\)</span>. Note that since <span class="math inline">\(F\)</span> is arbitrary, so is <span class="math inline">\(f\)</span>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Note that when we integrate a function of two variables in one of the two variable, we need to add (to the result) an arbitrary function of the other variable. This is similar to adding a constant of integration when we integrate a function of one variable.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;You can verify that this is true by direct differentiation of <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> with respect to <span class="math inline">\(\xi\)</span>.</p></li></div></div>
 <p>Returning to variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>, we can write the general solution of the wave equation as <span id="eq-waveGS"><span class="math display">\[
 y(x,t) = f(x-ct) + g(x+ct)
 \tag{2.12}\]</span></span> where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are arbitrary functions of one variable.</p>
@@ -242,13 +251,7 @@ V(x+ct) - V(x-ct)&amp;=\int\limits_0^{x+ct}v_0(s)\, ds - \int\limits_0^{x-ct}v_0
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Note that when we integrate a function of two variables in one of the two variable, we need to add (to the result) an arbitrary function of the other variable. This is similar to adding a constant of integration when we integrate a function of one variable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>You can verify that this is true by direct differentiation of <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> with respect to <span class="math inline">\(\xi\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
