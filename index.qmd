@@ -16,12 +16,16 @@ nocite: |
   
 # Welcome {.unnumbered}
 
-In this module we will explore the the dynamics of continuous media, focusing on elementary fluid dynamics and the motion of waves. This lays the foundations for the full development of fluid dynamics in years 3 and 4, as well as for modules on electromagnetism and quantum mechanics. The mathematical techniques of vector calculus are employed and further developed, as are Fourier methods and methods from complex analysis.
+These are the lecture notes for Waves and Fluids, part of the 2nd year Applied
+Maths module at the University of York in Spring 2023. Each chapter in these
+notes corresponds to one lecture.
+
+These notes will be periodically revised. Whenever you spot something that is not quite right, please email me at [gustav.delius\@york.ac.uk](mailto:gustav.delius@york.ac.uk) or submit your correction in the correction form at <https://forms.gle/w17c19vWnM7wpLpz7>.
+
+If you want to print these notes you should download the [pdf version](Waves-and-Fluids.pdf).
 
 The material in this module consists of two topics: Waves and Fluids. We will spend the first half of the term on Waves and the second half on Fluids. The topics are linked by the fact that both use partial differential equations to describe real-world phenomena in space and time. Of course they share this feature with a large part of Applied Mathematics. So you will meet the ideas and methods introduced in this module again and again in future Applied Mathematics modules. In some sense, the actual subject matter of this module is less important than the way of thinking that it introduces.
 
 The module is meant to prepare you for going out into the world and confronting new phenomena with the power of mathematics, not only in physics, but in biology, ecology, medicine, sociology, economics, and other areas. There will be many modules in the third and fourth year of you studies that will deepen that ability.
 
 Throughout this module, we shall use SI units: length is measured in meters (m), time in seconds (s), mass in kilograms (kg).
-
-These notes will be periodically revised. Whenever you spot something that is not quite right, please email me at [gustav.delius\@york.ac.uk](mailto:gustav.delius@york.ac.uk) or submit your correction in the correction form at <https://forms.gle/w17c19vWnM7wpLpz7>.
