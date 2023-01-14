@@ -116,7 +116,10 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -127,9 +130,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#checking-dimensions" id="toc-checking-dimensions" class="nav-link" data-scroll-target="#checking-dimensions"><span class="toc-section-number">1.5</span>  Checking dimensions</a></li>
   </ul>
 </nav>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -186,7 +186,7 @@ F_y&amp;=T_y(x+\delta x) - T_y(x) \\
 &amp;= T\sin\theta(x+\delta x) -T\sin\theta(x)\\
 &amp;\approx T\left(\theta(x+\delta x)-\theta(x)\right).
 \end{split} \tag{1.5}\]</span></span> We do another Taylor expansion and ignore higher-order terms in <span class="math inline">\(\delta x\)</span>, which is fine because we want to look at only an infinitesimally small segment of string. <span id="eq-6"><span class="math display">\[\begin{split}\theta(x+\delta x)&amp;=\theta(x)+\delta x\frac{\partial\theta}{\partial x}+O(\delta x)^2\\
-&amp;\approx \theta(x)+\delta x\frac{\partial\theta}{\partial x}.\end{split} \tag{1.6}\]</span></span> Substituting this into <a href="#eq-fy">Equation&nbsp;<span>1.5</span></a> gives <span id="eq-7"><span class="math display">\[F_y\approx T \delta x\frac{\partial\theta}{\partial x}. \tag{1.7}\]</span></span> We would like to express this in terms of <span class="math inline">\(y\)</span> instead of <span class="math inline">\(\theta\)</span>, which we can do by observing that <span id="eq-8"><span class="math display">\[\theta\approx\tan\theta=\frac{\partial y}{\partial x}, \tag{1.8}\]</span></span> so we finally have <span id="eq-9"><span class="math display">\[F_y\approx T\,\delta x\,\frac{\partial^2 y}{\partial x^2}. \tag{1.9}\]</span></span></p>
+&amp;\approx \theta(x)+\delta x\frac{\partial\theta}{\partial x}.\end{split} \tag{1.6}\]</span></span> Substituting this into <a href="#eq-fy">Eq.&nbsp;<span>1.5</span></a> gives <span id="eq-7"><span class="math display">\[F_y\approx T \delta x\frac{\partial\theta}{\partial x}. \tag{1.7}\]</span></span> We would like to express this in terms of <span class="math inline">\(y\)</span> instead of <span class="math inline">\(\theta\)</span>, which we can do by observing that <span id="eq-8"><span class="math display">\[\theta\approx\tan\theta=\frac{\partial y}{\partial x}, \tag{1.8}\]</span></span> so we finally have <span id="eq-9"><span class="math display">\[F_y\approx T\,\delta x\,\frac{\partial^2 y}{\partial x^2}. \tag{1.9}\]</span></span></p>
 <p>We deal with the <span class="math inline">\(x\)</span> component of the force similarly, using the Taylor expansion of <span class="math inline">\(\cos\theta=1+O(\theta^2)\)</span>: <span id="eq-10"><span class="math display">\[\begin{split}F_x&amp;=T_x(x+\delta x)-T_x(x)\\
 &amp;=T\cos\theta(x+\delta_x)-T\cos\theta(x)\\
 &amp;\approx T-T=0.\end{split} \tag{1.10}\]</span></span> So in our approximation of small slope, there is no movement in the <span class="math inline">\(x\)</span> direction. The string vibrates purely transversally.</p>

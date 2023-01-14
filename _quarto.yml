@@ -16,10 +16,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    toc-location: left
   pdf:
-    documentclass: scrbook
-    include-in-header: preamble.tex
+    documentclass: scrreport
 
 toc: true
 number-sections: true
+crossref-eq-prefix: Eq.

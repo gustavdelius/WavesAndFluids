@@ -1,11 +1,5 @@
 # d'Alembert's solution
 
-::: {.content-hidden}
-$$
-{{< include _macros.tex >}}
-$$
-:::
-
 First, we consider an infinitely long string (this is physically justified if we
 consider waves propagating far away from any boundaries). Mathematically, this
 means that we are looking for solutions of the wave equation on the whole real
@@ -15,13 +9,13 @@ line $-\infty<x<+\infty$.
 
 We consider the wave equation
 $$
- \partial_t^2 y - c^2\, \partial_{x}^2 y=0, \quad \hbox{for} \quad -\infty<x<+\infty.
+ \partial_t^2 y - c^2\, \partial_{x}^2 y=0
 $${#eq-waveeq6}
-Note that I have switched to the convenient notation using subscripts on
-derivatives to specify the variable with respect to which we are
-differentiating.
+for $-\infty<x<+\infty.$ Note that I have switched to the convenient notation
+using subscripts on derivatives to specify the variable with respect to which we
+are differentiating.
  
-Let's rewrite it using the _characteristic coordinates_ (also known as
+Let's rewrite @eq-waveeq6 using the _characteristic coordinates_ (also known as
 light-cone coordinates)
 $$
   \xi=x+ct,\quad \eta=x-ct.
@@ -36,20 +30,24 @@ It is a conventional abuse of notation to drop the tilde and denote both functio
 
 We need to express the derivatives with respect to $t$ and $x$ via the
 derivatives with respect to $\xi$ and $\eta$. This is done using the chain rule:
-$$
-\partial_t \, y =\frac{\partial {y}}{\partial {\xi}} \, \frac{\partial \xi}{\partial t} +
-\frac{\partial {y}}{\partial {\eta}} \, \frac{\partial \eta}{\partial t}= c \left( \partial_{\xi} -  \partial_{\eta}\right) {y}
-$${#eq-2.4}
+$$\begin{split}
+\partial_t \, y 
+&=\frac{\partial {y}}{\partial {\xi}} \, \frac{\partial \xi}{\partial t} +
+\frac{\partial {y}}{\partial {\eta}} \, \frac{\partial \eta}{\partial t}\\
+&= c \left( \partial_{\xi} -  \partial_{\eta}\right) {y}
+\end{split}$${#eq-2.4}
 and
-$$
-\partial_x \, y =\frac{\partial \tilde{y}}{\partial {\xi}} \, \frac{\partial \xi}{\partial x} +
-\frac{\partial \tilde{y}}{\partial {\eta}} \, \frac{\partial \eta}{\partial x}= \left( \partial_{\xi} +  \partial_{\eta}\right) \tilde{y}.
-$${#eq-2.5}
+$$\begin{split}
+\partial_x \, y 
+&=\frac{\partial y}{\partial {\xi}} \, \frac{\partial \xi}{\partial x} +
+\frac{\partial y}{\partial {\eta}} \, \frac{\partial \eta}{\partial x}\\
+&= \left( \partial_{\xi} +  \partial_{\eta}\right) y.
+\end{split}$${#eq-2.5}
 Hence
 $$
  \partial_t = c \left( \partial_{\xi} -  \partial_{\eta}\right),~~~
  \partial_x =  \partial_{\xi} +  \partial_{\eta}.
-$$
+$${#eq-2.6}
 Substituting these into the wave equation, we find that
 $$
 c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y - c^2\left(\partial_{\xi} + \partial_{\eta}\right)^2 y = 0.
@@ -71,11 +69,12 @@ integrate  @eq-waveeq7 in the variable $\xi$ ^[Note that when we integrate a
 function of two variables in one of the two variable, we need to add (to the
 result) an arbitrary function of the other variable. This is similar to adding a
 constant of integration when we integrate a function of one variable.]:
-$$
-\int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi = 0 \quad \Leftrightarrow \quad \partial_{\eta} y(\xi,\eta) = F(\eta)
-$${#eq-waveeq8}
-where $F$ is an arbitrary function of one variable ^[you can verify that this is
-true by direct differentiation of @eq-waveeq8 with respect to $\xi$]. Then we
+$$\begin{split}
+\int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi &= 0\\
+\Leftrightarrow \quad \partial_{\eta} y(\xi,\eta) &= F(\eta)
+\end{split}$${#eq-waveeq8}
+where $F$ is an arbitrary function of one variable ^[You can verify that this is
+true by direct differentiation of @eq-waveeq8 with respect to $\xi$.]. Then we
 integrate  @eq-waveeq8 in the variable $\eta$:
 $$\begin{split}
  y(\xi,\eta) &= \int \partial_{\eta} y(\xi,\eta)\,d\eta\\
@@ -139,38 +138,38 @@ where $a$ is an integration constant and $V(x)$ is just introduced to save
 writing below.
 
 Next, we add and subtract @eq-IC1 and @eq-IC3 divided by $c.$ This results in
-$$
-\begin{array}{l}
-y_0(x)-\frac{1}{c} \, V(x)=2 \, f(x)\\
-y_0(x)+\frac{1}{c} \, V(x)=2 \, g(x) 
-\end{array} \qquad \Rightarrow \qquad
-\begin{array}{l}
-f(x)=\frac{1}{2} \, y_0(x) - \frac{1}{2c} \, V(x) \\
-g(x)=\frac{1}{2} \, y_0(x) + \frac{1}{2c} \, V(x)
-\end{array}
-$$
+$$\begin{split}
+y_0(x)-\frac{1}{c} \, V(x)&=2 \, f(x)\\
+y_0(x)+\frac{1}{c} \, V(x)&=2 \, g(x) 
+\end{split}$${#eq-2.18}
+which implies that
+$$\begin{split}
+f(x)&=\frac{1}{2} \, y_0(x) - \frac{1}{2c} \, V(x) \\
+g(x)&=\frac{1}{2} \, y_0(x) + \frac{1}{2c} \, V(x)
+\end{split}$${#eq-2.19}
 Substituting these into the formula for the general solution, we get
-$$
-y(x,t)=\frac{1}{2} \, y_0(x-ct) - \frac{1}{2c} \, V(x-ct) +
-\frac{1}{2} \, y_0(x+ct) + \frac{1}{2c} \, V(x+ct)
-$$
+$$\begin{split}
+y(x,t)=&\frac{1}{2} \, y_0(x-ct) - \frac{1}{2c} \, V(x-ct) \\
+&+\frac{1}{2} \, y_0(x+ct) + \frac{1}{2c} \, V(x+ct)
+\end{split}$${#eq-2.20}
 or
-$$
-y(x,t)=\frac{1}{2} \left[ y_0(x-ct) + y_0(x+ct)\right]+ \frac{1}{2c} \left[ V(x+ct) - V(x-ct)\right]
-$$
+$$\begin{split}
+y(x,t)=&\frac{1}{2} \left[ y_0(x-ct) + y_0(x+ct)\right]\\
+&+ \frac{1}{2c} \left[ V(x+ct) - V(x-ct)\right]
+\end{split}$${#eq-2.21}
 Note that only the difference $\left[ V(x+ct) - V(x-ct)\right]$ appears so the
 integration constant cancels and also we can combine the two integrals into one
 because
 $$\begin{split}
 V(x+ct) - V(x-ct)&=\int\limits_0^{x+ct}v_0(s)\, ds - \int\limits_0^{x-ct}v_0(s)\, ds\\
 &=\int\limits_{x-ct}^{x+ct}v_0(s)\, ds .
-\end{split}$$
+\end{split}$${#eq-2.22}
 Finally, we have
-$$\label{dAlem}
+$$
   y(x,t)=\frac12 [y_0(x+ct)+y_0(x-ct)]+
   \frac{1}{2c}
   \int\limits_{x-ct}^{x+ct}v_0(s)\,ds.
-$$
+$${#eq-dAlem}
 This is the solution formula for the initial-value problem (@eq-WE_a, @eq-WE_b) and it is called the __d'Alembert formula__.
 
 
