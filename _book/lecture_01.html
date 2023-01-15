@@ -21,6 +21,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -166,6 +185,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>You find content related to this lecture in the textbooks:</p>
+<ul>
+<li><span class="citation" data-cites="knobel">Knobel (<a href="references.html#ref-knobel" role="doc-biblioref">1999</a>)</span> chapter 7</li>
+<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> sections 17 and 19</li>
+<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 1.10.3</li>
+<li><span class="citation" data-cites="simmons">Simmons (<a href="references.html#ref-simmons" role="doc-biblioref">1972</a>)</span> section 40</li>
+</ul>
 <section id="why-waves-on-a-string" class="level2 page-columns page-full" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="why-waves-on-a-string"><span class="header-section-number">1.1</span> Why waves on a string?</h2>
 <p>The great diversity of waves in nature means that we need to choose some concrete wave phenomenon to concentrate on to start our investigation. In this module we will concentrate on the waves on a string (think of a guitar string) and generalise to waves on a membrane (think of the membrane of a drum). By studying this in detail you will develop the intuition and the skills that will allow you to understand other wave phenomena later. We’ll come back to waves at the end of the part on Fluid Dynamics when we study waves on the surface of a fluid.</p>
@@ -210,6 +236,20 @@ F_y&amp;=T_y(x+\delta x) - T_y(x) \\
 <div class="page-columns page-full"><p>We use square brackets to denote the dimension of a quantity. So <span class="math inline">\([y]=L\)</span> says that <span class="math inline">\(y\)</span> has dimension of length, <span class="math inline">\([m]=M\)</span> says that <span class="math inline">\(m\)</span> has dimension of mass, and <span class="math inline">\([t]=T\)</span> says that <span class="math inline">\(t\)</span> has dimension of time. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The dimension of both sides of an equation has to agree, so <span id="eq-17"><span class="math display">\[\left[\frac{\partial^2 y}{\partial t^2}\right]=\frac{L}{T^2}=[c^2]\left[\frac{\partial^2 y}{\partial x^2}\right]=[c^2]\frac{1}{L}. \tag{1.17}\]</span></span> This shows that <span class="math inline">\([c]=L/T\)</span>, so it has the dimension of a velocity. Because <span class="math inline">\(T\)</span> is a force we have <span class="math inline">\([T]=ML/T^2\)</span>. The density <span class="math inline">\(\rho\)</span> has <span class="math inline">\([\rho]=M/L\)</span>. So <span id="eq-18"><span class="math display">\[[c]=\left[\sqrt{\frac{T}{\rho}}\right]=\sqrt{\frac{ML/T^2}{M/L}}=\sqrt{\frac{L^2}{T^2}}=\frac{L}{T}. \tag{1.18}\]</span></span> This completes our check of the dimensions.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Note the conflict of notation where we used <span class="math inline">\(T\)</span> for the tension force while it is also the conventional symbol for the dimension of time. Such conflicts happen from time to time – the context determines the meaning of the symbol.</p></li></div></div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
+Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
+</div>
+<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
+Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
+</div>
+<div id="ref-knobel" class="csl-entry" role="doc-biblioentry">
+Knobel, Roger A. 1999. <em>An Introduction to the Mathematical Theory of Waves</em>. <span>UK</span> ed. edition. Providence, R.I: American Mathematical Society. <a href="https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo">https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo</a>.
+</div>
+<div id="ref-simmons" class="csl-entry" role="doc-biblioentry">
+Simmons, George F. 1972. <em>Differential Equations with Applications and Historical Notes</em>. 3rd ed. <span>CRC</span> Press. <a href="https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons">https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons</a>.
+</div>
+</div>
 </section>
 
 

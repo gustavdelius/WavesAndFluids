@@ -1,5 +1,11 @@
 # d'Alembert's solution
 
+You find content related to this lecture in the textbooks:
+
+- @knobel chapter 8
+- @coulson sections 7 and 11
+- @baldock section 2.1
+
 First, we consider an infinitely long string (this is physically justified if we
 consider waves propagating far away from any boundaries). Mathematically, this
 means that we are looking for solutions of the wave equation on the whole real

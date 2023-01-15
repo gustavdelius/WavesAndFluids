@@ -6,6 +6,13 @@ $$
 $$
 :::
 
+You find content related to this lecture in the textbooks:
+
+- @knobel chapter 7
+- @coulson sections 17 and 19
+- @baldock section 1.10.3
+- @simmons section 40
+
 ## Why waves on a string?
 
 The great diversity of waves in nature means that we need to choose some

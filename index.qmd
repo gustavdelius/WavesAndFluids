@@ -1,19 +1,3 @@
----
-nocite: |
-  @knobel_introduction_1999,
-  @milne-thomson_theoretical_2013,
-  @landau_fluid_2013,
-  @pert_introductory_2013,
-  @acheson_elementary_1990,
-  @simmons_differential_nodate,
-  @batchelor_introduction_2000,
-  @paterson_first_1983,
-  @coulson_waves:_1977,
-  @baldock_mathematical_1983,
-  @bernard_fluid_2015,
-  @braithwaite_essential_2017
----
-  
 # Welcome {.unnumbered}
 
 These are the lecture notes for Waves and Fluids, part of the 2nd year Applied
