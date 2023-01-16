@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Work in progress">
+
+<title>Waves and Fluids - 4&nbsp; Bernoulli’s solution</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./lecture_03.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Waves and Fluids</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://maths.york.ac.uk/moodle/course/view.php?id=2497" title="Moodle page" class="sidebar-tool px-1"><i class="bi bi-mortarboard-fill"></i></a>
+    <a href="https://forms.gle/w17c19vWnM7wpLpz7" title="Submit a correction" class="sidebar-tool px-1"><i class="bi bi-bug-fill"></i></a>
+    <a href="./Waves-and-Fluids.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Boundaries and Interfaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_04.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#separation-of-variables" id="toc-separation-of-variables" class="nav-link active" data-scroll-target="#separation-of-variables"><span class="toc-section-number">4.1</span>  Separation of variables</a></li>
+  <li><a href="#finite-string-with-fixed-ends" id="toc-finite-string-with-fixed-ends" class="nav-link" data-scroll-target="#finite-string-with-fixed-ends"><span class="toc-section-number">4.2</span>  Finite string with fixed ends</a></li>
+  <li><a href="#standing-waves" id="toc-standing-waves" class="nav-link" data-scroll-target="#standing-waves"><span class="toc-section-number">4.3</span>  Standing waves</a></li>
+  <li><a href="#initial-value-problem" id="toc-initial-value-problem" class="nav-link" data-scroll-target="#initial-value-problem"><span class="toc-section-number">4.4</span>  Initial value problem</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>You find content related to this lecture in the textbooks:</p>
+<ul>
+<li><span class="citation" data-cites="knobel">Knobel (<a href="references.html#ref-knobel" role="doc-biblioref">1999</a>)</span> sections 11.2 and 11.3, chapters 13 and 14</li>
+<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> sections 3.1, 3.2, 3.3</li>
+<li><span class="citation" data-cites="simmons">Simmons (<a href="references.html#ref-simmons" role="doc-biblioref">1972</a>)</span> sections 39 and 40</li>
+</ul>
+<p>We will now solve the wave equation again in a totally different way from d’Alembert, following instead Bernoulli. This is a method you have seen before, namely the method of separation of variables.</p>
+<section id="separation-of-variables" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="separation-of-variables"><span class="header-section-number">4.1</span> Separation of variables</h2>
+<p>We make the Ansatz that the solution factorises into one function of only <span class="math inline">\(x\)</span> and one function of only <span class="math inline">\(t\)</span>: <span id="eq-4.1"><span class="math display">\[
+y(x,t) = X(x)T(t).
+\tag{4.1}\]</span></span> Substituting this into the wave equation <span id="eq-4.2"><span class="math display">\[
+\partial_x^2y(x,t)=\frac{1}{c^2}\partial_t^2y(x,t)
+\tag{4.2}\]</span></span> we get <span id="eq-4.3"><span class="math display">\[
+X''(x)T(t)=\frac{1}{c^2}X(x)T''(t) .
+\tag{4.3}\]</span></span> We divide both sides by <span class="math inline">\(X(x)T(t)\)</span>, which will separate the variables: <span id="eq-4.4"><span class="math display">\[
+\frac{X''(x)}{X(x)}=\frac{1}{c^2}\frac{T''(t)}{T(t)}.
+\tag{4.4}\]</span></span> It the last equation, we have a function of <span class="math inline">\(x\)</span> only on the left hand side and a function of <span class="math inline">\(t\)</span> only on the right hand side. The equation must hold for all <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>. This is only possible if both functions are equal to a constant. It will turn out to be convenient to write this constant as <span class="math inline">\(-k^2\)</span> for some new constant <span class="math inline">\(k\)</span>. Thus we set <span id="eq-4.5"><span class="math display">\[
+\frac{X''(x)}{X(x)}=\frac{1}{c^2}\frac{T''(t)}{T(t)} =- k^2.
+\tag{4.5}\]</span></span> This means that <span class="math inline">\(X(x)\)</span> and <span class="math inline">\(T(t)\)</span> must be solutions of the ODEs <span id="eq-4.6"><span class="math display">\[
+X''=-k^2 X \quad \text{and}\quad T''=-k^2 c^2 T.
+\tag{4.6}\]</span></span> The general solutions of these ODEs are <span id="eq-4.7"><span class="math display">\[\begin{split}
+X(x)&amp;= A \, \sin(kx) + B \, \cos(kx), \\
+T(t)&amp;= F \, \sin(kct) + G \, \cos(kct),
+\end{split} \tag{4.7}\]</span></span> where <span class="math inline">\(A, B, F, G\)</span> and <span class="math inline">\(k\)</span> are arbitrary constants.</p>
+</section>
+<section id="finite-string-with-fixed-ends" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="finite-string-with-fixed-ends"><span class="header-section-number">4.2</span> Finite string with fixed ends</h2>
+<p>Bernoulli was most interested in the finite string. Let us put the ends of the string at <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=\pi\)</span>. Now let the ends of the string be fixed. This means that we need to impose homogeneous Dirichlet boundary conditions <span id="eq-finitestr2"><span class="math display">\[
+y(0,t)=0 \quad \text{and} \quad y(\pi,t)=0 \quad \text{for all} \ \ t .
+\tag{4.8}\]</span></span> These conditions will be satisfied if <span class="math inline">\(X(0)=0\)</span> and <span class="math inline">\(X(\pi)=0\)</span>. Imposing the condition <span class="math inline">\(X(0)=0\)</span> on the general solution for <span class="math inline">\(X(x)\)</span>, we find that we need <span class="math inline">\(B=0\)</span>. We then have from <span class="math inline">\(X(\pi)=0\)</span> that <span id="eq-4.9"><span class="math display">\[
+A\sin(k\pi) = 0.
+\tag{4.9}\]</span></span> The last equation implies that either <span class="math inline">\(A=0\)</span> or <span class="math inline">\(\sin(k\pi)=0\)</span>. We reject the first option because it results in a zero solution. The second option yields <span id="eq-4.10"><span class="math display">\[
+\sin(k\pi) = 0 \quad \Rightarrow k\in\mathbb{Z}.
+\tag{4.10}\]</span></span></p>
+<div class="page-columns page-full"><p>Thus, for each positive integer <span class="math inline">\(k\)</span> we have a solution of the wave equation of the form <span id="eq-finitestr3"><span class="math display">\[
+y_k(x,t) = \sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right)
+\tag{4.11}\]</span></span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;We do not need negative <span class="math inline">\(k\)</span> because they will produce the same solutions, and we do not need <span class="math inline">\(k=0\)</span> because it yields zero solution. Also, we have absorbed the constant <span class="math inline">\(A\)</span> into the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span>.</p></li></div></div>
+</section>
+<section id="standing-waves" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="standing-waves"><span class="header-section-number">4.3</span> Standing waves</h2>
+<p>The solutions we obtained in the previous section are standing waves. They don’t change their shape and don’t move, only their amplitude oscillates with time. In the lecture videos I make various sketches and animations to illustrate this.</p>
+<p>So we now have a stark contrast between what d’Alembert found and what Bernoulli found. According to d’Alembert, the solutions of the wave equation are travelling waves of arbitrary shape. According to Bernoulli, the solutions are standing waves that have sine shape. It is always wonderful when one has two very different ways of looking at the same phenomenon. That is where deep understanding comes from.</p>
+<p>The resolution of the apparent paradox is that a superposition of standing waves can give a travelling wave, and that a superposition of sine waves can give any shape.</p>
+</section>
+<section id="initial-value-problem" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="initial-value-problem"><span class="header-section-number">4.4</span> Initial value problem</h2>
+<p>Since the wave equation is linear and also the boundary conditions we imposed were linear, a linear combination of any number of the solutions is also a solution (this is called the <em>superposition principle</em>. So, we can construct a general solution of the wave equation by summing up the harmonic standing waves from <a href="#eq-finitestr3">Eq.&nbsp;<span>4.11</span></a>: <span id="eq-finitestr4"><span class="math display">\[
+y(x,t) = \sum_{k=1}^{\infty}\sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right).
+\tag{4.12}\]</span></span> Here the <span class="math inline">\(G_k\)</span> and the <span class="math inline">\(F_k\)</span> are undetermined constants, to be fixed from the initial conditions.</p>
+<p>Suppose now that we are given the initial conditions <span id="eq-finitestr5"><span class="math display">\[
+y(x,0) = y_0(x), \quad \pr_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
+\tag{4.13}\]</span></span> How to choose constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> so as to satisfy the initial conditions? Let’s substitute <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> into <a href="#eq-finitestr5">Eq.&nbsp;<span>4.13</span></a>. We have <span id="eq-finitestr6"><span class="math display">\[
+y_0(x) = \sum_{k=1}^{\infty}G_k \, \sin\left(k x\right), \quad
+v_0(x) = \sum_{k=1}^{\infty}F_k\, k c \, \sin\left(k x\right).
+\tag{4.14}\]</span></span> These formulae look like Fourier series for the functions <span class="math inline">\(y_0\)</span> and <span class="math inline">\(v_0\)</span>. So, to find coefficients <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span>, we use the identity <span class="math display">\[
+\int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx = \frac{\pi}{2}\delta_{kl},
+\]</span> where <span class="math inline">\(\delta_{kl}\)</span> is the Kronecker delta: <span class="math display">\[
+\delta_{kl} =\begin{cases}
+1 &amp;\text{if \ } k=l \\
+0 &amp;\text{if \ } k\neq l
+\end{cases}
+\]</span> To make use of this, we multiply each of <a href="#eq-finitestr6">Eq.&nbsp;<span>4.14</span></a> by <span class="math inline">\(2/\pi \,\sin(l x)\)</span> and integrate over the interval <span class="math inline">\([0,\pi]\)</span>: <span id="eq-finitestr7"><span class="math display">\[\begin{split}
+\frac{2}{\pi}\int\limits_{0}^{\pi}y_0(x)\sin(l x)dx
+&amp;=\frac{2}{\pi} \sum_{k=1}^{\infty}G_k \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
+&amp;=\sum_{k=1}^{\infty}G_k \delta_{kl}=G_l
+\end{split}
+\tag{4.15}\]</span></span> <span id="eq-finitestr8"><span class="math display">\[\begin{split}
+\frac{2}{\pi}\int\limits_{0}^{\pi}v_0(x)\sin(l x)dx &amp;=
+\frac{2}{\pi}\sum_{k=1}^{\infty}F_k\, k c \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
+&amp;=\sum_{k=1}^{\infty}F_k\, k c\, \delta_{kl}= F_l\, l c
+\end{split}
+\tag{4.16}\]</span></span> Thus we know how to determine the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> in the general solution <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> such as to satisfy given initial conditions.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
+Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
+</div>
+<div id="ref-knobel" class="csl-entry" role="doc-biblioentry">
+Knobel, Roger A. 1999. <em>An Introduction to the Mathematical Theory of Waves</em>. <span>UK</span> ed. edition. Providence, R.I: American Mathematical Society. <a href="https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo">https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo</a>.
+</div>
+<div id="ref-simmons" class="csl-entry" role="doc-biblioentry">
+Simmons, George F. 1972. <em>Differential Equations with Applications and Historical Notes</em>. 3rd ed. <span>CRC</span> Press. <a href="https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons">https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons</a>.
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lecture_03.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Boundaries and Interfaces</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -7,7 +7,7 @@ book:
   title: "Waves and Fluids"
   subtitle: "Lecture notes for Spring 2023"
   author: "Gustav Delius"
-  date: "01/13/2023"
+  date: today
   abstract: |
     In this module we will explore the dynamics of continuous media, 
     focusing on elementary fluid dynamics and the motion of waves. This lays 
@@ -33,6 +33,7 @@ book:
       - lecture_01.qmd
       - lecture_02.qmd
       - lecture_03.qmd
+      - lecture_04.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -1,0 +1,146 @@
+# Bernoulli's solution
+
+You find content related to this lecture in the textbooks:
+
+- @knobel sections 11.2 and 11.3, chapters 13 and 14
+- @baldock sections 3.1, 3.2, 3.3
+- @simmons sections 39 and 40
+
+We will now solve the wave equation again in a totally different way from
+d'Alembert, following instead Bernoulli. This is a method you have seen before,
+namely the method of separation of variables.
+
+## Separation of variables
+We make the Ansatz that the solution factorises into one function of only $x$
+and one function of only $t$:
+$$
+y(x,t) = X(x)T(t).
+$$ {#eq-4.1}
+Substituting this into the wave equation
+$$
+\partial_x^2y(x,t)=\frac{1}{c^2}\partial_t^2y(x,t)
+$$ {#eq-4.2}
+ we get
+$$
+X''(x)T(t)=\frac{1}{c^2}X(x)T''(t) .
+$$ {#eq-4.3}
+We divide both sides by $X(x)T(t)$, which will separate the variables:
+$$
+\frac{X''(x)}{X(x)}=\frac{1}{c^2}\frac{T''(t)}{T(t)}.
+$$ {#eq-4.4}
+It the last equation, we have a function of $x$ only on the left hand side and a
+function of $t$ only on the right hand side. The equation must hold for all $x$
+and $t$. This is only possible if both functions are equal to a constant. It
+will turn out to be convenient to write this constant as $-k^2$ for some new
+constant $k$. Thus we set
+$$
+\frac{X''(x)}{X(x)}=\frac{1}{c^2}\frac{T''(t)}{T(t)} =- k^2.
+$$ {#eq-4.5}
+This means that $X(x)$ and $T(t)$ must be solutions of the ODEs
+$$
+X''=-k^2 X \quad \text{and}\quad T''=-k^2 c^2 T.
+$$ {#eq-4.6}
+The general solutions of these ODEs are
+$$\begin{split}
+X(x)&= A \, \sin(kx) + B \, \cos(kx), \\
+T(t)&= F \, \sin(kct) + G \, \cos(kct),
+\end{split}$$ {#eq-4.7}
+where $A, B, F, G$ and $k$ are arbitrary constants.
+
+## Finite string with fixed ends
+
+Bernoulli was most interested in the finite string. Let us put the ends of the
+string at $x=0$ and $x=\pi$. Now let the ends of the string be fixed. This means
+that we need to impose homogeneous Dirichlet boundary conditions
+$$
+y(0,t)=0 \quad \text{and} \quad y(\pi,t)=0 \quad \text{for all} \ \ t .
+$$ {#eq-finitestr2}
+These conditions will be satisfied if $X(0)=0$ and $X(\pi)=0$. Imposing the
+condition $X(0)=0$ on the general solution for $X(x)$, we find that we need
+$B=0$. We then have from $X(\pi)=0$ that
+$$
+A\sin(k\pi) = 0.
+$$ {#eq-4.9}
+The last equation implies that either $A=0$ or $\sin(k\pi)=0$. We reject the
+first option because it results in a zero solution. The second option yields
+$$
+\sin(k\pi) = 0 \quad \Rightarrow k\in\mathbb{Z}.
+$$ {#eq-4.10}
+
+Thus, for each positive integer $k$ we have a solution of the wave equation of
+the form
+$$
+y_k(x,t) = \sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right)
+$$ {#eq-finitestr3}
+^[We do not need negative $k$ because they will produce the same solutions, and
+we do not need $k=0$ because it yields zero solution. Also, we have absorbed the
+constant $A$ into the constants $F_k$ and $G_k$.]
+
+## Standing waves
+
+The solutions we obtained in the previous section are standing waves. They don't
+change their shape and don't move, only their amplitude oscillates with time. In
+the lecture videos I make various sketches and animations to illustrate this.
+
+So we now have a stark contrast between what d'Alembert found and what Bernoulli
+found. According to d'Alembert, the solutions of the wave equation are
+travelling waves of arbitrary shape. According to Bernoulli, the solutions are
+standing waves that have sine shape. It is always wonderful when one has two
+very different ways of looking at the same phenomenon. That is where deep
+understanding comes from.
+
+The resolution of the apparent paradox is that a superposition of standing waves
+can give a travelling wave, and that a superposition of sine waves can give any
+shape.
+
+## Initial value problem
+
+Since the wave equation is linear and also the boundary conditions we imposed
+were linear, a linear combination of any number of the solutions is also a
+solution (this is called the _superposition principle_. So, we can construct a
+general solution of the wave equation by summing up the harmonic standing waves
+from @eq-finitestr3:
+$$
+y(x,t) = \sum_{k=1}^{\infty}\sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right). 
+$$ {#eq-finitestr4}
+Here the $G_k$ and the $F_k$ are undetermined constants, to be fixed from the
+initial conditions.
+
+Suppose now that we are given the initial conditions
+$$
+y(x,0) = y_0(x), \quad \pr_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
+$$ {#eq-finitestr5}
+How to choose constants $F_k$ and $G_k$ so as to satisfy the initial conditions?
+Let's substitute @eq-finitestr4 into @eq-finitestr5. We have
+$$
+y_0(x) = \sum_{k=1}^{\infty}G_k \, \sin\left(k x\right), \quad
+v_0(x) = \sum_{k=1}^{\infty}F_k\, k c \, \sin\left(k x\right).
+$$ {#eq-finitestr6}
+These formulae look like Fourier series for the functions $y_0$ and $v_0$. So,
+to find coefficients $F_k$ and $G_k$, we use the identity
+$$
+\int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx = \frac{\pi}{2}\delta_{kl},
+$$
+where $\delta_{kl}$ is the Kronecker delta:
+$$
+ \delta_{kl} =\begin{cases}
+1 &\text{if \ } k=l \\
+0 &\text{if \ } k\neq l
+\end{cases}
+$$
+To make use of this, we multiply each of @eq-finitestr6 by $2/\pi \,\sin(l x)$
+and integrate over the interval $[0,\pi]$:
+$$\begin{split}
+\frac{2}{\pi}\int\limits_{0}^{\pi}y_0(x)\sin(l x)dx 
+&=\frac{2}{\pi} \sum_{k=1}^{\infty}G_k \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
+&=\sum_{k=1}^{\infty}G_k \delta_{kl}=G_l
+\end{split}
+$$ {#eq-finitestr7}
+$$\begin{split}
+\frac{2}{\pi}\int\limits_{0}^{\pi}v_0(x)\sin(l x)dx &= 
+\frac{2}{\pi}\sum_{k=1}^{\infty}F_k\, k c \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
+&=\sum_{k=1}^{\infty}F_k\, k c\, \delta_{kl}= F_l\, l c
+\end{split}
+$$ {#eq-finitestr8}
+Thus we know how to determine the constants $F_k$ and $G_k$ in the general
+solution @eq-finitestr4 such as to satisfy given initial conditions.
