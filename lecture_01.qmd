@@ -107,7 +107,7 @@ $$F_y\approx T\,\delta x\,\frac{\partial^2 y}{\partial x^2}.$${#eq-9}
 
 We deal with the $x$ component of the force similarly, using the Taylor expansion of $\cos\theta=1+O(\theta^2)$:
 $$\begin{split}F_x&=T_x(x+\delta x)-T_x(x)\\
-&=T\cos\theta(x+\delta_x)-T\cos\theta(x)\\
+&=T\cos\theta(x+\delta x)-T\cos\theta(x)\\
 &\approx T-T=0.\end{split}$${#eq-10}
 So in our approximation of small slope, there is no movement in the $x$ direction. The string vibrates purely
 transversally.
