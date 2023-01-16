@@ -17,6 +17,9 @@ book:
     developed, as are Fourier methods and methods from complex analysis.
   description: Work in progress
   downloads: pdf
+  repo-url: https://github.com/gustavdelius/WavesAndFluids/
+  repo-branch: master
+  repo-actions: edit
   sidebar:
     subtitle: Lecture notes
     tools: 
