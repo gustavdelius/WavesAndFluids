@@ -32,6 +32,7 @@ book:
       chapters:
       - lecture_01.qmd
       - lecture_02.qmd
+      - lecture_03.qmd
     - references.qmd
 
 bibliography: references.bib
