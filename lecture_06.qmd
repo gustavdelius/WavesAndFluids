@@ -1,0 +1,218 @@
+# Energy
+
+Besides Information, waves transmit another practically important quantity:
+Energy. Note that waves do not transport matter. Matter may oscillate up and
+down or forth and back as a wave passes, but it is not swept away with the wave.
+But energy is. In this lecture we are going to first introduce the expression
+for the energy in a wave on a string as an integral over the energy density,
+that in turn is made up out of kinetic and potential energy density. We will
+then calculate the energy in a few example waves, and then discuss the
+conservation of energy.
+
+## Energy density
+
+Consider an infinitesimal bit of string between $x$ and $x+\delta x$. Its
+kinetic energy is
+$$
+\delta K = \frac12 m\,v^2 = \frac12 \rho\,\delta x\left(\partial_t y\right)^2.
+$$ {#eq-6.1}
+The kinetic energy of the entire string is then obtained by integrating over its
+infinitesimal parts:
+$$
+K=\int \frac{\rho}{2}  (\partial_t y)^2 \, dx = \int \mathcal{E}_K\,dx.
+$$ {#eq-energy1}
+The quantity $\mathcal{E}_K$ is the kinetic energy density.
+
+To derive the formula for the potential energy, we again look first at an
+infinitesimal segment of the string. It has been stretched from a length of
+$\delta x$ to the longer length $\delta s$. The work done to change the length
+from $\delta x$ to $\delta s$ is $T(\delta s - \delta x)$. This gives the
+potential energy (we neglect the potential energy coming from gravity). We have
+$$
+\delta s= \sqrt{1+\left(\partial_x y\right)^2} \, \delta x \approx \delta x \left(1 +  \frac{\left(\partial_x y\right)^2}{2} + \cdots \right),
+$$ {#eq-6.3}
+where we have only kept the first two terms in the Taylor expansion because, as
+we did when we derived the wave equation, we assume that the slope of the string
+is small and thus the higher order terms in $\partial_x y$ are negligible. Thus
+the potential energy in the infinitesimal segment of the string is
+$$
+\delta V=T\left(\delta s - \delta x\right) 
+= \frac{T}{2} \left(\partial_x y\right)^2\, \delta x .
+$$ {#eq-6.4}
+Summing up contributions from all small elements of the string (i.e. integrating
+over the whole string), we find the potential energy
+$$
+V=\int T \, \frac{(\partial_x y)^2}{2} \, dx = \int \mathcal{E}_V\,dx.
+$$ {#eq-energy2}
+The quantity $\mathcal{E}_V$ is the potential energy density.
+
+The total energy $E$ is the sum of the kinetic and potential energy:
+$$\begin{split}
+E&=K+V\\
+&=\int \left( \frac{\rho}{2}  (\partial_t y)^2+  \frac{T}{2} (\partial_x y)^2\right)  dx\\
+&= \int \mathcal{E}\,dx,
+\end{split}$$ {#eq-energy2}
+where $\mathcal{E}=\mathcal{E}_K + \mathcal{E}_V$ is the total energy density.
+
+## Energy density of example waves
+
+::: {#exm-energy_travelling_wave}
+
+Consider a localised wave $y=f(x-ct)$ travelling to the right with speed $c$.
+Substituting this into the general expression for the energy density
+$$
+\mathcal{E}=\frac{\rho}{2}(\partial_ty)^2+\frac{T}{2}(\partial_x y)^2
+$$ {#eq-6.7}
+gives
+$$
+\mathcal{E}(x,t)=\frac{\rho}{2}(-c)^2(f'(x-ct))^2+\frac{T}{2}(f'(x-ct))^2.
+$$ {#eq-6.8}
+Because $c^2\rho = T$, we see that the kinetic and the potential energy
+densities are equal. This phenomenon is referred to as "equipartition" of the
+energy. Together we have
+$$
+\mathcal{E}(x,t)=T\,(f'(x-ct))^2.
+$$ {#eq-6.9}
+Note how the energy density is travelling along with the wave profile.
+
+:::
+
+::: {#exm-energy_standing_wave}
+
+### Standing harmonic wave
+
+Now we consider solutions of the form
+$$\begin{split}
+y(x,t)&=\sin(kx)(F\sin(kct)+G\cos(kct))\\
+&=\alpha\cos(kct+\phi).
+\end{split}$$ {#eq-6.10}
+We calculate the energy densities
+$$\begin{split}
+\mathcal{E}_K&=\frac{\rho}{2}(\partial_t y(x,t))^2\\
+&=\frac{\rho}{2}\alpha^2 k^2 c^2(-\sin(kct+\phi))^2\sin^2(kx)
+\end{split}$$ {#eq-6.11}
+and
+$$\begin{split}
+\mathcal{E}_V&=\frac{T}{2}(\partial_x y(x,t))^2\\
+&=\frac{T}{2}\alpha^2 k^2 (\cos(kct+\phi))^2\cos^2(kx)
+\end{split}$$ {#eq-6.12}
+Again we notice that the prefactors are the same because $c^2\rho=T$.
+For the energies we find
+$$\begin{split}
+K&=\frac{T}{2}\alpha^2 k^2 \sin^2(kct+\phi)
+\int_0^\pi\sin^2(kx)dx\\
+&=\frac{T\alpha^2 k^2 \pi}{4}\sin^2(kct+\phi)
+\end{split}$$ {#eq-6.13}
+and
+$$\begin{split}
+T&=\frac{T}{2}\alpha^2 k^2 \cos^2(kct+\phi)\int_0^\pi\cos^2(kx)dx\\
+&=\frac{T\alpha^2 k^2 \pi}{4}\cos^2(kct+\phi).
+\end{split}$$ {#eq-6.14}
+
+For standing waves, both the kinetic energy and the potential energy depend on
+time and are not equal. However, the averaged (over a period in $t$) kinetic and
+potential energies are equal. The total energy is constant
+$$
+E=K+T
+=\frac{T\alpha^2 k^2 \pi}{4}(\sin^2(kct+\phi)+\cos^2(kct+\phi))=\frac{T\alpha^2 k^2 \pi}{4}
+$$ {#eq-6.15}
+:::
+
+::: {#exm-energy_sum}
+### Sum of two standing harmonic waves
+
+Consider two harmonic waves
+$$\begin{split}
+y_k&=\alpha_k\sin(kx)\cos(kct+\phi_k)~~\text{and}\\
+y_l&=\alpha_l\sin(lx)\cos(lct+\phi_l)
+\end{split}$$ {#eq-6.16}
+with $k\neq l$ and let us calculate the energy of $y=y_k+y_l$. We have
+$$\begin{split}
+K&=\frac{\rho}{2}\int_0^\pi(\partial_t y)^2dx
+=\frac{\rho}{2}\int_0^\pi(\partial_t y_k+\partial_t y_l)^2dx \\
+&=K_k+K_l+\rho\,\alpha_k\, \alpha_l\, k\,l\,c^2\cos(kct+\phi_k)\cos(lct+\phi_l) \cdot\\
+&\qquad\qquad\qquad\int_0^\pi\sin(kx)\sin(lx)dx\\
+&=K_k+K_l
+\end{split}$$ {#eq-6.17}
+where $K_k$ and $K_l$ are the kinetic energies of the individual harmonic waves.
+A similar calculation shows that also the potential energy of the sum is the sum
+of the potential energies and so this is also true of the total energy:
+$$
+E[y_k+y_l]=E[y_k]+E[y_l].
+$$ {#eq-6.18}
+This is one of the nice properties of harmonic waves.
+:::
+
+::: {#exm-energy_complex_wave}
+### Complex exponential wave
+
+We calculate the energy density of the complex solution
+$$
+y(x,t)=A\,e^{i(kx-\omega t)}.
+$$ {#eq-6.19}
+The expression for the energy density of complex solutions involves the
+absolute value squared:
+$$
+\mathcal{E}[y]=\frac{\rho}{2}|\partial_t y|^2+\frac{T}{2}|\partial_x y|^2.
+$$ {#eq-6.20}
+This has the effect that the energy density is the sum of the energy density of
+the real part of the solution and the energy density of the imaginary part of
+the solution. We find
+$$\begin{split}
+\mathcal{E}[A\,e^{i(kx-\omega t)}]&=\frac{\rho}{2}\left|-i\omega \,A\,e^{i(kx-\omega t)}\right|^2+\frac{T}{2}\left|ik \,A\,e^{i(kx-\omega t)}\right|^2\\
+&=\left(\frac{\rho}{2}\omega^2+\frac{T}{2}k^2\right)|A|^2
+\end{split}$$ {#eq-6.21}
+So another miracle of these complex exponential solutions is that their energy
+density is constant.
+:::
+
+## Conservation equation
+
+Let $y(x,t)$ be a solution of the wave equation for the string and $\mathcal{E}$
+its energy density
+$$
+\mathcal{E}=\frac{\rho}{2}(\partial_t y)^2+\frac{T}{2}(\partial_x y)^2.
+$$ {#eq-6.22}
+For the time derivative of the energy density we find
+$$\begin{split}
+\partial_t \mathcal{E} &= \rho \, \partial_t y  \, \partial_t^2 y  +  T \, \partial_x y  \, \partial_t\partial_x y \\
+&= \partial_t y  \, T\, \partial_x^2 y  +  T \, \partial_x y  \, \partial_t\partial_x y \quad (\text{using} \ \ \rho \, \partial_t^2 y = T\, \partial_x^2 y \ ) \\
+&=- \partial_x\left( -T \, \partial_t y  \, \partial_x y\right)  . 
+\end{split}$$ {#eq-6.23}
+In terms of the quantity  $\mathcal{F} = - T \, \partial_t y  \, \partial_x y$
+this equation takes the form
+$$
+\partial_t\mathcal{E}=-\partial_x\mathcal{F}.
+$$ {#eq-energy4}
+The quantity $\mathcal{F}$ is called the _energy flux_. 
+
+@eq-energy4 implies the law of conservation of energy (and
+therefore is called a _conservation equation_}). Indeed, we have
+$$
+\frac{dE}{dt}= \int\limits_{x_1}^{x_2} \partial_t \mathcal{E} \, dx =
+-\int\limits_{x_1}^{x_2} \partial_x \mathcal{F} \, dx  = \mathcal{F}(x_1)-\mathcal{F}(x_2).
+$$ {#eq-energy5}
+So if we interpret the energy flux $\mathcal{F}(x)$ as the rate at which energy
+flows through a point $x$ from left to right, then the conservation equation
+expresses that the rate at which energy in a region changes is equal to the
+difference between the rate at which energy flows in and the rate at which
+energy flows out of the region.
+
+We already showed conservation of energy of a finite string with fixed boundary
+conditions in the previous section. We will now use the above machinery to show
+the conservation of the energy of a finite string with free boundary conditions.
+We consider a string between $x=0$ and $x=\pi$ satisfying the free boundary
+conditions
+$$
+\partial_xy(0,t)=0=\partial_xy(\pi,t)\text{ for all }t.
+$$ {#eq-6.25}
+The energy flux at the left end of the string at $x=0$ is
+$$
+\mathcal{F}(0,t)=-T\,\partial_ty(0,t)\,\partial_xy(0,t).
+$$ {#eq-6.26}
+This flux is zero due to the boundary condition. Similarly the flux at the right
+boundary is zero:
+$$
+\mathcal{F}(\pi,t)=-T\,\partial_ty(\pi,t)\,\partial_xy(\pi,t)=0.
+$$ {#eq-6.27}
+So by the conservation equation it follows that the energy is conserved.
