@@ -45,8 +45,8 @@ prefix `angular' is often discarded.
 The harmonic wave @eq-harmonic1 can be written as
 $$\begin{split}
 y(x,t)&=a \cos\left(kx - \omega t + \phi\right) \\
-&= {\rm Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
-&={\rm Re}\left( A e^{i(kx-\omega t)}\right),
+&= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
+&=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
 \end{split}$$ {#eq-harmonic3}
 where we have included the phase factor $e^{i\phi}$ into the complex amplitude:
 $A= a e^{i\phi}$.
@@ -61,7 +61,7 @@ for any $A\in\mathbb{C}$, any $k\in\mathbb{R}$ and some $\omega(k)$. To find
 $\omega(k)$, we substitute @eq-harmonic4 into the wave equation:
 $$
 \partial_t^2 y =c^2 \partial_x^2 y  \quad 
-\Rightarrow \quad -\omega^2 A =-c^2 k^2 A..
+\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
 $$ {#eq-5.9}
 Therefore
 $$
@@ -81,7 +81,7 @@ has harmonic wave solutions @eq-harmonic4 for some $\omega(k)$.
 
 Consider the damped string (with friction force proportional to velocity):
  $$
-  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where\ }\
+  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
   p>0.
 $$ {#eq-damped1}
 Substituting the harmonic wave @eq-harmonic4 into this equation, we obtain
@@ -107,7 +107,7 @@ $$ {#eq-5.15}
 If we want to, we can get a real solution by taking the real part of the complex
 solution:
 $$
-{\rm Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
+\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
 $$ {#eq-5.16}
 where $a=\vert A\vert$ and $\phi=\arg(A)$. 
 
