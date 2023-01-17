@@ -169,7 +169,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#wave-equation-in-light-cone-coordinates" id="toc-wave-equation-in-light-cone-coordinates" class="nav-link active" data-scroll-target="#wave-equation-in-light-cone-coordinates"><span class="toc-section-number">2.1</span>  Wave equation in light-cone coordinates</a></li>
+  <li><a href="#characteristic-coordinates" id="toc-characteristic-coordinates" class="nav-link active" data-scroll-target="#characteristic-coordinates"><span class="toc-section-number">2.1</span>  Characteristic coordinates</a></li>
   <li><a href="#general-solution-of-wave-equation" id="toc-general-solution-of-wave-equation" class="nav-link" data-scroll-target="#general-solution-of-wave-equation"><span class="toc-section-number">2.2</span>  General solution of wave equation</a></li>
   <li><a href="#travelling-waves" id="toc-travelling-waves" class="nav-link" data-scroll-target="#travelling-waves"><span class="toc-section-number">2.3</span>  Travelling waves</a></li>
   <li><a href="#initial-value-problem-and-dalemberts-formula" id="toc-initial-value-problem-and-dalemberts-formula" class="nav-link" data-scroll-target="#initial-value-problem-and-dalemberts-formula"><span class="toc-section-number">2.4</span>  Initial value problem and d’Alembert’s formula</a></li>
@@ -202,13 +202,12 @@ div.csl-indent {
 <li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> sections 7 and 11</li>
 <li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 2.1</li>
 </ul>
-<p>First, we consider an infinitely long string (this is physically justified if we consider waves propagating far away from any boundaries). Mathematically, this means that we are looking for solutions of the wave equation on the whole real line <span class="math inline">\(-\infty&lt;x&lt;+\infty\)</span>.</p>
-<section id="wave-equation-in-light-cone-coordinates" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="wave-equation-in-light-cone-coordinates"><span class="header-section-number">2.1</span> Wave equation in light-cone coordinates</h2>
-<p>We consider the wave equation <span id="eq-waveeq6"><span class="math display">\[
+<p>In this lecture, we consider an infinitely long string (this is physically justified if we consider waves propagating far away from any boundaries). Mathematically, this means that we are looking for solutions of the wave equation <span id="eq-waveeq6"><span class="math display">\[
 \partial_t^2 y - c^2\, \partial_{x}^2 y=0
-\tag{2.1}\]</span></span> for <span class="math inline">\(-\infty&lt;x&lt;+\infty.\)</span> Note that I have switched to the convenient notation using subscripts on derivatives to specify the variable with respect to which we are differentiating.</p>
-<p>Let’s rewrite <a href="#eq-waveeq6">Eq.&nbsp;<span>2.1</span></a> using the <em>characteristic coordinates</em> (also known as light-cone coordinates) <span id="eq-charcoor"><span class="math display">\[
+\tag{2.1}\]</span></span> on the whole real axis <span class="math inline">\(-\infty&lt;x&lt;+\infty.\)</span> Note that I have switched to the convenient notation using subscripts on derivatives to specify the variable with respect to which we are differentiating.</p>
+<section id="characteristic-coordinates" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="characteristic-coordinates"><span class="header-section-number">2.1</span> Characteristic coordinates</h2>
+<p>To solve the wave equation we use the <em>method of characteristics</em>, which involves a change of variables that makes the equation much simpler. We change from the variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> to the <em>characteristic coordinates</em> <span id="eq-charcoor"><span class="math display">\[
   \xi=x+ct,\quad \eta=x-ct.
 \tag{2.2}\]</span></span> By this we mean that for any function <span class="math inline">\(y\)</span> that depends on the variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> we can introduce a function <span class="math inline">\(\tilde{y}\)</span> that depends on the variables <span class="math inline">\(\xi\)</span> and <span class="math inline">\(\eta\)</span> in such a way that it has the same values as <span class="math inline">\(y\)</span>: <span id="eq-2.3"><span class="math display">\[
 y(x,t)=\tilde{y}(\xi(x,t), \eta(x,t)) \text{ for all }x,t.
@@ -227,7 +226,8 @@ y(x,t)=\tilde{y}(\xi(x,t), \eta(x,t)) \text{ for all }x,t.
 \partial_t = c \left( \partial_{\xi} -  \partial_{\eta}\right),~~~
 \partial_x =  \partial_{\xi} +  \partial_{\eta}.
 \tag{2.6}\]</span></span> Substituting these into the wave equation, we find that <span id="eq-2.7"><span class="math display">\[
-c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y - c^2\left(\partial_{\xi} + \partial_{\eta}\right)^2 y = 0.
+c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y -
+c^2\left(\partial_{\xi} + \partial_{\eta}\right)^2 y = 0.
 \tag{2.7}\]</span></span> Expanding the squares and cancelling terms gives <span id="eq-2.7"><span class="math display">\[
 -4c^2 \partial_{\xi} \partial_{\eta} y = 0.
 \tag{2.8}\]</span></span> We can divide both sides by the nonzero constant <span class="math inline">\(-4c^2\)</span>. Thus the wave equation simplifies to <span id="eq-waveeq7"><span class="math display">\[
@@ -236,14 +236,28 @@ c^2\left(\partial_{\xi} - \partial_{\eta}\right)^2 y - c^2\left(\partial_{\xi} +
 </section>
 <section id="general-solution-of-wave-equation" class="level2 page-columns page-full" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="general-solution-of-wave-equation"><span class="header-section-number">2.2</span> General solution of wave equation</h2>
-<div class="page-columns page-full"><p>The wave equation in light-cone variables is really easy to solve. First, we integrate <a href="#eq-waveeq7">Eq.&nbsp;<span>2.9</span></a> in the variable <span class="math inline">\(\xi\)</span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span id="eq-waveeq8"><span class="math display">\[\begin{split}
+<div class="page-columns page-full"><p>The wave equation in light-cone variables is really easy to solve. First, we integrate <a href="#eq-waveeq7">Eq.&nbsp;<span>2.9</span></a> in the variable <span class="math inline">\(\xi\)</span>: <span id="eq-waveeq8"><span class="math display">\[\begin{split}
 \int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi &amp;= 0\\
 \Leftrightarrow \quad \partial_{\eta} y(\xi,\eta) &amp;= F(\eta)
-\end{split} \tag{2.10}\]</span></span> where <span class="math inline">\(F\)</span> is an arbitrary function of one variable <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Then we integrate <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> in the variable <span class="math inline">\(\eta\)</span>: <span id="eq-waveeq9"><span class="math display">\[\begin{split}
+\end{split} \tag{2.10}\]</span></span> where <span class="math inline">\(F\)</span> is an arbitrary function of one variable <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;You can verify that this is true by direct differentiation of <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> with respect to <span class="math inline">\(\xi\)</span>.</p></li></div></div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we integrate a function of two variables in one of the two variable, we need to add to the result an arbitrary function of the other variable. This is similar to adding a constant of integration when we integrate a function of one variable.</p>
+</div>
+</div>
+<p>Now we can integrate <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> in the variable <span class="math inline">\(\eta\)</span>: <span id="eq-waveeq9"><span class="math display">\[\begin{split}
 y(\xi,\eta) &amp;= \int \partial_{\eta} y(\xi,\eta)\,d\eta\\
 &amp;= \int F(\eta) d\eta +g(\xi)\\
 &amp;= f(\eta) + g(\xi),
-\end{split} \tag{2.11}\]</span></span> where <span class="math inline">\(g(\xi)\)</span> is an arbitrary function of one variable and <span class="math inline">\(f'(\eta)=F(\eta)\)</span>. Note that since <span class="math inline">\(F\)</span> is arbitrary, so is <span class="math inline">\(f\)</span>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Note that when we integrate a function of two variables in one of the two variable, we need to add (to the result) an arbitrary function of the other variable. This is similar to adding a constant of integration when we integrate a function of one variable.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;You can verify that this is true by direct differentiation of <a href="#eq-waveeq8">Eq.&nbsp;<span>2.10</span></a> with respect to <span class="math inline">\(\xi\)</span>.</p></li></div></div>
+\end{split} \tag{2.11}\]</span></span> where <span class="math inline">\(g(\xi)\)</span> is an arbitrary function of one variable and <span class="math inline">\(f'(\eta)=F(\eta)\)</span>. Note that since <span class="math inline">\(F\)</span> is arbitrary, so is <span class="math inline">\(f\)</span>.</p>
 <p>Returning to variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>, we can write the general solution of the wave equation as <span id="eq-waveGS"><span class="math display">\[
 y(x,t) = f(x-ct) + g(x+ct)
 \tag{2.12}\]</span></span> where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are arbitrary functions of one variable.</p>
@@ -262,25 +276,25 @@ y(x,t) = f(x-ct) + g(x+ct)
 \tag{2.13}\]</span></span> for <span class="math inline">\(-\infty &lt;x&lt;+\infty\)</span> and <span class="math inline">\(0&lt;t&lt;+\infty\)</span> with the initial conditions <span id="eq-WE_b"><span class="math display">\[
    y(x,0)=y_0(x),\quad \partial_t y(x,0)=v_0(x)
 \tag{2.14}\]</span></span> for <span class="math inline">\(-\infty &lt;x&lt;+\infty\)</span>, where <span class="math inline">\(y_0\)</span> and <span class="math inline">\(v_0\)</span> are given functions of <span class="math inline">\(x\)</span>. The first of the two initial conditions prescribes the initial displacement of the string, the second the initial velocity.</p>
-<p>The solution of this initial value problem can be found by substituting the general solution <a href="#eq-waveGS">Eq.&nbsp;<span>2.12</span></a> into the initial conditions. This gives <span id="eq-IC1"><span class="math display">\[y_0(x)=f(x)+g(x), \tag{2.15}\]</span></span> <span id="eq-IC2"><span class="math display">\[v_0(x)=-cf'(x) + cg'(x). \tag{2.16}\]</span></span> So we have two equations for the two unknown functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. To solve them, we first integrate <a href="#eq-IC2">Eq.&nbsp;<span>2.16</span></a>: <span id="eq-IC3"><span class="math display">\[
--c f(x)+c g(x) = \int_0^x v_0(s)ds + a = V(x)
+<p>To solve an initial value one has to substitute the general solution into the initial conditions. We substitute the solution from <a href="#eq-waveGS">Eq.&nbsp;<span>2.12</span></a> into the initial conditions in <a href="#eq-WE_b">Eq.&nbsp;<span>2.14</span></a> and obtain <span id="eq-IC1"><span class="math display">\[y_0(x)=f(x)+g(x), \tag{2.15}\]</span></span> <span id="eq-IC2"><span class="math display">\[v_0(x)=-cf'(x) + cg'(x). \tag{2.16}\]</span></span> So we have two equations for the two unknown functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>. To solve them, we first integrate <a href="#eq-IC2">Eq.&nbsp;<span>2.16</span></a>: <span id="eq-IC3"><span class="math display">\[
+-c f(x)+c g(x) = \int_0^x v_0(s)ds + a = V(x),
 \tag{2.17}\]</span></span> where <span class="math inline">\(a\)</span> is an integration constant and <span class="math inline">\(V(x)\)</span> is just introduced to save writing below.</p>
 <p>Next, we add and subtract <a href="#eq-IC1">Eq.&nbsp;<span>2.15</span></a> and <a href="#eq-IC3">Eq.&nbsp;<span>2.17</span></a> divided by <span class="math inline">\(c.\)</span> This results in <span id="eq-2.18"><span class="math display">\[\begin{split}
-y_0(x)-\frac{1}{c} \, V(x)&amp;=2 \, f(x)\\
-y_0(x)+\frac{1}{c} \, V(x)&amp;=2 \, g(x)
+y_0(x)-\frac{1}{c} \, V(x)&amp;=2 \, f(x),\\
+y_0(x)+\frac{1}{c} \, V(x)&amp;=2 \, g(x),
 \end{split} \tag{2.18}\]</span></span> which implies that <span id="eq-2.19"><span class="math display">\[\begin{split}
-f(x)&amp;=\frac{1}{2} \, y_0(x) - \frac{1}{2c} \, V(x) \\
-g(x)&amp;=\frac{1}{2} \, y_0(x) + \frac{1}{2c} \, V(x)
+f(x)&amp;=\frac{1}{2} \, y_0(x) - \frac{1}{2c} \, V(x), \\
+g(x)&amp;=\frac{1}{2} \, y_0(x) + \frac{1}{2c} \, V(x).
 \end{split} \tag{2.19}\]</span></span> Substituting these into the formula for the general solution, we get <span id="eq-2.20"><span class="math display">\[\begin{split}
 y(x,t)=&amp;\frac{1}{2} \, y_0(x-ct) - \frac{1}{2c} \, V(x-ct) \\
 &amp;+\frac{1}{2} \, y_0(x+ct) + \frac{1}{2c} \, V(x+ct)
 \end{split} \tag{2.20}\]</span></span> or <span id="eq-2.21"><span class="math display">\[\begin{split}
 y(x,t)=&amp;\frac{1}{2} \left[ y_0(x-ct) + y_0(x+ct)\right]\\
-&amp;+ \frac{1}{2c} \left[ V(x+ct) - V(x-ct)\right]
-\end{split} \tag{2.21}\]</span></span> Note that only the difference <span class="math inline">\(\left[ V(x+ct) - V(x-ct)\right]\)</span> appears so the integration constant cancels and also we can combine the two integrals into one because <span id="eq-2.22"><span class="math display">\[\begin{split}
+&amp;+ \frac{1}{2c} \left[ V(x+ct) - V(x-ct)\right].
+\end{split} \tag{2.21}\]</span></span> Note that only the difference <span class="math inline">\(V(x+ct) - V(x-ct)\)</span> appears, so the integration constant cancels and we can combine the two integrals into one because <span id="eq-2.22"><span class="math display">\[\begin{split}
 V(x+ct) - V(x-ct)&amp;=\int\limits_0^{x+ct}v_0(s)\, ds - \int\limits_0^{x-ct}v_0(s)\, ds\\
 &amp;=\int\limits_{x-ct}^{x+ct}v_0(s)\, ds .
-\end{split} \tag{2.22}\]</span></span> Finally, we have <span id="eq-dAlem"><span class="math display">\[
+\end{split} \tag{2.22}\]</span></span> Using this, we have <span id="eq-dAlem"><span class="math display">\[
   y(x,t)=\frac12 [y_0(x+ct)+y_0(x-ct)]+
   \frac{1}{2c}
   \int\limits_{x-ct}^{x+ct}v_0(s)\,ds.
