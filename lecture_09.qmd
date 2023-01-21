@@ -1,0 +1,161 @@
+# Waves on circular domain
+
+![Circular membrane with radius $a$ and polar coordinates.](polar_coords.png){width=60% #fig-polar_co}
+
+Let's find normal mode solution for a circular membrane of radius $a$ with fixed
+boundary (see @fig-polar_co). Mathematically, we need to solve the wave equation
+(@eq-rectangular1) in the disc of radius $a$, i.e. in region
+$D=\{(x,y)\in\mathbb{R}^2\vert r^2=x^2+y^2 < a^2 \}$. It is convenient to use
+polar coordinates $(r,\theta)$, defined as (see @fig-polar_co)
+$$
+x=r\cos\theta, \quad y=r\sin\theta.
+$$ {#eq-9.1}
+
+Let
+$$
+Z(r, \theta, t) = z\left(x(r,\theta), y(r, \theta),t\right),
+$$ {#eq-9.2}
+i.e.,  $Z(r, \theta, t)$ is a solution of the wave equation in $D$, expressed in
+terms of polar coordinates.
+
+We know that the wave equation can be written in vector notation using the Laplace
+operator $\nabla^2$ as
+$$
+\partial_t^2 z - c^2 \nabla^2 z =0.
+$$ {#eq-9.3}
+It is well-known (see, e.g., Theorem 3.43 in the Calculus notes) that the
+Laplacian in polar coordinates is given by
+$$
+\nabla^2 = \partial_r^2 + \frac{1}{r}\, \partial_r + \frac{1}{r^2} \, \partial_{\theta}^2.
+$$ {#eq-9.4}
+Therefore, the 2D wave equation in polar coordinates has the form
+$$
+\partial_t^2 Z - c^2
+\left(\partial_r^2 Z + \frac{1}{r}\, \partial_r Z + \frac{1}{r^2} \, \partial_{\theta}^2 Z\right)= 0.
+$$ {#eq-circular2}
+Our aim is to solve it subject to the boundary condition @eq-circular1. As
+in the preceding section, we employ the method of separation of variables, i.e.
+we assume that
+$$
+Z(r, \theta, t)=R(r)\Theta(\theta)T(t).
+$$ {#eq-9.6}
+Substituting this into @eq-circular2, we find that
+$$
+R\Theta T''=c^2\left(R''\Theta T + \frac{1}{r} \, R'\Theta T + \frac{1}{r^2} \, R\Theta'' T\right) 
+$$ {#eq-9.7}
+Dividing by $R\Theta T$ gives
+$$
+ \frac{T''(t)}{T(t)} = c^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+\frac{\Theta''(\theta)}{r^2\Theta(\theta)}\right).
+$$ {#eq-9.8}
+Employing the same arguments as in the preceding section, we conclude that
+$$
+\frac{T''(t)}{T(t)} = c^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+
+\frac{\Theta''(\theta)}{r^2\Theta(\theta)}\right)
+= -k^2 c^2
+$$ {#eq-9.9}
+for some constant $k$. This means that we have the ODE
+$$
+T''(t)=-k^2 c^2 \, T(t)
+$$ {#eq-circular3}
+and the equation
+$$
+\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+
+\frac{\Theta''(\theta)}{r^2\Theta(\theta)} = -k^2 
+$$ {#eq-circular4}
+The general solution of @eq-rectangular3 is (cf. @eq-rectangular7)
+$$
+T(t)=F \, \sin(k c t)+G \, \cos(k c t)
+$$ {#eq-circular5}
+where $F$ and $G$ are arbitrary constants.
+
+Rewriting @eq-circular5 as
+$$
+\frac{r^2R''(r)+rR'(r)}{R(r)} + k^2 r^2 = -\frac{\Theta''(\theta)}{\Theta(\theta)},
+$$ {#eq-9.13}
+we conclude that for this equation to hold for all $r$ and $\theta$, both sides
+must be equal to a constant, which we choose to be $n^2$ (for some constant
+$n$), i.e.
+$$
+r^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)} \right)+ k^2 r^2 = n^2, \quad
+-\frac{\Theta''(\theta)}{\Theta(\theta)}= n^2
+$$ {#eq-9.14}
+(the constant, $n^2$, cannot be negative because, with a negative constant, it
+will be impossible to obtain a solution). Thus, we we have obtained the
+following two ODEs:
+$$
+R''(r) + \frac{1}{r} \, R'(r) +\left(k^2 -\frac{\lambda^2}{r^2}\right) R(r) = 0
+$$ {#eq-circular6}
+and
+$$
+\Theta''(\theta)=-n^2 \Theta(\theta) .
+$$ {#eq-circular7}
+
+The general solution of @eq-circular7 is
+$$
+\Theta(\theta) = A\sin(n \theta)+B\cos(n \theta)
+$$ {#eq-circtheta}
+for arbitrary constants $A$ and $B$. 
+We impose the \emph{periodicity} condition
+$$
+\Theta(\theta+2\pi) = \Theta(\theta) \quad \text{for all} \ \ \theta.
+$$
+This is a natural condition because $(r,\theta)$ and $(r,\theta+2\pi)$ represent
+a single point in domain $D$. Thus we require $n\in\mathbb{Z}$. In fact we only
+need to consider $n\in\mathbb{N}\cup\{ 0\}$ because of the symmetry of $\sin$
+and $\cos$.
+
+@eq-circular6 has the form
+$$
+r^2\,R''(r) + r \, R'(r) +\left(r^2\,k^2 -n^2\right) R(r) = 0.
+$$ {#eq-circular11}
+It is a well-known equation, called the Bessel differential equation. Its
+solutions are not elementary functions. We are only interested in solutions that
+are finite at $r=0$. There is a whole family of such solutions,
+$$
+R(r) =J_n(kr),
+$$ {#eq-circular12}
+where $J_n$ is the $n$th Bessel functions of the first type. We have already
+determined above that we are only interested in the cases where
+$n\in\mathbb{N}\cup\{0\}$.
+
+Next we need to impose the zero Dirichlet boundary condition (the edge of the
+membrane is fixed)
+$$
+Z(a, \theta, t) =  0.
+$$ {#eq-circular1}
+To do this, we only need to know that each Bessel function has an infinite
+number of zeros. A plot of the first few Bessel functions of the 1st kind is
+shown in @fig-bessel.
+
+![Plot of the first four Bessel functions of the 1st kind.](bessel){#fig-bessel}
+
+We denote the $m$th zero of the $n$th Bessel function of the 1st kind by
+$k_{nm}$. We have
+$$
+R(a)=0 \quad \Rightarrow \quad J_n(k\,a)=0  \quad \Rightarrow \quad k\,a=k_{nm}   \quad \Rightarrow \quad k=\frac{k_{nm}}{a}
+$$
+for $m\in\mathbb{N}$. 
+
+Finally, combining the above with @eq-circular5 and @eq-circtheta, we obtain the
+following solutions (that satisfy the required boundary condition):
+$$\begin{split}
+Z_{nm}(r,\theta,t)=&J_m\left(k_{nm} \frac{r}{a}\right)
+\left(A_{nm}\sin(n\theta)+\cos(n\theta)\right)\\
+&\qquad\cdot \left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)
+\end{split}$${#eq-circular14}
+where $n\in\mathbb{N}\cup\{0\}$, $m\in\mathbb{N}$ and $A_{nm}$, $F_{nm}$ and
+$G_{nm}$ are arbitrary real constants. Solutions in the form @eq-circular14 are
+the normal modes of vibrations of the circular membrane. Once normal modes are
+known, we can find a solution satisfying some initial conditions by using a
+linear combination of the normal modes
+$$
+Z(r,\theta,t)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}Z_{nm}(r,\theta,t).
+$$ {#eq-circular15}
+Note that constants $A_{nm}$, $F_{nm}$ and $G_{nm}$ (in the formula for $Z_{nm}$
+for each $n,m$) are still arbitrary. To determine them, we need to substitute
+@eq-circular15 into initial conditions. This will lead to the so-called
+Fourier-Bessel series. This is based on the identities
+$$
+\int_0^aJ_n\left(k_{nm}\frac{r}{a}\right)J_n\left(k_{nl}\frac{r}{a}\right)r\,dr
+=\delta_{ml}\frac{a^2}{2}\left(J_{n+1}(k_{nm})\right)^2.
+$$ {#eq-9.23}

@@ -41,6 +41,7 @@ book:
       - lecture_06.qmd
       - lecture_07.qmd
       - lecture_08.qmd
+      - lecture_09.qmd
     - references.qmd
 
 bibliography: references.bib
