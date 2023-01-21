@@ -55,7 +55,7 @@ after that we can plug this into Newton's second law and out pops the wave
 equation.
 
 
-## Linearized tension force
+## Linearized tension force {#sec-1.1}
 
 We consider a small segment of the string between any two
 points $x$ and at $x+\delta x$ as shown in Fig. @fig-string2. 
