@@ -1,0 +1,123 @@
+# Harmonic waves {sec-5}
+
+
+## Harmonic waves
+
+Harmonic waves are waves that are described by sines and cosines. A travelling
+harmonic wave can be written as
+$$
+y(x,t)=a \cos\left(kx - \omega t + \phi\right)
+$$ {#eq-harmonic1}
+or
+$$
+y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
+$$ {#eq-harmonic2}
+where $a$ is the amplitude, $\hat{k}$ the wave number, $\nu$ the frequency,
+$\phi$ the phase, and where
+$$
+k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
+$$ {#eq-5.3}
+are the angular wave number and the angular frequency, respectively. Note that
+$k$ and $\omega$ are used more often by mathematicians than $\hat{k}$ and $\nu$
+and that the prefix `angular' is often discarded.
+
+::: {.callout-note}
+### Terminology
+
+- _Frequency_ $=$ number of cycles (oscillations) per unit time.
+- _Wave number_ $=$ number of cycles (oscillations) per unit length.
+- _Period_ $=$ time $P$ needed to complete one cycle (oscillation):
+  $$
+  P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
+  $$ {#eq-5.4}
+- _Wave length_ $=$ distance between two consecutive wave crests (peaks):
+  $$
+  \lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
+  $$ {#eq-5.5}
+- _Wave speed_ $=$ speed at which the wave is travelling:
+  $$
+  c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
+  $$ {#eq-5.6}
+  (Sometimes, the wave speed is also called the _phase speed_.)
+
+:::
+
+The harmonic wave @eq-harmonic1 can be written as
+$$\begin{split}
+y(x,t)&=a \cos\left(kx - \omega t + \phi\right) \\
+&= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
+&=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
+\end{split}$$ {#eq-harmonic3}
+where we have included the phase factor $e^{i\phi}$ into the complex amplitude:
+$A= a e^{i\phi}$.
+
+Consider now the complex function
+$$
+y(x,t)= A \, e^{i(kx-\omega(k) t)}
+$$ {#eq-harmonic4}
+for any $A\in\mathbb{C}$, any $k\in\mathbb{R}$ and some $\omega(k)$.
+Substituting this into the wave equation gives us an equation for $\omega(k)$:
+$$
+\partial_t^2 y =c^2 \partial_x^2 y  \quad 
+\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
+$$ {#eq-5.9}
+Therefore, if
+$$
+\omega(k) = \pm ck
+$$ {#eq-5.10}
+then the complex function in @eq-harmonic4 is a solution of the wave equation.
+We will refer to these complex solutions as
+_complex harmonic waves_. They are often more convenient to work with than 
+their real counterpart in @eq-harmonic1.
+
+@eq-5.10 is an example of a _dispersion relation_. It states that for the wave
+equation, $\omega$ is proportional to $k$. But complex harmonic waves can also
+solve other PDEs, as we will see in the next subsection, and that will lead to
+more complicated dispersion relations.
+
+## Solving PDEs with harmonic waves
+
+::: {.callout-important}
+Any linear homogeneous PDE (in variables $x$ and $t$) with constant coefficients
+has complex harmonic wave solutions @eq-harmonic4 for some $\omega(k)$.
+:::
+
+::: {#exm-8}
+
+Consider the damped string (with friction force proportional to velocity):
+ $$
+  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
+  p>0.
+$$ {#eq-damped1}
+Substituting the complex harmonic wave from @eq-harmonic4 into this equation, we
+obtain the dispersion relation
+$$
+-\omega^2 y =- c^2 k^2 y +ip\,\omega y .
+$$ {#eq-5.12}
+Cancelling the $y$ we obtain a quadratic equation for $\omega^2$ which has the
+complex solution
+$$
+\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
+$$ {#eq-iw}
+Thus we have the following solution for the damped string:
+$$\begin{split}
+y(x,t)&= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
+&=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
+\end{split}$$ {#eq-dampedy}
+The factor $e^{-pt/2}$ shows that we have a wave with exponentially decreasing
+amplitude. This is a consequence of the damping. The wave speed is now dependent
+on the wave number $k$:
+$$
+c(k)=\sqrt{c^2  - p^2/(4k^2)}.
+$$ {#eq-5.15}
+If we want to, we can get a real solution by taking the real part of the complex
+solution:
+$$
+\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
+$$ {#eq-5.16}
+where $a=\vert A\vert$ and $\phi=\arg(A)$. 
+
+:::
+
+Note that the imaginary part of $\omega$ produces the damping
+exponential and the real part of $\omega$ determines the wave speed.

@@ -37,6 +37,8 @@ book:
       - lecture_02.qmd
       - lecture_03.qmd
       - lecture_04.qmd
+      - lecture_05.qmd
+      - lecture_06.qmd
     - references.qmd
 
 bibliography: references.bib
