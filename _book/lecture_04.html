@@ -181,7 +181,7 @@ div.csl-indent {
   <ul>
   <li><a href="#separation-of-variables" id="toc-separation-of-variables" class="nav-link active" data-scroll-target="#separation-of-variables"><span class="toc-section-number">4.1</span>  Separation of variables</a></li>
   <li><a href="#finite-string-with-fixed-ends" id="toc-finite-string-with-fixed-ends" class="nav-link" data-scroll-target="#finite-string-with-fixed-ends"><span class="toc-section-number">4.2</span>  Finite string with fixed ends</a></li>
-  <li><a href="#standing-waves" id="toc-standing-waves" class="nav-link" data-scroll-target="#standing-waves"><span class="toc-section-number">4.3</span>  Standing waves</a></li>
+  <li><a href="#standing-waves-and-superposition" id="toc-standing-waves-and-superposition" class="nav-link" data-scroll-target="#standing-waves-and-superposition"><span class="toc-section-number">4.3</span>  Standing waves and superposition</a></li>
   <li><a href="#initial-value-problem" id="toc-initial-value-problem" class="nav-link" data-scroll-target="#initial-value-problem"><span class="toc-section-number">4.4</span>  Initial value problem</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_04.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -191,7 +191,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></h1>
+<h1 class="title"><span id="sec-bernoulli_solution" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span></h1>
 </div>
 
 
@@ -232,7 +232,7 @@ X(x)&amp;= A \, \sin(kx) + B \, \cos(kx), \\
 T(t)&amp;= F \, \sin(kct) + G \, \cos(kct),
 \end{split} \tag{4.7}\]</span></span> where <span class="math inline">\(A, B, F, G\)</span> and <span class="math inline">\(k\)</span> are arbitrary constants.</p>
 </section>
-<section id="finite-string-with-fixed-ends" class="level2 page-columns page-full" data-number="4.2">
+<section id="finite-string-with-fixed-ends" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="finite-string-with-fixed-ends"><span class="header-section-number">4.2</span> Finite string with fixed ends</h2>
 <p>Bernoulli was most interested in the finite string. Let us put the ends of the string at <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=\pi\)</span>. Now let the ends of the string be fixed. This means that we need to impose homogeneous Dirichlet boundary conditions <span id="eq-finitestr2"><span class="math display">\[
 y(0,t)=0 \quad \text{and} \quad y(\pi,t)=0 \quad \text{for all} \ \ t .
@@ -241,34 +241,35 @@ A\sin(k\pi) = 0.
 \tag{4.9}\]</span></span> The last equation implies that either <span class="math inline">\(A=0\)</span> or <span class="math inline">\(\sin(k\pi)=0\)</span>. We reject the first option because it results in a zero solution. The second option yields <span id="eq-4.10"><span class="math display">\[
 \sin(k\pi) = 0 \quad \Rightarrow k\in\mathbb{Z}.
 \tag{4.10}\]</span></span></p>
-<div class="page-columns page-full"><p>Thus, for each positive integer <span class="math inline">\(k\)</span> we have a solution of the wave equation of the form <span id="eq-finitestr3"><span class="math display">\[
+<p>Thus, for each integer <span class="math inline">\(k\)</span> we have a solution of the wave equation of the form <span id="eq-finitestr3"><span class="math display">\[
 y_k(x,t) = \sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right)
-\tag{4.11}\]</span></span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;We do not need negative <span class="math inline">\(k\)</span> because they will produce the same solutions, and we do not need <span class="math inline">\(k=0\)</span> because it yields zero solution. Also, we have absorbed the constant <span class="math inline">\(A\)</span> into the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span>.</p></li></div></div>
+\tag{4.11}\]</span></span></p>
 </section>
-<section id="standing-waves" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="standing-waves"><span class="header-section-number">4.3</span> Standing waves</h2>
+<section id="standing-waves-and-superposition" class="level2 page-columns page-full" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="standing-waves-and-superposition"><span class="header-section-number">4.3</span> Standing waves and superposition</h2>
 <p>The solutions we obtained in the previous section are standing waves. They don’t change their shape and don’t move, only their amplitude oscillates with time. In the lecture videos I make various sketches and animations to illustrate this.</p>
 <p>So we now have a stark contrast between what d’Alembert found and what Bernoulli found. According to d’Alembert, the solutions of the wave equation are travelling waves of arbitrary shape. According to Bernoulli, the solutions are standing waves that have sine shape. It is always wonderful when one has two very different ways of looking at the same phenomenon. That is where deep understanding comes from.</p>
+<p>To resolve the apparent conflict between d’Alembert’s solution and Bernoulli’s solution we have to use the <strong>superposition principle</strong>: For any set of linear homogeneous equations, any sum of solutions is also a solution.</p>
+<div class="page-columns page-full"><p>Since the wave equation is linear and also the boundary conditions we imposed were linear, a linear combination of any number of harmonic standing waves is also a solution. So, we can construct a general solution of the wave equation by summing up all <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> the harmonic standing waves from <a href="#eq-finitestr3">Eq.&nbsp;<span>4.11</span></a>: <span id="eq-finitestr4"><span class="math display">\[
+y(x,t) = \sum_{k=1}^{\infty}\sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right).
+\tag{4.12}\]</span></span> Here the <span class="math inline">\(G_k\)</span> and the <span class="math inline">\(F_k\)</span> are undetermined constants, to be fixed from the initial conditions.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;We do not need negative <span class="math inline">\(k\)</span> because they will produce the same solutions, and we do not need <span class="math inline">\(k=0\)</span> because it yields zero solution. Also, we have absorbed the constant <span class="math inline">\(A\)</span> into the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span>.</p></li></div></div>
 <p>The resolution of the apparent paradox is that a superposition of standing waves can give a travelling wave, and that a superposition of sine waves can give any shape.</p>
 </section>
 <section id="initial-value-problem" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="initial-value-problem"><span class="header-section-number">4.4</span> Initial value problem</h2>
-<p>Since the wave equation is linear and also the boundary conditions we imposed were linear, a linear combination of any number of the solutions is also a solution (this is called the <em>superposition principle</em>. So, we can construct a general solution of the wave equation by summing up the harmonic standing waves from <a href="#eq-finitestr3">Eq.&nbsp;<span>4.11</span></a>: <span id="eq-finitestr4"><span class="math display">\[
-y(x,t) = \sum_{k=1}^{\infty}\sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right).
-\tag{4.12}\]</span></span> Here the <span class="math inline">\(G_k\)</span> and the <span class="math inline">\(F_k\)</span> are undetermined constants, to be fixed from the initial conditions.</p>
-<p>Suppose now that we are given the initial conditions <span id="eq-finitestr5"><span class="math display">\[
-y(x,0) = y_0(x), \quad \pr_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
-\tag{4.13}\]</span></span> How to choose constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> so as to satisfy the initial conditions? Let’s substitute <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> into <a href="#eq-finitestr5">Eq.&nbsp;<span>4.13</span></a>. We have <span id="eq-finitestr6"><span class="math display">\[
+<p>In <a href="lecture_02.html#sec-dalembert_formula"><span>Section&nbsp;2.4</span></a> we imposed initial conditions on d’Alembert’s general solution and obtained d’Alembert’s formula in <a href="lecture_02.html#eq-dAlem">Eq.&nbsp;<span>2.23</span></a>. We now similarly impose initial conditions on Bernoulli’s solution. Suppose now that we are given the initial conditions <span id="eq-finitestr5"><span class="math display">\[
+y(x,0) = y_0(x), \quad \partial_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
+\tag{4.13}\]</span></span> We want to use these initial conditions to determine the unknown coefficients <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> for all <span class="math inline">\(k\in\mathbb{N}\)</span>. As always, the procedure is to substitute the general solution into the initial conditions. When we substitute <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> into <a href="#eq-finitestr5">Eq.&nbsp;<span>4.13</span></a> we get <span id="eq-finitestr6"><span class="math display">\[
 y_0(x) = \sum_{k=1}^{\infty}G_k \, \sin\left(k x\right), \quad
-v_0(x) = \sum_{k=1}^{\infty}F_k\, k c \, \sin\left(k x\right).
-\tag{4.14}\]</span></span> These formulae look like Fourier series for the functions <span class="math inline">\(y_0\)</span> and <span class="math inline">\(v_0\)</span>. So, to find coefficients <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span>, we use the identity <span class="math display">\[
+v_0(x) = \sum_{k=1}^{\infty}F_k\, k\, c \, \sin\left(k x\right).
+\tag{4.14}\]</span></span> These formulae look like Fourier series for the functions <span class="math inline">\(y_0\)</span> and <span class="math inline">\(v_0\)</span>. So, to find the coefficients <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> we have to perform the inverse Fourier transform. This uses the identity <span class="math display">\[
 \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx = \frac{\pi}{2}\delta_{kl},
 \]</span> where <span class="math inline">\(\delta_{kl}\)</span> is the Kronecker delta: <span class="math display">\[
 \delta_{kl} =\begin{cases}
 1 &amp;\text{if \ } k=l \\
 0 &amp;\text{if \ } k\neq l
 \end{cases}
-\]</span> To make use of this, we multiply each of <a href="#eq-finitestr6">Eq.&nbsp;<span>4.14</span></a> by <span class="math inline">\(2/\pi \,\sin(l x)\)</span> and integrate over the interval <span class="math inline">\([0,\pi]\)</span>: <span id="eq-finitestr7"><span class="math display">\[\begin{split}
+\]</span> We multiply each of <a href="#eq-finitestr6">Eq.&nbsp;<span>4.14</span></a> by <span class="math inline">\(2/\pi \,\sin(l x)\)</span> and integrate over the interval <span class="math inline">\([0,\pi]\)</span>: <span id="eq-finitestr7"><span class="math display">\[\begin{split}
 \frac{2}{\pi}\int\limits_{0}^{\pi}y_0(x)\sin(l x)dx
 &amp;=\frac{2}{\pi} \sum_{k=1}^{\infty}G_k \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
 &amp;=\sum_{k=1}^{\infty}G_k \delta_{kl}=G_l
@@ -278,7 +279,7 @@ v_0(x) = \sum_{k=1}^{\infty}F_k\, k c \, \sin\left(k x\right).
 \frac{2}{\pi}\sum_{k=1}^{\infty}F_k\, k c \, \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx\\
 &amp;=\sum_{k=1}^{\infty}F_k\, k c\, \delta_{kl}= F_l\, l c
 \end{split}
-\tag{4.16}\]</span></span> Thus we know how to determine the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> in the general solution <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> such as to satisfy given initial conditions.</p>
+\tag{4.16}\]</span></span> Thus we know how to determine the constants <span class="math inline">\(F_k\)</span> and <span class="math inline">\(G_k\)</span> in the general solution <a href="#eq-finitestr4">Eq.&nbsp;<span>4.12</span></a> so as to satisfy given initial conditions.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

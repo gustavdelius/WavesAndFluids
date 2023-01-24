@@ -1,4 +1,4 @@
-# Bernoulli's solution
+# Bernoulli's solution {#sec-bernoulli_solution}
 
 You find content related to this lecture in the textbooks:
 
@@ -67,16 +67,14 @@ $$
 \sin(k\pi) = 0 \quad \Rightarrow k\in\mathbb{Z}.
 $$ {#eq-4.10}
 
-Thus, for each positive integer $k$ we have a solution of the wave equation of
+Thus, for each integer $k$ we have a solution of the wave equation of
 the form
 $$
 y_k(x,t) = \sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right)
 $$ {#eq-finitestr3}
-^[We do not need negative $k$ because they will produce the same solutions, and
-we do not need $k=0$ because it yields zero solution. Also, we have absorbed the
-constant $A$ into the constants $F_k$ and $G_k$.]
 
-## Standing waves
+
+## Standing waves and superposition
 
 The solutions we obtained in the previous section are standing waves. They don't
 change their shape and don't move, only their amplitude oscillates with time. In
@@ -89,35 +87,47 @@ standing waves that have sine shape. It is always wonderful when one has two
 very different ways of looking at the same phenomenon. That is where deep
 understanding comes from.
 
-The resolution of the apparent paradox is that a superposition of standing waves
-can give a travelling wave, and that a superposition of sine waves can give any
-shape.
-
-## Initial value problem
+To resolve the apparent conflict between d'Alembert's solution and Bernoulli's
+solution we have to use the __superposition principle__: For any set of 
+linear homogeneous equations, any sum of solutions is also a solution.
 
 Since the wave equation is linear and also the boundary conditions we imposed
-were linear, a linear combination of any number of the solutions is also a
-solution (this is called the _superposition principle_. So, we can construct a
-general solution of the wave equation by summing up the harmonic standing waves
-from @eq-finitestr3:
+were linear, a linear combination of any number of harmonic standing waves is
+also a solution. So, we can construct a general solution of the wave equation by
+summing up all ^[We do not need negative $k$ because they will produce the same
+solutions, and we do not need $k=0$ because it yields zero solution. Also, we
+have absorbed the constant $A$ into the constants $F_k$ and $G_k$.] the harmonic
+standing waves from @eq-finitestr3:
 $$
 y(x,t) = \sum_{k=1}^{\infty}\sin\left(k x\right)\left(F_k \, \sin(k c t) + G_k \, \cos(k c t)\right). 
 $$ {#eq-finitestr4}
 Here the $G_k$ and the $F_k$ are undetermined constants, to be fixed from the
 initial conditions.
 
-Suppose now that we are given the initial conditions
+The resolution of the apparent paradox is that a superposition of standing waves
+can give a travelling wave, and that a superposition of sine waves can give any
+shape.
+
+## Initial value problem
+
+In @sec-dalembert_formula we imposed initial conditions on d'Alembert's general
+solution and obtained d'Alembert's formula in @eq-dAlem. We now similarly impose
+initial conditions on Bernoulli's solution. Suppose now that we are given the
+initial conditions
 $$
-y(x,0) = y_0(x), \quad \pr_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
+y(x,0) = y_0(x), \quad \partial_t y(x,0)=v_0(x) \quad \text{for } x\in[0,\pi].
 $$ {#eq-finitestr5}
-How to choose constants $F_k$ and $G_k$ so as to satisfy the initial conditions?
-Let's substitute @eq-finitestr4 into @eq-finitestr5. We have
+We want to use these initial conditions to determine the unknown coefficients
+$F_k$ and $G_k$ for all $k\in\mathbb{N}$. As always, the procedure is to
+substitute the general solution into the initial conditions. When we substitute
+@eq-finitestr4 into @eq-finitestr5 we get
 $$
 y_0(x) = \sum_{k=1}^{\infty}G_k \, \sin\left(k x\right), \quad
-v_0(x) = \sum_{k=1}^{\infty}F_k\, k c \, \sin\left(k x\right).
+v_0(x) = \sum_{k=1}^{\infty}F_k\, k\, c \, \sin\left(k x\right).
 $$ {#eq-finitestr6}
 These formulae look like Fourier series for the functions $y_0$ and $v_0$. So,
-to find coefficients $F_k$ and $G_k$, we use the identity
+to find the coefficients $F_k$ and $G_k$ we have to perform the inverse Fourier
+transform. This uses the identity
 $$
 \int\limits_{0}^{\pi}\sin\left(k x\right)\sin(l x)dx = \frac{\pi}{2}\delta_{kl},
 $$
@@ -128,7 +138,7 @@ $$
 0 &\text{if \ } k\neq l
 \end{cases}
 $$
-To make use of this, we multiply each of @eq-finitestr6 by $2/\pi \,\sin(l x)$
+We multiply each of @eq-finitestr6 by $2/\pi \,\sin(l x)$
 and integrate over the interval $[0,\pi]$:
 $$\begin{split}
 \frac{2}{\pi}\int\limits_{0}^{\pi}y_0(x)\sin(l x)dx 
@@ -143,4 +153,4 @@ $$\begin{split}
 \end{split}
 $$ {#eq-finitestr8}
 Thus we know how to determine the constants $F_k$ and $G_k$ in the general
-solution @eq-finitestr4 such as to satisfy given initial conditions.
+solution @eq-finitestr4 so as to satisfy given initial conditions.

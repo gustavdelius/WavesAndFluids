@@ -1,4 +1,4 @@
-# d'Alembert's solution
+# d'Alembert's solution {#sec-dalembert_solution}
 
 You find content related to this lecture in the textbooks:
 
@@ -123,7 +123,7 @@ Thus, $f(x-ct)$ and $g(x+ct)$ describe waves that propagate (without changing
 shape) to the right and to the left, respectively, and the general solution
 @eq-waveGS represent the sum of such waves.
 
-## Initial value problem  and d'Alembert's formula
+## Initial value problem  and d'Alembert's formula {#sec-dalembert_formula}
 
 The initial-value problem is to solve the wave equation
 $$

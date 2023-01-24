@@ -182,7 +182,7 @@ div.csl-indent {
   <li><a href="#characteristic-coordinates" id="toc-characteristic-coordinates" class="nav-link active" data-scroll-target="#characteristic-coordinates"><span class="toc-section-number">2.1</span>  Characteristic coordinates</a></li>
   <li><a href="#general-solution-of-wave-equation" id="toc-general-solution-of-wave-equation" class="nav-link" data-scroll-target="#general-solution-of-wave-equation"><span class="toc-section-number">2.2</span>  General solution of wave equation</a></li>
   <li><a href="#travelling-waves" id="toc-travelling-waves" class="nav-link" data-scroll-target="#travelling-waves"><span class="toc-section-number">2.3</span>  Travelling waves</a></li>
-  <li><a href="#initial-value-problem-and-dalemberts-formula" id="toc-initial-value-problem-and-dalemberts-formula" class="nav-link" data-scroll-target="#initial-value-problem-and-dalemberts-formula"><span class="toc-section-number">2.4</span>  Initial value problem and d’Alembert’s formula</a></li>
+  <li><a href="#sec-dalembert_formula" id="toc-sec-dalembert_formula" class="nav-link" data-scroll-target="#sec-dalembert_formula"><span class="toc-section-number">2.4</span>  Initial value problem and d’Alembert’s formula</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_02.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -191,7 +191,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></h1>
+<h1 class="title"><span id="sec-dalembert_solution" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></span></h1>
 </div>
 
 
@@ -279,8 +279,8 @@ y(x,t) = f(x-ct) + g(x+ct)
 <p>If <span class="math inline">\(f = 0\)</span>, then <span class="math inline">\(y(x,t)=g(x+ct)\)</span>. At <span class="math inline">\(t=0\)</span>, the string has the shape described by the graph <span class="math inline">\(y=g(x)\)</span>. At time <span class="math inline">\(t&gt;0\)</span>, it will have the same shape relative to the variable <span class="math inline">\(\xi=x+ct\)</span>: <span class="math inline">\(y=g(\xi)\)</span>. Since <span class="math inline">\(x=\xi - ct\)</span>, this means that the graph of <span class="math inline">\(y\)</span> as a function of <span class="math inline">\(x\)</span> for a fixed <span class="math inline">\(t&gt;0\)</span> is the graph of <span class="math inline">\(g(x)\)</span> shifted to the <em>left</em> (in the direction of negative <span class="math inline">\(x\)</span>) by distance <span class="math inline">\(ct\)</span>.</p>
 <p>Thus, <span class="math inline">\(f(x-ct)\)</span> and <span class="math inline">\(g(x+ct)\)</span> describe waves that propagate (without changing shape) to the right and to the left, respectively, and the general solution <a href="#eq-waveGS">Eq.&nbsp;<span>2.12</span></a> represent the sum of such waves.</p>
 </section>
-<section id="initial-value-problem-and-dalemberts-formula" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="initial-value-problem-and-dalemberts-formula"><span class="header-section-number">2.4</span> Initial value problem and d’Alembert’s formula</h2>
+<section id="sec-dalembert_formula" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-dalembert_formula"><span class="header-section-number">2.4</span> Initial value problem and d’Alembert’s formula</h2>
 <p>The initial-value problem is to solve the wave equation <span id="eq-WE_a"><span class="math display">\[
   \partial_t^2 y - c^2 \partial_x^2 y =0
 \tag{2.13}\]</span></span> for <span class="math inline">\(-\infty &lt;x&lt;+\infty\)</span> and <span class="math inline">\(0&lt;t&lt;+\infty\)</span> with the initial conditions <span id="eq-WE_b"><span class="math display">\[
