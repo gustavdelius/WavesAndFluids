@@ -62,7 +62,7 @@ equation. Along the way we will make approximations that allow us to linearise
 the equations.
 
 
-## Linearized tension force
+## Linearized tension force {#sec-1.1}
 
 We consider a small segment of the string between any two
 points $x$ and at $x+\delta x$ as shown in Fig. @fig-string2. 

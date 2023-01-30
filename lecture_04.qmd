@@ -10,7 +10,7 @@ We will now solve the wave equation again in a totally different way from
 d'Alembert, following instead Bernoulli. This is a method you have seen before,
 namely the method of separation of variables.
 
-## Separation of variables
+## Separation of variables {#sec-4.1}
 We make the Ansatz that the solution factorises into one function of only $x$
 and one function of only $t$:
 $$

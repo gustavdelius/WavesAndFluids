@@ -1,0 +1,130 @@
+# Two-dimensional waves
+
+::: {.content-hidden}
+$$
+{{< include _macros.tex >}}
+$$
+:::
+
+## Two-dimensional wave equation
+
+Consider an infinite two-dimensional membrane of homogeneous density $\rho$
+(mass per unit area, measured in $kg/m^2$). In the equilibrium state, it is flat
+and coincides with the $(x,y)$ plane in $\mathbb{R}^3$. We assume that it is
+stretched to a tension $T$ (force per unit length, measured in $N/m$). This
+means that for any line on the surface of the membrane, the part of the membrane
+on one side of the line exerts a force $T$ (per unit length of the line) on the
+other part of the membrane (on the other side of the line), and the direction of
+the force is perpendicular to the line.
+
+The perturbed membrane may be described as a time-dependent surface $z=z(x,y,t)$
+in $\mathbb{R}^3$, where $z(x,y,t)$ is the vertical (in the $z$ direction)
+displacement of the membrane at point $(x,y)$ and time $t$. To derive the
+equation of motion, we consider a small element of the membrane of size $\delta
+x$ and $\delta y$ in $x$ and $y$, as shown in @fig-membrane.
+
+![A membrane stretched in the $x$--$y$ plane and vibrating in the $z$ direction.](membrane){#fig-membrane}
+
+We assume that there is only transverse motion of the membrane and that the
+partial derivatives $\partial_x z$ and $\partial_y z$ are small:
+$\vert\partial_x z\vert \ll 1$ and $\vert\partial_y z\vert \ll 1$. Almost the
+same arguments as those in @sec-1.1 lead to the conclusion that the vertical
+component of the force is a sum of two terms: $T \delta y \, \partial_x^2 z \,
+\delta x$ (coming from the tension forces that are nearly parallel to the
+$x$-axis in @fig-membrane) and $T \delta x \, \partial_y^2 z \, \delta y$ (coming
+from the tension forces that are nearly parallel to the $y$-axis in
+@fig-membrane). So, Newton's equation of motion ($ma=F$) yields
+$$
+(\rho \, \delta x \, \delta y)\partial_t^2 z = T \delta y \, \partial_x^2 z \, \delta x + T \delta x \, \partial_y^2 z \, \delta y.
+$$ {#eq-7.1}
+Dividing this by $\delta x \, \delta y$ and $\rho$, we get the governing
+equation for the membrane:
+$$
+ \partial_t^2 z = \frac{T}{\rho} \left( \partial_x^2 \, z  +  \partial_y^2 \, z\right)
+$$ {#eq-memb1}
+or, equivalently,
+$$
+\partial_t^2 z  - c^2 \nabla^2 z = 0, \quad c=\sqrt{\frac{T}{\rho}}.
+$$ {#eq-memb2}
+Here $c$ in the wave speed and $\nabla^2$ is the Laplace operator:
+$$
+\nabla^2= \partial_x^2  + \partial_y^2.
+$$ {#eq-7.4}
+Sometimes, the Laplace operator is also denoted by $\Delta$ (i.e.  $\Delta =
+\nabla^2 = \partial_x^2  + \partial_y^2$).
+@eq-memb2 is the two-dimensional wave equation.
+
+## Energy of membrane
+
+The energy density of the membrane is
+$$
+\mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
+$$ {#eq-7.5}
+where the term involving the density $\rho$ is the kinetic energy density
+$\mathcal{E}_K$ and the term involving the tension $T$ is the potential energy
+density $\mathcal{E}_V$. The latter we could write in vector notation as
+$\mathcal{E}_v=T|\nabla z|^2/2.$
+
+To check this, we check whether this $\mathcal{E}$ satisfies a conservation
+equation. So we calculate
+$$\begin{split}
+\frac{d\mathcal{E}}{dt} &=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\ 
+&=T\, (\partial_t z) (\partial_x^2z+\partial_y^2z) +T\,\left((\partial_t\partial_x z)(\partial_x z)+\,(\partial_t\partial_y z)(\partial_y z)\right)  \\
+&=-\partial_x\left(-T(\partial_xz)(\partial_tz)\right)-\partial_y\left(-T(\partial_xz)(\partial_tz)\right),
+\end{split}$$ {#eq-7.6}
+where for the second equality we have used the wave equation. We introduce the
+two-dimensional energy flux density vector
+$\mathcal{F}=(\mathcal{F}_x,\mathcal{F}_y)$ with
+$$
+\mathcal{F}_x =-T(\partial_xz)(\partial_tz),~~~~ \mathcal{F}_y=-T(\partial_yz)(\partial_tz).
+$$ {#eq-7.7}
+In terms of this we have derived the conservation equation
+ $$
+\frac{d\mathcal{E}}{dt} =-\nabla\cdot\mathcal{F}.
+$$ {#eq-7.8}
+
+To understand how this two-dimensional conservation equation leads to energy conservation let us look
+at the energy in a  region $R$ in the $(x,y)$ plane. 
+The energy in this region is given by
+$$
+E=\int\!\!\int_{R} \mathcal{E} dA.
+$$ {eq-memb4}
+Here $dA=dx \, dy$ is the area element. The rate of change in the energy is then
+$$\begin{split}
+\frac{dE}{dt} &=\int\!\!\int_{D} \partial_t\mathcal{E} dA =- \int\!\!\int_{D} \nabla\mathcal{F} dA \\
+&=-\int_{\partial R} \mathcal{F}\cdot\vn\, ds  \qquad (\text{using the divergence theorem}). 
+\end{split}$$ {#eq-7.9}
+where $\vn$ is the outward unit normal on $\partial D$ and $ds$ is the line
+element on $\partial D$. So again we see that the change of energy in a region
+is equal to the net flow of energy into the region.
+
+## Travelling plane waves
+
+A 2D wave is a plane wave if $z(x,y,t)$ varies only in one spatial direction,
+say, parallel to a constant unit vector $\vn=(n_x,n_y)$  (and $z(x,y,t)$ is
+constant in the direction perpendicular to $\vn$). This means that
+$$
+z(x,y,t)=f(\vn\cdot\vx -ct)=f(n_x x+n_y y -ct)
+$$ {#eq-plane1}
+describes a plane wave travelling with wave speed $c$ in the direction of vector
+$\vn$.
+
+Let's verify that @eq-plane1 is a solution of the 2D wave equation. We have
+$$\begin{split}
+\partial_t^2 \, z &=\partial_t^2 \, f(\vn\cdot\vx -ct)=f''(\vn\cdot\vx -ct) \, c^2,  \\
+\partial_x^2 \, z &=\partial_x^2 \, f(\vn\cdot\vx -ct)=f''(\vn\cdot\vx -ct) \, n_x^2, \\
+\partial_y^2 \, z &=\partial_y^2 \, f(\vn\cdot\vx -ct)=f''(\vn\cdot\vx -ct) \, n_y^2. 
+\end{split}$$ {#eq-7.12}
+Hence,
+$$
+\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=
+c^2 \, f''(\vn\cdot\vx -ct)\left(1- n_x^2-n_y^2\right)=0
+$$ {#eq-7.13}
+(as $\vn$ is a unit vector, i.e. $n_x^2 + n_y^2=1$).
+
+The _harmonic plane wave_ corresponds to the choice $f(s)=e^{iks}$, so that
+$$
+z(x,y,t)=e^{ik(\vn\cdot\vx -ct)}= e^{i(\vk\cdot\vx -\omega(\vk)t)},
+$$ {#eq-plane2}
+where $\vk=k \, \vn$ is called the _wave vector_. The dispersion relation follows from
+@eq-plane2: $\omega(\vk)=c \, \vert \vk\vert$.
