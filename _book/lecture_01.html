@@ -163,6 +163,16 @@ div.csl-indent {
   <a href="./lecture_06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -180,7 +190,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#why-waves-on-a-string" id="toc-why-waves-on-a-string" class="nav-link active" data-scroll-target="#why-waves-on-a-string"><span class="toc-section-number">1.1</span>  Why waves on a string?</a></li>
-  <li><a href="#linearized-tension-force" id="toc-linearized-tension-force" class="nav-link" data-scroll-target="#linearized-tension-force"><span class="toc-section-number">1.2</span>  Linearized tension force</a></li>
+  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="toc-section-number">1.2</span>  Linearized tension force</a></li>
   <li><a href="#wave-equation-from-newtons-2nd-law" id="toc-wave-equation-from-newtons-2nd-law" class="nav-link" data-scroll-target="#wave-equation-from-newtons-2nd-law"><span class="toc-section-number">1.3</span>  Wave equation from Newton’s 2nd law</a></li>
   <li><a href="#checking-dimensions" id="toc-checking-dimensions" class="nav-link" data-scroll-target="#checking-dimensions"><span class="toc-section-number">1.4</span>  Checking dimensions</a></li>
   </ul>
@@ -228,8 +238,8 @@ div.csl-indent {
 <p>To achieve this mathematical understanding we will need to make several simplifications and approximations. For example, we neglect that the string is made up of lots of individual atoms and instead we will pretend that the mass is spread out continuously along the string. This is known as the <strong>continuum approximation</strong> and we will meet this again in the fluid dynamics.</p>
 <p>To derive the equation of motion of the string we first need to discuss the force acting on it which we will do in the next section. Then in the section after that we can plug this into Newton’s second law and out pops the wave equation. Along the way we will make approximations that allow us to linearise the equations.</p>
 </section>
-<section id="linearized-tension-force" class="level2 page-columns page-full" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="linearized-tension-force"><span class="header-section-number">1.2</span> Linearized tension force</h2>
+<section id="sec-1.1" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.2</span> Linearized tension force</h2>
 <p>We consider a small segment of the string between any two points <span class="math inline">\(x\)</span> and at <span class="math inline">\(x+\delta x\)</span> as shown in Fig. <a href="#fig-string2">Figure&nbsp;<span>1.2</span></a>. We want to determine the force that is acting on this segment, so that we can later determine its motion using Newton’s second law. We will concentrate on only the tension force of the string and ignore less important effects like gravity, friction, or stiffness.</p>
 <p>We assume that the tension force <span class="math inline">\(\boldsymbol{T}(x)\)</span> has constant magnitude throughout the string: <span class="math inline">\(|\boldsymbol{T}(x)|=T\)</span>. However its direction varies along the string, because it always acts in the tangential direction. At interior points the tension force pulling to one side will balance that pulling in the other direction. The net tension force on the segment will thus be determined by the tension forces at its ends. We have drawn these forces schematically in Figure <a href="#fig-string2">Figure&nbsp;<span>1.2</span></a> where we have also split them into their <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components.</p>
 <div id="fig-string2" class="quarto-figure quarto-figure-center anchored page-columns page-full">

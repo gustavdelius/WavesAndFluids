@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - 5&nbsp; Harmonic waves</title>
+<title>Waves and Fluids - 7&nbsp; Two-dimensional waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_06.html" rel="next">
-<link href="./lecture_04.html" rel="prev">
+<link href="./lecture_08.html" rel="next">
+<link href="./lecture_06.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,13 +66,13 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></a>
+  <a href="./lecture_07.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -170,17 +170,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#harmonic-waves" id="toc-harmonic-waves" class="nav-link active" data-scroll-target="#harmonic-waves"><span class="toc-section-number">5.1</span>  Harmonic waves</a></li>
-  <li><a href="#solving-pdes-with-harmonic-waves" id="toc-solving-pdes-with-harmonic-waves" class="nav-link" data-scroll-target="#solving-pdes-with-harmonic-waves"><span class="toc-section-number">5.2</span>  Solving PDEs with harmonic waves</a></li>
+  <li><a href="#two-dimensional-wave-equation" id="toc-two-dimensional-wave-equation" class="nav-link active" data-scroll-target="#two-dimensional-wave-equation"><span class="toc-section-number">7.1</span>  Two-dimensional wave equation</a></li>
+  <li><a href="#energy-of-membrane" id="toc-energy-of-membrane" class="nav-link" data-scroll-target="#energy-of-membrane"><span class="toc-section-number">7.2</span>  Energy of membrane</a></li>
+  <li><a href="#travelling-plane-waves" id="toc-travelling-plane-waves" class="nav-link" data-scroll-target="#travelling-plane-waves"><span class="toc-section-number">7.3</span>  Travelling plane waves</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_05.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_07.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></h1>
 </div>
 
 
@@ -195,88 +196,63 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="harmonic-waves" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="harmonic-waves"><span class="header-section-number">5.1</span> Harmonic waves</h2>
-<p>Harmonic waves are waves that are described by sines and cosines. A travelling harmonic wave can be written as <span id="eq-harmonic1"><span class="math display">\[
-y(x,t)=a \cos\left(kx - \omega t + \phi\right)
-\tag{5.1}\]</span></span> or <span id="eq-harmonic2"><span class="math display">\[
-y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
-\tag{5.2}\]</span></span> where <span class="math inline">\(a\)</span> is the amplitude, <span class="math inline">\(\hat{k}\)</span> the wave number, <span class="math inline">\(\nu\)</span> the frequency, <span class="math inline">\(\phi\)</span> the phase, and where <span id="eq-5.3"><span class="math display">\[
-k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
-\tag{5.3}\]</span></span> are the angular wave number and the angular frequency, respectively. Note that <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span> are used more often by mathematicians than <span class="math inline">\(\hat{k}\)</span> and <span class="math inline">\(\nu\)</span> and that the prefix `angular’ is often discarded.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
+<p>Consider an infinite two-dimensional membrane of homogeneous density <span class="math inline">\(\rho\)</span> (mass per unit area, measured in <span class="math inline">\(kg/m^2\)</span>). In the equilibrium state, it is flat and coincides with the <span class="math inline">\((x,y)\)</span> plane in <span class="math inline">\(\mathbb{R}^3\)</span>. We assume that it is stretched to a tension <span class="math inline">\(T\)</span> (force per unit length, measured in <span class="math inline">\(N/m\)</span>). This means that for any line on the surface of the membrane, the part of the membrane on one side of the line exerts a force <span class="math inline">\(T\)</span> (per unit length of the line) on the other part of the membrane (on the other side of the line), and the direction of the force is perpendicular to the line.</p>
+<p>The perturbed membrane may be described as a time-dependent surface <span class="math inline">\(z=z(x,y,t)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>, where <span class="math inline">\(z(x,y,t)\)</span> is the vertical (in the <span class="math inline">\(z\)</span> direction) displacement of the membrane at point <span class="math inline">\((x,y)\)</span> and time <span class="math inline">\(t\)</span>. To derive the equation of motion, we consider a small element of the membrane of size <span class="math inline">\(\delta x\)</span> and <span class="math inline">\(\delta y\)</span> in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, as shown in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>.</p>
+<div id="fig-membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="membrane.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;7.1: A membrane stretched in the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane and vibrating in the <span class="math inline">\(z\)</span> direction.</figcaption><p></p>
+</figure>
 </div>
-<div class="callout-caption-container flex-fill">
-Terminology
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><em>Frequency</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit time.</li>
-<li><em>Wave number</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit length.</li>
-<li><em>Period</em> <span class="math inline">\(=\)</span> time <span class="math inline">\(P\)</span> needed to complete one cycle (oscillation): <span id="eq-5.4"><span class="math display">\[
-P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
-\tag{5.4}\]</span></span></li>
-<li><em>Wave length</em> <span class="math inline">\(=\)</span> distance between two consecutive wave crests (peaks): <span id="eq-5.5"><span class="math display">\[
-\lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
-\tag{5.5}\]</span></span></li>
-<li><em>Wave speed</em> <span class="math inline">\(=\)</span> speed at which the wave is travelling: <span id="eq-5.6"><span class="math display">\[
-c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
-\tag{5.6}\]</span></span> (Sometimes, the wave speed is also called the <em>phase speed</em>.)</li>
-</ul>
-</div>
-</div>
-<p>The harmonic wave <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a> can be written as <span id="eq-harmonic3"><span class="math display">\[\begin{split}
-y(x,t)&amp;=a \cos\left(kx - \omega t + \phi\right) \\
-&amp;= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
-&amp;=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
-\end{split} \tag{5.7}\]</span></span> where we have included the phase factor <span class="math inline">\(e^{i\phi}\)</span> into the complex amplitude: <span class="math inline">\(A= a e^{i\phi}\)</span>.</p>
-<p>Consider now the complex function <span id="eq-harmonic4"><span class="math display">\[
-y(x,t)= A \, e^{i(kx-\omega(k) t)}
-\tag{5.8}\]</span></span> for any <span class="math inline">\(A\in\mathbb{C}\)</span>, any <span class="math inline">\(k\in\mathbb{R}\)</span> and some <span class="math inline">\(\omega(k)\)</span>. Substituting this into the wave equation gives us an equation for <span class="math inline">\(\omega(k)\)</span>: <span id="eq-5.9"><span class="math display">\[
-\partial_t^2 y =c^2 \partial_x^2 y  \quad
-\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
-\tag{5.9}\]</span></span> Therefore, if <span id="eq-5.10"><span class="math display">\[
-\omega(k) = \pm ck
-\tag{5.10}\]</span></span> then the complex function in <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> is a solution of the wave equation. We will refer to these complex solutions as <em>complex harmonic waves</em>. They are often more convenient to work with than their real counterpart in <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a>.</p>
-<p><a href="#eq-5.10">Eq.&nbsp;<span>5.10</span></a> is an example of a <em>dispersion relation</em>. It states that for the wave equation, <span class="math inline">\(\omega\)</span> is proportional to <span class="math inline">\(k\)</span>. But complex harmonic waves can also solve other PDEs, as we will see in the next subsection, and that will lead to more complicated dispersion relations.</p>
+<p>We assume that there is only transverse motion of the membrane and that the partial derivatives <span class="math inline">\(\partial_x z\)</span> and <span class="math inline">\(\partial_y z\)</span> are small: <span class="math inline">\(\vert\partial_x z\vert \ll 1\)</span> and <span class="math inline">\(\vert\partial_y z\vert \ll 1\)</span>. Almost the same arguments as those in <a href="lecture_01.html#sec-1.1"><span>Section&nbsp;1.2</span></a> lead to the conclusion that the vertical component of the force is a sum of two terms: <span class="math inline">\(T \delta y \, \partial_x^2 z \, \delta x\)</span> (coming from the tension forces that are nearly parallel to the <span class="math inline">\(x\)</span>-axis in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>) and <span class="math inline">\(T \delta x \, \partial_y^2 z \, \delta y\)</span> (coming from the tension forces that are nearly parallel to the <span class="math inline">\(y\)</span>-axis in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>). So, Newton’s equation of motion (<span class="math inline">\(ma=F\)</span>) yields <span id="eq-7.1"><span class="math display">\[
+(\rho \, \delta x \, \delta y)\partial_t^2 z = T \delta y \, \partial_x^2 z \, \delta x + T \delta x \, \partial_y^2 z \, \delta y.
+\tag{7.1}\]</span></span> Dividing this by <span class="math inline">\(\delta x \, \delta y\)</span> and <span class="math inline">\(\rho\)</span>, we get the governing equation for the membrane: <span id="eq-memb1"><span class="math display">\[
+\partial_t^2 z = \frac{T}{\rho} \left( \partial_x^2 \, z  +  \partial_y^2 \, z\right)
+\tag{7.2}\]</span></span> or, equivalently, <span id="eq-memb2"><span class="math display">\[
+\partial_t^2 z  - c^2 \nabla^2 z = 0, \quad c=\sqrt{\frac{T}{\rho}}.
+\tag{7.3}\]</span></span> Here <span class="math inline">\(c\)</span> in the wave speed and <span class="math inline">\(\nabla^2\)</span> is the Laplace operator: <span id="eq-7.4"><span class="math display">\[
+\nabla^2= \partial_x^2  + \partial_y^2.
+\tag{7.4}\]</span></span> Sometimes, the Laplace operator is also denoted by <span class="math inline">\(\Delta\)</span> (i.e.&nbsp;<span class="math inline">\(\Delta = \nabla^2 = \partial_x^2 + \partial_y^2\)</span>). <a href="#eq-memb2">Eq.&nbsp;<span>7.3</span></a> is the two-dimensional wave equation.</p>
 </section>
-<section id="solving-pdes-with-harmonic-waves" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="solving-pdes-with-harmonic-waves"><span class="header-section-number">5.2</span> Solving PDEs with harmonic waves</h2>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Any linear homogeneous PDE (in variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>) with constant coefficients has complex harmonic wave solutions <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> for some <span class="math inline">\(\omega(k)\)</span>.</p>
-</div>
-</div>
-<div id="exm-8" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.1 </strong></span>Consider the damped string (with friction force proportional to velocity): <span id="eq-damped1"><span class="math display">\[
-  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
-  p&gt;0.
-\tag{5.11}\]</span></span> Substituting the complex harmonic wave from <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> into this equation, we obtain the dispersion relation <span id="eq-5.12"><span class="math display">\[
--\omega^2 y =- c^2 k^2 y +ip\,\omega y .
-\tag{5.12}\]</span></span> Cancelling the <span class="math inline">\(y\)</span> we obtain a quadratic equation for <span class="math inline">\(\omega^2\)</span> which has the complex solution <span id="eq-iw"><span class="math display">\[
-\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
-\tag{5.13}\]</span></span> Thus we have the following solution for the damped string: <span id="eq-dampedy"><span class="math display">\[\begin{split}
-y(x,t)&amp;= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
-&amp;=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
-\end{split} \tag{5.14}\]</span></span> The factor <span class="math inline">\(e^{-pt/2}\)</span> shows that we have a wave with exponentially decreasing amplitude. This is a consequence of the damping. The wave speed is now dependent on the wave number <span class="math inline">\(k\)</span>: <span id="eq-5.15"><span class="math display">\[
-c(k)=\sqrt{c^2  - p^2/(4k^2)}.
-\tag{5.15}\]</span></span> If we want to, we can get a real solution by taking the real part of the complex solution: <span id="eq-5.16"><span class="math display">\[
-\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
-\tag{5.16}\]</span></span> where <span class="math inline">\(a=\vert A\vert\)</span> and <span class="math inline">\(\phi=\arg(A)\)</span>.</p>
-</div>
-<p>Note that the imaginary part of <span class="math inline">\(\omega\)</span> produces the damping exponential and the real part of <span class="math inline">\(\omega\)</span> determines the wave speed.</p>
+<section id="energy-of-membrane" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="energy-of-membrane"><span class="header-section-number">7.2</span> Energy of membrane</h2>
+<p>The energy density of the membrane is <span id="eq-7.5"><span class="math display">\[
+\mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
+\tag{7.5}\]</span></span> where the term involving the density <span class="math inline">\(\rho\)</span> is the kinetic energy density <span class="math inline">\(\mathcal{E}_K\)</span> and the term involving the tension <span class="math inline">\(T\)</span> is the potential energy density <span class="math inline">\(\mathcal{E}_V\)</span>. The latter we could write in vector notation as <span class="math inline">\(\mathcal{E}_v=T|\nabla z|^2/2.\)</span></p>
+<p>To check this, we check whether this <span class="math inline">\(\mathcal{E}\)</span> satisfies a conservation equation. So we calculate <span id="eq-7.6"><span class="math display">\[\begin{split}
+\frac{d\mathcal{E}}{dt} &amp;=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\
+&amp;=T\, (\partial_t z) (\partial_x^2z+\partial_y^2z) +T\,\left((\partial_t\partial_x z)(\partial_x z)+\,(\partial_t\partial_y z)(\partial_y z)\right)  \\
+&amp;=-\partial_x\left(-T(\partial_xz)(\partial_tz)\right)-\partial_y\left(-T(\partial_xz)(\partial_tz)\right),
+\end{split} \tag{7.6}\]</span></span> where for the second equality we have used the wave equation. We introduce the two-dimensional energy flux density vector <span class="math inline">\(\mathcal{F}=(\mathcal{F}_x,\mathcal{F}_y)\)</span> with <span id="eq-7.7"><span class="math display">\[
+\mathcal{F}_x =-T(\partial_xz)(\partial_tz),~~~~ \mathcal{F}_y=-T(\partial_yz)(\partial_tz).
+\tag{7.7}\]</span></span> In terms of this we have derived the conservation equation <span id="eq-7.8"><span class="math display">\[
+\frac{d\mathcal{E}}{dt} =-\nabla\cdot\mathcal{F}.
+\tag{7.8}\]</span></span></p>
+<p>To understand how this two-dimensional conservation equation leads to energy conservation let us look at the energy in a region <span class="math inline">\(R\)</span> in the <span class="math inline">\((x,y)\)</span> plane. The energy in this region is given by <span class="math display">\[
+E=\int\!\!\int_{R} \mathcal{E} dA.
+\]</span> {eq-memb4} Here <span class="math inline">\(dA=dx \, dy\)</span> is the area element. The rate of change in the energy is then <span id="eq-7.9"><span class="math display">\[\begin{split}
+\frac{dE}{dt} &amp;=\int\!\!\int_{D} \partial_t\mathcal{E} dA =- \int\!\!\int_{D} \nabla\mathcal{F} dA \\
+&amp;=-\int_{\partial R} \mathcal{F}\cdot\underline{n}\, ds  \qquad (\text{using the divergence theorem}).
+\end{split} \tag{7.9}\]</span></span> where <span class="math inline">\(\underline{n}\)</span> is the outward unit normal on <span class="math inline">\(\partial D\)</span> and <span class="math inline">\(ds\)</span> is the line element on <span class="math inline">\(\partial D\)</span>. So again we see that the change of energy in a region is equal to the net flow of energy into the region.</p>
+</section>
+<section id="travelling-plane-waves" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="travelling-plane-waves"><span class="header-section-number">7.3</span> Travelling plane waves</h2>
+<p>A 2D wave is a plane wave if <span class="math inline">\(z(x,y,t)\)</span> varies only in one spatial direction, say, parallel to a constant unit vector <span class="math inline">\(\underline{n}=(n_x,n_y)\)</span> (and <span class="math inline">\(z(x,y,t)\)</span> is constant in the direction perpendicular to <span class="math inline">\(\underline{n}\)</span>). This means that <span id="eq-plane1"><span class="math display">\[
+z(x,y,t)=f(\underline{n}\cdot\underline{x}-ct)=f(n_x x+n_y y -ct)
+\tag{7.10}\]</span></span> describes a plane wave travelling with wave speed <span class="math inline">\(c\)</span> in the direction of vector <span class="math inline">\(\underline{n}\)</span>.</p>
+<p>Let’s verify that <a href="#eq-plane1">Eq.&nbsp;<span>7.10</span></a> is a solution of the 2D wave equation. We have <span id="eq-7.12"><span class="math display">\[\begin{split}
+\partial_t^2 \, z &amp;=\partial_t^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, c^2,  \\
+\partial_x^2 \, z &amp;=\partial_x^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, n_x^2, \\
+\partial_y^2 \, z &amp;=\partial_y^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, n_y^2.
+\end{split} \tag{7.11}\]</span></span> Hence, <span id="eq-7.13"><span class="math display">\[
+\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=
+c^2 \, f''(\underline{n}\cdot\underline{x}-ct)\left(1- n_x^2-n_y^2\right)=0
+\tag{7.12}\]</span></span> (as <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e.&nbsp;<span class="math inline">\(n_x^2 + n_y^2=1\)</span>).</p>
+<p>The <em>harmonic plane wave</em> corresponds to the choice <span class="math inline">\(f(s)=e^{iks}\)</span>, so that <span id="eq-plane2"><span class="math display">\[
+z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x}-ct)}= e^{i(\underline{k}\cdot\underline{x}-\omega(\underline{k})t)},
+\tag{7.13}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. The dispersion relation follows from <a href="#eq-plane2">Eq.&nbsp;<span>7.13</span></a>: <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
 
 
 </section>
@@ -431,13 +407,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lecture_04.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span>
+      <a href="./lecture_06.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_06.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lecture_08.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

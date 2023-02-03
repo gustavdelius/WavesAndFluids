@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - Waves</title>
+<title>Waves and Fluids - 8&nbsp; Waves on rectangular domain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_01.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./lecture_07.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,16 +62,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Waves</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./waves.html" class="sidebar-item-text sidebar-link active">Waves</a>
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -150,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></a>
+  <a href="./lecture_08.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></a>
   </div>
 </li>
       </ul>
@@ -168,11 +169,11 @@ ul.task-list li input[type="checkbox"] {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Waves</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></h1>
 </div>
 
 
@@ -187,9 +188,74 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Waves are so fundamentally important because waves are the only way information can propagate in this universe. Some waves that propagate information are obvious: sound waves, light and radio waves, electric waves travelling along our neurons. Others are less obvious: even if I communicate with you by shooting a particle at you, this is described by a wave, as you will learn in quantum mechanics. Gravitational effects are communicated via gravitational waves.</p>
-<p>Because waves propagate at a finite speed, also information can only propagate at that wave speed. This has profound impacts, as you know from the theory of special relativity. For example, we can look far back into the past because some of the light waves emitted shortly after the big bang 16 billion years ago are only now arriving here, strongly red-shifted and thus detectable as microwaves.</p>
-<p>Studying waves is also of great practical importance. They play an important part in our technological world. Improvements in our understanding of how to generate and control electromagnetic waves, for example, has led to radio, radar and mobile phones. Understanding how a pest propagates in the form of an invasion wave into so-far uninfected territory allows us to prepare adequate interventions. Understanding how density waves form in traffic flow, leading to traffic jams, allows us to design interventions that lead to smoother traffic flow.</p>
+<p>Consider a rectangular membrane: <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^2\vert 0&lt;x&lt;a, \ 0&lt;y&lt;b \}\)</span>. Let’s solve the wave equation <span id="eq-rectangular1"><span class="math display">\[
+\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=0 \quad \text{in} \ \ D
+\tag{8.1}\]</span></span> subject to fixed (Dirichlet) boundary condition <span id="eq-rectangular2"><span class="math display">\[
+z(x,y,t)=0 \quad \text{on} \ \ \partial D
+\tag{8.2}\]</span></span> or, equivalently, <span id="eq-rectangular3"><span class="math display">\[
+z(0,y,t)=0, \quad z(a,y,t)=0
+\tag{8.3}\]</span></span> and <span id="eq-rectangular4"><span class="math display">\[
+z(x,0,t)=0, \quad z(x,b,t)=0.
+\tag{8.4}\]</span></span> To find a solution, we use the method of separation of variables (see <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>), i.e.&nbsp;we assume that <span id="eq-8.5"><span class="math display">\[
+z(x,y,t)=X(x)Y(y)T(t).
+\tag{8.5}\]</span></span> Substituting this into the wave equation, we get <span id="eq-8.6"><span class="math display">\[
+XYT''=c^2\left(X''YT + XY''T\right),
+\tag{8.6}\]</span></span> which, after dividing by <span class="math inline">\(XYT\)</span> gives <span id="eq-8.7"><span class="math display">\[
+\frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
++\frac{Y''(y)}{Y(y)}\right)
+\tag{8.7}\]</span></span> In the last equation, we have a function of one variable, <span class="math inline">\(t\)</span>, on the left side and a function of two variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, on the right side. It can be satisfied for all <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(t\)</span> only if both sides are equal to a constant. As in section <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>, we choose this constant to be negative and (for convenience) equal to <span class="math inline">\(-k^2 c^2\)</span> (for arbitrary real <span class="math inline">\(k\)</span>). Again, the possibility of a positive constant is excluded, because, with a positive constant, it is impossible to find solutions satisfying the boundary conditions. Thus, we have <span id="eq-8.8"><span class="math display">\[
+\frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
++\frac{Y''(y)}{Y(y)}\right)= -k^2 c^2.
+\tag{8.8}\]</span></span> This leads to the ODE <span id="eq-rectangular5"><span class="math display">\[
+T''(t)=-c^2 k^2  \, T(t)
+\tag{8.9}\]</span></span> and to the equation <span id="eq-rectangular6"><span class="math display">\[
+\frac{X''(x)}{X(x)}
++\frac{Y''(y)}{Y(y)}= -k^2.
+\tag{8.10}\]</span></span> The general solution of <a href="#eq-rectangular5">Eq.&nbsp;<span>8.9</span></a> is <span id="eq-rectangular7"><span class="math display">\[
+T(t)=F \, \sin(k c t) +G \, \cos(k c t),
+\tag{8.11}\]</span></span> where <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are arbitrary constants.</p>
+<p>Rewriting <a href="#eq-rectangular6">Eq.&nbsp;<span>8.10</span></a> as <span id="eq-8.12"><span class="math display">\[
+\frac{X''(x)}{X(x)}= -k^2 -\frac{Y''(y)}{Y(y)},
+\tag{8.12}\]</span></span> we conclude that for this equation to hold for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, both sides must be equal to a constant, which we choose to be <span class="math inline">\(-\nu^2\)</span> (for some real <span class="math inline">\(\nu\)</span>). Also, setting <span class="math inline">\(\mu\)</span> so that <span class="math inline">\(\nu^2+\mu^2=k^2\)</span> gives us the equations <span id="eq-rectangular8"><span class="math display">\[
+X''(x) =-\nu^2 X(x), \quad Y''(y)=-\mu^2Y(y).
+\tag{8.13}\]</span></span></p>
+<p>The general solutions are <span id="eq-8.14"><span class="math display">\[\begin{split}
+X(x)&amp;=A\sin(\nu x)+ B\cos(\nu x),\\
+Y(y)&amp;=C\sin(\mu y)+ D\cos(\mu y),
+\end{split} \tag{8.14}\]</span></span> for arbitrary constants <span class="math inline">\(A,B,C,D\)</span>.</p>
+<p>Now we are ready to impose the boundary conditions.</p>
+<p>The condition <span class="math inline">\(z(0,y,t)=0\)</span> for all <span class="math inline">\(y,t\)</span> requires that <span class="math inline">\(X(0)=0\)</span> and, because <span class="math inline">\(X(0)= B\)</span>, this implies that <span class="math inline">\(B=0\)</span>. Similarly the condition <span class="math inline">\(z(a,y,t)=0\)</span> requires that <span class="math inline">\(X(a)=0\)</span> and because <span class="math inline">\(X(a)=A\sin(\nu\, a)\)</span> (because we already know that <span class="math inline">\(B=0\)</span>), this implies that either <span class="math inline">\(A=0\)</span>, which is not an interesting case because it makes the entire solution vanish, or that <span class="math inline">\(\nu=n\pi/a\)</span> with <span class="math inline">\(n\in \mathbb{Z}\)</span>. Without loss of generality we can take <span class="math inline">\(n\in\mathbb{N}\)</span> because negative <span class="math inline">\(n\)</span> just give the same solution up to a sign that can be absorbed into the arbitrary constant <span class="math inline">\(A\)</span>, and <span class="math inline">\(n=0\)</span> gives the zero solution.</p>
+<p>The conditions <span class="math inline">\(z(x,0,t)=0=z(x,b,t)\)</span> similarly require that <span class="math inline">\(Y(0)=0=Y(\pi)\)</span> and thus <span class="math inline">\(D=0\)</span> and <span class="math inline">\(\mu=m\pi/a\)</span> with <span class="math inline">\(m\in\mathbb{N}\)</span>.</p>
+<p>Thus we have found the following solutions satisfying the boundary conditions: <span id="eq-rectangular12"><span class="math display">\[\begin{split}
+z_{nm}(x,y,t)=&amp;\sin\left(\frac{\pi}{a}nx\right)\sin\left(\frac{\pi}{b}my\right)\\
+&amp;\cdot\left(F_{nm}\sin(k_{nm}ct)+G_{nm}\cos(k_{nm}ct)\right)
+\end{split} \tag{8.15}\]</span></span> with <span id="eq-8.16"><span class="math display">\[
+k_{nm}=\sqrt{\left(\frac{n\pi}{a}\right)^2+\left(\frac{m\pi}{b}\right)^2}
+\tag{8.16}\]</span></span> for any choice of <span class="math inline">\(n,m\in\mathbb{N}\)</span> and <span class="math inline">\(F_{nm},G_{nm}\in\mathbb{R}\)</span>.</p>
+<p>Note that solutions <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a> already satisfy the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a>. Such solutions are called <em>normal modes</em> of the membrane. Snapshots of normal modes with <span class="math inline">\((n,m)=(1,1)\)</span>, <span class="math inline">\((n,m)=(1,2)\)</span>, <span class="math inline">\((n,m)=(2,2)\)</span> and <span class="math inline">\((n,m)=(3,2)\)</span> are shown in <a href="#fig-rectangular_membrane">Figure&nbsp;<span>8.1</span></a>. Any solution of the wave equation <a href="#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a> satisfying the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a> can be presented as a linear combination of normal modes <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a>:</p>
+<p><span id="eq-8.17"><span class="math display">\[
+z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{n,m}.
+\tag{8.17}\]</span></span> The free constants <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are then determined by the initial conditions, using the Fourier transform technique as in the one-dimensional case.</p>
+<div id="fig-rectangular_membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="rectangular_membrane.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: Some normal modes of a rectangular membrane</figcaption><p></p>
+</figure>
+</div>
+<p>To construct a solution satisfying the initial conditions <span id="eq-8.18"><span class="math display">\[
+z(x,y,0)=z_0(x,y), \quad \partial_t z(x,y,0)=v_0(x,y)
+\tag{8.18}\]</span></span> we evaluate our general solution and its <span class="math inline">\(t\)</span> derivative at the boundary. This gives <span id="eq-8.19"><span class="math display">\[
+z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}
+\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b} G_{nm}= z_0(x,y).
+\tag{8.19}\]</span></span> <span id="eq-8.20"><span class="math display">\[
+\partial_t z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} k_{nm} c \,
+B_{nm} \, \sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b}=v_0(x,y).
+\tag{8.20}\]</span></span> Comparing these with the (double) Fourier series for functions <span class="math inline">\(z_0(x,y)\)</span> and <span class="math inline">\(v_0(x,y)\)</span>, one can deduce that <span id="eq-8.21"><span class="math display">\[\begin{split}
+G_{nm} &amp;= \frac{4}{ab} \, \int\limits_{0}^{a} dx \int\limits_{0}^{b}  dy \,  z_0(x,y)
+\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b},  \\
+F_{nm} &amp;= \frac{1}{k_{nm}c} \, \frac{4}{ab} \, \int\limits_{0}^{a} dx \int\limits_{0}^{b}  dy \, v_0(x,y)
+\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b}.  
+\end{split} \tag{8.21}\]</span></span></p>
 
 
 
@@ -343,13 +409,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./lecture_07.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
