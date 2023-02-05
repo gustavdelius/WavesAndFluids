@@ -18,8 +18,8 @@ $$
 k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
 $$ {#eq-5.3}
 are the angular wave number and the angular frequency, respectively. Note that
-$k$ and $\omega$ are used more often that $\hat{k}$ and $\nu$ and that the
-prefix `angular' is often discarded.
+$k$ and $\omega$ are used more often by mathematicians than $\hat{k}$ and $\nu$
+and that the prefix `angular' is often discarded.
 
 ::: {.callout-note}
 ### Terminology
@@ -51,30 +51,35 @@ y(x,t)&=a \cos\left(kx - \omega t + \phi\right) \\
 where we have included the phase factor $e^{i\phi}$ into the complex amplitude:
 $A= a e^{i\phi}$.
 
-Consider now the complex quantity $A e^{i(kx-\omega t)}$. Direct substitution
-shows that it is a solution of the wave equation and so are both its real and
-imaginary parts. So, we shall consider complex solutions of the form
+Consider now the complex function
 $$
-y(x,t)= A \, e^{i(kx-\omega t)}
+y(x,t)= A \, e^{i(kx-\omega(k) t)}
 $$ {#eq-harmonic4}
-for any $A\in\mathbb{C}$, any $k\in\mathbb{R}$ and some $\omega(k)$. To find
-$\omega(k)$, we substitute @eq-harmonic4 into the wave equation:
+for any $A\in\mathbb{C}$, any $k\in\mathbb{R}$ and some $\omega(k)$.
+Substituting this into the wave equation gives us an equation for $\omega(k)$:
 $$
 \partial_t^2 y =c^2 \partial_x^2 y  \quad 
 \Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
 $$ {#eq-5.9}
-Therefore
+Therefore, if
 $$
 \omega(k) = \pm ck
 $$ {#eq-5.10}
-The function $\omega(k)$ is called the _dispersion relation_. The above formula
-shows that, for the wave equation, $\omega$ is proportional to $k$.
+then the complex function in @eq-harmonic4 is a solution of the wave equation.
+We will refer to these complex solutions as
+_complex harmonic waves_. They are often more convenient to work with than 
+their real counterpart in @eq-harmonic1.
+
+@eq-5.10 is an example of a _dispersion relation_. It states that for the wave
+equation, $\omega$ is proportional to $k$. But complex harmonic waves can also
+solve other PDEs, as we will see in the next subsection, and that will lead to
+more complicated dispersion relations.
 
 ## Solving PDEs with harmonic waves
 
 ::: {.callout-important}
 Any linear homogeneous PDE (in variables $x$ and $t$) with constant coefficients
-has harmonic wave solutions @eq-harmonic4 for some $\omega(k)$.
+has complex harmonic wave solutions @eq-harmonic4 for some $\omega(k)$.
 :::
 
 ::: {#exm-8}
@@ -84,7 +89,8 @@ Consider the damped string (with friction force proportional to velocity):
   \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
   p>0.
 $$ {#eq-damped1}
-Substituting the harmonic wave @eq-harmonic4 into this equation, we obtain
+Substituting the complex harmonic wave from @eq-harmonic4 into this equation, we
+obtain the dispersion relation
 $$
 -\omega^2 y =- c^2 k^2 y +ip\,\omega y .
 $$ {#eq-5.12}
@@ -98,9 +104,9 @@ $$\begin{split}
 y(x,t)&= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
 &=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
 \end{split}$$ {#eq-dampedy}
-So we see that we have a wave with exponentially decreasing amplitude which is a
-consequence of the damping. The wave speed is now dependent on the wave number
-$k$:
+The factor $e^{-pt/2}$ shows that we have a wave with exponentially decreasing
+amplitude. This is a consequence of the damping. The wave speed is now dependent
+on the wave number $k$:
 $$
 c(k)=\sqrt{c^2  - p^2/(4k^2)}.
 $$ {#eq-5.15}
@@ -113,5 +119,5 @@ where $a=\vert A\vert$ and $\phi=\arg(A)$.
 
 :::
 
-Note that the imaginary part of $\omega$ in @eq-iw produces the damping
+Note that the imaginary part of $\omega$ produces the damping
 exponential and the real part of $\omega$ determines the wave speed.

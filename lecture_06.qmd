@@ -4,10 +4,10 @@ Besides Information, waves transmit another practically important quantity:
 Energy. Note that waves do not transport matter. Matter may oscillate up and
 down or forth and back as a wave passes, but it is not swept away with the wave.
 But energy is. In this lecture we are going to first introduce the expression
-for the energy in a wave on a string as an integral over the energy density,
-that in turn is made up out of kinetic and potential energy density. We will
-then calculate the energy in a few example waves, and then discuss the
-conservation of energy.
+for the energy in a wave on a string as an integral over the energy density.
+The energy density in turn is made up out of kinetic and potential energy
+density. We will then calculate the energy in a few example waves, and then
+discuss the conservation of energy.
 
 ## Energy density
 
@@ -21,7 +21,7 @@ infinitesimal parts:
 $$
 K=\int \frac{\rho}{2}  (\partial_t y)^2 \, dx = \int \mathcal{E}_K\,dx.
 $$ {#eq-energy1}
-The quantity $\mathcal{E}_K$ is the kinetic energy density.
+The quantity $\mathcal{E}_K$ is the _kinetic energy density_.
 
 To derive the formula for the potential energy, we again look first at an
 infinitesimal segment of the string. It has been stretched from a length of
@@ -44,7 +44,7 @@ over the whole string), we find the potential energy
 $$
 V=\int T \, \frac{(\partial_x y)^2}{2} \, dx = \int \mathcal{E}_V\,dx.
 $$ {#eq-energy2}
-The quantity $\mathcal{E}_V$ is the potential energy density.
+The quantity $\mathcal{E}_V$ is the _potential energy density_.
 
 The total energy $E$ is the sum of the kinetic and potential energy:
 $$\begin{split}
@@ -52,13 +52,13 @@ E&=K+V\\
 &=\int \left( \frac{\rho}{2}  (\partial_t y)^2+  \frac{T}{2} (\partial_x y)^2\right)  dx\\
 &= \int \mathcal{E}\,dx,
 \end{split}$$ {#eq-energy2}
-where $\mathcal{E}=\mathcal{E}_K + \mathcal{E}_V$ is the total energy density.
+where $\mathcal{E}=\mathcal{E}_K + \mathcal{E}_V$ is the _total energy density_.
 
 ## Energy density of example waves
 
 ::: {#exm-energy_travelling_wave}
 
-Consider a localised wave $y=f(x-ct)$ travelling to the right with speed $c$.
+Consider a localised wave $y(x,t)=f(x-ct)$ travelling to the right with speed $c$.
 Substituting this into the general expression for the energy density
 $$
 \mathcal{E}=\frac{\rho}{2}(\partial_ty)^2+\frac{T}{2}(\partial_x y)^2
@@ -110,8 +110,8 @@ T&=\frac{T}{2}\alpha^2 k^2 \cos^2(kct+\phi)\int_0^\pi\cos^2(kx)dx\\
 \end{split}$$ {#eq-6.14}
 
 For standing waves, both the kinetic energy and the potential energy depend on
-time and are not equal. However, the averaged (over a period in $t$) kinetic and
-potential energies are equal. The total energy is constant
+time and are not equal. However, their averages, averaged over a period in $t$,
+are equal. The total energy is constant
 $$
 E=K+T
 =\frac{T\alpha^2 k^2 \pi}{4}(\sin^2(kct+\phi)+\cos^2(kct+\phi))=\frac{T\alpha^2 k^2 \pi}{4}

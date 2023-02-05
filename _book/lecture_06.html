@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Work in progress">
+
+<title>Waves and Fluids - 6&nbsp; Energy</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./lecture_05.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Waves and Fluids</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://maths.york.ac.uk/moodle/course/view.php?id=2497" title="Moodle page" class="sidebar-tool px-1"><i class="bi bi-mortarboard-fill"></i></a>
+    <a href="https://forms.gle/w17c19vWnM7wpLpz7" title="Submit a correction" class="sidebar-tool px-1"><i class="bi bi-bug-fill"></i></a>
+    <a href="https://github.com/gustavdelius/WavesAndFluids/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="./Waves-and-Fluids.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Boundaries and Interfaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_06.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#energy-density" id="toc-energy-density" class="nav-link active" data-scroll-target="#energy-density"><span class="toc-section-number">6.1</span>  Energy density</a></li>
+  <li><a href="#energy-density-of-example-waves" id="toc-energy-density-of-example-waves" class="nav-link" data-scroll-target="#energy-density-of-example-waves"><span class="toc-section-number">6.2</span>  Energy density of example waves</a></li>
+  <li><a href="#conservation-equation" id="toc-conservation-equation" class="nav-link" data-scroll-target="#conservation-equation"><span class="toc-section-number">6.3</span>  Conservation equation</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_06.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Besides Information, waves transmit another practically important quantity: Energy. Note that waves do not transport matter. Matter may oscillate up and down or forth and back as a wave passes, but it is not swept away with the wave. But energy is. In this lecture we are going to first introduce the expression for the energy in a wave on a string as an integral over the energy density. The energy density in turn is made up out of kinetic and potential energy density. We will then calculate the energy in a few example waves, and then discuss the conservation of energy.</p>
+<section id="energy-density" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="energy-density"><span class="header-section-number">6.1</span> Energy density</h2>
+<p>Consider an infinitesimal bit of string between <span class="math inline">\(x\)</span> and <span class="math inline">\(x+\delta x\)</span>. Its kinetic energy is <span id="eq-6.1"><span class="math display">\[
+\delta K = \frac12 m\,v^2 = \frac12 \rho\,\delta x\left(\partial_t y\right)^2.
+\tag{6.1}\]</span></span> The kinetic energy of the entire string is then obtained by integrating over its infinitesimal parts: <span id="eq-energy1"><span class="math display">\[
+K=\int \frac{\rho}{2}  (\partial_t y)^2 \, dx = \int \mathcal{E}_K\,dx.
+\tag{6.2}\]</span></span> The quantity <span class="math inline">\(\mathcal{E}_K\)</span> is the <em>kinetic energy density</em>.</p>
+<p>To derive the formula for the potential energy, we again look first at an infinitesimal segment of the string. It has been stretched from a length of <span class="math inline">\(\delta x\)</span> to the longer length <span class="math inline">\(\delta s\)</span>. The work done to change the length from <span class="math inline">\(\delta x\)</span> to <span class="math inline">\(\delta s\)</span> is <span class="math inline">\(T(\delta s - \delta x)\)</span>. This gives the potential energy (we neglect the potential energy coming from gravity). We have <span id="eq-6.3"><span class="math display">\[
+\delta s= \sqrt{1+\left(\partial_x y\right)^2} \, \delta x \approx \delta x \left(1 +  \frac{\left(\partial_x y\right)^2}{2} + \cdots \right),
+\tag{6.3}\]</span></span> where we have only kept the first two terms in the Taylor expansion because, as we did when we derived the wave equation, we assume that the slope of the string is small and thus the higher order terms in <span class="math inline">\(\partial_x y\)</span> are negligible. Thus the potential energy in the infinitesimal segment of the string is <span id="eq-6.4"><span class="math display">\[
+\delta V=T\left(\delta s - \delta x\right)
+= \frac{T}{2} \left(\partial_x y\right)^2\, \delta x .
+\tag{6.4}\]</span></span> Summing up contributions from all small elements of the string (i.e.&nbsp;integrating over the whole string), we find the potential energy <span id="eq-energy2"><span class="math display">\[
+V=\int T \, \frac{(\partial_x y)^2}{2} \, dx = \int \mathcal{E}_V\,dx.
+\tag{6.5}\]</span></span> The quantity <span class="math inline">\(\mathcal{E}_V\)</span> is the <em>potential energy density</em>.</p>
+<p>The total energy <span class="math inline">\(E\)</span> is the sum of the kinetic and potential energy: <span id="eq-energy2"><span class="math display">\[\begin{split}
+E&amp;=K+V\\
+&amp;=\int \left( \frac{\rho}{2}  (\partial_t y)^2+  \frac{T}{2} (\partial_x y)^2\right)  dx\\
+&amp;= \int \mathcal{E}\,dx,
+\end{split} \tag{6.6}\]</span></span> where <span class="math inline">\(\mathcal{E}=\mathcal{E}_K + \mathcal{E}_V\)</span> is the <em>total energy density</em>.</p>
+</section>
+<section id="energy-density-of-example-waves" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="energy-density-of-example-waves"><span class="header-section-number">6.2</span> Energy density of example waves</h2>
+<div id="exm-energy_travelling_wave" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.1 </strong></span>Consider a localised wave <span class="math inline">\(y(x,t)=f(x-ct)\)</span> travelling to the right with speed <span class="math inline">\(c\)</span>. Substituting this into the general expression for the energy density <span id="eq-6.7"><span class="math display">\[
+\mathcal{E}=\frac{\rho}{2}(\partial_ty)^2+\frac{T}{2}(\partial_x y)^2
+\tag{6.7}\]</span></span> gives <span id="eq-6.8"><span class="math display">\[
+\mathcal{E}(x,t)=\frac{\rho}{2}(-c)^2(f'(x-ct))^2+\frac{T}{2}(f'(x-ct))^2.
+\tag{6.8}\]</span></span> Because <span class="math inline">\(c^2\rho = T\)</span>, we see that the kinetic and the potential energy densities are equal. This phenomenon is referred to as “equipartition” of the energy. Together we have <span id="eq-6.9"><span class="math display">\[
+\mathcal{E}(x,t)=T\,(f'(x-ct))^2.
+\tag{6.9}\]</span></span> Note how the energy density is travelling along with the wave profile.</p>
+</div>
+<div id="exm-energy_standing_wave" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.2 (Standing harmonic wave) </strong></span>Now we consider solutions of the form <span id="eq-6.10"><span class="math display">\[\begin{split}
+y(x,t)&amp;=\sin(kx)(F\sin(kct)+G\cos(kct))\\
+&amp;=\alpha\cos(kct+\phi).
+\end{split} \tag{6.10}\]</span></span> We calculate the energy densities <span id="eq-6.11"><span class="math display">\[\begin{split}
+\mathcal{E}_K&amp;=\frac{\rho}{2}(\partial_t y(x,t))^2\\
+&amp;=\frac{\rho}{2}\alpha^2 k^2 c^2(-\sin(kct+\phi))^2\sin^2(kx)
+\end{split} \tag{6.11}\]</span></span> and <span id="eq-6.12"><span class="math display">\[\begin{split}
+\mathcal{E}_V&amp;=\frac{T}{2}(\partial_x y(x,t))^2\\
+&amp;=\frac{T}{2}\alpha^2 k^2 (\cos(kct+\phi))^2\cos^2(kx)
+\end{split} \tag{6.12}\]</span></span> Again we notice that the prefactors are the same because <span class="math inline">\(c^2\rho=T\)</span>. For the energies we find <span id="eq-6.13"><span class="math display">\[\begin{split}
+K&amp;=\frac{T}{2}\alpha^2 k^2 \sin^2(kct+\phi)
+\int_0^\pi\sin^2(kx)dx\\
+&amp;=\frac{T\alpha^2 k^2 \pi}{4}\sin^2(kct+\phi)
+\end{split} \tag{6.13}\]</span></span> and <span id="eq-6.14"><span class="math display">\[\begin{split}
+T&amp;=\frac{T}{2}\alpha^2 k^2 \cos^2(kct+\phi)\int_0^\pi\cos^2(kx)dx\\
+&amp;=\frac{T\alpha^2 k^2 \pi}{4}\cos^2(kct+\phi).
+\end{split} \tag{6.14}\]</span></span></p>
+<p>For standing waves, both the kinetic energy and the potential energy depend on time and are not equal. However, their averages, averaged over a period in <span class="math inline">\(t\)</span>, are equal. The total energy is constant <span id="eq-6.15"><span class="math display">\[
+E=K+T
+=\frac{T\alpha^2 k^2 \pi}{4}(\sin^2(kct+\phi)+\cos^2(kct+\phi))=\frac{T\alpha^2 k^2 \pi}{4}
+\tag{6.15}\]</span></span></p>
+</div>
+<div id="exm-energy_sum" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.3 (Sum of two standing harmonic waves) </strong></span>Consider two harmonic waves <span id="eq-6.16"><span class="math display">\[\begin{split}
+y_k&amp;=\alpha_k\sin(kx)\cos(kct+\phi_k)~~\text{and}\\
+y_l&amp;=\alpha_l\sin(lx)\cos(lct+\phi_l)
+\end{split} \tag{6.16}\]</span></span> with <span class="math inline">\(k\neq l\)</span> and let us calculate the energy of <span class="math inline">\(y=y_k+y_l\)</span>. We have <span id="eq-6.17"><span class="math display">\[\begin{split}
+K&amp;=\frac{\rho}{2}\int_0^\pi(\partial_t y)^2dx
+=\frac{\rho}{2}\int_0^\pi(\partial_t y_k+\partial_t y_l)^2dx \\
+&amp;=K_k+K_l+\rho\,\alpha_k\, \alpha_l\, k\,l\,c^2\cos(kct+\phi_k)\cos(lct+\phi_l) \cdot\\
+&amp;\qquad\qquad\qquad\int_0^\pi\sin(kx)\sin(lx)dx\\
+&amp;=K_k+K_l
+\end{split} \tag{6.17}\]</span></span> where <span class="math inline">\(K_k\)</span> and <span class="math inline">\(K_l\)</span> are the kinetic energies of the individual harmonic waves. A similar calculation shows that also the potential energy of the sum is the sum of the potential energies and so this is also true of the total energy: <span id="eq-6.18"><span class="math display">\[
+E[y_k+y_l]=E[y_k]+E[y_l].
+\tag{6.18}\]</span></span> This is one of the nice properties of harmonic waves.</p>
+</div>
+<div id="exm-energy_complex_wave" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.4 (Complex exponential wave) </strong></span>We calculate the energy density of the complex solution <span id="eq-6.19"><span class="math display">\[
+y(x,t)=A\,e^{i(kx-\omega t)}.
+\tag{6.19}\]</span></span> The expression for the energy density of complex solutions involves the absolute value squared: <span id="eq-6.20"><span class="math display">\[
+\mathcal{E}[y]=\frac{\rho}{2}|\partial_t y|^2+\frac{T}{2}|\partial_x y|^2.
+\tag{6.20}\]</span></span> This has the effect that the energy density is the sum of the energy density of the real part of the solution and the energy density of the imaginary part of the solution. We find <span id="eq-6.21"><span class="math display">\[\begin{split}
+\mathcal{E}[A\,e^{i(kx-\omega t)}]&amp;=\frac{\rho}{2}\left|-i\omega \,A\,e^{i(kx-\omega t)}\right|^2+\frac{T}{2}\left|ik \,A\,e^{i(kx-\omega t)}\right|^2\\
+&amp;=\left(\frac{\rho}{2}\omega^2+\frac{T}{2}k^2\right)|A|^2
+\end{split} \tag{6.21}\]</span></span> So another miracle of these complex exponential solutions is that their energy density is constant.</p>
+</div>
+</section>
+<section id="conservation-equation" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="conservation-equation"><span class="header-section-number">6.3</span> Conservation equation</h2>
+<p>Let <span class="math inline">\(y(x,t)\)</span> be a solution of the wave equation for the string and <span class="math inline">\(\mathcal{E}\)</span> its energy density <span id="eq-6.22"><span class="math display">\[
+\mathcal{E}=\frac{\rho}{2}(\partial_t y)^2+\frac{T}{2}(\partial_x y)^2.
+\tag{6.22}\]</span></span> For the time derivative of the energy density we find <span id="eq-6.23"><span class="math display">\[\begin{split}
+\partial_t \mathcal{E} &amp;= \rho \, \partial_t y  \, \partial_t^2 y  +  T \, \partial_x y  \, \partial_t\partial_x y \\
+&amp;= \partial_t y  \, T\, \partial_x^2 y  +  T \, \partial_x y  \, \partial_t\partial_x y \quad (\text{using} \ \ \rho \, \partial_t^2 y = T\, \partial_x^2 y \ ) \\
+&amp;=- \partial_x\left( -T \, \partial_t y  \, \partial_x y\right)  .
+\end{split} \tag{6.23}\]</span></span> In terms of the quantity <span class="math inline">\(\mathcal{F} = - T \, \partial_t y \, \partial_x y\)</span> this equation takes the form <span id="eq-energy4"><span class="math display">\[
+\partial_t\mathcal{E}=-\partial_x\mathcal{F}.
+\tag{6.24}\]</span></span> The quantity <span class="math inline">\(\mathcal{F}\)</span> is called the <em>energy flux</em>.</p>
+<p><a href="#eq-energy4">Eq.&nbsp;<span>6.24</span></a> implies the law of conservation of energy (and therefore is called a <em>conservation equation</em>}). Indeed, we have <span id="eq-energy5"><span class="math display">\[
+\frac{dE}{dt}= \int\limits_{x_1}^{x_2} \partial_t \mathcal{E} \, dx =
+-\int\limits_{x_1}^{x_2} \partial_x \mathcal{F} \, dx  = \mathcal{F}(x_1)-\mathcal{F}(x_2).
+\tag{6.25}\]</span></span> So if we interpret the energy flux <span class="math inline">\(\mathcal{F}(x)\)</span> as the rate at which energy flows through a point <span class="math inline">\(x\)</span> from left to right, then the conservation equation expresses that the rate at which energy in a region changes is equal to the difference between the rate at which energy flows in and the rate at which energy flows out of the region.</p>
+<p>We already showed conservation of energy of a finite string with fixed boundary conditions in the previous section. We will now use the above machinery to show the conservation of the energy of a finite string with free boundary conditions. We consider a string between <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=\pi\)</span> satisfying the free boundary conditions <span id="eq-6.25"><span class="math display">\[
+\partial_xy(0,t)=0=\partial_xy(\pi,t)\text{ for all }t.
+\tag{6.26}\]</span></span> The energy flux at the left end of the string at <span class="math inline">\(x=0\)</span> is <span id="eq-6.26"><span class="math display">\[
+\mathcal{F}(0,t)=-T\,\partial_ty(0,t)\,\partial_xy(0,t).
+\tag{6.27}\]</span></span> This flux is zero due to the boundary condition. Similarly the flux at the right boundary is zero: <span id="eq-6.27"><span class="math display">\[
+\mathcal{F}(\pi,t)=-T\,\partial_ty(\pi,t)\,\partial_xy(\pi,t)=0.
+\tag{6.28}\]</span></span> So by the conservation equation it follows that the energy is conserved.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lecture_05.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

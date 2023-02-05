@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - Waves</title>
+<title>Waves and Fluids - 5&nbsp; Harmonic waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_01.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./lecture_06.html" rel="next">
+<link href="./lecture_04.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Waves</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./waves.html" class="sidebar-item-text sidebar-link active">Waves</a>
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -135,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -155,14 +156,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#harmonic-waves" id="toc-harmonic-waves" class="nav-link active" data-scroll-target="#harmonic-waves"><span class="toc-section-number">5.1</span>  Harmonic waves</a></li>
+  <li><a href="#solving-pdes-with-harmonic-waves" id="toc-solving-pdes-with-harmonic-waves" class="nav-link" data-scroll-target="#solving-pdes-with-harmonic-waves"><span class="toc-section-number">5.2</span>  Solving PDEs with harmonic waves</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_05.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Waves</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
 </div>
 
 
@@ -177,11 +185,91 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Waves are so fundamentally important because waves are the only way information can propagate in this universe. Some waves that propagate information are obvious: sound waves, light and radio waves, electric waves travelling along our neurons. Others are less obvious: even if I communicate with you by shooting a particle at you, this is described by a wave, as you will learn in quantum mechanics. Gravitational effects are communicated via gravitational waves.</p>
-<p>Because waves propagate at a finite speed, also information can only propagate at that wave speed. This has profound impacts, as you know from the theory of special relativity. For example, we can look far back into the past because some of the light waves emitted shortly after the big bang 16 billion years ago are only now arriving here, strongly red-shifted and thus detectable as microwaves.</p>
-<p>Studying waves is also of great practical importance. They play an important part in our technological world. Improvements in our understanding of how to generate and control electromagnetic waves, for example, has led to radio, radar and mobile phones. Understanding how a pest propagates in the form of an invasion wave into so-far uninfected territory allows us to prepare adequate interventions. Understanding how density waves form in traffic flow, leading to traffic jams, allows us to design interventions that lead to smoother traffic flow.</p>
+<section id="harmonic-waves" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="harmonic-waves"><span class="header-section-number">5.1</span> Harmonic waves</h2>
+<p>Harmonic waves are waves that are described by sines and cosines. A travelling harmonic wave can be written as <span id="eq-harmonic1"><span class="math display">\[
+y(x,t)=a \cos\left(kx - \omega t + \phi\right)
+\tag{5.1}\]</span></span> or <span id="eq-harmonic2"><span class="math display">\[
+y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
+\tag{5.2}\]</span></span> where <span class="math inline">\(a\)</span> is the amplitude, <span class="math inline">\(\hat{k}\)</span> the wave number, <span class="math inline">\(\nu\)</span> the frequency, <span class="math inline">\(\phi\)</span> the phase, and where <span id="eq-5.3"><span class="math display">\[
+k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
+\tag{5.3}\]</span></span> are the angular wave number and the angular frequency, respectively. Note that <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span> are used more often by mathematicians than <span class="math inline">\(\hat{k}\)</span> and <span class="math inline">\(\nu\)</span> and that the prefix `angular’ is often discarded.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Terminology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Frequency</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit time.</li>
+<li><em>Wave number</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit length.</li>
+<li><em>Period</em> <span class="math inline">\(=\)</span> time <span class="math inline">\(P\)</span> needed to complete one cycle (oscillation): <span id="eq-5.4"><span class="math display">\[
+P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
+\tag{5.4}\]</span></span></li>
+<li><em>Wave length</em> <span class="math inline">\(=\)</span> distance between two consecutive wave crests (peaks): <span id="eq-5.5"><span class="math display">\[
+\lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
+\tag{5.5}\]</span></span></li>
+<li><em>Wave speed</em> <span class="math inline">\(=\)</span> speed at which the wave is travelling: <span id="eq-5.6"><span class="math display">\[
+c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
+\tag{5.6}\]</span></span> (Sometimes, the wave speed is also called the <em>phase speed</em>.)</li>
+</ul>
+</div>
+</div>
+<p>The harmonic wave <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a> can be written as <span id="eq-harmonic3"><span class="math display">\[\begin{split}
+y(x,t)&amp;=a \cos\left(kx - \omega t + \phi\right) \\
+&amp;= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
+&amp;=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
+\end{split} \tag{5.7}\]</span></span> where we have included the phase factor <span class="math inline">\(e^{i\phi}\)</span> into the complex amplitude: <span class="math inline">\(A= a e^{i\phi}\)</span>.</p>
+<p>Consider now the complex function <span id="eq-harmonic4"><span class="math display">\[
+y(x,t)= A \, e^{i(kx-\omega(k) t)}
+\tag{5.8}\]</span></span> for any <span class="math inline">\(A\in\mathbb{C}\)</span>, any <span class="math inline">\(k\in\mathbb{R}\)</span> and some <span class="math inline">\(\omega(k)\)</span>. Substituting this into the wave equation gives us an equation for <span class="math inline">\(\omega(k)\)</span>: <span id="eq-5.9"><span class="math display">\[
+\partial_t^2 y =c^2 \partial_x^2 y  \quad
+\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
+\tag{5.9}\]</span></span> Therefore, if <span id="eq-5.10"><span class="math display">\[
+\omega(k) = \pm ck
+\tag{5.10}\]</span></span> then the complex function in <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> is a solution of the wave equation. We will refer to these complex solutions as <em>complex harmonic waves</em>. They are often more convenient to work with than their real counterpart in <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a>.</p>
+<p><a href="#eq-5.10">Eq.&nbsp;<span>5.10</span></a> is an example of a <em>dispersion relation</em>. It states that for the wave equation, <span class="math inline">\(\omega\)</span> is proportional to <span class="math inline">\(k\)</span>. But complex harmonic waves can also solve other PDEs, as we will see in the next subsection, and that will lead to more complicated dispersion relations.</p>
+</section>
+<section id="solving-pdes-with-harmonic-waves" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="solving-pdes-with-harmonic-waves"><span class="header-section-number">5.2</span> Solving PDEs with harmonic waves</h2>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any linear homogeneous PDE (in variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>) with constant coefficients has complex harmonic wave solutions <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> for some <span class="math inline">\(\omega(k)\)</span>.</p>
+</div>
+</div>
+<div id="exm-8" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5.1 </strong></span>Consider the damped string (with friction force proportional to velocity): <span id="eq-damped1"><span class="math display">\[
+  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
+  p&gt;0.
+\tag{5.11}\]</span></span> Substituting the complex harmonic wave from <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> into this equation, we obtain the dispersion relation <span id="eq-5.12"><span class="math display">\[
+-\omega^2 y =- c^2 k^2 y +ip\,\omega y .
+\tag{5.12}\]</span></span> Cancelling the <span class="math inline">\(y\)</span> we obtain a quadratic equation for <span class="math inline">\(\omega^2\)</span> which has the complex solution <span id="eq-iw"><span class="math display">\[
+\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
+\tag{5.13}\]</span></span> Thus we have the following solution for the damped string: <span id="eq-dampedy"><span class="math display">\[\begin{split}
+y(x,t)&amp;= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
+&amp;=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
+\end{split} \tag{5.14}\]</span></span> The factor <span class="math inline">\(e^{-pt/2}\)</span> shows that we have a wave with exponentially decreasing amplitude. This is a consequence of the damping. The wave speed is now dependent on the wave number <span class="math inline">\(k\)</span>: <span id="eq-5.15"><span class="math display">\[
+c(k)=\sqrt{c^2  - p^2/(4k^2)}.
+\tag{5.15}\]</span></span> If we want to, we can get a real solution by taking the real part of the complex solution: <span id="eq-5.16"><span class="math display">\[
+\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
+\tag{5.16}\]</span></span> where <span class="math inline">\(a=\vert A\vert\)</span> and <span class="math inline">\(\phi=\arg(A)\)</span>.</p>
+</div>
+<p>Note that the imaginary part of <span class="math inline">\(\omega\)</span> produces the damping exponential and the real part of <span class="math inline">\(\omega\)</span> determines the wave speed.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -333,13 +421,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./lecture_04.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lecture_06.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
