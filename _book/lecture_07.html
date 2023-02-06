@@ -173,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#two-dimensional-wave-equation" id="toc-two-dimensional-wave-equation" class="nav-link active" data-scroll-target="#two-dimensional-wave-equation"><span class="toc-section-number">7.1</span>  Two-dimensional wave equation</a></li>
   <li><a href="#energy-of-membrane" id="toc-energy-of-membrane" class="nav-link" data-scroll-target="#energy-of-membrane"><span class="toc-section-number">7.2</span>  Energy of membrane</a></li>
   <li><a href="#travelling-plane-waves" id="toc-travelling-plane-waves" class="nav-link" data-scroll-target="#travelling-plane-waves"><span class="toc-section-number">7.3</span>  Travelling plane waves</a></li>
+  <li><a href="#higher-dimensions" id="toc-higher-dimensions" class="nav-link" data-scroll-target="#higher-dimensions"><span class="toc-section-number">7.4</span>  Higher dimensions</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_07.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -196,6 +197,11 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>So far we have been discussing the one-dimensional wave equation. We have motivated the equation in terms of a string stretched along the <span class="math inline">\(x\)</span> dimension and oscillating in the <span class="math inline">\(y\)</span> dimension. We now want to extend this to higher dimensions.</p>
+<p>One way to introduce another dimension would be to let the string vibrate in both the <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> dimension. However that would not give anything new. In the small-angle approximation to which we have been working, the oscillations in the <span class="math inline">\(y\)</span> direction and the oscillations in the <span class="math inline">\(z\)</span> direction would be independent and we would just end up with two independent one-dimensional wave equations, <span class="math display">\[
+\partial_t^2 y(x,t) = c^2\partial_x^2 y(x,t)~~\text{ and }~~\partial_t^2 z(x,t) = c^2\partial_x^2 z(x,t).
+\]</span></p>
+<p>Instead we will introduce the second dimension by going from the string stretched in the <span class="math inline">\(x\)</span> dimension to a membrane stretched in both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> dimensions. It will vibrate in the <span class="math inline">\(z\)</span> direction. This toy example of a vibrating membrane will give us the two-dimensional wave equation, which of course appears in many other applications as well.</p>
 <section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
 <p>Consider an infinite two-dimensional membrane of homogeneous density <span class="math inline">\(\rho\)</span> (mass per unit area, measured in <span class="math inline">\(kg/m^2\)</span>). In the equilibrium state, it is flat and coincides with the <span class="math inline">\((x,y)\)</span> plane in <span class="math inline">\(\mathbb{R}^3\)</span>. We assume that it is stretched to a tension <span class="math inline">\(T\)</span> (force per unit length, measured in <span class="math inline">\(N/m\)</span>). This means that for any line on the surface of the membrane, the part of the membrane on one side of the line exerts a force <span class="math inline">\(T\)</span> (per unit length of the line) on the other part of the membrane (on the other side of the line), and the direction of the force is perpendicular to the line.</p>
@@ -214,45 +220,66 @@ ul.task-list li input[type="checkbox"] {
 \partial_t^2 z  - c^2 \nabla^2 z = 0, \quad c=\sqrt{\frac{T}{\rho}}.
 \tag{7.3}\]</span></span> Here <span class="math inline">\(c\)</span> in the wave speed and <span class="math inline">\(\nabla^2\)</span> is the Laplace operator: <span id="eq-7.4"><span class="math display">\[
 \nabla^2= \partial_x^2  + \partial_y^2.
-\tag{7.4}\]</span></span> Sometimes, the Laplace operator is also denoted by <span class="math inline">\(\Delta\)</span> (i.e.&nbsp;<span class="math inline">\(\Delta = \nabla^2 = \partial_x^2 + \partial_y^2\)</span>). <a href="#eq-memb2">Eq.&nbsp;<span>7.3</span></a> is the two-dimensional wave equation.</p>
+\tag{7.4}\]</span></span> Sometimes, the Laplace operator is also denoted by <span class="math inline">\(\Delta\)</span> (i.e.&nbsp;<span class="math inline">\(\Delta = \nabla^2 = \partial_x^2 + \partial_y^2\)</span>). <a href="#eq-memb2">Eq.&nbsp;<span>7.3</span></a> is the two-dimensional wave equation. Written in terms of the Laplace operator it easily generalises to any higher dimension.</p>
 </section>
 <section id="energy-of-membrane" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="energy-of-membrane"><span class="header-section-number">7.2</span> Energy of membrane</h2>
 <p>The energy density of the membrane is <span id="eq-7.5"><span class="math display">\[
 \mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
-\tag{7.5}\]</span></span> where the term involving the density <span class="math inline">\(\rho\)</span> is the kinetic energy density <span class="math inline">\(\mathcal{E}_K\)</span> and the term involving the tension <span class="math inline">\(T\)</span> is the potential energy density <span class="math inline">\(\mathcal{E}_V\)</span>. The latter we could write in vector notation as <span class="math inline">\(\mathcal{E}_v=T|\nabla z|^2/2.\)</span></p>
+\tag{7.5}\]</span></span> where the term involving the density <span class="math inline">\(\rho\)</span> is the kinetic energy density <span class="math inline">\(\mathcal{E}_K\)</span> and the term involving the tension <span class="math inline">\(T\)</span> is the potential energy density <span class="math inline">\(\mathcal{E}_V\)</span>. The latter we could write in vector notation as <span class="math inline">\(\mathcal{E}_v=T|\underline{\nabla} z|^2/2\)</span> where <span class="math inline">\(\underline{\nabla}z\)</span> is the gradient of <span class="math inline">\(z\)</span>.</p>
 <p>To check this, we check whether this <span class="math inline">\(\mathcal{E}\)</span> satisfies a conservation equation. So we calculate <span id="eq-7.6"><span class="math display">\[\begin{split}
-\frac{d\mathcal{E}}{dt} &amp;=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\
+\partial_t\mathcal{E} &amp;=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\
 &amp;=T\, (\partial_t z) (\partial_x^2z+\partial_y^2z) +T\,\left((\partial_t\partial_x z)(\partial_x z)+\,(\partial_t\partial_y z)(\partial_y z)\right)  \\
 &amp;=-\partial_x\left(-T(\partial_xz)(\partial_tz)\right)-\partial_y\left(-T(\partial_xz)(\partial_tz)\right),
-\end{split} \tag{7.6}\]</span></span> where for the second equality we have used the wave equation. We introduce the two-dimensional energy flux density vector <span class="math inline">\(\mathcal{F}=(\mathcal{F}_x,\mathcal{F}_y)\)</span> with <span id="eq-7.7"><span class="math display">\[
+\end{split} \tag{7.6}\]</span></span> where for the second equality we have used the wave equation. We introduce the two-dimensional energy flux density vector <span class="math inline">\(\underline{\mathcal{F}}=(\mathcal{F}_x,\mathcal{F}_y)\)</span> with <span id="eq-7.7"><span class="math display">\[
 \mathcal{F}_x =-T(\partial_xz)(\partial_tz),~~~~ \mathcal{F}_y=-T(\partial_yz)(\partial_tz).
 \tag{7.7}\]</span></span> In terms of this we have derived the conservation equation <span id="eq-7.8"><span class="math display">\[
-\frac{d\mathcal{E}}{dt} =-\nabla\cdot\mathcal{F}.
+\partial_t\mathcal{E} =-\underline{\nabla}\cdot\underline{\mathcal{F}}.
 \tag{7.8}\]</span></span></p>
-<p>To understand how this two-dimensional conservation equation leads to energy conservation let us look at the energy in a region <span class="math inline">\(R\)</span> in the <span class="math inline">\((x,y)\)</span> plane. The energy in this region is given by <span class="math display">\[
-E=\int\!\!\int_{R} \mathcal{E} dA.
-\]</span> {eq-memb4} Here <span class="math inline">\(dA=dx \, dy\)</span> is the area element. The rate of change in the energy is then <span id="eq-7.9"><span class="math display">\[\begin{split}
-\frac{dE}{dt} &amp;=\int\!\!\int_{D} \partial_t\mathcal{E} dA =- \int\!\!\int_{D} \nabla\mathcal{F} dA \\
-&amp;=-\int_{\partial R} \mathcal{F}\cdot\underline{n}\, ds  \qquad (\text{using the divergence theorem}).
-\end{split} \tag{7.9}\]</span></span> where <span class="math inline">\(\underline{n}\)</span> is the outward unit normal on <span class="math inline">\(\partial D\)</span> and <span class="math inline">\(ds\)</span> is the line element on <span class="math inline">\(\partial D\)</span>. So again we see that the change of energy in a region is equal to the net flow of energy into the region.</p>
+<p>To understand how this two-dimensional conservation equation leads to energy conservation let us look at the energy in a region <span class="math inline">\(R\)</span> in the <span class="math inline">\((x,y)\)</span> plane. The energy in this region is given by <span id="eq-memb4"><span class="math display">\[
+E=\int\!\!\int_{R} \mathcal{E}\, dA.
+\tag{7.9}\]</span></span> Here <span class="math inline">\(dA=dx \, dy\)</span> is the area element. The rate of change in the energy is then <span id="eq-7.9"><span class="math display">\[\begin{split}
+\frac{dE}{dt} &amp;=\int\!\!\int_{R} \partial_t\mathcal{E} dA =- \int\!\!\int_{R} \underline{\nabla}\cdot\underline{\mathcal{F}}\, dA \\
+&amp;=-\int_{\partial R} \mathcal{F}\cdot\underline{n}\, ds.
+\end{split} \tag{7.10}\]</span></span> For the last equality we used the divergence theorem. <span class="math inline">\(\underline{n}\)</span> is the outward unit normal to the boundary <span class="math inline">\(\partial R\)</span> of the region <span class="math inline">\(R\)</span> and <span class="math inline">\(ds\)</span> is the line element on <span class="math inline">\(\partial R\)</span>. So again we see that the change of energy in a region is equal to the net flow of energy into the region.</p>
 </section>
 <section id="travelling-plane-waves" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="travelling-plane-waves"><span class="header-section-number">7.3</span> Travelling plane waves</h2>
 <p>A 2D wave is a plane wave if <span class="math inline">\(z(x,y,t)\)</span> varies only in one spatial direction, say, parallel to a constant unit vector <span class="math inline">\(\underline{n}=(n_x,n_y)\)</span> (and <span class="math inline">\(z(x,y,t)\)</span> is constant in the direction perpendicular to <span class="math inline">\(\underline{n}\)</span>). This means that <span id="eq-plane1"><span class="math display">\[
-z(x,y,t)=f(\underline{n}\cdot\underline{x}-ct)=f(n_x x+n_y y -ct)
-\tag{7.10}\]</span></span> describes a plane wave travelling with wave speed <span class="math inline">\(c\)</span> in the direction of vector <span class="math inline">\(\underline{n}\)</span>.</p>
-<p>Let’s verify that <a href="#eq-plane1">Eq.&nbsp;<span>7.10</span></a> is a solution of the 2D wave equation. We have <span id="eq-7.12"><span class="math display">\[\begin{split}
-\partial_t^2 \, z &amp;=\partial_t^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, c^2,  \\
-\partial_x^2 \, z &amp;=\partial_x^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, n_x^2, \\
-\partial_y^2 \, z &amp;=\partial_y^2 \, f(\underline{n}\cdot\underline{x}-ct)=f''(\underline{n}\cdot\underline{x}-ct) \, n_y^2.
-\end{split} \tag{7.11}\]</span></span> Hence, <span id="eq-7.13"><span class="math display">\[
+z(x,y,t)=f(\underline{n}\cdot\underline{x} -ct)=f(n_x x+n_y y -ct)
+\tag{7.11}\]</span></span> describes a plane wave travelling with wave speed <span class="math inline">\(c\)</span> in the direction of vector <span class="math inline">\(\underline{n}\)</span>.</p>
+<p>Let’s verify that <a href="#eq-plane1">Eq.&nbsp;<span>7.11</span></a> is a solution of the 2D wave equation. We have <span id="eq-7.12"><span class="math display">\[\begin{split}
+\partial_t^2 \, z &amp;=\partial_t^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, c^2,  \\
+\partial_x^2 \, z &amp;=\partial_x^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, n_x^2, \\
+\partial_y^2 \, z &amp;=\partial_y^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, n_y^2.
+\end{split} \tag{7.12}\]</span></span> Hence, <span id="eq-7.13"><span class="math display">\[
 \partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=
-c^2 \, f''(\underline{n}\cdot\underline{x}-ct)\left(1- n_x^2-n_y^2\right)=0
-\tag{7.12}\]</span></span> (as <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e.&nbsp;<span class="math inline">\(n_x^2 + n_y^2=1\)</span>).</p>
+c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
+\tag{7.13}\]</span></span> (as <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e.&nbsp;<span class="math inline">\(n_x^2 + n_y^2=1\)</span>).</p>
 <p>The <em>harmonic plane wave</em> corresponds to the choice <span class="math inline">\(f(s)=e^{iks}\)</span>, so that <span id="eq-plane2"><span class="math display">\[
-z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x}-ct)}= e^{i(\underline{k}\cdot\underline{x}-\omega(\underline{k})t)},
-\tag{7.13}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. The dispersion relation follows from <a href="#eq-plane2">Eq.&nbsp;<span>7.13</span></a>: <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
+z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\underline{x} -\omega(\underline{k})t)},
+\tag{7.14}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. The dispersion relation follows from <a href="#eq-plane2">Eq.&nbsp;<span>7.14</span></a>: <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
+</section>
+<section id="higher-dimensions" class="level2 page-columns page-full" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="higher-dimensions"><span class="header-section-number">7.4</span> Higher dimensions</h2>
+<div class="page-columns page-full"><p>By writing our equations in vector notation, we can see that they work in any dimension. So the n-dimensional wave equation for a real-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{R}\)</span> or a complex-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{C}\)</span> is <span id="eq-7.15"><span class="math display">\[
+\partial_t^2 z(\underline{x}, t) = c^2\,\nabla^2 z(\underline{x}, t).
+\tag{7.15}\]</span></span> </p><div class="no-row-height column-margin column-container"><span class="">When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of <span class="math inline">\(n+1\)</span>-dimensional space-time vectors and tensors.</span></div></div>
+<p>Its energy density is <span id="eq-7.16"><span class="math display">\[
+\mathcal{E} = \frac{T}{2}\left(\frac{1}{c^2}|\partial_t z|^2+|\underline{\nabla}z|^2\right).
+\tag{7.16}\]</span></span> It satisfies the conservation equation <span id="eq-7.17"><span class="math display">\[
+\partial_t\mathcal{E} =-\underline{\nabla}\cdot\underline{\mathcal{F}}
+\tag{7.17}\]</span></span> where the energy flux is <span id="eq-7.18"><span class="math display">\[
+\underline{\mathcal{F}} = -T\mathop{Re}\left(\partial_tz\,\underline{\nabla}z\right)
+\tag{7.18}\]</span></span></p>
+<p>According to the n-dimensional divergence theorem the rate of change of the energy in an n-dimensional region <span class="math inline">\(R\subset\mathbb{R}^n\)</span> is <span id="eq-7.19"><span class="math display">\[\begin{split}
+\frac{dE}{dt}&amp;=\int_R\partial_t\mathcal{E}\,dV
+= -\int_R\underline{\nabla}\cdot\underline{\mathcal{F}}\,dV\\
+&amp;=\int_{\partial R}\underline{\mathcal{F}}\cdot\underline{n}\,dS.
+\end{split} \tag{7.19}\]</span></span></p>
+<p>The wave equation has plane wave solutions <span id="eq-7.20"><span class="math display">\[
+z(\underline{x},t) = f(\underline{n}\cdot\underline{x}-ct)
+\tag{7.20}\]</span></span> for any choice of <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> or <span class="math inline">\(f:\mathbb{R}\to\mathbb{C}\)</span>.</p>
 
 
 </section>
