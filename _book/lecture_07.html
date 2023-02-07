@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -202,13 +204,14 @@ ul.task-list li input[type="checkbox"] {
 \partial_t^2 y(x,t) = c^2\partial_x^2 y(x,t)~~\text{ and }~~\partial_t^2 z(x,t) = c^2\partial_x^2 z(x,t).
 \]</span></p>
 <p>Instead we will introduce the second dimension by going from the string stretched in the <span class="math inline">\(x\)</span> dimension to a membrane stretched in both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> dimensions. It will vibrate in the <span class="math inline">\(z\)</span> direction. This toy example of a vibrating membrane will give us the two-dimensional wave equation, which of course appears in many other applications as well.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="wavy.mp4"></video></div>
 <section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
 <p>Consider an infinite two-dimensional membrane of homogeneous density <span class="math inline">\(\rho\)</span> (mass per unit area, measured in <span class="math inline">\(kg/m^2\)</span>). In the equilibrium state, it is flat and coincides with the <span class="math inline">\((x,y)\)</span> plane in <span class="math inline">\(\mathbb{R}^3\)</span>. We assume that it is stretched to a tension <span class="math inline">\(T\)</span> (force per unit length, measured in <span class="math inline">\(N/m\)</span>). This means that for any line on the surface of the membrane, the part of the membrane on one side of the line exerts a force <span class="math inline">\(T\)</span> (per unit length of the line) on the other part of the membrane (on the other side of the line), and the direction of the force is perpendicular to the line.</p>
 <p>The perturbed membrane may be described as a time-dependent surface <span class="math inline">\(z=z(x,y,t)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>, where <span class="math inline">\(z(x,y,t)\)</span> is the vertical (in the <span class="math inline">\(z\)</span> direction) displacement of the membrane at point <span class="math inline">\((x,y)\)</span> and time <span class="math inline">\(t\)</span>. To derive the equation of motion, we consider a small element of the membrane of size <span class="math inline">\(\delta x\)</span> and <span class="math inline">\(\delta y\)</span> in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, as shown in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>.</p>
 <div id="fig-membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="membrane.png" class="img-fluid figure-img"></p>
+<p><img src="membrane.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;7.1: A membrane stretched in the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane and vibrating in the <span class="math inline">\(z\)</span> direction.</figcaption><p></p>
 </figure>
 </div>
@@ -227,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The energy density of the membrane is <span id="eq-7.5"><span class="math display">\[
 \mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
 \tag{7.5}\]</span></span> where the term involving the density <span class="math inline">\(\rho\)</span> is the kinetic energy density <span class="math inline">\(\mathcal{E}_K\)</span> and the term involving the tension <span class="math inline">\(T\)</span> is the potential energy density <span class="math inline">\(\mathcal{E}_V\)</span>. The latter we could write in vector notation as <span class="math inline">\(\mathcal{E}_v=T|\underline{\nabla} z|^2/2\)</span> where <span class="math inline">\(\underline{\nabla}z\)</span> is the gradient of <span class="math inline">\(z\)</span>.</p>
-<p>To check this, we check whether this <span class="math inline">\(\mathcal{E}\)</span> satisfies a conservation equation. So we calculate <span id="eq-7.6"><span class="math display">\[\begin{split}
+<p>To check that <a href="#eq-7.5">Eq.&nbsp;<span>7.5</span></a> is a good expression for the energy density, we check that <span class="math inline">\(\mathcal{E}\)</span> satisfies a conservation equation. So we calculate <span id="eq-7.6"><span class="math display">\[\begin{split}
 \partial_t\mathcal{E} &amp;=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\
 &amp;=T\, (\partial_t z) (\partial_x^2z+\partial_y^2z) +T\,\left((\partial_t\partial_x z)(\partial_x z)+\,(\partial_t\partial_y z)(\partial_y z)\right)  \\
 &amp;=-\partial_x\left(-T(\partial_xz)(\partial_tz)\right)-\partial_y\left(-T(\partial_xz)(\partial_tz)\right),
@@ -252,13 +255,15 @@ z(x,y,t)=f(\underline{n}\cdot\underline{x} -ct)=f(n_x x+n_y y -ct)
 \partial_t^2 \, z &amp;=\partial_t^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, c^2,  \\
 \partial_x^2 \, z &amp;=\partial_x^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, n_x^2, \\
 \partial_y^2 \, z &amp;=\partial_y^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, n_y^2.
-\end{split} \tag{7.12}\]</span></span> Hence, <span id="eq-7.13"><span class="math display">\[
-\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=
-c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
-\tag{7.13}\]</span></span> (as <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e.&nbsp;<span class="math inline">\(n_x^2 + n_y^2=1\)</span>).</p>
+\end{split} \tag{7.12}\]</span></span> Hence, <span id="eq-7.13"><span class="math display">\[\begin{split}
+&amp;\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)\\
+=&amp;c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
+\end{split} \tag{7.13}\]</span></span> because <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e., <span class="math inline">\(n_x^2 + n_y^2=1\)</span>.</p>
+<p>Because the wave equation is linear, any superposition of plane wave solutions is also a solution. The following video shows two plane waves moving though each other.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="plane_waves.mp4"></video></div>
 <p>The <em>harmonic plane wave</em> corresponds to the choice <span class="math inline">\(f(s)=e^{iks}\)</span>, so that <span id="eq-plane2"><span class="math display">\[
 z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\underline{x} -\omega(\underline{k})t)},
-\tag{7.14}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. The dispersion relation follows from <a href="#eq-plane2">Eq.&nbsp;<span>7.14</span></a>: <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
+\tag{7.14}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. We have the dispersion relation <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
 </section>
 <section id="higher-dimensions" class="level2 page-columns page-full" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="higher-dimensions"><span class="header-section-number">7.4</span> Higher dimensions</h2>
@@ -272,7 +277,7 @@ z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\un
 \tag{7.17}\]</span></span> where the energy flux is <span id="eq-7.18"><span class="math display">\[
 \underline{\mathcal{F}} = -T\mathop{Re}\left(\partial_tz\,\underline{\nabla}z\right)
 \tag{7.18}\]</span></span></p>
-<p>According to the n-dimensional divergence theorem the rate of change of the energy in an n-dimensional region <span class="math inline">\(R\subset\mathbb{R}^n\)</span> is <span id="eq-7.19"><span class="math display">\[\begin{split}
+<p>According to the <span class="math inline">\(n\)</span>-dimensional divergence theorem, the rate of change of the energy in an <span class="math inline">\(n\)</span>-dimensional region <span class="math inline">\(R\subset\mathbb{R}^n\)</span> with <span class="math inline">\(n-1\)</span>-dimensional boundary <span class="math inline">\(\partial R\)</span> is <span id="eq-7.19"><span class="math display">\[\begin{split}
 \frac{dE}{dt}&amp;=\int_R\partial_t\mathcal{E}\,dV
 = -\int_R\underline{\nabla}\cdot\underline{\mathcal{F}}\,dV\\
 &amp;=\int_{\partial R}\underline{\mathcal{F}}\cdot\underline{n}\,dS.
@@ -445,6 +450,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
 
 
 

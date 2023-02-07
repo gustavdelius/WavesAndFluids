@@ -17,6 +17,8 @@ $y$ dimensions. It will vibrate in the $z$ direction. This toy example of
 a vibrating membrane will give us the two-dimensional wave equation, which 
 of course appears in many other applications as well.
 
+{{< video wavy.mp4 >}}
+
 ## Two-dimensional wave equation
 
 Consider an infinite two-dimensional membrane of homogeneous density $\rho$
@@ -133,6 +135,11 @@ $$\begin{split}
 =&c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
 \end{split}$$ {#eq-7.13}
 because $\underline{n}$ is a unit vector, i.e., $n_x^2 + n_y^2=1$.
+
+Because the wave equation is linear, any superposition of plane wave solutions is also
+a solution. The following video shows two plane waves moving though each other.
+
+{{< video plane_waves.mp4 >}}
 
 The _harmonic plane wave_ corresponds to the choice $f(s)=e^{iks}$, so that
 $$

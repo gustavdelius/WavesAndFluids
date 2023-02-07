@@ -190,20 +190,20 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Consider a rectangular membrane: <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^2\vert 0&lt;x&lt;a, \ 0&lt;y&lt;b \}\)</span>. Let’s solve the wave equation <span id="eq-rectangular1"><span class="math display">\[
 \partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=0 \quad \text{in} \ \ D
-\tag{8.1}\]</span></span> subject to fixed (Dirichlet) boundary condition <span id="eq-rectangular2"><span class="math display">\[
+\tag{8.1}\]</span></span> subject to the fixed (Dirichlet) boundary condition <span id="eq-rectangular2"><span class="math display">\[
 z(x,y,t)=0 \quad \text{on} \ \ \partial D
 \tag{8.2}\]</span></span> or, equivalently, <span id="eq-rectangular3"><span class="math display">\[
 z(0,y,t)=0, \quad z(a,y,t)=0
 \tag{8.3}\]</span></span> and <span id="eq-rectangular4"><span class="math display">\[
 z(x,0,t)=0, \quad z(x,b,t)=0.
-\tag{8.4}\]</span></span> To find a solution, we use the method of separation of variables (see <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>), i.e.&nbsp;we assume that <span id="eq-8.5"><span class="math display">\[
+\tag{8.4}\]</span></span> To find a solution, we use the method of separation of variables (see <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>), i.e., we make the Ansatz <span id="eq-8.5"><span class="math display">\[
 z(x,y,t)=X(x)Y(y)T(t).
-\tag{8.5}\]</span></span> Substituting this into the wave equation, we get <span id="eq-8.6"><span class="math display">\[
+\tag{8.5}\]</span></span> Substituting this Ansatz into the wave equation, we get <span id="eq-8.6"><span class="math display">\[
 XYT''=c^2\left(X''YT + XY''T\right),
 \tag{8.6}\]</span></span> which, after dividing by <span class="math inline">\(XYT\)</span> gives <span id="eq-8.7"><span class="math display">\[
 \frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
-+\frac{Y''(y)}{Y(y)}\right)
-\tag{8.7}\]</span></span> In the last equation, we have a function of one variable, <span class="math inline">\(t\)</span>, on the left side and a function of two variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, on the right side. It can be satisfied for all <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(t\)</span> only if both sides are equal to a constant. As in section <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>, we choose this constant to be negative and (for convenience) equal to <span class="math inline">\(-k^2 c^2\)</span> (for arbitrary real <span class="math inline">\(k\)</span>). Again, the possibility of a positive constant is excluded, because, with a positive constant, it is impossible to find solutions satisfying the boundary conditions. Thus, we have <span id="eq-8.8"><span class="math display">\[
++\frac{Y''(y)}{Y(y)}\right).
+\tag{8.7}\]</span></span> In the last equation, we have a function of one variable, <span class="math inline">\(t\)</span>, on the left side and a function of two different variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, on the right side. The equation can be satisfied for all <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(t\)</span> only if both sides are equal to a constant. As in <a href="lecture_04.html#sec-4.1"><span>Section&nbsp;4.1</span></a>, we choose this constant to be negative and (for convenience) equal to <span class="math inline">\(-k^2 c^2\)</span> (for arbitrary real <span class="math inline">\(k\)</span>). Again, the possibility of a positive constant is excluded, because with a positive constant it is impossible to find solutions satisfying the boundary conditions. Thus, we have <span id="eq-8.8"><span class="math display">\[
 \frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
 +\frac{Y''(y)}{Y(y)}\right)= -k^2 c^2.
 \tag{8.8}\]</span></span> This leads to the ODE <span id="eq-rectangular5"><span class="math display">\[
@@ -216,7 +216,7 @@ T(t)=F \, \sin(k c t) +G \, \cos(k c t),
 \tag{8.11}\]</span></span> where <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are arbitrary constants.</p>
 <p>Rewriting <a href="#eq-rectangular6">Eq.&nbsp;<span>8.10</span></a> as <span id="eq-8.12"><span class="math display">\[
 \frac{X''(x)}{X(x)}= -k^2 -\frac{Y''(y)}{Y(y)},
-\tag{8.12}\]</span></span> we conclude that for this equation to hold for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, both sides must be equal to a constant, which we choose to be <span class="math inline">\(-\nu^2\)</span> (for some real <span class="math inline">\(\nu\)</span>). Also, setting <span class="math inline">\(\mu\)</span> so that <span class="math inline">\(\nu^2+\mu^2=k^2\)</span> gives us the equations <span id="eq-rectangular8"><span class="math display">\[
+\tag{8.12}\]</span></span> we conclude that for this equation to hold for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, both sides must be equal to a constant, which we choose to write as <span class="math inline">\(-\nu^2\)</span> (for some real <span class="math inline">\(\nu\)</span>). Also, introducing the constant <span class="math inline">\(\mu\)</span> so that <span class="math inline">\(\nu^2+\mu^2=k^2\)</span> gives us the equations <span id="eq-rectangular8"><span class="math display">\[
 X''(x) =-\nu^2 X(x), \quad Y''(y)=-\mu^2Y(y).
 \tag{8.13}\]</span></span></p>
 <p>The general solutions are <span id="eq-8.14"><span class="math display">\[\begin{split}
@@ -234,7 +234,7 @@ k_{nm}=\sqrt{\left(\frac{n\pi}{a}\right)^2+\left(\frac{m\pi}{b}\right)^2}
 \tag{8.16}\]</span></span> for any choice of <span class="math inline">\(n,m\in\mathbb{N}\)</span> and <span class="math inline">\(F_{nm},G_{nm}\in\mathbb{R}\)</span>.</p>
 <p>Note that solutions <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a> already satisfy the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a>. Such solutions are called <em>normal modes</em> of the membrane. Snapshots of normal modes with <span class="math inline">\((n,m)=(1,1)\)</span>, <span class="math inline">\((n,m)=(1,2)\)</span>, <span class="math inline">\((n,m)=(2,2)\)</span> and <span class="math inline">\((n,m)=(3,2)\)</span> are shown in <a href="#fig-rectangular_membrane">Figure&nbsp;<span>8.1</span></a>. Any solution of the wave equation <a href="#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a> satisfying the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a> can be presented as a linear combination of normal modes <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a>:</p>
 <p><span id="eq-8.17"><span class="math display">\[
-z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{n,m}.
+z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{nm}.
 \tag{8.17}\]</span></span> The free constants <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are then determined by the initial conditions, using the Fourier transform technique as in the one-dimensional case.</p>
 <div id="fig-rectangular_membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -246,7 +246,7 @@ z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{n,m}.
 z(x,y,0)=z_0(x,y), \quad \partial_t z(x,y,0)=v_0(x,y)
 \tag{8.18}\]</span></span> we evaluate our general solution and its <span class="math inline">\(t\)</span> derivative at the boundary. This gives <span id="eq-8.19"><span class="math display">\[
 z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}
-\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b} G_{nm}= z_0(x,y).
+\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b} G_{nm}= z_0(x,y),
 \tag{8.19}\]</span></span> <span id="eq-8.20"><span class="math display">\[
 \partial_t z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} k_{nm} c \,
 B_{nm} \, \sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b}=v_0(x,y).
