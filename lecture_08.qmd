@@ -5,7 +5,7 @@ Let's solve the wave equation
 $$
 \partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=0 \quad \text{in} \ \ D
 $$ {#eq-rectangular1}
-subject to fixed (Dirichlet) boundary condition
+subject to the fixed (Dirichlet) boundary condition
 $$
 z(x,y,t)=0 \quad \text{on} \ \ \partial D
 $$ {#eq-rectangular2}
@@ -18,26 +18,26 @@ $$
 z(x,0,t)=0, \quad z(x,b,t)=0.
 $$ {#eq-rectangular4}
 To find a solution, we use the method of separation of variables (see 
-@sec-4.1), i.e. we assume that
+@sec-4.1), i.e., we make the Ansatz
 $$
 z(x,y,t)=X(x)Y(y)T(t).
 $$ {#eq-8.5}
-Substituting this into the wave equation, we get
+Substituting this Ansatz into the wave equation, we get
 $$
 XYT''=c^2\left(X''YT + XY''T\right),
 $$ {#eq-8.6}
 which, after dividing by $XYT$ gives
 $$
 \frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
-+\frac{Y''(y)}{Y(y)}\right)
++\frac{Y''(y)}{Y(y)}\right).
 $$ {#eq-8.7}
 In the last equation, we have a function of one variable, $t$, on the left side
-and a function of two variables, $x$ and $y$, on the right side. It can be
+and a function of two different variables, $x$ and $y$, on the right side. The equation can be
 satisfied for all $x$, $y$ and $t$ only if both sides are equal to a constant.
-As in section @sec-4.1, we choose this constant to be negative and (for
+As in @sec-4.1, we choose this constant to be negative and (for
 convenience) equal to $-k^2 c^2$ (for arbitrary real $k$). Again, the
-possibility of a positive constant is excluded, because, with a positive
-constant, it is impossible to find solutions satisfying the boundary conditions.
+possibility of a positive constant is excluded, because with a positive
+constant it is impossible to find solutions satisfying the boundary conditions.
 Thus, we have
 $$
 \frac{T''(t)}{T(t)} = c^2\left(\frac{X''(x)}{X(x)}
@@ -63,8 +63,8 @@ $$
 \frac{X''(x)}{X(x)}= -k^2 -\frac{Y''(y)}{Y(y)},
 $$ {#eq-8.12}
 we conclude that for this equation to hold for all $x$ and $y$, both sides must
-be equal to a constant, which we choose to be $-\nu^2$ (for some real $\nu$).
-Also, setting $\mu$ so that $\nu^2+\mu^2=k^2$ gives us the equations
+be equal to a constant, which we choose to write as $-\nu^2$ (for some real $\nu$).
+Also, introducing the constant $\mu$ so that $\nu^2+\mu^2=k^2$ gives us the equations
 $$
 X''(x) =-\nu^2 X(x), \quad Y''(y)=-\mu^2Y(y).
 $$ {#eq-rectangular8}
@@ -111,7 +111,7 @@ conditions @eq-rectangular3 and @eq-rectangular4 can be presented as a linear
 combination of normal modes @eq-rectangular12:
 
 $$
-z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{n,m}.
+z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{nm}.
 $$ {#eq-8.17}
 The free constants $F_{nm}$ and $G_{nm}$ are then determined by the initial
 conditions, using the Fourier transform technique as in the one-dimensional
@@ -126,7 +126,7 @@ $$ {#eq-8.18}
 we evaluate our general solution and its $t$ derivative at the boundary. This gives
 $$
 z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} 
-\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b} G_{nm}= z_0(x,y).
+\sin\frac{\pi n x}{a} \, \sin\frac{\pi m y}{b} G_{nm}= z_0(x,y),
 $$ {#eq-8.19}
 $$
 \partial_t z(x,y,0)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} k_{nm} c \,

@@ -34,7 +34,7 @@ displacement of the membrane at point $(x,y)$ and time $t$. To derive the
 equation of motion, we consider a small element of the membrane of size $\delta
 x$ and $\delta y$ in $x$ and $y$, as shown in @fig-membrane.
 
-![A membrane stretched in the $x$--$y$ plane and vibrating in the $z$ direction.](membrane.png){#fig-membrane}
+![A membrane stretched in the $x$--$y$ plane and vibrating in the $z$ direction.](membrane.png){width=80% #fig-membrane}
 
 We assume that there is only transverse motion of the membrane and that the
 partial derivatives $\partial_x z$ and $\partial_y z$ are small:
@@ -78,8 +78,7 @@ density $\mathcal{E}_V$. The latter we could write in vector notation as
 $\mathcal{E}_v=T|\underline{\nabla} z|^2/2$ where $\underline{\nabla}z$ is 
 the gradient of $z$.
 
-To check this, we check whether this $\mathcal{E}$ satisfies a conservation
-equation. So we calculate
+To check that @eq-7.5 is a good expression for the energy density, we check that $\mathcal{E}$ satisfies a conservation equation. So we calculate
 $$\begin{split}
 \partial_t\mathcal{E} &=\rho\, (\partial_t z) ( \partial_t^2 z) +T\,(\partial_t\partial_x z)(\partial_x z)+T\,(\partial_t\partial_y z)(\partial_y z)  \\ 
 &=T\, (\partial_t z) (\partial_x^2z+\partial_y^2z) +T\,\left((\partial_t\partial_x z)(\partial_x z)+\,(\partial_t\partial_y z)(\partial_y z)\right)  \\
@@ -129,18 +128,17 @@ $$\begin{split}
 \partial_y^2 \, z &=\partial_y^2 \, f(\underline{n}\cdot\underline{x} -ct)=f''(\underline{n}\cdot\underline{x} -ct) \, n_y^2. 
 \end{split}$$ {#eq-7.12}
 Hence,
-$$
-\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=
-c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
-$$ {#eq-7.13}
-(as $\underline{n}$ is a unit vector, i.e. $n_x^2 + n_y^2=1$).
+$$\begin{split}
+&\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)\\
+=&c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
+\end{split}$$ {#eq-7.13}
+because $\underline{n}$ is a unit vector, i.e., $n_x^2 + n_y^2=1$.
 
 The _harmonic plane wave_ corresponds to the choice $f(s)=e^{iks}$, so that
 $$
 z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\underline{x} -\omega(\underline{k})t)},
 $$ {#eq-plane2}
-where $\underline{k}=k \, \underline{n}$ is called the _wave vector_. The dispersion relation follows from
-@eq-plane2: $\omega(\underline{k})=c \, \vert \underline{k}\vert$.
+where $\underline{k}=k \, \underline{n}$ is called the _wave vector_. We have the dispersion relation $\omega(\underline{k})=c \, \vert \underline{k}\vert$.
 
 ## Higher dimensions
 
@@ -163,8 +161,8 @@ $$
 \underline{\mathcal{F}} = -T\mathop{Re}\left(\partial_tz\,\underline{\nabla}z\right)
 $$ {#eq-7.18}
 
-According to the n-dimensional divergence theorem the rate of change of
-the energy in an n-dimensional region $R\subset\mathbb{R}^n$ is
+According to the $n$-dimensional divergence theorem, the rate of change of
+the energy in an $n$-dimensional region $R\subset\mathbb{R}^n$ with $n-1$-dimensional boundary $\partial R$ is
 $$\begin{split}
 \frac{dE}{dt}&=\int_R\partial_t\mathcal{E}\,dV 
 = -\int_R\underline{\nabla}\cdot\underline{\mathcal{F}}\,dV\\
