@@ -188,6 +188,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8a76711e-1f8b-4afd-bbb3-af790124753e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
 <p>Consider a rectangular membrane: <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^2\vert 0&lt;x&lt;a, \ 0&lt;y&lt;b \}\)</span>. Let’s solve the wave equation <span id="eq-rectangular1"><span class="math display">\[
 \partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)=0 \quad \text{in} \ \ D
 \tag{8.1}\]</span></span> subject to the fixed (Dirichlet) boundary condition <span id="eq-rectangular2"><span class="math display">\[
@@ -232,16 +234,19 @@ z_{nm}(x,y,t)=&amp;\sin\left(\frac{\pi}{a}nx\right)\sin\left(\frac{\pi}{b}my\rig
 \end{split} \tag{8.15}\]</span></span> with <span id="eq-8.16"><span class="math display">\[
 k_{nm}=\sqrt{\left(\frac{n\pi}{a}\right)^2+\left(\frac{m\pi}{b}\right)^2}
 \tag{8.16}\]</span></span> for any choice of <span class="math inline">\(n,m\in\mathbb{N}\)</span> and <span class="math inline">\(F_{nm},G_{nm}\in\mathbb{R}\)</span>.</p>
-<p>Note that solutions <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a> already satisfy the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a>. Such solutions are called <em>normal modes</em> of the membrane. Snapshots of normal modes with <span class="math inline">\((n,m)=(1,1)\)</span>, <span class="math inline">\((n,m)=(1,2)\)</span>, <span class="math inline">\((n,m)=(2,2)\)</span> and <span class="math inline">\((n,m)=(3,2)\)</span> are shown in <a href="#fig-rectangular_membrane">Figure&nbsp;<span>8.1</span></a>. Any solution of the wave equation <a href="#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a> satisfying the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a> can be presented as a linear combination of normal modes <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a>:</p>
-<p><span id="eq-8.17"><span class="math display">\[
-z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{nm}.
-\tag{8.17}\]</span></span> The free constants <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are then determined by the initial conditions, using the Fourier transform technique as in the one-dimensional case.</p>
+<p>Note that solutions <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a> already satisfy the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a>. Such solutions are called <em>normal modes</em> of the membrane. Snapshots of normal modes with <span class="math inline">\((n,m)=(1,1)\)</span>, <span class="math inline">\((n,m)=(1,2)\)</span>, <span class="math inline">\((n,m)=(2,2)\)</span> and <span class="math inline">\((n,m)=(3,2)\)</span> are shown in <a href="#fig-rectangular_membrane">Figure&nbsp;<span>8.1</span></a>.</p>
 <div id="fig-rectangular_membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="rectangular_membrane.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: Some normal modes of a rectangular membrane</figcaption><p></p>
 </figure>
 </div>
+<p>The amplitudes of the normal modes oscillate over time. The following video shows an animation of various normal modes:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/yDZsCZn3lSk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Any solution of the wave equation <a href="#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a> satisfying the boundary conditions <a href="#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> and <a href="#eq-rectangular4">Eq.&nbsp;<span>8.4</span></a> can be presented as a linear combination of normal modes <a href="#eq-rectangular12">Eq.&nbsp;<span>8.15</span></a>:</p>
+<p><span id="eq-8.17"><span class="math display">\[
+z(x,y,t)=\sum_{n=1}^\infty\sum_{m=1}^\infty z_{nm}.
+\tag{8.17}\]</span></span> The free constants <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are then determined by the initial conditions, using the Fourier transform technique as in the one-dimensional case.</p>
 <p>To construct a solution satisfying the initial conditions <span id="eq-8.18"><span class="math display">\[
 z(x,y,0)=z_0(x,y), \quad \partial_t z(x,y,0)=v_0(x,y)
 \tag{8.18}\]</span></span> we evaluate our general solution and its <span class="math inline">\(t\)</span> derivative at the boundary. This gives <span id="eq-8.19"><span class="math display">\[

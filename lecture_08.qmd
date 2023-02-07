@@ -1,5 +1,7 @@
 ## Waves on rectangular domain
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8a76711e-1f8b-4afd-bbb3-af790124753e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Consider a rectangular membrane: $D=\{(x,y)\in\mathbb{R}^2\vert 0<x<a, \ 0<y<b \}$. 
 Let's solve the wave equation
 $$
@@ -105,7 +107,14 @@ for any choice of $n,m\in\mathbb{N}$ and $F_{nm},G_{nm}\in\mathbb{R}$.
 Note that solutions @eq-rectangular12 already satisfy the boundary conditions
 @eq-rectangular3 and @eq-rectangular4. Such solutions are called _normal modes_
 of the membrane. Snapshots of normal modes with $(n,m)=(1,1)$, $(n,m)=(1,2)$,
-$(n,m)=(2,2)$ and $(n,m)=(3,2)$ are shown in @fig-rectangular_membrane. Any
+$(n,m)=(2,2)$ and $(n,m)=(3,2)$ are shown in @fig-rectangular_membrane. 
+
+![Some normal modes of a rectangular membrane](rectangular_membrane){#fig-rectangular_membrane}
+
+The amplitudes of the normal modes oscillate over time. The following video shows an animation of various normal modes:
+{{< video https://youtu.be/yDZsCZn3lSk >}}
+
+Any
 solution of the wave equation @eq-rectangular1 satisfying the boundary
 conditions @eq-rectangular3 and @eq-rectangular4 can be presented as a linear
 combination of normal modes @eq-rectangular12:
@@ -117,7 +126,6 @@ The free constants $F_{nm}$ and $G_{nm}$ are then determined by the initial
 conditions, using the Fourier transform technique as in the one-dimensional
 case.
 
-![Some normal modes of a rectangular membrane](rectangular_membrane){#fig-rectangular_membrane}
 
 To construct a solution satisfying the initial conditions
 $$

@@ -17,9 +17,13 @@ $y$ dimensions. It will vibrate in the $z$ direction. This toy example of
 a vibrating membrane will give us the two-dimensional wave equation, which 
 of course appears in many other applications as well.
 
-{{< video wavy.mp4 >}}
+::: {.content-hidden when-format="pdf"}
+![](wavy.mp4)
+:::
 
 ## Two-dimensional wave equation
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Consider an infinite two-dimensional membrane of homogeneous density $\rho$
 (mass per unit area, measured in $kg/m^2$). In the equilibrium state, it is flat
@@ -70,6 +74,8 @@ operator it easily generalises to any higher dimension.
 
 ## Energy of membrane
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 The energy density of the membrane is
 $$
 \mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
@@ -114,6 +120,8 @@ is equal to the net flow of energy into the region.
 
 ## Travelling plane waves
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 A 2D wave is a plane wave if $z(x,y,t)$ varies only in one spatial direction,
 say, parallel to a constant unit vector $\underline{n}=(n_x,n_y)$  (and $z(x,y,t)$ is
 constant in the direction perpendicular to $\underline{n}$). This means that
@@ -137,9 +145,11 @@ $$\begin{split}
 because $\underline{n}$ is a unit vector, i.e., $n_x^2 + n_y^2=1$.
 
 Because the wave equation is linear, any superposition of plane wave solutions is also
-a solution. The following video shows two plane waves moving though each other.
+a solution.
 
-{{< video plane_waves.mp4 >}}
+::: {.content-hidden when-format="pdf"}
+![Video of two plane waves moving through each other.](plane_waves.mp4)
+:::
 
 The _harmonic plane wave_ corresponds to the choice $f(s)=e^{iks}$, so that
 $$
@@ -153,7 +163,7 @@ By writing our equations in vector notation, we can see that they work in any di
 $$
 \partial_t^2 z(\underline{x}, t) = c^2\,\nabla^2 z(\underline{x}, t).
 $$ {#eq-7.15}
-[When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of $n+1$-dimensional space-time vectors and tensors.]{.aside}
+
 
 Its energy density is
 $$
@@ -182,3 +192,4 @@ z(\underline{x},t) = f(\underline{n}\cdot\underline{x}-ct)
 $$ {#eq-7.20}
 for any choice of $f:\mathbb{R}\to\mathbb{R}$ or $f:\mathbb{R}\to\mathbb{C}$.
 
+When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of $n+1$-dimensional space-time vectors and tensors.

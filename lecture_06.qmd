@@ -11,6 +11,8 @@ discuss the conservation of energy.
 
 ## Energy density
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bfbacab1-967a-4262-aac6-af7901213c2c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Consider an infinitesimal bit of string between $x$ and $x+\delta x$. Its
 kinetic energy is
 $$
@@ -55,6 +57,8 @@ E&=K+V\\
 where $\mathcal{E}=\mathcal{E}_K + \mathcal{E}_V$ is the _total energy density_.
 
 ## Energy density of example waves
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=358243a0-a2b3-4704-bf74-af7901213bf6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ::: {#exm-energy_travelling_wave}
 
@@ -167,6 +171,8 @@ density is constant.
 :::
 
 ## Conservation equation
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1490e84a-d8d3-4d3e-9892-af7901213bd6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Let $y(x,t)$ be a solution of the wave equation for the string and $\mathcal{E}$
 its energy density

@@ -42,8 +42,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -204,9 +202,13 @@ ul.task-list li input[type="checkbox"] {
 \partial_t^2 y(x,t) = c^2\partial_x^2 y(x,t)~~\text{ and }~~\partial_t^2 z(x,t) = c^2\partial_x^2 z(x,t).
 \]</span></p>
 <p>Instead we will introduce the second dimension by going from the string stretched in the <span class="math inline">\(x\)</span> dimension to a membrane stretched in both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> dimensions. It will vibrate in the <span class="math inline">\(z\)</span> direction. This toy example of a vibrating membrane will give us the two-dimensional wave equation, which of course appears in many other applications as well.</p>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="wavy.mp4"></video></div>
+<div>
+<p><video src="wavy.mp4" class="img-fluid" controls=""><a href="wavy.mp4">Video</a></video></p>
+</div>
 <section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
 <p>Consider an infinite two-dimensional membrane of homogeneous density <span class="math inline">\(\rho\)</span> (mass per unit area, measured in <span class="math inline">\(kg/m^2\)</span>). In the equilibrium state, it is flat and coincides with the <span class="math inline">\((x,y)\)</span> plane in <span class="math inline">\(\mathbb{R}^3\)</span>. We assume that it is stretched to a tension <span class="math inline">\(T\)</span> (force per unit length, measured in <span class="math inline">\(N/m\)</span>). This means that for any line on the surface of the membrane, the part of the membrane on one side of the line exerts a force <span class="math inline">\(T\)</span> (per unit length of the line) on the other part of the membrane (on the other side of the line), and the direction of the force is perpendicular to the line.</p>
 <p>The perturbed membrane may be described as a time-dependent surface <span class="math inline">\(z=z(x,y,t)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>, where <span class="math inline">\(z(x,y,t)\)</span> is the vertical (in the <span class="math inline">\(z\)</span> direction) displacement of the membrane at point <span class="math inline">\((x,y)\)</span> and time <span class="math inline">\(t\)</span>. To derive the equation of motion, we consider a small element of the membrane of size <span class="math inline">\(\delta x\)</span> and <span class="math inline">\(\delta y\)</span> in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, as shown in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>.</p>
 <div id="fig-membrane" class="quarto-figure quarto-figure-center anchored page-columns page-full">
@@ -227,6 +229,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="energy-of-membrane" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="energy-of-membrane"><span class="header-section-number">7.2</span> Energy of membrane</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
 <p>The energy density of the membrane is <span id="eq-7.5"><span class="math display">\[
 \mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
 \tag{7.5}\]</span></span> where the term involving the density <span class="math inline">\(\rho\)</span> is the kinetic energy density <span class="math inline">\(\mathcal{E}_K\)</span> and the term involving the tension <span class="math inline">\(T\)</span> is the potential energy density <span class="math inline">\(\mathcal{E}_V\)</span>. The latter we could write in vector notation as <span class="math inline">\(\mathcal{E}_v=T|\underline{\nabla} z|^2/2\)</span> where <span class="math inline">\(\underline{\nabla}z\)</span> is the gradient of <span class="math inline">\(z\)</span>.</p>
@@ -246,8 +250,10 @@ E=\int\!\!\int_{R} \mathcal{E}\, dA.
 &amp;=-\int_{\partial R} \mathcal{F}\cdot\underline{n}\, ds.
 \end{split} \tag{7.10}\]</span></span> For the last equality we used the divergence theorem. <span class="math inline">\(\underline{n}\)</span> is the outward unit normal to the boundary <span class="math inline">\(\partial R\)</span> of the region <span class="math inline">\(R\)</span> and <span class="math inline">\(ds\)</span> is the line element on <span class="math inline">\(\partial R\)</span>. So again we see that the change of energy in a region is equal to the net flow of energy into the region.</p>
 </section>
-<section id="travelling-plane-waves" class="level2" data-number="7.3">
+<section id="travelling-plane-waves" class="level2 page-columns page-full" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="travelling-plane-waves"><span class="header-section-number">7.3</span> Travelling plane waves</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
 <p>A 2D wave is a plane wave if <span class="math inline">\(z(x,y,t)\)</span> varies only in one spatial direction, say, parallel to a constant unit vector <span class="math inline">\(\underline{n}=(n_x,n_y)\)</span> (and <span class="math inline">\(z(x,y,t)\)</span> is constant in the direction perpendicular to <span class="math inline">\(\underline{n}\)</span>). This means that <span id="eq-plane1"><span class="math display">\[
 z(x,y,t)=f(\underline{n}\cdot\underline{x} -ct)=f(n_x x+n_y y -ct)
 \tag{7.11}\]</span></span> describes a plane wave travelling with wave speed <span class="math inline">\(c\)</span> in the direction of vector <span class="math inline">\(\underline{n}\)</span>.</p>
@@ -259,17 +265,24 @@ z(x,y,t)=f(\underline{n}\cdot\underline{x} -ct)=f(n_x x+n_y y -ct)
 &amp;\partial_t^2 \, z -c^2 \, \left(\partial_x^2 \, z + \partial_y^2 \, z\right)\\
 =&amp;c^2 \, f''(\underline{n}\cdot\underline{x} -ct)\left(1- n_x^2-n_y^2\right)=0
 \end{split} \tag{7.13}\]</span></span> because <span class="math inline">\(\underline{n}\)</span> is a unit vector, i.e., <span class="math inline">\(n_x^2 + n_y^2=1\)</span>.</p>
-<p>Because the wave equation is linear, any superposition of plane wave solutions is also a solution. The following video shows two plane waves moving though each other.</p>
-<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="plane_waves.mp4"></video></div>
+<p>Because the wave equation is linear, any superposition of plane wave solutions is also a solution.</p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><video src="plane_waves.mp4" class="img-fluid" controls=""><a href="plane_waves.mp4">Video</a></video></p>
+<p></p><figcaption class="figure-caption margin-caption">Video of two plane waves moving through each other.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <p>The <em>harmonic plane wave</em> corresponds to the choice <span class="math inline">\(f(s)=e^{iks}\)</span>, so that <span id="eq-plane2"><span class="math display">\[
 z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\underline{x} -\omega(\underline{k})t)},
 \tag{7.14}\]</span></span> where <span class="math inline">\(\underline{k}=k \, \underline{n}\)</span> is called the <em>wave vector</em>. We have the dispersion relation <span class="math inline">\(\omega(\underline{k})=c \, \vert \underline{k}\vert\)</span>.</p>
 </section>
-<section id="higher-dimensions" class="level2 page-columns page-full" data-number="7.4">
+<section id="higher-dimensions" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="higher-dimensions"><span class="header-section-number">7.4</span> Higher dimensions</h2>
-<div class="page-columns page-full"><p>By writing our equations in vector notation, we can see that they work in any dimension. So the n-dimensional wave equation for a real-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{R}\)</span> or a complex-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{C}\)</span> is <span id="eq-7.15"><span class="math display">\[
+<p>By writing our equations in vector notation, we can see that they work in any dimension. So the n-dimensional wave equation for a real-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{R}\)</span> or a complex-valued function <span class="math inline">\(z:\mathbb{R}^n\times\mathbb{R}\to\mathbb{C}\)</span> is <span id="eq-7.15"><span class="math display">\[
 \partial_t^2 z(\underline{x}, t) = c^2\,\nabla^2 z(\underline{x}, t).
-\tag{7.15}\]</span></span> </p><div class="no-row-height column-margin column-container"><span class="">When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of <span class="math inline">\(n+1\)</span>-dimensional space-time vectors and tensors.</span></div></div>
+\tag{7.15}\]</span></span></p>
 <p>Its energy density is <span id="eq-7.16"><span class="math display">\[
 \mathcal{E} = \frac{T}{2}\left(\frac{1}{c^2}|\partial_t z|^2+|\underline{\nabla}z|^2\right).
 \tag{7.16}\]</span></span> It satisfies the conservation equation <span id="eq-7.17"><span class="math display">\[
@@ -285,6 +298,7 @@ z(x,y,t)=e^{ik(\underline{n}\cdot\underline{x} -ct)}= e^{i(\underline{k}\cdot\un
 <p>The wave equation has plane wave solutions <span id="eq-7.20"><span class="math display">\[
 z(\underline{x},t) = f(\underline{n}\cdot\underline{x}-ct)
 \tag{7.20}\]</span></span> for any choice of <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> or <span class="math inline">\(f:\mathbb{R}\to\mathbb{C}\)</span>.</p>
+<p>When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of <span class="math inline">\(n+1\)</span>-dimensional space-time vectors and tensors.</p>
 
 
 </section>
@@ -450,8 +464,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
-<script>videojs(video_shortcode_videojs_video2);</script>
 
 
 
