@@ -1,0 +1,8 @@
+# Fluids
+Fluid dynamics studies the motion of fluids (gases and liquids, e.g. air or water).
+
+TODO: Motivation. Uses. Mathematics required.
+
+Fluid dynamics is a huge subject. In this introduction to the subject we will concentrate on ideal fluids,
+which we will define later. In spite of this restriction we will be able to understand some important
+phenomena, like the lift on an airplane wing or the surface waves on water.
