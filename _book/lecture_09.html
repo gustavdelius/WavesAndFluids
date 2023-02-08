@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - 5&nbsp; Harmonic waves</title>
+<title>Waves and Fluids - 9&nbsp; Waves on circular domain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_06.html" rel="next">
-<link href="./lecture_04.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./lecture_08.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,13 +66,13 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></a>
+  <a href="./lecture_09.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></a>
   </div>
 </li>
       </ul>
@@ -171,21 +171,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#harmonic-waves" id="toc-harmonic-waves" class="nav-link active" data-scroll-target="#harmonic-waves"><span class="toc-section-number">5.1</span>  Harmonic waves</a></li>
-  <li><a href="#solving-pdes-with-harmonic-waves" id="toc-solving-pdes-with-harmonic-waves" class="nav-link" data-scroll-target="#solving-pdes-with-harmonic-waves"><span class="toc-section-number">5.2</span>  Solving PDEs with harmonic waves</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_05.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></h1>
 </div>
 
 
@@ -200,91 +193,89 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="harmonic-waves" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="harmonic-waves"><span class="header-section-number">5.1</span> Harmonic waves</h2>
-<p>Harmonic waves are waves that are described by sines and cosines. A travelling harmonic wave can be written as <span id="eq-harmonic1"><span class="math display">\[
-y(x,t)=a \cos\left(kx - \omega t + \phi\right)
-\tag{5.1}\]</span></span> or <span id="eq-harmonic2"><span class="math display">\[
-y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
-\tag{5.2}\]</span></span> where <span class="math inline">\(a\)</span> is the amplitude, <span class="math inline">\(\hat{k}\)</span> the wave number, <span class="math inline">\(\nu\)</span> the frequency, <span class="math inline">\(\phi\)</span> the phase, and where <span id="eq-5.3"><span class="math display">\[
-k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
-\tag{5.3}\]</span></span> are the angular wave number and the angular frequency, respectively. Note that <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span> are used more often by mathematicians than <span class="math inline">\(\hat{k}\)</span> and <span class="math inline">\(\nu\)</span> and that the prefix `angular’ is often discarded.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>Let’s find normal mode solution for a circular membrane of radius <span class="math inline">\(a\)</span> with fixed boundary (see <a href="#fig-polar_co">Figure&nbsp;<span>9.1</span></a>). Mathematically, we need to solve the wave equation (<a href="lecture_08.html#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a>) in the disc of radius <span class="math inline">\(a\)</span>, i.e.&nbsp;in region <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^2\vert r^2=x^2+y^2 &lt; a^2 \}\)</span>. It is convenient to use polar coordinates <span class="math inline">\((r,\theta)\)</span>, defined as (see <a href="#fig-polar_co">Figure&nbsp;<span>9.1</span></a>) <span id="eq-9.1"><span class="math display">\[
+x=r\cos\theta, \quad y=r\sin\theta.
+\tag{9.1}\]</span></span></p>
+<div id="fig-polar_co" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="polar_coords.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;9.1: Circular membrane with radius <span class="math inline">\(a\)</span> and polar coordinates.</figcaption><p></p>
+</figure>
 </div>
-<div class="callout-caption-container flex-fill">
-Terminology
+<p>Let <span id="eq-9.2"><span class="math display">\[
+Z(r, \theta, t) = z\left(x(r,\theta), y(r, \theta),t\right),
+\tag{9.2}\]</span></span> i.e., <span class="math inline">\(Z(r, \theta, t)\)</span> is a solution of the wave equation in <span class="math inline">\(D\)</span>, expressed in terms of polar coordinates.</p>
+<p>We know that the wave equation can be written in vector notation using the Laplace operator <span class="math inline">\(\nabla^2\)</span> as <span id="eq-9.3"><span class="math display">\[
+\partial_t^2 z - c^2 \nabla^2 z =0.
+\tag{9.3}\]</span></span> It is well-known (see, e.g., Theorem 3.43 in the Calculus notes) that the Laplacian in polar coordinates is given by <span id="eq-9.4"><span class="math display">\[
+\nabla^2 = \partial_r^2 + \frac{1}{r}\, \partial_r + \frac{1}{r^2} \, \partial_{\theta}^2.
+\tag{9.4}\]</span></span> Therefore, the 2D wave equation in polar coordinates has the form <span id="eq-circular2"><span class="math display">\[
+\partial_t^2 Z - c^2
+\left(\partial_r^2 Z + \frac{1}{r}\, \partial_r Z + \frac{1}{r^2} \, \partial_{\theta}^2 Z\right)= 0.
+\tag{9.5}\]</span></span> Our aim is to solve it subject to the boundary condition <a href="#eq-circular1">Eq.&nbsp;<span>9.20</span></a>. As in the preceding section, we employ the method of separation of variables, i.e. we assume that <span id="eq-9.6"><span class="math display">\[
+Z(r, \theta, t)=R(r)\Theta(\theta)T(t).
+\tag{9.6}\]</span></span> Substituting this into <a href="#eq-circular2">Eq.&nbsp;<span>9.5</span></a>, we find that <span id="eq-9.7"><span class="math display">\[
+R\Theta T''=c^2\left(R''\Theta T + \frac{1}{r} \, R'\Theta T + \frac{1}{r^2} \, R\Theta'' T\right)
+\tag{9.7}\]</span></span> Dividing by <span class="math inline">\(R\Theta T\)</span> gives <span id="eq-9.8"><span class="math display">\[
+\frac{T''(t)}{T(t)} = c^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+\frac{\Theta''(\theta)}{r^2\Theta(\theta)}\right).
+\tag{9.8}\]</span></span> Employing the same arguments as in the preceding section, we conclude that <span id="eq-9.9"><span class="math display">\[
+\frac{T''(t)}{T(t)} = c^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+
+\frac{\Theta''(\theta)}{r^2\Theta(\theta)}\right)
+= -k^2 c^2
+\tag{9.9}\]</span></span> for some constant <span class="math inline">\(k\)</span>. This means that we have the ODE <span id="eq-circular3"><span class="math display">\[
+T''(t)=-k^2 c^2 \, T(t)
+\tag{9.10}\]</span></span> and the equation <span id="eq-circular4"><span class="math display">\[
+\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)}+
+\frac{\Theta''(\theta)}{r^2\Theta(\theta)} = -k^2
+\tag{9.11}\]</span></span> The general solution of <a href="lecture_08.html#eq-rectangular3">Eq.&nbsp;<span>8.3</span></a> is (cf. <a href="lecture_08.html#eq-rectangular7">Eq.&nbsp;<span>8.11</span></a>) <span id="eq-circular5"><span class="math display">\[
+T(t)=F \, \sin(k c t)+G \, \cos(k c t)
+\tag{9.12}\]</span></span> where <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are arbitrary constants.</p>
+<p>Rewriting <a href="#eq-circular5">Eq.&nbsp;<span>9.12</span></a> as <span id="eq-9.13"><span class="math display">\[
+\frac{r^2R''(r)+rR'(r)}{R(r)} + k^2 r^2 = -\frac{\Theta''(\theta)}{\Theta(\theta)},
+\tag{9.13}\]</span></span> we conclude that for this equation to hold for all <span class="math inline">\(r\)</span> and <span class="math inline">\(\theta\)</span>, both sides must be equal to a constant, which we choose to be <span class="math inline">\(n^2\)</span> (for some constant <span class="math inline">\(n\)</span>), i.e. <span id="eq-9.14"><span class="math display">\[
+r^2\left(\frac{R''(r)}{R(r)} + \frac{R'(r)}{r R(r)} \right)+ k^2 r^2 = n^2, \quad
+-\frac{\Theta''(\theta)}{\Theta(\theta)}= n^2
+\tag{9.14}\]</span></span> (the constant, <span class="math inline">\(n^2\)</span>, cannot be negative because, with a negative constant, it will be impossible to obtain a solution). Thus, we we have obtained the following two ODEs: <span id="eq-circular6"><span class="math display">\[
+R''(r) + \frac{1}{r} \, R'(r) +\left(k^2 -\frac{\lambda^2}{r^2}\right) R(r) = 0
+\tag{9.15}\]</span></span> and <span id="eq-circular7"><span class="math display">\[
+\Theta''(\theta)=-n^2 \Theta(\theta) .
+\tag{9.16}\]</span></span></p>
+<p>The general solution of <a href="#eq-circular7">Eq.&nbsp;<span>9.16</span></a> is <span id="eq-circtheta"><span class="math display">\[
+\Theta(\theta) = A\sin(n \theta)+B\cos(n \theta)
+\tag{9.17}\]</span></span> for arbitrary constants <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. We impose the condition <span class="math display">\[
+\Theta(\theta+2\pi) = \Theta(\theta) \quad \text{for all} \ \ \theta.
+\]</span> This is a natural condition because <span class="math inline">\((r,\theta)\)</span> and <span class="math inline">\((r,\theta+2\pi)\)</span> represent a single point in domain <span class="math inline">\(D\)</span>. Thus we require <span class="math inline">\(n\in\mathbb{Z}\)</span>. In fact we only need to consider <span class="math inline">\(n\in\mathbb{N}\cup\{ 0\}\)</span> because of the symmetry of <span class="math inline">\(\sin\)</span> and <span class="math inline">\(\cos\)</span>.</p>
+<p><a href="#eq-circular6">Eq.&nbsp;<span>9.15</span></a> has the form <span id="eq-circular11"><span class="math display">\[
+r^2\,R''(r) + r \, R'(r) +\left(r^2\,k^2 -n^2\right) R(r) = 0.
+\tag{9.18}\]</span></span> It is a well-known equation, called the Bessel differential equation. Its solutions are not elementary functions. We are only interested in solutions that are finite at <span class="math inline">\(r=0\)</span>. There is a whole family of such solutions, <span id="eq-circular12"><span class="math display">\[
+R(r) =J_n(kr),
+\tag{9.19}\]</span></span> where <span class="math inline">\(J_n\)</span> is the <span class="math inline">\(n\)</span>th Bessel functions of the first type. We have already determined above that we are only interested in the cases where <span class="math inline">\(n\in\mathbb{N}\cup\{0\}\)</span>.</p>
+<p>Next we need to impose the zero Dirichlet boundary condition (the edge of the membrane is fixed) <span id="eq-circular1"><span class="math display">\[
+Z(a, \theta, t) =  0.
+\tag{9.20}\]</span></span> To do this, we only need to know that each Bessel function has an infinite number of zeros. A plot of the first few Bessel functions of the 1st kind is shown in <a href="#fig-bessel">Figure&nbsp;<span>9.2</span></a>.</p>
+<div id="fig-bessel" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="bessel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;9.2: Plot of the first four Bessel functions of the 1st kind.</figcaption><p></p>
+</figure>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><em>Frequency</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit time.</li>
-<li><em>Wave number</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit length.</li>
-<li><em>Period</em> <span class="math inline">\(=\)</span> time <span class="math inline">\(P\)</span> needed to complete one cycle (oscillation): <span id="eq-5.4"><span class="math display">\[
-P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
-\tag{5.4}\]</span></span></li>
-<li><em>Wave length</em> <span class="math inline">\(=\)</span> distance between two consecutive wave crests (peaks): <span id="eq-5.5"><span class="math display">\[
-\lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
-\tag{5.5}\]</span></span></li>
-<li><em>Wave speed</em> <span class="math inline">\(=\)</span> speed at which the wave is travelling: <span id="eq-5.6"><span class="math display">\[
-c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
-\tag{5.6}\]</span></span> (Sometimes, the wave speed is also called the <em>phase speed</em>.)</li>
-</ul>
-</div>
-</div>
-<p>The harmonic wave <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a> can be written as <span id="eq-harmonic3"><span class="math display">\[\begin{split}
-y(x,t)&amp;=a \cos\left(kx - \omega t + \phi\right) \\
-&amp;= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
-&amp;=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
-\end{split} \tag{5.7}\]</span></span> where we have included the phase factor <span class="math inline">\(e^{i\phi}\)</span> into the complex amplitude: <span class="math inline">\(A= a e^{i\phi}\)</span>.</p>
-<p>Consider now the complex function <span id="eq-harmonic4"><span class="math display">\[
-y(x,t)= A \, e^{i(kx-\omega(k) t)}
-\tag{5.8}\]</span></span> for any <span class="math inline">\(A\in\mathbb{C}\)</span>, any <span class="math inline">\(k\in\mathbb{R}\)</span> and some <span class="math inline">\(\omega(k)\)</span>. Substituting this into the wave equation gives us an equation for <span class="math inline">\(\omega(k)\)</span>: <span id="eq-5.9"><span class="math display">\[
-\partial_t^2 y =c^2 \partial_x^2 y  \quad
-\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
-\tag{5.9}\]</span></span> Therefore, if <span id="eq-5.10"><span class="math display">\[
-\omega(k) = \pm ck
-\tag{5.10}\]</span></span> then the complex function in <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> is a solution of the wave equation. We will refer to these complex solutions as <em>complex harmonic waves</em>. They are often more convenient to work with than their real counterpart in <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a>.</p>
-<p><a href="#eq-5.10">Eq.&nbsp;<span>5.10</span></a> is an example of a <em>dispersion relation</em>. It states that for the wave equation, <span class="math inline">\(\omega\)</span> is proportional to <span class="math inline">\(k\)</span>. But complex harmonic waves can also solve other PDEs, as we will see in the next subsection, and that will lead to more complicated dispersion relations.</p>
-</section>
-<section id="solving-pdes-with-harmonic-waves" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="solving-pdes-with-harmonic-waves"><span class="header-section-number">5.2</span> Solving PDEs with harmonic waves</h2>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Any linear homogeneous PDE (in variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>) with constant coefficients has complex harmonic wave solutions <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> for some <span class="math inline">\(\omega(k)\)</span>.</p>
-</div>
-</div>
-<div id="exm-8" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.1 </strong></span>Consider the damped string (with friction force proportional to velocity): <span id="eq-damped1"><span class="math display">\[
-  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
-  p&gt;0.
-\tag{5.11}\]</span></span> Substituting the complex harmonic wave from <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> into this equation, we obtain the dispersion relation <span id="eq-5.12"><span class="math display">\[
--\omega^2 y =- c^2 k^2 y +ip\,\omega y .
-\tag{5.12}\]</span></span> Cancelling the <span class="math inline">\(y\)</span> we obtain a quadratic equation for <span class="math inline">\(\omega^2\)</span> which has the complex solution <span id="eq-iw"><span class="math display">\[
-\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
-\tag{5.13}\]</span></span> Thus we have the following solution for the damped string: <span id="eq-dampedy"><span class="math display">\[\begin{split}
-y(x,t)&amp;= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
-&amp;=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
-\end{split} \tag{5.14}\]</span></span> The factor <span class="math inline">\(e^{-pt/2}\)</span> shows that we have a wave with exponentially decreasing amplitude. This is a consequence of the damping. The wave speed is now dependent on the wave number <span class="math inline">\(k\)</span>: <span id="eq-5.15"><span class="math display">\[
-c(k)=\sqrt{c^2  - p^2/(4k^2)}.
-\tag{5.15}\]</span></span> If we want to, we can get a real solution by taking the real part of the complex solution: <span id="eq-5.16"><span class="math display">\[
-\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
-\tag{5.16}\]</span></span> where <span class="math inline">\(a=\vert A\vert\)</span> and <span class="math inline">\(\phi=\arg(A)\)</span>.</p>
-</div>
-<p>Note that the imaginary part of <span class="math inline">\(\omega\)</span> produces the damping exponential and the real part of <span class="math inline">\(\omega\)</span> determines the wave speed.</p>
+<p>We denote the <span class="math inline">\(m\)</span>th zero of the <span class="math inline">\(n\)</span>th Bessel function of the 1st kind by <span class="math inline">\(k_{nm}\)</span>. We have <span class="math display">\[
+R(a)=0 \quad \Rightarrow \quad J_n(k\,a)=0  \quad \Rightarrow \quad k\,a=k_{nm}   \quad \Rightarrow \quad k=\frac{k_{nm}}{a}
+\]</span> for <span class="math inline">\(m\in\mathbb{N}\)</span>.</p>
+<p>Finally, combining the above with <a href="#eq-circular5">Eq.&nbsp;<span>9.12</span></a> and <a href="#eq-circtheta">Eq.&nbsp;<span>9.17</span></a>, we obtain the following solutions (that satisfy the required boundary condition): <span id="eq-circular14"><span class="math display">\[\begin{split}
+Z_{nm}(r,\theta,t)=&amp;J_m\left(k_{nm} \frac{r}{a}\right)
+\left(A_{nm}\sin(n\theta)+\cos(n\theta)\right)\\
+&amp;\qquad\cdot \left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)
+\end{split} \tag{9.21}\]</span></span> where <span class="math inline">\(n\in\mathbb{N}\cup\{0\}\)</span>, <span class="math inline">\(m\in\mathbb{N}\)</span> and <span class="math inline">\(A_{nm}\)</span>, <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are arbitrary real constants. Solutions in the form <a href="#eq-circular14">Eq.&nbsp;<span>9.21</span></a> are the normal modes of vibrations of the circular membrane. Once normal modes are known, we can find a solution satisfying some initial conditions by using a linear combination of the normal modes <span id="eq-circular15"><span class="math display">\[
+Z(r,\theta,t)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}Z_{nm}(r,\theta,t).
+\tag{9.22}\]</span></span> Note that constants <span class="math inline">\(A_{nm}\)</span>, <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> (in the formula for <span class="math inline">\(Z_{nm}\)</span> for each <span class="math inline">\(n,m\)</span>) are still arbitrary. To determine them, we need to substitute <a href="#eq-circular15">Eq.&nbsp;<span>9.22</span></a> into initial conditions. This will lead to the so-called Fourier-Bessel series. This is based on the identities <span id="eq-9.23"><span class="math display">\[
+\int_0^aJ_n\left(k_{nm}\frac{r}{a}\right)J_n\left(k_{nl}\frac{r}{a}\right)r\,dr
+=\delta_{ml}\frac{a^2}{2}\left(J_{n+1}(k_{nm})\right)^2.
+\tag{9.23}\]</span></span></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -436,13 +427,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lecture_04.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span>
+      <a href="./lecture_08.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_06.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

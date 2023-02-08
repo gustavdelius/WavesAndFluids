@@ -154,6 +154,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./lecture_08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -207,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 <p>Consider an infinite two-dimensional membrane of homogeneous density <span class="math inline">\(\rho\)</span> (mass per unit area, measured in <span class="math inline">\(kg/m^2\)</span>). In the equilibrium state, it is flat and coincides with the <span class="math inline">\((x,y)\)</span> plane in <span class="math inline">\(\mathbb{R}^3\)</span>. We assume that it is stretched to a tension <span class="math inline">\(T\)</span> (force per unit length, measured in <span class="math inline">\(N/m\)</span>). This means that for any line on the surface of the membrane, the part of the membrane on one side of the line exerts a force <span class="math inline">\(T\)</span> (per unit length of the line) on the other part of the membrane (on the other side of the line), and the direction of the force is perpendicular to the line.</p>
 <p>The perturbed membrane may be described as a time-dependent surface <span class="math inline">\(z=z(x,y,t)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>, where <span class="math inline">\(z(x,y,t)\)</span> is the vertical (in the <span class="math inline">\(z\)</span> direction) displacement of the membrane at point <span class="math inline">\((x,y)\)</span> and time <span class="math inline">\(t\)</span>. To derive the equation of motion, we consider a small element of the membrane of size <span class="math inline">\(\delta x\)</span> and <span class="math inline">\(\delta y\)</span> in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, as shown in <a href="#fig-membrane">Figure&nbsp;<span>7.1</span></a>.</p>
@@ -229,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="energy-of-membrane" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="energy-of-membrane"><span class="header-section-number">7.2</span> Energy of membrane</h2>
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 <p>The energy density of the membrane is <span id="eq-7.5"><span class="math display">\[
 \mathcal{E}(x,y,t)=\frac{\rho}{2}(\partial_t z)^2+\frac{T}{2}\left((\partial_x z)^2+(\partial_y z)^2\right),
@@ -252,7 +257,7 @@ E=\int\!\!\int_{R} \mathcal{E}\, dA.
 </section>
 <section id="travelling-plane-waves" class="level2 page-columns page-full" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="travelling-plane-waves"><span class="header-section-number">7.3</span> Travelling plane waves</h2>
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 <p>A 2D wave is a plane wave if <span class="math inline">\(z(x,y,t)\)</span> varies only in one spatial direction, say, parallel to a constant unit vector <span class="math inline">\(\underline{n}=(n_x,n_y)\)</span> (and <span class="math inline">\(z(x,y,t)\)</span> is constant in the direction perpendicular to <span class="math inline">\(\underline{n}\)</span>). This means that <span id="eq-plane1"><span class="math display">\[
 z(x,y,t)=f(\underline{n}\cdot\underline{x} -ct)=f(n_x x+n_y y -ct)
