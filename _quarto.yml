@@ -43,6 +43,9 @@ book:
       - lecture_08.qmd
       - lecture_09.qmd
     - references.qmd
+    - part: fluids.qmd
+      chapters:
+      - lecture10.qmd
 
 bibliography: references.bib
 

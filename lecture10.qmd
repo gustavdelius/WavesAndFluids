@@ -2,6 +2,8 @@
 
 ## Fluid flow
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6e399bc-7063-459e-8dd4-af79012559c6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Fluids are considered as continuous media, i.e. any small volume element of a
 fluid (a `fluid particle') contains a huge number of molecules. Instead of
 describing the location and velocity of all the individual molecules, we work
@@ -34,6 +36,8 @@ for the 2D flow $\underline{u}=(-y,x,0)$.
 
 
 ## Pathlines and streamlines
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=62d6326c-44c4-4609-8f0a-af79012559a2&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 We want to answer the question: given the velocity field $\underline{u}(\underline{x},t)$, how does a fluid particle (i.e. a very small volume element of the fluid or a small particle embedded in the fluid) move?
 
@@ -142,6 +146,8 @@ coincide with pathlines, because @eq-streamline2 will be exactly the same as
 
 ## Material derivative
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2cbf2875-0e01-45b8-9114-af790125596b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Let $f(\underline{x},t)$ be some quantity of interest (e.g. a component of the
 velocity $\underline{u}$ or the density of the fluid $\rho$). The rate of change
 of $f$ at a fixed point in space (i.e. at fixed $\underline{x}$) is $\partial_t
@@ -195,6 +201,8 @@ $$\begin{split}
 \end{split}$$ {#eq-10.18}
 
 ## Conservation of mass
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f9bb3b8-19ec-4db1-b337-af790125594c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Let $\rho(\underline{x},t)$ be the density of the fluid, i.e. the mass of the
 fluid per unit volume. The density is strictly positive: $\rho(\underline{x},t)> 0$ for all $\underline{x}$ and $t$. We shall deduce an equation governing the
