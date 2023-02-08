@@ -1,4 +1,4 @@
-# Energy
+# Energy {#sec-6}
 
 Besides Information, waves transmit another practically important quantity:
 Energy. Note that waves do not transport matter. Matter may oscillate up and

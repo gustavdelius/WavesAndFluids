@@ -1,4 +1,4 @@
-# Deriving the wave equation for a string
+# Deriving the wave equation for a string {#sec-1}
 
 You find content related to this lecture in the textbooks:
 

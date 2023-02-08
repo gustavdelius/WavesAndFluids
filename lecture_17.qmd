@@ -10,7 +10,7 @@ You find content related to this lecture in the textbooks:
 - @acheson sections 3.2 and 3.3
 
 ## Pathlines
-From the velocity potential $\phi$ in \eqref{wavephi} we can read off the
+From the velocity potential $\phi$ in @eq-wavephi  we can read off the
 components of the velocity field as
 $$\begin{split}
 u_x&=\partial_x\phi=A\omega e^{k\,y}\cos(kx-\omega t),\\
@@ -32,7 +32,7 @@ and forth and back a little bit. So we write the position of the
 particle as
 $$\underline{x}(t)=\bar{\underline{x}}+\hat{\underline{x}}(t),$$
 where $\bar{\underline{x}}$ is the mean position and the $\hat{\underline{x}}$ are
-assumed to be small. Substituting this into \eqref{pl1} and looking
+assumed to be small. Substituting this into @eq-pl1  and looking
 at the components gives
 $$\begin{split}
 \frac{d\hat{x}}{dt}&\approx A\omega e^{k\,\bar{y}}\cos(k\bar{x}-\omega t),\\
@@ -54,13 +54,13 @@ where the radius gets bigger the circle will get deformed a bit.
 
 Now that we have the solutions to the linearised surface conditions we
 can check under what circumstances the linearisation was a good
-approximation. For example in \eqref{eq:Kl1} we dropped the
+approximation. For example in @eq-Kl1  we dropped the
 term $u_x\partial_x\eta$. This is a good approximation only if the dropped
 term is much smaller in magnitude than the terms that remain. So we need
 $$
 |u_x\partial_x\eta|\ll|u_y|.
 $$
-Substituting our solutions from \eqref{wu} and \eqref{seta} gives
+Substituting our solutions from @eq-wu  and \eqref{seta} gives
 $$|A\omega e^{k\,\eta}\cos(kx-\omega t)A\,k\sin(kx-\omega t)|
 \ll|A\omega e^{k\,\eta}\sin(kx-\omega t)|.$$
 We can cancel a sin from both sides.
@@ -78,7 +78,7 @@ So the amplitude of the wave must be small compared to its
 wavelength.
 This turns out to be exactly the same condition that we also needed in
 our linearisation while deriving the equation for waves on a string in
-lecture \ref{lec:1}
+lecture [-@sec-1].
 
 We made other approximations while we linearised the surface
 conditions and we need to check whether they too are valid under
@@ -99,5 +99,5 @@ $$
 This holds if $|k\, \eta|\ll 1$ which in turn holds if $|k\,A|\ll 1$.
 
 I leave it up to you to go through the approximations
-that we made in section \ref{sec:dyn} to verify that they too are good
+that we made in @sec-dyn to verify that they too are good
 when $|k\,A|\ll 1$.

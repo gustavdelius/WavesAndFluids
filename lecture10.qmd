@@ -297,7 +297,7 @@ It the density of each fluid element remain constant as the fluid moves, i.e.
 $$
 \frac{D\rho}{Dt} =0 ,
 $$ {#eq-conserv_mass5}
-then it follows from @eq-conserv_mass4 that
+then it follows from @eq-conserv_mass4b that
 $$
 \nabla\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass6}

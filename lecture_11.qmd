@@ -123,7 +123,7 @@ $$\begin{split}
 ## Water in a rotating bucket
 
 ::: {#exm-bucket}
-We will now use the steady flow from Example @exm-ex1:
+We will now use the steady flow from Example @exm-10_1:
 $$
 \underline{u}=(-y, x,0)
 $$ {#eq-11.12}

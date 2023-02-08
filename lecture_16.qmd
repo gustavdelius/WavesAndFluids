@@ -9,7 +9,7 @@ You find content related to this lecture in the textbooks:
 - @acheson section 3.2
 - @paterson sections 13.1 - 13.3
 
-![Plane wave on the surface of water described by $y=\eta(x,t)$.](surface.png){width=80% #eq-fig:surface}
+![Plane wave on the surface of water described by $y=\eta(x,t)$.](surface.png){width=80% #fig-surface}
 
 If we use the $y$ coordinate as the vertical coordinate we can describe the
 surface by the equation $y = \eta(x,z,t)$ for some function $\eta$. We will
@@ -31,7 +31,7 @@ $u_y=\partial_y\phi$.
 We describe the water as an ideal fluid. In particular we treat water as incompressible, which implies that the flow is divergence free:
 $$\tag{L}
 \nabla\cdot\underline{u}=\nabla\cdot\nabla\phi=\nabla^2\phi=\partial_x^2\phi+\partial_y^2\phi=0.
-$$ {#eq-eq:L}
+$$ {#eq-L}
 This is the Laplace equation. Of course finding solutions to the Laplace equation is easy. We have seen that the real part of any
 holomorphic function satisfies the Laplace equation. But we are looking not for an arbitrary incompressible flow  but
 one that fits the wave on its surface. This means that next we need to write down equations that couple the shape of the surface
@@ -57,7 +57,7 @@ $$\tag{K}\begin{split}
 \frac{Dd}{Dt}&=\partial_td+\underline{u}\cdot\nabla d=\partial_td+u_x\partial_x d+u_y\partial_y d\\
 &=-\partial_t\eta-u_x\partial_x \eta+u_y=0.
 \end{split}
-$$ {#eq-eq:K}
+$$ {#eq-K}
 This is the kinematic surface condition and holds at all points at the surface, i.e., all points with $y=\eta(x,t)$.
 
 ### Dynamic condition {#sec-dyn}
@@ -87,42 +87,42 @@ does not make a difference because it is only the gradient of the potential that
 equation by shifting $\phi \to\phi+s(t)$ where we choose $s(t)$ such that $s'(t)=G(t)-p_0/\rho$. This new potential satisfies
 $$\tag{D}
 \partial_t\phi+\frac12 u^2+g\eta=0
-$$ {#eq-eq:D}
+$$ {#eq-D}
 This is the dynamical surface condition and holds at all points at the surface, i.e.,  the points with $y=\eta(x,t)$.
 
 ## Linear approximation
 The surface conditions contain non-linear terms. That makes them impossible to solve analytically. So we linearise the equations.
-For the kinematic surface condition \eqref{eq:K} this means
+For the kinematic surface condition @eq-K  this means
 $$
 -\partial_t\eta-u_x\partial_x \eta+u_y=0 \longrightarrow -\partial_t\eta+u_y=0.
-$$ {#eq-eq:Kl1}
+$$ {#eq-Kl1}
 We assume that the term that we are dropping is small, something we will need to verify later.
 Even after dropping the quadratic term, there is still a complicated dependence on 
 $\eta$ which we need to drop as well:
 $$\tag{K'}
 \partial_t\eta(x,t)=u_y(x,\eta(x,t),t) \longrightarrow \partial_t\eta(x,t)=u_y(x,0,t).
-$$ {#eq-eq:Kl}
+$$ {#eq-Kl}
 This is the linearised kinematic surface condition that we will use.
 
 Similarly we linearise the dynamic surface condition to
 $$\tag{D'}
 \partial_t\phi(y,0,t)=-g\eta(x,t).
-$$ {#eq-eq:Dl}
+$$ {#eq-Dl}
 
 ## Harmonic travelling wave solution
-Our task now is to solve the equations \eqref{eq:L}, \eqref{eq:Kl} and \eqref{eq:Dl}.
-We will do this with the harmonic travelling wave Ansatz that we discussed in lecture \ref{lec:5}\footnote{
-We could include a phase as in lecture \ref{lec:5} but it would just come along for the ride and not add anything interesting.}:
+Our task now is to solve the equations [-@eq-L], [-@eq-Kl] and [-@eq-Dl].
+We will do this with the harmonic travelling wave Ansatz that we discussed in lecture [-@sec-5]^[
+We could include a phase as in lecture [-@sec-5] but it would just come along for the ride and not add anything interesting.]:
 $$
 \eta(x,t)=A\cos(kx-\omega t).
 $$
-Then in order to have a chance of satisfying \eqref{eq:Dl} we need to make the
+Then in order to have a chance of satisfying @eq-Dl  we need to make the
 following Ansatz for $\phi$:
 $$
 \phi(x,y,t)=f(y)\sin(kx-\omega t),
 $$
 where $f(y)$ is an as yet undetermined function. To determine it we substitute this Ansatz into the
-Laplace equation \eqref{eq:L}. This gives
+Laplace equation @eq-L . This gives
 $$
 -k^2 f(y)\sin(kx-\omega t)+f''(y)\sin(kx-\omega t)=0.
 $$
@@ -137,7 +137,7 @@ $$
 for some undetermined constants $D$ and $E$. However $E=0$ in the case of infinite deep water because otherwise 
 the function would go to $\infty$ as $y\to-\infty$. 
 
-Substituting into the dynamic surface condition \eqref{eq:Dl} gives
+Substituting into the dynamic surface condition @eq-Dl  gives
 $$
 -\omega f(0)\cos(kx-\omega t)=-g\,A\cos(kx-\omega t)
 $$
@@ -146,7 +146,7 @@ $$
 D=\frac{g\,A}{\omega}.
 $$
 
-Finally, substituting into the kinematic surface condition \eqref{eq:Kl} gives
+Finally, substituting into the kinematic surface condition @eq-Kl  gives
 $$
 \omega\,A\sin(kx-\omega t)=f'(0)\sin(kx-\omega t).
 $$

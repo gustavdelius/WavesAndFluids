@@ -1,4 +1,4 @@
-# Harmonic waves {sec-5}
+# Harmonic waves {#sec-5}
 You can find related material in the textbooks:
 
 - @coulson section 3

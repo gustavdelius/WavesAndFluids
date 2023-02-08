@@ -18,13 +18,13 @@ $$
 where $C$ is any contour encircling the airfoil.
 In this subsection we will derive this expression. For this purpose we first consider the force $d\underline{F}$ on an infinitesimal segment
  of length $dl$
-of the cross section of the airfoil. In terms of the angle $\theta$ that it is indicated in Figure \ref{fig:segment} we have
+of the cross section of the airfoil. In terms of the angle $\theta$ that it is indicated in @fig-segment we have
 $$
 F_x=p\cos\theta dl,~~~F_y=-p\sin\theta dl.
 $$
 
 
-![Force acting on an infinitesimal segment.](airfoil_segment.png){width=90% #eq-fig:segment}
+![Force acting on an infinitesimal segment.](airfoil_segment.png){width=90% #fig-segment}
 
 For the velocity components we have
 $$
@@ -98,7 +98,7 @@ $\nabla\psi\cdot d\underline{x}=0$. The remaining first term is just the circula
 $$
 a_1=\frac{\Gamma}{2\pi i}.
 $$
-Substituting our results for $a_0$ and $a_1$ into \eqref{fxy} gives
+Substituting our results for $a_0$ and $a_1$ into @eq-fxy  gives
 $$
 F_x-iF_y=i\rho(u_x(\infty)-i u_y(\infty))\Gamma,
 $$
@@ -108,17 +108,17 @@ F_x=\rho\,\Gamma u_y(\infty),~~~F_y=-\rho\,\Gamma u_x(\infty).
 $$
 As promised, the forces depend only on the circulation and the velocity far away from the airfoil.
 
-Let us check that this reproduces the results from the  section \ref{subsec:magnus} on the Magnus effect.
+Let us check that this reproduces the results from @sec-magnus on the Magnus effect.
 There we had $u_y(\infty)=0$ and thus $F_x=0$. Thus there is no drag force. (In the real world of course there is drag,
 which will be created by the turbulent wake behind the cylinder, but we are not modelling that.)
-We also had $u_x(\infty)=a$ and $\Gamma=-2\pi b$ so that $F_y=2\pi\rho a b$, which reproduces the old result in \eqref{magnus}.
+We also had $u_x(\infty)=a$ and $\Gamma=-2\pi b$ so that $F_y=2\pi\rho a b$, which reproduces the old result in @eq-magnus .
 
 
 ## Conformal mappings
 We currently have a flow around a cylindrical airfoil. We want the flow around a less symmetrical shape that is rounded at the front but has a tip
-at the end. This is illustrated in Figure \ref{fig:conformal}. We are going to use a conformal mapping that maps from one to the other. 
+at the end. This is illustrated in @fig-conformal. We are going to use a conformal mapping that maps from one to the other. 
 
-![A conformal mapping $f$ from the region $D$ outside a disk $A$ to the region $\tilde{D}$ outside the cross section $\tilde{A}$ of an airfoil.](conformal.png){width=90% #eq-fig:conformal}
+![A conformal mapping $f$ from the region $D$ outside a disk $A$ to the region $\tilde{D}$ outside the cross section $\tilde{A}$ of an airfoil.](conformal.png){width=90% #fig-conformal}
 
 Let $A$ be the cross section of a cylindrical airfoil, i.e., a closed disc, with radius $R$, centred at $z=-\lambda$. Let $\tilde{A}$ be the desired cross section of the airfoil.
 Then $D=\mathbb{C}\setminus A$ and $\tilde{D}=\mathbb{C}\setminus \tilde{A}$ are the regions outside the airfoils. 
@@ -145,13 +145,16 @@ refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
  where we used that the derivative of the inverse function $f^{-1}$ is the reciprocal of the derivative of the function $f$.
  Thus we find that the components of the velocity field are simply rescaled by $f'$ at every point.
  
- We now consider how angles behave under the mapping $f$. See Figure \ref{fig:angles}
- or a drawing illustrating the following discussion. We consider an infinitesimal line from some point $z_0$ to point
- $z_0+\delta z$ for some infinitesimally small $\delta z$. This gets mapped into a line from $\tilde{z}_0=f(z_0)$ to 
- $$
- \tilde{z}_0+\delta\tilde{z}=f(z_0+\delta z)=f(z_0)+\delta z\,f'(z_0)+\frac{(\delta z)^2}{2}f''(z_0)+\cdots 
+ We now consider how angles behave under the mapping $f$. See @fig-angles or a
+ drawing illustrating the following discussion. We consider an infinitesimal
+ line from some point $z_0$ to point $z_0+\delta z$ for some infinitesimally
+ small $\delta z$. This gets mapped into a line from $\tilde{z}_0=f(z_0)$ to
+$$\begin{split}
+ \tilde{z}_0+\delta\tilde{z}&=f(z_0+\delta z)\\
+ &=f(z_0)+\delta z\,f'(z_0)+\frac{(\delta z)^2}{2}f''(z_0)+\\
+ &\qquad\cdots 
  +\frac{(\delta z)^n}{n!}f^{(n)}(z_0)+\cdots
- $$
+\end{split}$$
  In the case where $f^{(n)}(z_0)=0$ for all $n<m$ and $f^{(m)}(z_0)\neq 0$ this gives
  $$
  \delta\tilde{z}=f(z_0+\delta z)=\frac{(\delta z)^m}{m!}f^{(m)}(z_0)+\text{ higher-order terms}.
@@ -162,7 +165,7 @@ refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
  \operatorname{arg}(\delta \tilde{z})=m\,\operatorname{arg}(\delta z) + \operatorname{arg}(f^{(m)}(z_0)).
  $$
  
-![A figure illustrating the change in angle under the holomorphic mapping $f$.](angles.png){width=90% #eq-fig:angles}
+![A figure illustrating the change in angle under the holomorphic mapping $f$.](angles.png){width=90% #fig-angles}
  
  Let's now consider a second infinitesimal line element from $z_0$ to 
  $z_0+\delta z_2$, which gets mapped into a line from $\tilde{z}_0$ to $\tilde{z}_0+\delta\tilde{z}_2$ and
@@ -175,28 +178,32 @@ refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
  \tilde{\theta} = \operatorname{arg}(\delta  \tilde{z}_2) - \operatorname{arg}(\delta  \tilde{z})
  =m\,\operatorname{arg}(\delta z_2) - m\,\operatorname{arg}(\delta z)=m\,\theta.
  $$ {#eq-mtheta}
- Thus the angle is multiplied by the integer $m$.
- But $f'(z)\neq 0$ for all $z$ in $D$ because otherwise $f$ would not be invertible. Hence $m=1$ and
- all angles are preserved. This is why such mappings by holomorphic invertible functions are called
- __conformal mappings__.
+ Thus the angle is multiplied by the integer $m$. But $f'(z)\neq 0$ for all $z$
+ in $D$ because otherwise $f$ would not be invertible. Hence $m=1$ and all
+ angles are preserved. This is why such mappings by holomorphic invertible
+ functions are called __conformal mappings__.
  
 ## Joukouwski mapping
 
-We want the airfoil to have a cusp at the trailing edge, see Figure \ref{fig:conformal}. We will see soon why that is important. At the cusp the angle between the upper 
-and lower surfaces of the airfoil is $2\pi$. In the original cylindrical airfoil the angle is everywhere equal to $\pi$. So we need to choose a conformal map $f$
-that, when extended to the surface of the airfoil, has a vanishing derivative at the point $c=R-\lambda$ but a non-vanishing second derivative, 
+We want the airfoil to have a cusp at the trailing edge, see Figure
+@fig-conformal. We will see soon why that is important. At the cusp the angle
+between the upper and lower surfaces of the airfoil is $2\pi$. In the original
+cylindrical airfoil the angle is everywhere equal to $\pi$. So we need to choose
+a conformal map $f$ that, when extended to the surface of the airfoil, has a
+vanishing derivative at the point $c=R-\lambda$ but a non-vanishing second
+derivative,
 $$
 f'(c)=0~~~\text{ and }~~~f''(c)\neq 0,
 $$ {#eq-fc1}
-because then, according to \eqref{mtheta}, the angles at $z=c$ are doubled.
+because then, according to @eq-mtheta , the angles at $z=c$ are doubled.
 
-We also want the conformal mapping to not affect the flow far away from the airfoil. We know from \eqref{uf} that the velocity is scaled by a factor of $f'$, so we 
+We also want the conformal mapping to not affect the flow far away from the airfoil. We know from @eq-uf  that the velocity is scaled by a factor of $f'$, so we 
 need
 $$
 \lim_{|z|\to\infty}f'(z)=1.
 $$ {#eq-fc2}
 
-A function $f$ that satisfies the conditions \eqref{fc1} and  \eqref{fc2} is
+A function $f$ that satisfies the conditions @eq-fc1  and  \eqref{fc2} is
 $$
 f(z)=z-\frac{c^2}{z}.
 $$
@@ -208,9 +215,9 @@ w(z)=a\left(z+\frac{R^2}{z}\right)+ib\log z.
 $$
 We rotate everything by an angle $\alpha$ counterclockwise and shift the centre of the cylinder to the left by $\lambda$ . This is
 achieved by replacing $z$ by $(z+\lambda)e^{-i\alpha}$. We also make the argument of the logarithm dimensionless by dividing by $R$,
-see discussion in section \ref{units}. This thus gives the flow on the left in Figure \ref{fig:jou}. 
+see discussion in section @sec-units. This thus gives the flow on the left in @fig-jou. 
 
-![The Joukowski mapping $f$ maps the flow around the cylinder to the flow around the airfoil.](joukowski.png){width=90% #eq-fig:jou}
+![The Joukowski mapping $f$ maps the flow around the cylinder to the flow around the airfoil.](joukowski.png){width=90% #fig-jou}
 
 We set $b=-\Gamma/(2\pi R)$.
 So we use
@@ -231,7 +238,7 @@ $$
 \oint_C\frac{dw}{dz}dz=2\pi i\left(-\dfrac{i\Gamma}{2\pi}\right)=\Gamma
 $$
 
-We can now use \eqref{uf} to find the velocity field after applying the conformal mapping $f$:
+We can now use @eq-uf  to find the velocity field after applying the conformal mapping $f$:
  $$
  \frac{d\tilde{w}}{d\tilde{z}}=\frac{dw/dz}{f'}
  =\frac{a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}}

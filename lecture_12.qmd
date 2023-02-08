@@ -16,7 +16,7 @@ We will make two observations that allow us to rewrite the equations in new ways
 1) Because gravity is a conservative force, it can be written as minus the
 gradient of a potential: $\underline{g}= -\nabla\chi$. In the simple case where
 gravitational force is constant and in the negative $z$ direction,
-$\chi = g\,z$ so that $\underline{g} = -g\,\underline{e}_z$. Hence, @euler2 can
+$\chi = g\,z$ so that $\underline{g} = -g\,\underline{e}_z$. Hence, @eq-euler2 can
 also be written as
 $$
 \frac{D\underline{u}}{Dt} = - \nabla \left(\frac{p}{\rho} + \chi\right).
@@ -28,7 +28,7 @@ $$
 $$ {#eq-12.2}
 which holds for any differentiable vector field $\underline{u}$ and thus in
 particular for the velocity field. Using this, together with the definition of
-the material derivative, in the left-hand side of \eqref{euler2b} gives
+the material derivative, in the left-hand side of @eq-euler2b  gives
 $$
 \frac{D\underline{u}}{Dt} =\partial_t\underline{u}+(\underline{u}\cdot\nabla)\underline{u}
 =\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right)=- \nabla \left(\frac{p}{\rho} + \chi\right).
@@ -51,7 +51,7 @@ $$
 $$ {#eq-vortex2}
 
 This simplifies even further if we consider a steady steady flow, so that
-$\partial_t\underline{u}=0$. Then \eqref{vortex2} simplifies to
+$\partial_t\underline{u}=0$. Then @eq-vortex2  simplifies to
 $$
 \underline{\omega}\times\underline{u}=-\nabla H.
 $$ {#eq-bomh}
@@ -76,7 +76,7 @@ To keep $H$ constant, higher velocity must correspond to lower pressure, and vic
 
 Next we restrict ourselves to flows where there is no
 vorticity, $\underline{\omega} = 0$. Such flows are called __irrotational__ flows.
-In this case \eqref{bomh} implies that $\nabla H=0$, which together with $\partial_t H=0$ gives us
+In this case @eq-bomh  implies that $\nabla H=0$, which together with $\partial_t H=0$ gives us
 
 \begin{tcolorbox}[title=Bernoulli's theorem for irrotational flow]
 If an ideal fluid is in steady irrotational flow then
@@ -121,7 +121,7 @@ finds itself in an area of faster flow while the lower end is in an area of slow
 
 ### The evolution of vorticity
 
-To derive an equation which governs the evolution of vorticity, we take the $curl$ of \eqref{vortex2}. 
+To derive an equation which governs the evolution of vorticity, we take the $curl$ of @eq-vortex2 . 
 $$
 \nabla\times\partial_t\underline{u}+\nabla\times(\underline{\omega}\times\underline{u})=-\nabla\times\nabla H.
 $$
@@ -143,11 +143,14 @@ $$
 \partial_t\underline{\omega} + (\underline{u}\cdot\nabla)\underline{\omega} = (\underline{\omega}\cdot\nabla)\underline{u}.
 $$ {#eq-vortex3b}
 Using the definition of the material derivative we obtain the
-\begin{tcolorbox}[title=Vorticity equation]
+
+::: {.callout-important}
+### Vorticity equation
 $$
 \frac{D\underline{\omega}}{Dt} = (\underline{\omega}\cdot\nabla)\underline{u}.
 $$ {#eq-ve}
-\end{tcolorbox}
+:::
+
 Note that the pressure $p$ does not appear in the vorticity equation.
 
 This simplifies for a 2D flow $\underline{u}=(u_x(x,y,t), u_y(x,y,t),0)$.
@@ -160,7 +163,7 @@ $$
 (\underline{\omega}\cdot\nabla)\underline{u} = \omega \, \partial_z \underline{u}=\underline{z}
 $$
 because there is no $z$ dependence in the 2D flow.
-As a result, the vorticity equation \eqref{ve}) reduces to
+As a result, the vorticity equation @eq-ve ) reduces to
 $$
 \frac{D\omega}{Dt}=0.
 $$ {#eq-vortex4}

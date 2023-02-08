@@ -20,7 +20,7 @@ $$
 $$
 This $\phi$ is called the __velocity potential__. It can be obtained from a line integral:
 $$
-\phi(\underline{x})=\int^{\underline{x}}\underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
+\phi(\underline{x})=\int^{\underline{x}}\underline{u}(\tilde{\underline{x}})\cdot d\tilde{\underline{x}}.
 $$
 Here we have not specified the starting point of the line integral because a change in the starting point only 
 leads to a change in $\phi$ by a constant that does not contribute to the gradient of $\phi$. It can thus can be chosen
@@ -28,7 +28,7 @@ arbitrarily.
 
 If the domain in which the velocity field $\underline{u}$ is defined is not
 simply connected, then $\phi$ may be multi-valued. We will see an example of
-that later in @sec:circulation, but first we will look at a simple example to
+that later in @sec-circulation, but first we will look at a simple example to
 make sure we understand the line integral.
 
 ::: {#exm-ex14}
@@ -47,7 +47,7 @@ $$
 
 Then to calculate
 $$
-\phi(\underline{x})=\int_{\underline{z}}^{\underline{x}} \underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
+\phi(\underline{x})=\int_{\underline{z}}^{\underline{x}} \underline{u}(\tilde{\underline{x}})\cdot d\tilde{\underline{x}}.
 $$
 we choose the contour that consists of three straight lines: it starts from $(0,0,0)$ and goes along the $x$ axis to $(x,0,0)$, then goes
 straight to $(x,y,0)$ and then from there straight to $(x,y,z)$. This splits the integral into three bits:
@@ -102,9 +102,9 @@ $$ {#eq-lipsi}
 Again it does not matter where we start the line integral because that only changes the integral by a constant that does
 not affect the velocity field.
 
-::: {#exm-ex:stagnation}
+::: {#exm-stagnation}
 Consider the velocity field $\underline{u}=(ax,-ay,0)$ that you have met before in your homework and that we know is irrotational. We can
-obtain its stream function from the line integral in \eqref{lipsi}:
+obtain its stream function from the line integral in @eq-lipsi :
 $$
 \psi(x,y)=\int_0^x(-u_y(\tilde{x},0))d\tilde{x}+\int_0^yu_x(x,\tilde{y})d\tilde{y}=
 \int_0^x0\,d\tilde{x}+\int_0^yax\,d\tilde{y}=axy.
@@ -143,7 +143,7 @@ $$
 Any holomorphic function gives us a solution of Euler's equations, because any holomorphic
 function can be used as a complex potential describing an incompressible irrotational flow. Such
 a flow solves Euler's equations. To see this
-we start with Euler's equation in the form given in \eqref{vortex2}:
+we start with Euler's equation in the form given in @eq-vortex2 :
 $$
 \partial_t \underline{u}+(\nabla\times\underline{u})\times\underline{u}=-\nabla\left(\frac{p}{\rho}+\frac{u^2}2+\chi\right),
 $$
@@ -161,18 +161,18 @@ $$
 It is now easy to come up with examples of fluid flows, because we can simply choose any homomorphic function for
 our complex potential.
 
-\begin{example}{\rm
+::: {#exm-cp}
 Consider the complex potential
 $$
 w(z)=\frac{a}{2}z^2=\frac{a}{2}(x+iy)^2=\frac{a}{2}(x^2-y^2)+i axy=\phi+i\psi.
 $$
-We recognise the stream function $\psi=axy$ to be the one for the stagnation flow in Example \ref{ex:stagnation}.
+We recognise the stream function $\psi=axy$ to be the one for the stagnation flow in  @exm-stagnation.
 We obtain the velocity field from the derivative of the complex potential:
 $$
 \frac{dw}{dz} = az=ax+iay,
 $$
-so $u_x=ax$ and $u_y=-ay$, which again agrees with  Example \ref{ex:stagnation}.
-}\end{example}
+so $u_x=ax$ and $u_y=-ay$, which again agrees with @exm-stagnation.
+:::
 
 ::: {#exm-straight}
 Consider the complex potential
