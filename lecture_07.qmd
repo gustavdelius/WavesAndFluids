@@ -23,7 +23,7 @@ of course appears in many other applications as well.
 
 ## Two-dimensional wave equation
 
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Consider an infinite two-dimensional membrane of homogeneous density $\rho$
 (mass per unit area, measured in $kg/m^2$). In the equilibrium state, it is flat
@@ -74,7 +74,7 @@ operator it easily generalises to any higher dimension.
 
 ## Energy of membrane
 
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 The energy density of the membrane is
 $$
@@ -120,7 +120,7 @@ is equal to the net flow of energy into the region.
 
 ## Travelling plane waves
 
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=317443c7-3142-46bb-81da-af7901218bfd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 A 2D wave is a plane wave if $z(x,y,t)$ varies only in one spatial direction,
 say, parallel to a constant unit vector $\underline{n}=(n_x,n_y)$  (and $z(x,y,t)$ is

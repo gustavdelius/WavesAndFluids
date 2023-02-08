@@ -1,8 +1,6 @@
 # Waves on circular domain
 
-{{< video <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe> >}}
-
-![Circular membrane with radius $a$ and polar coordinates.](polar_coords.png){width=60% #fig-polar_co}
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Let's find normal mode solution for a circular membrane of radius $a$ with fixed
 boundary (see @fig-polar_co). Mathematically, we need to solve the wave equation
@@ -12,6 +10,8 @@ polar coordinates $(r,\theta)$, defined as (see @fig-polar_co)
 $$
 x=r\cos\theta, \quad y=r\sin\theta.
 $$ {#eq-9.1}
+
+![Circular membrane with radius $a$ and polar coordinates.](polar_coords.png){width=60% #fig-polar_co}
 
 Let
 $$
