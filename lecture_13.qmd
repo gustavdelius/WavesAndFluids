@@ -6,7 +6,7 @@ and hence solutions of the Euler equations. This will make clever use of complex
 You find content related to this lecture in the textbooks:
 
 - @acheson sections 4.2 and 4.3
-- @bachelor sections 2.7, 6.2
+- @batchelor sections 2.7, 6.2
 
 
 In the discussions in this lecture the time variable does not play a role, so we neglect to write it in all equations. But everything
@@ -20,7 +20,7 @@ $$
 $$
 This $\phi$ is called the {\bf velocity potential}. It can be obtained from a line integral:
 $$
-\phi(\underline{x})=\int^{\underline{x}} \underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
+\phi(\underline{x})=\int^{\underline{x}}\underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
 $$
 Here we have not specified the starting point of the line integral because a change in the starting point only 
 leads to a change in $\phi$ by a constant that does not contribute to the gradient of $\phi$. It can thus can be chosen

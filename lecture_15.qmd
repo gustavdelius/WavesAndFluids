@@ -7,7 +7,7 @@ far from the airfoil and the circulation around the airfoil.
 You find content related to this lecture in the textbooks:
 
 - @acheson sections 4.6 to 4.11
-- @bachelor section 6.6
+- @batchelor section 6.6
 
 ## Blasius theorem
 Blasius theorem gives the following expression for the force $\underline{F}$ per unit length on an airfoil in an incompressible,
@@ -23,11 +23,8 @@ $$
 F_x=p\cos\theta dl,~~~F_y=-p\sin\theta dl.
 $$
 
-\begin{figure}
-\centering
-\includegraphics[width=8cm]{airfoil_segment.png}
-\caption{Force acting on an infinitesimal segment.}{#eq-fig:segment}
-\end{figure}
+
+![Force acting on an infinitesimal segment.](airfoil_segment.png){width=90% #eq-fig:segment}
 
 For the velocity components we have
 $$
@@ -121,11 +118,7 @@ We also had $u_x(\infty)=a$ and $\Gamma=-2\pi b$ so that $F_y=2\pi\rho a b$, whi
 We currently have a flow around a cylindrical airfoil. We want the flow around a less symmetrical shape that is rounded at the front but has a tip
 at the end. This is illustrated in Figure \ref{fig:conformal}. We are going to use a conformal mapping that maps from one to the other. 
 
- \begin{figure}
- \centering
- \includegraphics[width=14cm]{conformal.png}
- \caption{A conformal mapping $f$ from the region $D$ outside a disk $A$ to the region $\tilde{D}$ outside the cross section $\tilde{A}$ of an airfoil.}{#eq-fig:conformal}
- \end{figure}
+![A conformal mapping $f$ from the region $D$ outside a disk $A$ to the region $\tilde{D}$ outside the cross section $\tilde{A}$ of an airfoil.](conformal.png){width=90% #eq-fig:conformal}
 
 Let $A$ be the cross section of a cylindrical airfoil, i.e., a closed disc, with radius $R$, centred at $z=-\lambda$. Let $\tilde{A}$ be the desired cross section of the airfoil.
 Then $D=\mathbb{C}\setminus A$ and $\tilde{D}=\mathbb{C}\setminus \tilde{A}$ are the regions outside the airfoils. 
@@ -169,11 +162,7 @@ refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
  \operatorname{arg}(\delta \tilde{z})=m\,\operatorname{arg}(\delta z) + \operatorname{arg}(f^{(m)}(z_0)).
  $$
  
- \begin{figure}
- \centering
- \includegraphics[width=14cm]{angles.png}
- \caption{A figure illustrating the change in angle under the holomorphic mapping $f$.}{#eq-fig:angles}
- \end{figure}
+![A figure illustrating the change in angle under the holomorphic mapping $f$.](angles.png){width=90% #eq-fig:angles}
  
  Let's now consider a second infinitesimal line element from $z_0$ to 
  $z_0+\delta z_2$, which gets mapped into a line from $\tilde{z}_0$ to $\tilde{z}_0+\delta\tilde{z}_2$ and
@@ -221,11 +210,7 @@ We rotate everything by an angle $\alpha$ counterclockwise and shift the centre 
 achieved by replacing $z$ by $(z+\lambda)e^{-i\alpha}$. We also make the argument of the logarithm dimensionless by dividing by $R$,
 see discussion in section \ref{units}. This thus gives the flow on the left in Figure \ref{fig:jou}. 
 
-\begin{figure}
-\centering
-\includegraphics[width=14cm]{joukowski.png}
-\caption{The Joukowski mapping $f$ maps the flow around the cylinder to the flow around the airfoil.}{#eq-fig:jou}
-\end{figure}
+![The Joukowski mapping $f$ maps the flow around the cylinder to the flow around the airfoil.](joukowski.png){width=90% #eq-fig:jou}
 
 We set $b=-\Gamma/(2\pi R)$.
 So we use

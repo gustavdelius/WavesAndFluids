@@ -37,13 +37,11 @@ y(x,0)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 x^2}{2}} \,
 e^{ik_0 x} .
 $$ {#eq-packet3}
 The factor $e^{ik_0 x}$ represents a harmonic wave, the other factors represent a varying amplitude (the envelope of the wave).
-The graph of the real part of (\ref{packet3}) is shown in Fig. \ref{gauss}b.
-\begin{figure}[h] % 1030 x 290
-\centering
- \epsfig{figure=gauss.eps,width=14cm}
-\caption{} {#eq-gauss}
-\end{figure}
-\noindent
+The graph of the real part of @eq-packet3 is shown in @fig-gauss b.
+
+![Plot of the Gaussian amplitude function A(k) and the resulting Gaussian wave packet.](gauss.png){width=90% #fig-gauss}
+
+
 Note that the half width of the wave packet is $1/\sigma$, i.e. it is inversely proportional to the width of $A(k)$. This means that
 that a more localised wave corresponds to a broader range in $k$ and vice versa. This property has an important consequence in quantum mechanics --
 the uncertainty principle.

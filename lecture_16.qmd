@@ -9,19 +9,16 @@ You find content related to this lecture in the textbooks:
 - @acheson section 3.2
 - @paterson sections 13.1 - 13.3
 
-\begin{figure}
-\centering
-\includegraphics[width=8cm]{surface.png}
-\caption{Plane wave on the surface of water described by $y=\eta(x,t)$.}{#eq-fig:surface}
-\end{figure}
+![Plane wave on the surface of water described by $y=\eta(x,t)$.](surface.png){width=80% #eq-fig:surface}
 
-If we use the $y$ coordinate as the vertical coordinate we can describe the surface by
-the equation $y = \eta(x,z,t)$ for some function $\eta$. We will simplify our calculations by looking for plane waves.
-We choose the $z$ axis to point in the direction along which the plane wave is constant.
-Then we can describe the surface by
-a function $\eta(x,t)$ that is independent of $z$. This is depicted in Figure \ref{fig:surface}.
-This will lead to a two-dimensional flow in the fluid that we can
-describe by a velocity field $\underline{u}=(u_x(x,y,t),u_y(x,y,t),0)$.
+If we use the $y$ coordinate as the vertical coordinate we can describe the
+surface by the equation $y = \eta(x,z,t)$ for some function $\eta$. We will
+simplify our calculations by looking for plane waves. We choose the $z$ axis to
+point in the direction along which the plane wave is constant. Then we can
+describe the surface by a function $\eta(x,t)$ that is independent of $z$. This
+is depicted in @fig-surface. This will lead to a two-dimensional flow in the
+fluid that we can describe by a velocity field
+$\underline{u}=(u_x(x,y,t),u_y(x,y,t),0)$.
 
 We further simplify the problem by assuming that the water is infinitely deep and infinitely extended in the $x$ and $z$ directions,
 so that we do not have to impose any boundary conditions except at the surface. This is akin to how in the waves section of this module
