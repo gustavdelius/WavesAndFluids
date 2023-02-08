@@ -20,6 +20,9 @@ book:
   repo-url: https://github.com/gustavdelius/WavesAndFluids/
   repo-branch: master
   repo-actions: edit
+  favicon: logo.svg
+  twitter-card: true
+  open-graph: true
   sidebar:
     subtitle: Lecture notes
     tools: 
