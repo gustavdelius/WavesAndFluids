@@ -1,5 +1,9 @@
 ## Wave packets and dispersion
 
+You find content related to this lecture in the textbooks:
+
+- @coulson section 92
+
 Harmonic waves are not localised in $x$ (rather, they are periodic in $x$). However, it is possible to construct a localised \emph{wave packet}
 by summing up harmonic waves with different wave numbers. So, let's consider the wave given by
 $$

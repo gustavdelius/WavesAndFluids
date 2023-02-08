@@ -1,5 +1,10 @@
 ## Waves on rectangular domain
 
+You find content related to this lecture in the textbooks:
+
+- @baldock section 7.4
+- @coulson section 33
+
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8a76711e-1f8b-4afd-bbb3-af790124753e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Consider a rectangular membrane: $D=\{(x,y)\in\mathbb{R}^2\vert 0<x<a, \ 0<y<b \}$. 

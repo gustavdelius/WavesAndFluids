@@ -9,6 +9,11 @@ The energy density in turn is made up out of kinetic and potential energy
 density. We will then calculate the energy in a few example waves, and then
 discuss the conservation of energy.
 
+You can find related material in the textbooks:
+
+- @baldock section 2.2
+- @coulson sections 18, 25, 30
+
 ## Energy density
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bfbacab1-967a-4262-aac6-af7901213c2c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>

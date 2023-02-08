@@ -1,5 +1,9 @@
 # Bernoulli's principle and vorticity
 
+You find content related to this lecture in the textbooks:
+
+- @batchelor sections 1.3, 1.4, and 1.5
+
 Solving Euler's equations is hard. It is therefore worthwhile to first try to
 derive consequences of the equations without actually solving them. So in this
 lecture we will use our vector calculus skills to manipulate Euler's equations a

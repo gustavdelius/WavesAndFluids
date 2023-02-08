@@ -1,5 +1,10 @@
 # Ideal fluid
 
+You find content related to this lecture in the textbooks:
+
+- @batchelor section 2.2
+- @acheson start of section 1.3
+
 ## The Euler equations for an ideal fluid
 
 Euler wrote down the partial differential equations describing an ideal fluid

@@ -2,6 +2,11 @@
 In this lecture we will explain a fascinating phenomenon: a rotating cylinder flying through air experiences a perpendicular force. 
 This phenomenon is most familiar when the rotating cylinder is replaced by a rotating ball: curve balls.
 
+You find content related to this lecture in the textbooks:
+
+- @acheson sections 1.6 and 4.5
+- @bachelor section 6.6
+
 ## Flow around a cylinder {#sec-cylinder}
 We are on the way to describing the flow around an airfoil. We want the flow to have the following three properties:
 

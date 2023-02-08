@@ -3,6 +3,12 @@
 In this section we will develop a powerful method that provides us an unlimited supply of two dimensional incompressible and irrotational flows
 and hence solutions of the Euler equations. This will make clever use of complex analysis.
 
+You find content related to this lecture in the textbooks:
+
+- @acheson sections 4.2 and 4.3
+- @bachelor sections 2.7, 6.2
+
+
 In the discussions in this lecture the time variable does not play a role, so we neglect to write it in all equations. But everything
 is allowed to have a time dependence.
 

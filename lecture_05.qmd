@@ -1,5 +1,8 @@
 # Harmonic waves {sec-5}
+You can find related material in the textbooks:
 
+- @coulson section 3
+- @baldock and Bridgeman section 1.7
 
 ## Harmonic waves
 

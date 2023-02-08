@@ -1,5 +1,13 @@
 # How to describe fluids
 
+You find content related to this lecture in the textbooks:
+
+- @batchelor section 2.1
+- @acheson section 1.2 
+- @paterson chapter 3 and sections 4.1, 4.2
+- @bernard chapters 1, 2, 10
+
+
 ## Fluid flow
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6e399bc-7063-459e-8dd4-af79012559c6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>

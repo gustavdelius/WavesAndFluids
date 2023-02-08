@@ -18,8 +18,14 @@ a vibrating membrane will give us the two-dimensional wave equation, which
 of course appears in many other applications as well.
 
 ::: {.content-hidden when-format="pdf"}
-![](wavy.mp4)
+![An example of a solution of the 2d-wave equation, which models the vibrations of a membrane.](wavy.mp4)
 :::
+
+You find content related to this lecture in the textbooks:
+
+- @baldock section 7.3
+- @coulson sections 32 and start of 33
+
 
 ## Two-dimensional wave equation
 
