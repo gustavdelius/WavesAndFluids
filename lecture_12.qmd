@@ -11,6 +11,8 @@ bit until they reveal to us Bernoulli's principle and the vorticity equation.
 
 ## Bernoulli's principle
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=22755b53-5770-402f-abc9-af7901271374&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 We will make two observations that allow us to rewrite the equations in new ways.
 
 1) Because gravity is a conservative force, it can be written as minus the
@@ -94,6 +96,8 @@ until we have answered to questions:
 We'll address the first question in the next section and the second question in the following lectures.
 
 ## Vorticity
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f5412fa6-acd1-4eeb-b643-af7901271341&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 The vorticity $\underline{\omega}$ of a flow with the velocity field $\underline{u}$ is defined as the \emph{curl} of $\underline{u}$ (see Vector Calculus notes, p. 26):
 $$

@@ -10,6 +10,9 @@ You find content related to this lecture in the textbooks:
 - @batchelor section 6.6
 
 ## Blasius theorem
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fc8eebf5-0440-4a46-abb9-af790127db86&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Blasius theorem gives the following expression for the force $\underline{F}$ per unit length on an airfoil in an incompressible,
 irrotational flow, described by a complex potential $w(z)$:
 $$
@@ -67,6 +70,9 @@ We have thus derived Blasius' theorem.
 
 
 ## Kutta-Joukowski lift theorem
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c4830f0c-6356-4f16-ab8d-af790127db50&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 We now simplify the expression for the force acting on an airfoil that we derived in the previous subsection even further
 by considering the Laurent expansion
 $$
@@ -115,6 +121,9 @@ We also had $u_x(\infty)=a$ and $\Gamma=-2\pi b$ so that $F_y=2\pi\rho a b$, whi
 
 
 ## Conformal mappings
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=46c1c619-0459-4a00-ab17-af790127f7db&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 We currently have a flow around a cylindrical airfoil. We want the flow around a less symmetrical shape that is rounded at the front but has a tip
 at the end. This is illustrated in @fig-conformal. We are going to use a conformal mapping that maps from one to the other. 
 
@@ -184,6 +193,8 @@ $$\begin{split}
  functions are called __conformal mappings__.
  
 ## Joukouwski mapping
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e6d96b10-ba14-488f-a2bd-af790127f7bc&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 We want the airfoil to have a cusp at the trailing edge, see Figure
 @fig-conformal. We will see soon why that is important. At the cusp the angle

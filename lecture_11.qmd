@@ -7,6 +7,8 @@ You find content related to this lecture in the textbooks:
 
 ## The Euler equations for an ideal fluid
 
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=23e652fe-156d-431f-8057-af790126dfa9&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Euler wrote down the partial differential equations describing an ideal fluid
 already in 1755. This was one of the first partial differential equations
 systems to be studied.
@@ -121,6 +123,8 @@ $$\begin{split}
 :::
 
 ## Water in a rotating bucket
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=71f7353e-6a20-43be-9591-af790126df68&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ::: {#exm-bucket}
 We will now use the steady flow from Example @exm-10_1:

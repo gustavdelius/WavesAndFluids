@@ -8,6 +8,9 @@ You find content related to this lecture in the textbooks:
 - @batchelor section 6.6
 
 ## Flow around a cylinder {#sec-cylinder}
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1520d408-505d-4cb5-b453-af7901277d66&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 We are on the way to describing the flow around an airfoil. We want the flow to have the following three properties:
 
 1. The flow is two-dimensional, incompressible and irrotational.
@@ -43,6 +46,8 @@ constant.
 
 
 ## Circulation {#sec-circulation}
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=75e35b5b-8110-42a0-a4d9-af7901277d37&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 We now look at a flow around a rotating cylinder, in which the air close to the cylinder is rotating along with 
 it, as depicted in the second flow in @fig-magnus. ^[Of course in a perfectly inviscid fluid the cylinder would not be able to drag the fluid along with it due to the absence
@@ -115,6 +120,9 @@ complex analysis merge to be helpful in fluid dynamics.
 
 
 ## Magnus effect {#sec-magnus}
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=57b7873e-4ac7-4032-9416-af7901277d15&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 We now explain the Magnus effect, whereby a spinning cylinder in an air flow can experience a force perpendicular to the airflow. This is 
 similar to the phenomenon of curve balls, except that the flow around the cylinder can be described by a two-dimensional flow unlike
 the flow around a spinning ball.

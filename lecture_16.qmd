@@ -9,7 +9,7 @@ You find content related to this lecture in the textbooks:
 - @acheson section 3.2
 - @paterson sections 13.1 - 13.3
 
-![Plane wave on the surface of water described by $y=\eta(x,t)$.](surface.png){width=80% #fig-surface}
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e944f549-4da2-417f-9c6a-af79012843d7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 If we use the $y$ coordinate as the vertical coordinate we can describe the
 surface by the equation $y = \eta(x,z,t)$ for some function $\eta$. We will
@@ -19,6 +19,8 @@ describe the surface by a function $\eta(x,t)$ that is independent of $z$. This
 is depicted in @fig-surface. This will lead to a two-dimensional flow in the
 fluid that we can describe by a velocity field
 $\underline{u}=(u_x(x,y,t),u_y(x,y,t),0)$.
+
+![Plane wave on the surface of water described by $y=\eta(x,t)$.](surface.png){width=80% #fig-surface}
 
 We further simplify the problem by assuming that the water is infinitely deep and infinitely extended in the $x$ and $z$ directions,
 so that we do not have to impose any boundary conditions except at the surface. This is akin to how in the waves section of this module
@@ -44,6 +46,9 @@ treat the surface as a free surface. At such a surface there are two conditions:
 which we will introduce in the next two subsections.
 
 ### Kinematic condition
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4f727d34-d6bd-4985-acfc-af79012843a2&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 The kinematic condition states that fluid particles on the surface stay on the surface. 
 
 If we introduce the distance $d$ of a point from the
@@ -61,6 +66,9 @@ $$ {#eq-K}
 This is the kinematic surface condition and holds at all points at the surface, i.e., all points with $y=\eta(x,t)$.
 
 ### Dynamic condition {#sec-dyn}
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6f9d1a6-1178-4dfb-984f-af790128437e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 The dynamic condition states that the pressure at the surface equals the atmospheric pressure $p_0$.
 
 According to Euler's equation
@@ -91,6 +99,9 @@ $$ {#eq-D}
 This is the dynamical surface condition and holds at all points at the surface, i.e.,  the points with $y=\eta(x,t)$.
 
 ## Linear approximation
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0c038766-3a8e-4e6d-a235-af790128432b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 The surface conditions contain non-linear terms. That makes them impossible to solve analytically. So we linearise the equations.
 For the kinematic surface condition @eq-K  this means
 $$
@@ -110,6 +121,9 @@ $$
 $$ {#eq-Dl}
 
 ## Harmonic travelling wave solution
+
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d068cc83-cf43-4a63-b728-af7901284309&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Our task now is to solve the equations [-@eq-L], [-@eq-Kl] and [-@eq-Dl].
 We will do this with the harmonic travelling wave Ansatz that we discussed in lecture [-@sec-5]^[
 We could include a phase as in lecture [-@sec-5] but it would just come along for the ride and not add anything interesting.]:
