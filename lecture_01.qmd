@@ -1,11 +1,5 @@
 # Deriving the wave equation for a string
 
-::: {.content-hidden}
-$$
-{{< include _macros.tex >}}
-$$
-:::
-
 You find content related to this lecture in the textbooks:
 
 - @knobel chapter 7
