@@ -1,0 +1,181 @@
+# Velocity potential, stream function, and complex potential
+
+In this section we will develop a powerful method that provides us an unlimited supply of two dimensional incompressible and irrotational flows
+and hence solutions of the Euler equations. This will make clever use of complex analysis.
+
+In the discussions in this lecture the time variable does not play a role, so we neglect to write it in all equations. But everything
+is allowed to have a time dependence.
+
+## Velocity potential
+Consider an {\bf irrotational} flow, so that $\nabla\times\underline{u}=\underline{z}$. Then you know from Vector Calculus that there is a scalar function $\phi$
+so that 
+$$
+\underline{u} = \nabla\phi.
+$$
+This $\phi$ is called the {\bf velocity potential}. It can be obtained from a line integral:
+$$
+\phi(\underline{x})=\int^{\underline{x}} \underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
+$$
+Here we have not specified the starting point of the line integral because a change in the starting point only 
+leads to a change in $\phi$ by a constant that does not contribute to the gradient of $\phi$. It can thus can be chosen
+arbitrarily. 
+
+If the domain in which the velocity field $\underline{u}$ is defined is not simply connected, then $\phi$ may be 
+multi-valued. We will see an example of that later in section \ref{sec:circulation}, but first we will look at a simple example to make sure we understand
+the line integral.
+
+::: {#exm-ex14}
+Show that the velocity field, given by
+$$
+\underline{u}=(ax+by,bx+cy, -(a+c)z)
+$$
+(where $a$, $b$ and $c$ are constants), represents an irrotational flow and find the velocity potential.
+:::
+
+::: {.solution}
+First we check whether the flow is irrotational by calculating the vorticity
+$$
+\nabla\times\underline{u}=(\partial_yu_z-\partial_zu_y,\partial_zu_x-\partial_xu_z,\partial_xu_y-\partial_yu_x)=(0,0,b-b)=\underline{z}.
+$$
+
+Then to calculate
+$$
+\phi(\underline{x})=\int_{\underline{z}}^{\underline{x}} \underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
+$$
+we choose the contour that consists of three straight lines: it starts from $(0,0,0)$ and goes along the $x$ axis to $(x,0,0)$, then goes
+straight to $(x,y,0)$ and then from there straight to $(x,y,z)$. This splits the integral into three bits:
+$$\begin{split}
+\phi(\underline{x})&=\int_0^x u_x(\tilde{x},0,0)\,d\tilde x+\int_0^y u_y(x,\tilde{y},0)\,d\tilde y+\int_0^z u_y(x,y,\tilde{z})\,d\tilde z\\
+&=\int_0^x a\tilde{x}\,d\tilde x+\int_0^y (bx+c\tilde{y})\,d\tilde y-\int_0^z (a+c)\tilde z\,d\tilde z\\
+&=\frac{a}{2}x^2+bxy+\frac{c}{2}y^2-\frac{a+c}{2}z^2.
+\end{split}$$
+
+Alternatively, and equivalently, we can find $\phi$ by solving the 
+component differential equations contained in $\underline{u}=\nabla \phi$:
+$$
+\left\{\begin{array}{l}
+ax+by = \partial_x\phi,  \\
+bx+cy = \partial_y\phi,  \\
+-(a+c)z = \partial_z\phi,
+\end{array}\right. \quad \Rightarrow \quad
+\left\{\begin{array}{l}
+\phi= \frac{a}{2}x^2 + bxy+ f(y,z),  \\
+\phi=  bxy+\frac{c}{2}y^2 + g(x,z),  \\
+\phi= - \frac{a+c}{2} z^2+ h(x,y)
+\end{array}\right.
+$$
+The last three equations must represent the same function. Therefore,
+$$
+\phi=\frac{a}{2}x^2+bxy+\frac{c}{2}y^2-\frac{a+c}{2}z^2 + \text{ constant}.
+$$
+:::
+
+## Stream function
+Consider an {\bf incompressible, two-dimensional } flow, so $\nabla\cdot\underline{u}=\underline{z}$ and $\underline{u}(\underline{x})=(u_x(x,y),u_y(x,y),0)$.
+Then we can write this in terms of a scalar function $\psi(x,y)$ as follows:
+$$
+\underline{u}=\nabla\times(\psi\,\underline{e}_z)=(\partial_y\psi,-\partial_x\psi,0).
+$$
+It is easy to check that this always gives an incompressible flow:
+$$
+\nabla\cdot\underline{u}=\partial_xu_x+\partial_yu_y=\partial_x\partial_y\psi-\partial_y\partial_x\psi=0.
+$$
+The function $\psi$ is known as the {\bf stream function}. The reason for this name is that a stream function
+is constant along streamlines. To check this we calculate the derivative of $\psi$ in the direction of a streamline,
+i.e., in the direction of the velocity field (recall that the velocity field is tangent to the streamlines).
+$$
+\underline{u}\cdot\nabla\psi=u_x\partial_x\psi+u_y\partial_y\psi=u_x(-u_y)+u_yu_x=0.
+$$
+Thus the stream function gives an easy way to obtain streamlines: they are the lines along which the streamline is constant.
+
+We can find $\psi$ from the following two-dimensional line integral:
+$$
+\psi(x,y)=\int^{(x,y)}(-u_y,u_x)\cdot d\underline{x}.
+$$ {#eq-lipsi}
+Again it does not matter where we start the line integral because that only changes the integral by a constant that does
+not affect the velocity field.
+
+::: {#exm-ex:stagnation}
+Consider the velocity field $\underline{u}=(ax,-ay,0)$ that you have met before in your homework and that we know is irrotational. We can
+obtain its stream function from the line integral in \eqref{lipsi}:
+$$
+\psi(x,y)=\int_0^x(-u_y(\tilde{x},0))d\tilde{x}+\int_0^yu_x(x,\tilde{y})d\tilde{y}=
+\int_0^x0\,d\tilde{x}+\int_0^yax\,d\tilde{y}=axy.
+$$
+The streamlines are the lines along which $\psi(x,y)=c$ for some constant $c$. Here this gives $axy=c$ and hence
+$$
+y=\frac{c}{a}\frac{1}{x}.
+$$
+So the stream lines are hyperbolas, as you already determined in a different way in the homework.
+:::
+
+## Complex potential
+
+Now we consider flows $\underline{u}$ that are irrotational and incompressible and two-dimensional, so they can be described by both
+a velocity potential as $\underline{u}=\nabla\phi$ and by a stream function as $\underline{u}=\nabla\times(\psi\underline{e}_x)$. In components this gives
+$$\begin{split}
+u_x&=\partial_x\phi=\partial_y\psi,\\
+u_y&=\partial_y\phi=-\partial_x\psi.
+\end{split}$$
+You will recognise these as the Cauchy-Riemann equations. They tell us that the function
+$$
+w=\phi+i\psi
+$$
+is a holomorphic function of $z=x+iy$. This function is known as the {\bf complex potential}.
+
+Note that here we are identifying the $x-y$ plane with the complex plane and use $z$ to denote the complex
+number in that plane. This has nothing to do with the $z$ coordinate that we used when discussing 3-dimensional flows.
+While in general it is a bad idea to use the same letter in the same module for different things, it is just so conventional to
+use the letter $z$ both for the third Cartesian coordinate as well as for complex numbers that it is excusable in this case.
+
+To extract the velocity field from the complex potential, we just need to differentiate:
+$$
+\frac{dw}{dz} = \partial_x w= \partial_x (\phi+i\psi)=\partial_x\phi+i\partial_x\psi=u_x-iu_y.
+$$
+
+Any holomorphic function gives us a solution of Euler's equations, because any holomorphic
+function can be used as a complex potential describing an incompressible irrotational flow. Such
+a flow solves Euler's equations. To see this
+we start with Euler's equation in the form given in \eqref{vortex2}:
+$$
+\partial_t \underline{u}+(\nabla\times\underline{u})\times\underline{u}=-\nabla\left(\frac{p}{\rho}+\frac{u^2}2+\chi\right),
+$$
+where $\chi$ is the gravitational potential.
+For our irrotational flow the vorticity $\nabla\times\underline{u}$ vanishes. Substituting $\underline{u}=\nabla\phi$ on the left-hand side and moving the
+time derivative through the gradient we obtain
+$$
+\nabla(\partial_t \phi)=-\nabla\left(\frac{p}{\rho}+\frac{u^2}2+\chi\right),
+$$
+This equation is satisfied if the pressure is given by
+$$
+p=-\rho\left(\partial_t\phi +\frac{u^2}2+\chi \right) + \text{ constant}.
+$$
+
+It is now easy to come up with examples of fluid flows, because we can simply choose any homomorphic function for
+our complex potential.
+
+\begin{example}{\rm
+Consider the complex potential
+$$
+w(z)=\frac{a}{2}z^2=\frac{a}{2}(x+iy)^2=\frac{a}{2}(x^2-y^2)+i axy=\phi+i\psi.
+$$
+We recognise the stream function $\psi=axy$ to be the one for the stagnation flow in Example \ref{ex:stagnation}.
+We obtain the velocity field from the derivative of the complex potential:
+$$
+\frac{dw}{dz} = az=ax+iay,
+$$
+so $u_x=ax$ and $u_y=-ay$, which again agrees with  Example \ref{ex:stagnation}.
+}\end{example}
+
+::: {#exm-straight}
+Consider the complex potential
+$$
+w(z)=ae^{i\alpha}z,
+$$
+so that the derivative is just
+$$
+\frac{dw}{dz} = ae^{i\alpha}=a(\cos\alpha+i\sin\alpha)
+$$
+from which we can read off that
+$u_x=a\cos\alpha$ and $u_y=-a\sin\alpha$. This is a constant flow at an angle $-\alpha$ to the horizontal.
+:::

@@ -1,0 +1,194 @@
+# Ideal fluid
+
+## The Euler equations for an ideal fluid
+
+Euler wrote down the partial differential equations describing an ideal fluid
+already in 1755. This was one of the first partial differential equations
+systems to be studied.
+
+An ideal fluid has two simplifying properties:
+
+1. The density is constant throughout the fluid at all times, so the density
+that in a general fluid could be a function of space and time is a constant:
+$\rho(\underline{x},t)=\rho$, i.e.,
+$$
+\partial_t\rho=0=\nabla\rho.
+$$ {#eq-11.1}
+This implies that also the material derivative is zero:
+$$
+\frac{D\rho}{Dt}=\partial_t\rho+\underline{u}\cdot\nabla\rho=0.
+$$ {#eq-11.2}
+We had seen already that this implies that the fluid is incompressible:
+$\nabla\cdot\underline{u}=0$. But the condition on an ideal fluid is stronger
+than incompressibility, because it demands that the density is not only constant
+as experienced by each fluid particle, but that it is also the same across
+different fluid particles.
+
+2. The force that the fluid exerts on any infinitesimal surface element is
+solely in the direction of the normal vector to the surface element. Thus this
+surface force contribution can be written as
+$$
+d\underline{F}^{(s)}=p\, \underline{n}\, dS
+$$ {#eq-11.3}
+where $p=p(\underline{x},t)$ is called the __pressure__, $\underline{n}$ is the
+normal vector to the surface, and the factor of $dS$ expresses that the force is
+proportional to the area of the surface element.
+
+    Thus in an ideal fluid there are no surface forces acting tangentially to the
+surface, also called shear forces. Such a fluid is also called __inviscid__. The
+opposite would be a __viscous__ fluid. In reality every fluid has at least a
+little bit of viscosity, but in circumstances where these viscous forces are
+negligible compared to the other forces we can neglect them and treat the fluid
+as inviscid.
+
+The equation of motion is simply Newton's equation: $m\mathbf{a}=\underline{F}$.
+We consider a volume $V$ inside the fluid. We sum up the mass multiplied by the
+acceleration for each fluid particle inside the volume, which due to our
+continuity approximation becomes an integral of the density multiplied by the
+acceleration vector field $D\underline{u}/Dt$ over the volume $V$:
+$$
+m\underline{a} = \int\limits_{V} \rho \, \frac{D\underline{u}}{Dt} \, dV .
+$$ {#eq-11.4}
+
+As discussed above, for an ideal fluid, the only force acting on the surface of
+the volume $V$ is the force due to the pressure in the surrounding fluid. The
+total force exerted on the volume $V$ is obtained by integrating the
+contributions from all infinitesimal surface elements:
+$$
+\underline{F}^{(s)} = -\oint\limits_{\partial V} p \, \underline{n} \, dS .
+%\quad \text{or, in components,} \quad  \underline{F} = -\oint\limits_{\partial V} p \, n_i \, dV \ \ \text{for} \ \ i=1,2,3.
+$$ {#eq-11.5}
+The reason for the minus sign is that by convention $\underline{n}$ denotes the
+outwards normal, but we are interested in the force acting on the volume from
+the outside.
+
+We now use a form of the divergence theorem that you may not have met yet:
+
+::: {#thm-div2}
+For any scalar function $f(\underline{x})$ 
+$$
+\oint\limits_{\partial V} f \, \underline{n} \, dS = \int\limits_{V} \nabla f \, dV.
+$$ {#eq-divergence_thrm2}
+:::
+
+::: {.proof}
+The $i$th component of the above vector equation can be obtained by setting
+$\underline{F}=f\underline{e}_i$ in the divergence theorem
+@thm-div. 
+:::
+Applying this to the expression for the surface force
+$\underline{F}^{(s)}$ by setting $f=p$ allows us to express the force as a
+volume integral:
+$$
+\underline{F}^{(s)} = -\int\limits_{V} \nabla p\, dV.
+$$ {#eq-11.7}
+
+We added the superscript $(s)$ to the pressure force to indicate that this is a
+force acting on a surface -- a so-called surface force. An ideal fluid can also
+be subject to other forces, called body forces, that act at every point in the
+fluid, like the gravitational force or possibly electromagnetic forces. We will
+here consider the gravitational force. We obtain the gravitational force acting
+on our volume $V$ by summing the gravitational force (mass times gravitational
+acceleration $\underline{g}$) on all particles, which in our continuum
+approximation becomes an integral:
+$$
+\underline{F}^{(g)}=\int_V\rho\,\underline{g}\,dV.
+$$ {#eq-11.8}
+
+So, Newton's equation $m\underline{a}=\underline{F}$ applied to our volume V of
+fluid takes the form
+$$
+ \int\limits_{V} \rho \, \frac{D\underline{u}}{Dt} \, dV = -\int\limits_{V} \nabla p\, dV + \int_V\rho\,\underline{g}\,dV.
+$$ {#eq-11.9}
+This must hold for any volume $V$. Therefore, we conclude that
+$$
+\rho \, \frac{D\underline{u}}{Dt} = -\nabla p + \rho\,\underline{g}. 
+$$ {#eq-11.10}
+This equation, together with the incompressibility condition
+@eq-conserv_mass6 are called _Euler's equations_ for an ideal fluid.
+
+::: {.callout-important}
+###Euler's equations for an ideal fluid
+$$\begin{split}
+\frac{D\underline{u}}{Dt} &= -\frac{1}{\rho}\nabla p + \underline{g}\\
+\nabla\cdot\underline{u} &= 0
+\end{split}$$ {#eq-euler2}
+:::
+
+## Water in a rotating bucket
+
+::: {#exm-bucket}
+We will now use the steady flow from Example @exm-ex1:
+$$
+\underline{u}=(-y, x,0)
+$$ {#eq-11.12}
+to illustrate the Euler equations. We have seen that this is a circular flow.
+This describes for example the flow in a rotating bucket of water. We now want
+to show that $\underline{u}$ satisfies the Euler equations and find the pressure
+$p$. We will then see that Euler's equations can tell us the shape of the
+surface of the water in the rotating bucket. You probably know from personal
+observation that you expect the surface to be higher towards the rim of the
+bucket than in the middle because the centrifugal force presses water outwards.
+We will easily find the exact shape.
+:::
+
+We have written Euler's equations in vector notation. Let's expand them in components.
+Let the $z$ axis be directed vertically up, then $\underline{g}=(0,0,-g)$.
+The equations for the material derivatives of the components of $\underline{u}$ are.
+$$\begin{split}
+&\partial_t u_x + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_x = -\frac{1}{\rho} \, \partial_x p ,\\
+&\partial_t u_y + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_y = -\frac{1}{\rho} \, \partial_y p ,\\
+&\partial_t u_z + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_z = -\frac{1}{\rho} \, \partial_z p - g.
+\end{split}$$ {#eq-euler3}
+Also, we have the incompressibility condition
+$$
+\partial_x u_x  + \partial_y u_y  + \partial_z u_z =0.
+$$ {#eq-euler3d}
+Thus, we have 4 equations for 4 unknowns: three components of the velocity,
+$u_x$, $u_y$ and $u_z$, and pressure, $p$.
+
+::: {.callout-note}
+The pressure cannot be uniquely determined from @eq-euler3, because if
+$\underline{u}(\underline{x},t)$ and $p(\underline{x},t)$ represent a solution,
+then $\underline{u}(\underline{x},t)$ and $p(\underline{x},t)+f(t)$ for
+arbitrary function $f$ is also a solution. To determine the pressure uniquely,
+we heed to impose some additional condition. For example, if we consider a flow
+in the whole space, we may require that the pressure at infinity is a given
+constant: $p(\underline{x},t)\to p_0=const$ as $\vert\underline{x}\vert\to
+\infty$.
+:::
+
+First we check that the flow with $\underline{u}=(-y,x,0)$ is incompressible,
+i.e., that @eq-euler3d is satisfied. We find
+$$
+\partial_x u_x  + \partial_y u_y  + \partial_z u_z
+=\partial_x (- y)  + \partial_y x  + \partial_z 0 =0.
+$$
+So the flow is incompressible and thus has a chance to describe an ideal fluid.
+
+Substituting $\underline{u}=(-y,x,0)$ into @eq-euler3, most terms are zero and we get
+$$
+\left\{\begin{array}{l}
+x \partial_y(- y) = -\frac{1}{\rho} \, \partial_x p ,  \\
+- y\partial_x\, x = -\frac{1}{\rho} \, \partial_y p ,   \\
+0 = -\frac{1}{\rho} \, \partial_z p - g \nonumber
+\end{array}\right. \quad \Rightarrow \quad
+\left\{\begin{array}{l}
+\partial_x p = \rho\,x,  \\
+\partial_y p = \rho\,y,  \\
+\partial_z p = -\rho \, g 
+\end{array}\right.
+$$
+We see that these equations for the pressure do indeed have a solution:
+$$
+p=\rho \left(\frac{1}{2} \, (x^2 + y^2) - g z\right) +\text{ constant}.
+$$
+This shows that this velocity field satisfies Euler's equations and thus
+describes an ideal fluid with the given pressure.
+
+At the surface of the water in the bucket the pressure is constant -- equal to
+the atmospheric pressure. From that we can deduce that
+$$
+z = \frac{1}{2g}(x^2+y^2) +\text{ constant}.
+$$
+Thus the surface of the water is a perfect paraboloid.

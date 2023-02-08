@@ -1,0 +1,166 @@
+# Surface waves 1
+
+We will now look at an example that combines the two topics of this module: waves and fluids. We will look at the waves on the surface of water.
+As waves move over the surface, of course the fluid below the surface needs to rearrange, so the shape of the wave and the flow of the fluid are
+coupled. 
+
+\begin{figure}
+\centering
+\includegraphics[width=8cm]{surface.png}
+\caption{Plane wave on the surface of water described by $y=\eta(x,t)$.}{#eq-fig:surface}
+\end{figure}
+
+If we use the $y$ coordinate as the vertical coordinate we can describe the surface by
+the equation $y = \eta(x,z,t)$ for some function $\eta$. We will simplify our calculations by looking for plane waves.
+We choose the $z$ axis to point in the direction along which the plane wave is constant.
+Then we can describe the surface by
+a function $\eta(x,t)$ that is independent of $z$. This is depicted in Figure \ref{fig:surface}.
+This will lead to a two-dimensional flow in the fluid that we can
+describe by a velocity field $\underline{u}=(u_x(x,y,t),u_y(x,y,t),0)$.
+
+We further simplify the problem by assuming that the water is infinitely deep and infinitely extended in the $x$ and $z$ directions,
+so that we do not have to impose any boundary conditions except at the surface. This is akin to how in the waves section of this module
+we first looked at the infinite string. 
+
+We will assume that the flow of the water is irrotational. This is certainly justified if we think of surface waves created for example by wind blowing
+over the surface of water at rest. This means that we can describe the flow by a velocity potential $\phi(x,y,t)$ so that $\underline{u}=\nabla\phi$, or, in components, $u_x=\partial_x\phi$ and
+$u_y=\partial_y\phi$.
+
+We describe the water as an ideal fluid. In particular we treat water as incompressible, which implies that the flow is divergence free:
+$$\tag{L}
+\nabla\cdot\underline{u}=\nabla\cdot\nabla\phi=\nabla^2\phi=\partial_x^2\phi+\partial_y^2\phi=0.
+$$ {#eq-eq:L}
+This is the Laplace equation. Of course finding solutions to the Laplace equation is easy. We have seen that the real part of any
+holomorphic function satisfies the Laplace equation. But we are looking not for an arbitrary incompressible flow  but
+one that fits the wave on its surface. This means that next we need to write down equations that couple the shape of the surface
+described by $\eta$ to the flow of the water described by $\underline{u}$ or $\phi$. These are the surface conditions.
+
+## Surface conditions
+
+We consider the interface between the water and the air. We use the fact that the density of the air is negligible compared to that of water and thus
+treat the surface as a free surface. At such a surface there are two conditions: the kinematic surface condition and the dynamic surface condition,
+which we will introduce in the next two subsections.
+
+### Kinematic condition
+The kinematic condition states that fluid particles on the surface stay on the surface. 
+
+If we introduce the distance $d$ of a point from the
+surface
+$$
+d(x,y,t)=y-\eta(x,t)
+$$
+then the particles at the surface have $d=0$ and  this will stay constant as the particle moves around,
+i.e.,
+$$\tag{K}\begin{split}
+\frac{Dd}{Dt}&=\partial_td+\underline{u}\cdot\nabla d=\partial_td+u_x\partial_x d+u_y\partial_y d\\
+&=-\partial_t\eta-u_x\partial_x \eta+u_y=0.
+\end{split}
+$$ {#eq-eq:K}
+This is the kinematic surface condition and holds at all points at the surface, i.e., all points with $y=\eta(x,t)$.
+
+### Dynamic condition {#sec-dyn}
+The dynamic condition states that the pressure at the surface equals the atmospheric pressure $p_0$.
+
+According to Euler's equation
+$$
+\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}=-\nabla\left(\frac{p}{\rho}+\frac12 u^2+\chi\right),
+$$
+where $p$ is the pressure, $\rho$ is the density and $\chi$ is the gravitational potential. The
+left-hand side simplifies for an irrotational flow described by a velocity potential $\phi$,
+$$
+\nabla(\partial_t\phi)=-\nabla\left(\frac{p}{\rho}+\frac12 u^2+\chi\right).
+$$
+We can integrate this to give
+$$
+\partial_t\phi+\frac{p}{\rho}+\frac12 u^2+\chi=G(t)
+$$
+for some integration constant $G(t)$. (Note that by `constant' in this constant we mean independent of the spatial variables.
+A time dependence does not affect the gradient.) The gravitational potential is acting in the negative $y$ direction, so $\chi = g\,y$.
+At the surface $y=\eta$ we have $p=p_0$, so
+$$
+\partial_t\phi+\frac12 u^2+g\eta=G(t)-\frac{p_0}{\rho},
+$$
+where we have collected all the constant terms on the right-hand side. We now use that shifting a potential by a constant
+does not make a difference because it is only the gradient of the potential that is relevant. We can thus simplify the
+equation by shifting $\phi \to\phi+s(t)$ where we choose $s(t)$ such that $s'(t)=G(t)-p_0/\rho$. This new potential satisfies
+$$\tag{D}
+\partial_t\phi+\frac12 u^2+g\eta=0
+$$ {#eq-eq:D}
+This is the dynamical surface condition and holds at all points at the surface, i.e.,  the points with $y=\eta(x,t)$.
+
+## Linear approximation
+The surface conditions contain non-linear terms. That makes them impossible to solve analytically. So we linearise the equations.
+For the kinematic surface condition \eqref{eq:K} this means
+$$
+-\partial_t\eta-u_x\partial_x \eta+u_y=0 \longrightarrow -\partial_t\eta+u_y=0.
+$$ {#eq-eq:Kl1}
+We assume that the term that we are dropping is small, something we will need to verify later.
+Even after dropping the quadratic term, there is still a complicated dependence on 
+$\eta$ which we need to drop as well:
+$$\tag{K'}
+\partial_t\eta(x,t)=u_y(x,\eta(x,t),t) \longrightarrow \partial_t\eta(x,t)=u_y(x,0,t).
+$$ {#eq-eq:Kl}
+This is the linearised kinematic surface condition that we will use.
+
+Similarly we linearise the dynamic surface condition to
+$$\tag{D'}
+\partial_t\phi(y,0,t)=-g\eta(x,t).
+$$ {#eq-eq:Dl}
+
+## Harmonic travelling wave solution
+Our task now is to solve the equations \eqref{eq:L}, \eqref{eq:Kl} and \eqref{eq:Dl}.
+We will do this with the harmonic travelling wave Ansatz that we discussed in lecture \ref{lec:5}\footnote{
+We could include a phase as in lecture \ref{lec:5} but it would just come along for the ride and not add anything interesting.}:
+$$
+\eta(x,t)=A\cos(kx-\omega t).
+$$
+Then in order to have a chance of satisfying \eqref{eq:Dl} we need to make the
+following Ansatz for $\phi$:
+$$
+\phi(x,y,t)=f(y)\sin(kx-\omega t),
+$$
+where $f(y)$ is an as yet undetermined function. To determine it we substitute this Ansatz into the
+Laplace equation \eqref{eq:L}. This gives
+$$
+-k^2 f(y)\sin(kx-\omega t)+f''(y)\sin(kx-\omega t)=0.
+$$
+Dividing by $\sin(kx-\omega t)$ leaves us with a very simple ODE for $f$:
+$$
+f''(y)=k^2f(y).
+$$
+The general solution is
+$$
+f(y)=D e^{k\,y} + E e^{-k\,y}
+$$
+for some undetermined constants $D$ and $E$. However $E=0$ in the case of infinite deep water because otherwise 
+the function would go to $\infty$ as $y\to-\infty$. 
+
+Substituting into the dynamic surface condition \eqref{eq:Dl} gives
+$$
+-\omega f(0)\cos(kx-\omega t)=-g\,A\cos(kx-\omega t)
+$$
+and thus
+$$
+D=\frac{g\,A}{\omega}.
+$$
+
+Finally, substituting into the kinematic surface condition \eqref{eq:Kl} gives
+$$
+\omega\,A\sin(kx-\omega t)=f'(0)\sin(kx-\omega t).
+$$
+Because $f'(0)=kD=k\,g\,A/\omega$, this gives
+$$
+\omega^2=k\, g~~\text{ or }~~ \omega=\pm\sqrt{k\,g}.
+$$
+This is the dispersion relation.
+
+So we have found a harmonic wave solution 
+$$
+\eta=A\cos(kx-\omega t)
+$$ {#eq-seta}
+ for any wave number $k$ and amplitude $A$, where $\omega=\pm\sqrt{k\,g}$.
+ Thus the wave moves with a velocity of $c=\omega/k=\pm\sqrt{g/k}$.
+The flow underneath the wave is described by the velocity potential
+$$
+\phi=\frac{A\omega}{k}e^{ky}\sin(kx-\omega t).
+$$ {#eq-wavephi}

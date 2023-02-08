@@ -1,0 +1,99 @@
+# Surface waves 2
+In this lecture we want to study the wave solution that we derived in the previous
+lecture. We will first look at the paths that the particles in the fluid follow. Then
+we will investigate under what condition the linear approximation that we made
+to simplify the surface conditions is valid. Finally we look at the dispersion in 
+the surface waves.
+
+## Pathlines
+From the velocity potential $\phi$ in \eqref{wavephi} we can read off the
+components of the velocity field as
+$$\begin{split}
+u_x&=\partial_x\phi=A\omega e^{k\,y}\cos(kx-\omega t),\\
+u_y&=\partial_y\phi=A\omega e^{k\,y}\sin(kx-\omega t).
+\end{split}$$ {#eq-wu}
+The factor of $e^{k\,y}$ shows us that the velocity decreases exponentially
+with depth.
+
+We want to understand how the fluid particles move, i.e., we want
+to determine the pathlines. These satisfy
+$$
+\frac{\underline{x}(t)}{dt}=\underline{u}(\underline{x}(t),t).
+$$ {#eq-pl1}
+Unfortunately these nonlinear equations are too complicated to solve
+analytically. So we linearise. We know from experience that, while
+the waves on the surface move over long distances, the particles in
+the fluid are not swept away with the wave but only move up and down
+and forth and back a little bit. So we write the position of the
+particle as
+$$\underline{x}(t)=\bar{\underline{x}}+\hat{\underline{x}}(t),$$
+where $\bar{\underline{x}}$ is the mean position and the $\hat{\underline{x}}$ are
+assumed to be small. Substituting this into \eqref{pl1} and looking
+at the components gives
+$$\begin{split}
+\frac{d\hat{x}}{dt}&\approx A\omega e^{k\,\bar{y}}\cos(k\bar{x}-\omega t),\\
+\frac{d\hat{y}}{dt}&\approx A\omega e^{k\,\bar{y}}\sin(k\bar{x}-\omega t).
+\end{split}$$
+This is easy to integrate to
+$$\begin{split}
+\hat{x}&\approx -A e^{k\,\bar{y}}\sin(k\bar{x}-\omega t),\\
+\hat{y}&\approx A e^{k\,\bar{y}}\cos(k\bar{x}-\omega t).
+\end{split}
+$$
+This describes motion counterclockwise around a circle of radius
+$A e^{k\,\bar{y}}$ around the mean position. When that radius
+is small, the pathlines are close to perfect circles. Closer to the surface
+where the radius gets bigger the circle will get deformed a bit.
+
+
+## Validity of linear approximation
+
+Now that we have the solutions to the linearised surface conditions we
+can check under what circumstances the linearisation was a good
+approximation. For example in \eqref{eq:Kl1} we dropped the
+term $u_x\partial_x\eta$. This is a good approximation only if the dropped
+term is much smaller in magnitude than the terms that remain. So we need
+$$
+|u_x\partial_x\eta|\ll|u_y|.
+$$
+Substituting our solutions from \eqref{wu} and \eqref{seta} gives
+$$|A\omega e^{k\,\eta}\cos(kx-\omega t)A\,k\sin(kx-\omega t)|
+\ll|A\omega e^{k\,\eta}\sin(kx-\omega t)|.$$
+We can cancel a sin from both sides.
+The factors of cosine can be dropped because it only
+takes values between $-1$ and $1$. So, after cancellations, the condition
+becomes
+$$
+|A\,k|\ll 1.
+$$
+Written in terms of the wavelength $\lambda$ this becomes
+$$
+A\ll\frac{\lambda}{2\pi}.
+$$
+So the amplitude of the wave must be small compared to its
+wavelength.
+This turns out to be exactly the same condition that we also needed in
+our linearisation while deriving the equation for waves on a string in
+lecture \ref{lec:1}
+
+We made other approximations while we linearised the surface
+conditions and we need to check whether they too are valid under
+the same circumstances. For example we replaced $u_y(x,\eta,t)$
+by $u_y(x,0,t)$. This is a good approximation if
+$$
+|u_y(x,\eta,t)-u_y(x,0,t)|\ll|u_y(x,0,t)|.
+$$
+Substituting our solution gives
+$$
+|A\omega \left(e^{k\,\eta}-1\right)\sin(kx-\omega t)|
+\ll|A\omega \sin(kx-\omega t)|,
+$$
+which simplifies to
+$$
+\left|e^{k\,\eta}-1\right|\ll1.
+$$
+This holds if $|k\, \eta|\ll 1$ which in turn holds if $|k\,A|\ll 1$.
+
+I leave it up to you to go through the approximations
+that we made in section \ref{sec:dyn} to verify that they too are good
+when $|k\,A|\ll 1$.

@@ -1,0 +1,220 @@
+# Flow around a cylinder, circulation, and the Magnus effect
+In this lecture we will explain a fascinating phenomenon: a rotating cylinder flying through air experiences a perpendicular force. 
+This phenomenon is most familiar when the rotating cylinder is replaced by a rotating ball: curve balls.
+
+## Flow around a cylinder {#sec-cylinder}
+We are on the way to describing the flow around an airfoil. We want the flow to have the following three properties:
+
+1. The flow is two-dimensional, incompressible and irrotational.
+
+2. Far away from the airfoil, the flow should be uniform and straight.
+
+3. On the surface of the airfoil, the flow follows the surface.
+
+We will now argue that the flow described by the complex potential
+$$
+w(z)=a\left(z+\frac{R^2}{z}\right)
+$$
+has these properties, albeit for a cylindrical airfoil of radius $R$ centred on the origin, as depicted in
+the first picture in Figure \ref{fig:magnus}. We'll see in the next
+lecture how we can deform the cylinder to a more airfoil-like shape. Let us verify the three properties.
+
+1. Any  flow described by a complex potential is two-dimensional, incompressible and irrotational.
+
+2. Far away from the origin, $|z|\ll 1$ and the term in $w$ that
+is proportional to $1/z$ becomes irrelevant and $w(z)\approx az$. We have already seen in Example \ref{straight}
+that this corresponds to a uniform horizontal flow.
+
+3. The flow is a steady flow, so it follows the streamlines. The streamlines are lines where the stream function is constant
+
+So we need to show  that the stream function is constant on
+the circle of radius $R$. The stream function is the imaginary part of the complex potential, so we evaluate the complex potential at all points of the form $z=Re^{i\theta}$:
+$$
+w\left( Re^{i\theta}\right)=a\left(Re^{i\theta}+\frac{R^2}{Re^{i\theta}}\right)
+=aR\left(e^{i\theta} +e^{-i\theta}\right)=aR\cos\theta.
+$$
+Thus on the circle of radius $R$ the complex potential has no imaginary part, i.e., the streamfunction is zero there, hence
+constant. 
+
+
+## Circulation {#sec-circulation}
+
+We now look at a flow around a rotating cylinder, in which the air close to the cylinder is rotating along with 
+it, as depicted in the second flow in Figure \ref{fig:magnus}. ^[Of course in a perfectly inviscid fluid the cylinder would not be able to drag the fluid along with it due to the absence
+of shear forces, so we can not describe how this circulating flow is created, but once it is established we can 
+describe it.]
+We start with the complex potential
+$$
+w(z)=i a \log z.
+$$
+This is holomorphic outside the cylinder.
+
+We find the velocity field from the derivative
+$$
+\frac{dw}{dz} = \frac{ia}{z}=\frac{ia}{x+iy}=\frac{ia(x-iy)}{x^2+y^2}=\frac{ay}{x^2+y^2}-i\frac{-ax}{x^2+y^2}.
+$$
+Introducing $r^2=x^2+y^2$ we read off the velocity components
+$$
+u_x=\frac{a}{r^2}y ~~\text{ and }~~ u_y=-\frac{a}{r^2}x.
+$$
+This is similar to the circular flow from Example \ref{ex1} just with an extra factor of $-a/r^2$, so this flow too
+is a circular flow, but with its angular velocity $\Omega$ decreasing with increasing distance from the centre,
+$\Omega=-a/r$.
+It is easy to look at this in polar coordinates: we simply need to write $z=re^{i\theta}$.
+We then have
+$$
+w(z)=i a \log z=ia\log\left( re^{i\theta}\right)=ia\left( \log r+i\theta\right)=-a\theta+ia\log r.
+$$
+So the velocity potential is $\phi=-a\theta$ and the stream function is $\psi = a\log r$.
+The streamlines are lines of constant $\psi$, so lines of constant $r$, hence circles centred on the origin.
+
+Remember that any flow described by a complex potential is irrotational. Yes, the fluid rotates around the origin,
+but an extended particle placed in the fluid does not rotate around its own axis. Now, if you do not believe this, in
+spite of the maths, you can also do the experiment. You can create something close to this flow by filling your bathroom sink
+and then pulling out the stopper. You will observe that the angular velocity of the water decreases with the distance
+from the plughole. If you glue together two matches to form a cross and place them on the water, you will see the 
+cross circling the plughole, but without rotating around its own axis. Instead its orientation will stay constant.
+The vorticity of the flow is zero. To make the situation even more perverse, this flow is called
+the {\bf line vortex flow}, in spite of its zero vorticity.
+
+While the line vortex flow is irrotational, it has non-zero {\bf circulation}. 
+The circulation $\Gamma$ of a velocity field along a closed curve $C$ is defined as the line integral of the velocity field along that closed curve,
+$$
+\Gamma = \oint_C \underline{u}\cdot d\underline{x}.
+$$ {#eq-circulation}
+According to Stoke's theorem
+$$
+\oint_C \underline{u}\cdot d\underline{x}=\int_S(\nabla\times\underline{u})\cdot d\boldsymbol{S} ,
+$$ {#eq-stokes}
+where $S$ is a surface enclosed by $C$.
+If the flow is irrotational, so that $\nabla\times\underline{u}=\underline{z}$, this seems to indicate that the circulation will always be zero.
+However this argument only works if the vector field is defined everywhere on the surface $S$. This will not be the case if the curve $C$ encircles
+a line along which the vector field is not defined. This is the case for the line vortex flow, which is undefined along the entire $z$ axis.
+
+For a two-dimensional flow with a complex potential $w$, the line integral for the circulation $\Gamma$ in \eqref{circulation} can be written as a contour
+integral in the complex plane. To derive this we start with the fact that $dw/dz=u_x-iu_y$. Hence
+$$
+\oint_C\frac{dw}{dz}dz=\oint_C(u_x-iu_y)(dx+idy)=\oint_C(u_x\,dx+u_y\,dy)-i\oint_C(u_y\,dx-u_x\,dy)
+$$
+Thus
+$$
+\Gamma = \oint_C \underline{u}\cdot d\underline{x}=\oint_C(u_x\,dx+u_y\,dy)=\operatorname{Re}\left(\oint_C\frac{dw}{dz}dz\right).
+$$
+In the example of the vortex flow with the complex potential $w=ia\log z$ this gives
+$$
+\Gamma = \operatorname{Re}\left(\oint_C\frac{ia}{z}dz\right)=-2\pi\,a.
+$$
+The contour integral was easy to perform thanks to Cauchy's residue theorem. It is nice to see how vector calculus and
+complex analysis merge to be helpful in fluid dynamics.
+
+
+
+## Magnus effect {#sec-magnus}
+We now explain the Magnus effect, whereby a spinning cylinder in an air flow can experience a force perpendicular to the airflow. This is 
+similar to the phenomenon of curve balls, except that the flow around the cylinder can be described by a two-dimensional flow unlike
+the flow around a spinning ball.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=13cm]{magnus.png}
+\caption{The flow around a rotating cylinder moving through still air is obtained as the sum of the flows from the previous sections,
+which individually did not create a lift force.}
+{#eq-fig:magnus}
+\end{figure}
+
+The idea is that near the rotating cylinder the air is dragged along, leading to a flow as depicted in Figure \ref{fig:magnus}, with a faster flow above the cylinder
+than below the cylinder. This flow can be obtained by adding a line vertex flow (see section \ref{sec:circulation}) to the flow around the non-rotating cylinder (see
+section \ref{sec:cylinder}). If we add two complex potentials, we again obtain a valid complex potential (because the sum of two holomorphic functions is again
+holomorphic). So we use the complex potential
+$$
+w(z)=a\left(z+\frac{R^2}{z}\right)+ib\log z.
+$$ {#eq-wl}
+The stagnation points --
+the points at which the flow velocity is zero -- are where the velocity of the line-vortex flow exactly cancels the velocity of the flow around the
+non-rotating cylinder. They are moved downwards by the clockwise rotation of the cylinder.
+
+Bernoulli's theorem for irrotational flow gives us the pressure as
+$$
+p = -\frac{\rho}{2}u^2 + \text{ constant}.
+$$
+We do not care about the value of the constant because the force is caused only by  pressure differences. In order to 
+calculate the force acting on the cylinder we need to calculate
+the pressure everywhere on the surface of the cylinder, so we need the velocities there. We calculate these by taking the derivative of
+the complex potential and evaluating it at  $z=Re^{i\theta}$,
+$$
+\frac{dw}{dz}=a\left(1-\frac{R^2}{z^2}\right)+\frac{ib}{z}=a\left(1-e^{-2i\theta}\right)+\frac{ib}{R}e^{-i\theta}
+=e^{-i\theta}\left( 2ia\sin(\theta)+\frac{ib}{R}\right).
+$$
+From this we get the square of the velocity as
+$$
+u^2=u_x^2+u_y^2=(u_x-iu_y)(u_x-iu_y)=\left|\frac{dw}{dz}\right|^2=\left(2a\sin\theta-\frac{b}{R}\right)^2
+$$
+and thus the pressure as
+$$
+p=-2\rho\left(a^2\sin^2\theta-a\frac{b}{R}\sin\theta\right) +\text{ constant}.
+$$
+This now allows us to calculate the force $dF$ on an infinitesimal angular segment of the cylinder between $\theta$ and $\theta+d\theta$.
+The force is constant along the length of the cylinder, so we calculate just the force per unit length. According to the definition of
+the pressure this force is
+$$
+d\underline{F} = -p\underline{n}\, dl = -p\underline{n}  R\,d\theta.
+$$
+where $\underline{n}$ is the outwards normal. We are interested in the $y$ component of this:
+$$
+dF_y = -p\,R\sin\theta  \,d\theta.
+$$
+Integrating this over the entire circle of radius $R$ gives
+$$\begin{split}
+F_y&=-\int_0^{2\pi}p(\theta)\,R\sin\theta\,d\theta\\
+&=\int_0^{2\pi}\rho\left(2a^2\sin^3\theta-2a\frac{b}{R}\sin^2\theta\right)R\,d\theta\\
+&=2\pi\rho\, a\, b.
+\end{split}$$ {#eq-magnus}
+So we have derived that the cylinder experiences a non-zero lift force that is proportional to the air density,
+the velocity of the air flow, and the angular velocity of the cylinder.
+
+## A comment on units and dimensions {#sec-units}
+When describing the real world, quantities have units and dimensions. For example, the radius of a cylinder has dimension of
+length and can be measured in either meters or feet or centimetres or ... There are three ways to deal with this:
+
+\begin{enumerate}
+\item Agree on a system of units and measure everything in terms of these units. The most common system is the SI system,
+where length is measured in meters (m), time - in seconds (s), mass - in kilograms (kg). So we would write
+$$
+\text{radius }=R \text{ meters}
+$$
+and then work with $R$ in our formulas. This seems natural to a mathematician because it means that the
+mathematician never has to think about units and dimensions because there is an agreed way to express
+all quantities as just numbers. But one looses some benefits.
+
+\item Choose units that are natural for the problem at hand. For example if the radius of the cylinder is the
+most important length in the problem, then it is natural to measure all other lengths as multiples of this radius.
+This has the nice effect that
+$$
+\text{radius }=1.
+$$
+None of the formulas will ever have to involve a parameter $R$. By similarly choosing a natural time and a natural
+mass, we can get rid of 3 parameters. This is why applied mathematicians sometimes like this approach because
+it leads to simpler expressions. It goes by the name of ``non-dimensionalisation''. Theoretical physicists use it to
+set $c=\hbar=G=1$.
+
+\item Don't specify units and keep all quantities as dimensionful quantities. So
+$$
+\text{radius }=R.
+$$
+This has the disadvantage over the previous approach that it does not reduce the number of parameters. But
+it has the advantage that we have an easy way to check whether the equations we derive make sense. If in
+any equation the different terms do not all have the same dimension, then we know we have made a mistake.
+For people like me who make mistakes very easily, this is very valuable.
+\end{enumerate}
+
+It is clear that the first approach above has no advantages, because it neither decreases the number of parameters
+in the equations nor does it give us a way to use the dimensions of the terms in the equation as a check. Nevertheless
+unfortunately it is often adopted without thinking, and I did so in this lecture. Take a look for example at \eqref{wl}:
+$$
+w(z)=a\left(z+\frac{R^2}{z}\right)+ib\log z.
+$$
+The fact that it contains $\log z$ shows that $z$ is dimensionless (because you can't take the log of a dimensionful
+number). The fact that it still contains $R$ means that I did not take approach 2, i.e., $z$ is not measured in multiples
+of $R$. 
+
+I will switch to using option 3 for the rest of the module to always have a check on the results. 
