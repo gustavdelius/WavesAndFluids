@@ -1,5 +1,7 @@
 # Waves on circular domain
 
+{{< video <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe> >}}
+
 ![Circular membrane with radius $a$ and polar coordinates.](polar_coords.png){width=60% #fig-polar_co}
 
 Let's find normal mode solution for a circular membrane of radius $a$ with fixed
