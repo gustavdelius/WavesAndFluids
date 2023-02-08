@@ -42,10 +42,10 @@ book:
       - lecture_07.qmd
       - lecture_08.qmd
       - lecture_09.qmd
-    - references.qmd
     - part: fluids.qmd
       chapters:
       - lecture10.qmd
+    - references.qmd
 
 bibliography: references.bib
 
