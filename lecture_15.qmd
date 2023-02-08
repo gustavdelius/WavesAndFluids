@@ -178,7 +178,7 @@ refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
  Thus the angle is multiplied by the integer $m$.
  But $f'(z)\neq 0$ for all $z$ in $D$ because otherwise $f$ would not be invertible. Hence $m=1$ and
  all angles are preserved. This is why such mappings by holomorphic invertible functions are called
- {\bf conformal mappings}.
+ __conformal mappings__.
  
 ## Joukouwski mapping
 

@@ -37,7 +37,7 @@ This we can rewrite as
 $$
 \partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u} = - \nabla \left(\frac{p}{\rho} + \frac{u^2}{2} + \chi\right).
 $$ {#eq-12.4}
-In this form the Euler equation involves the curl of $\underline{u}$ which is known as the {\bf vorticity}
+In this form the Euler equation involves the curl of $\underline{u}$ which is known as the __vorticity__
 $$
 \underline{\omega}=\operatorname{curl} \underline{u} = \nabla\times\underline{u}.
 $$ {#eq-vortex1}
@@ -75,7 +75,7 @@ is constant along streamlines.
 To keep $H$ constant, higher velocity must correspond to lower pressure, and vice versa.
 
 Next we restrict ourselves to flows where there is no
-vorticity, $\underline{\omega} = 0$. Such flows are called {\bf irrotational} flows.
+vorticity, $\underline{\omega} = 0$. Such flows are called __irrotational__ flows.
 In this case \eqref{bomh} implies that $\nabla H=0$, which together with $\partial_t H=0$ gives us
 
 \begin{tcolorbox}[title=Bernoulli's theorem for irrotational flow]

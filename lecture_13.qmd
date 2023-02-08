@@ -13,12 +13,12 @@ In the discussions in this lecture the time variable does not play a role, so we
 is allowed to have a time dependence.
 
 ## Velocity potential
-Consider an {\bf irrotational} flow, so that $\nabla\times\underline{u}=\underline{z}$. Then you know from Vector Calculus that there is a scalar function $\phi$
+Consider an __irrotational__ flow, so that $\nabla\times\underline{u}=\underline{z}$. Then you know from Vector Calculus that there is a scalar function $\phi$
 so that 
 $$
 \underline{u} = \nabla\phi.
 $$
-This $\phi$ is called the {\bf velocity potential}. It can be obtained from a line integral:
+This $\phi$ is called the __velocity potential__. It can be obtained from a line integral:
 $$
 \phi(\underline{x})=\int^{\underline{x}}\underline{u}(\tilde\underline{x})\cdot d\tilde\underline{x}.
 $$
@@ -26,9 +26,10 @@ Here we have not specified the starting point of the line integral because a cha
 leads to a change in $\phi$ by a constant that does not contribute to the gradient of $\phi$. It can thus can be chosen
 arbitrarily. 
 
-If the domain in which the velocity field $\underline{u}$ is defined is not simply connected, then $\phi$ may be 
-multi-valued. We will see an example of that later in section \ref{sec:circulation}, but first we will look at a simple example to make sure we understand
-the line integral.
+If the domain in which the velocity field $\underline{u}$ is defined is not
+simply connected, then $\phi$ may be multi-valued. We will see an example of
+that later in @sec:circulation, but first we will look at a simple example to
+make sure we understand the line integral.
 
 ::: {#exm-ex14}
 Show that the velocity field, given by
@@ -77,7 +78,7 @@ $$
 :::
 
 ## Stream function
-Consider an {\bf incompressible, two-dimensional } flow, so $\nabla\cdot\underline{u}=\underline{z}$ and $\underline{u}(\underline{x})=(u_x(x,y),u_y(x,y),0)$.
+Consider an __incompressible, two-dimensional __ flow, so $\nabla\cdot\underline{u}=\underline{z}$ and $\underline{u}(\underline{x})=(u_x(x,y),u_y(x,y),0)$.
 Then we can write this in terms of a scalar function $\psi(x,y)$ as follows:
 $$
 \underline{u}=\nabla\times(\psi\,\underline{e}_z)=(\partial_y\psi,-\partial_x\psi,0).
@@ -86,7 +87,7 @@ It is easy to check that this always gives an incompressible flow:
 $$
 \nabla\cdot\underline{u}=\partial_xu_x+\partial_yu_y=\partial_x\partial_y\psi-\partial_y\partial_x\psi=0.
 $$
-The function $\psi$ is known as the {\bf stream function}. The reason for this name is that a stream function
+The function $\psi$ is known as the __stream function__. The reason for this name is that a stream function
 is constant along streamlines. To check this we calculate the derivative of $\psi$ in the direction of a streamline,
 i.e., in the direction of the velocity field (recall that the velocity field is tangent to the streamlines).
 $$
@@ -127,7 +128,7 @@ You will recognise these as the Cauchy-Riemann equations. They tell us that the 
 $$
 w=\phi+i\psi
 $$
-is a holomorphic function of $z=x+iy$. This function is known as the {\bf complex potential}.
+is a holomorphic function of $z=x+iy$. This function is known as the __complex potential__.
 
 Note that here we are identifying the $x-y$ plane with the complex plane and use $z$ to denote the complex
 number in that plane. This has nothing to do with the $z$ coordinate that we used when discussing 3-dimensional flows.

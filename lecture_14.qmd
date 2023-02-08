@@ -80,9 +80,9 @@ and then pulling out the stopper. You will observe that the angular velocity of 
 from the plughole. If you glue together two matches to form a cross and place them on the water, you will see the 
 cross circling the plughole, but without rotating around its own axis. Instead its orientation will stay constant.
 The vorticity of the flow is zero. To make the situation even more perverse, this flow is called
-the {\bf line vortex flow}, in spite of its zero vorticity.
+the __line vortex flow__, in spite of its zero vorticity.
 
-While the line vortex flow is irrotational, it has non-zero {\bf circulation}. 
+While the line vortex flow is irrotational, it has non-zero __circulation__. 
 The circulation $\Gamma$ of a velocity field along a closed curve $C$ is defined as the line integral of the velocity field along that closed curve,
 $$
 \Gamma = \oint_C \underline{u}\cdot d\underline{x}.

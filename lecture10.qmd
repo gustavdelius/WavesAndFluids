@@ -64,7 +64,7 @@ $$\begin{split}
 \end{split}$$ {#eq-fluid_particle2}
 
 
-::: {#exm-10.1}
+::: {#exm-10_1}
 Find the pathlines for the 2D flow $\underline{u}=(-y,x,0)$.
 :::
 
@@ -89,10 +89,11 @@ z(t)&= z_0.
 \end{split}$$ {#eq-fluid_particle5}
 It is clear now that the pathline starting at $(x_0,y_0)$ is a circle of radius
 $\sqrt{x_0^2+y_0^2}$.
-
+:::
 
 Next we look at an example of a non-steady flow.
-::: {#exm-10.2}
+
+::: {#exm-10_2}
 We consider the 2D flow $\underline{u}=(x,t,0)$. In the video lecture we sketch
 this velocity field at $t=0$ and $t=1$.
 
@@ -136,7 +137,7 @@ $$\begin{split}
 \frac{dz(s)}{ds}&=u_z(x(s),y(s),z(s),t).
 \end{split}$$ {#eq-streamline2}
 
-So in Example \ref{ex2} the ODEs for the streamlines are
+So in @exm-10_2 the ODEs for the streamlines are
 $$
 \frac{dx(s)}{ds}=x(s), \quad \frac{dy(s)}{ds}=t, \quad \frac{dz(s)}{ds}=0.
 $$ {#eq-10.12}
@@ -146,7 +147,7 @@ $$
 x(s)=x_0e^s, ~~~
 y(t)=\frac12 st+ y_0,~~~z(t)=z_0.
 $$ {#eq-10.13}
-Note that this is different from the pathlines that we determined for @exm-10.2
+Note that this is different from the pathlines that we determined for @exm-10_2
 
 For steady flows ($\underline{u}=\underline{u}(\underline{x})$) streamlines
 coincide with pathlines, because @eq-streamline2 will be exactly the same as
@@ -201,7 +202,7 @@ $$
 =\partial_t \underline{u} + (\underline{u}\cdot\nabla) \underline{u} .
 $$ {#eq-10.17}
 
-If we calculate the acceleration in Example @exm-10.2 where
+If we calculate the acceleration in Example @exm-10_2 where
 $\underline{u}=(x,t,0)$ we get the acceleration
 $$\begin{split}
 \underline{a}(\underline{x},t) &=\frac{D \underline{u}}{Dt}=\partial_t \underline{u} + x\partial_x \underline{u} +t\partial_y \underline{u} +0\partial_y \underline{u} \\
