@@ -29,7 +29,7 @@ over the surface of water at rest. This means that we can describe the flow by a
 $u_y=\partial_y\phi$.
 
 We describe the water as an ideal fluid. In particular we treat water as incompressible, which implies that the flow is divergence free:
-$$\tag{L}
+$$
 \nabla\cdot\underline{u}=\nabla\cdot\nabla\phi=\nabla^2\phi=\partial_x^2\phi+\partial_y^2\phi=0.
 $$ {#eq-L}
 This is the Laplace equation. Of course finding solutions to the Laplace equation is easy. We have seen that the real part of any
@@ -53,7 +53,7 @@ d(x,y,t)=y-\eta(x,t)
 $$
 then the particles at the surface have $d=0$ and  this will stay constant as the particle moves around,
 i.e.,
-$$\tag{K}\begin{split}
+$$\begin{split}
 \frac{Dd}{Dt}&=\partial_td+\underline{u}\cdot\nabla d=\partial_td+u_x\partial_x d+u_y\partial_y d\\
 &=-\partial_t\eta-u_x\partial_x \eta+u_y=0.
 \end{split}
@@ -85,7 +85,7 @@ $$
 where we have collected all the constant terms on the right-hand side. We now use that shifting a potential by a constant
 does not make a difference because it is only the gradient of the potential that is relevant. We can thus simplify the
 equation by shifting $\phi \to\phi+s(t)$ where we choose $s(t)$ such that $s'(t)=G(t)-p_0/\rho$. This new potential satisfies
-$$\tag{D}
+$$
 \partial_t\phi+\frac12 u^2+g\eta=0
 $$ {#eq-D}
 This is the dynamical surface condition and holds at all points at the surface, i.e.,  the points with $y=\eta(x,t)$.
@@ -99,13 +99,13 @@ $$ {#eq-Kl1}
 We assume that the term that we are dropping is small, something we will need to verify later.
 Even after dropping the quadratic term, there is still a complicated dependence on 
 $\eta$ which we need to drop as well:
-$$\tag{K'}
+$$
 \partial_t\eta(x,t)=u_y(x,\eta(x,t),t) \longrightarrow \partial_t\eta(x,t)=u_y(x,0,t).
 $$ {#eq-Kl}
 This is the linearised kinematic surface condition that we will use.
 
 Similarly we linearise the dynamic surface condition to
-$$\tag{D'}
+$$
 \partial_t\phi(y,0,t)=-g\eta(x,t).
 $$ {#eq-Dl}
 
