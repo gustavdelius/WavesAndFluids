@@ -21,6 +21,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -33,6 +52,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./lecture_08.html" rel="next">
 <link href="./lecture_06.html" rel="prev">
+<link href="./logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -64,6 +84,12 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<meta property="og:title" content="Waves and Fluids - 7&nbsp; Two-dimensional waves">
+<meta property="og:description" content="Work in progress">
+<meta property="og:site-name" content="Waves and Fluids">
+<meta name="twitter:title" content="Waves and Fluids - 7&nbsp; Two-dimensional waves">
+<meta name="twitter:description" content="Work in progress">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating slimcontent">
@@ -161,6 +187,31 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./fluids.html" class="sidebar-item-text sidebar-link">Fluids</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">How to describe fluids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -207,9 +258,19 @@ ul.task-list li input[type="checkbox"] {
 \partial_t^2 y(x,t) = c^2\partial_x^2 y(x,t)~~\text{ and }~~\partial_t^2 z(x,t) = c^2\partial_x^2 z(x,t).
 \]</span></p>
 <p>Instead we will introduce the second dimension by going from the string stretched in the <span class="math inline">\(x\)</span> dimension to a membrane stretched in both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> dimensions. It will vibrate in the <span class="math inline">\(z\)</span> direction. This toy example of a vibrating membrane will give us the two-dimensional wave equation, which of course appears in many other applications as well.</p>
-<div>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><video src="wavy.mp4" class="img-fluid" controls=""><a href="wavy.mp4">Video</a></video></p>
+<p></p><figcaption class="figure-caption margin-caption">An example of a solution of the 2d-wave equation, which models the vibrations of a membrane.</figcaption><p></p>
+</figure>
 </div>
+</div>
+<p>You find content related to this lecture in the textbooks:</p>
+<ul>
+<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 7.3</li>
+<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> sections 32 and start of 33</li>
+</ul>
 <section id="two-dimensional-wave-equation" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="two-dimensional-wave-equation"><span class="header-section-number">7.1</span> Two-dimensional wave equation</h2>
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4114683a-2806-4119-bada-af7901218c97&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
@@ -306,6 +367,14 @@ z(\underline{x},t) = f(\underline{n}\cdot\underline{x}-ct)
 <p>When you study Electromagnetism you will meet an even nicer way of writing these equations in terms of <span class="math inline">\(n+1\)</span>-dimensional space-time vectors and tensors.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
+Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
+</div>
+<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
+Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

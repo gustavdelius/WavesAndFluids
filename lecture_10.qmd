@@ -302,6 +302,6 @@ $$
 \nabla\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass6}
 In this case, the fluid is called _incompressible_ and @eq-conserv_mass6 is
-known as the _incompressibility condition_. [A vector field $\underline{u}$
+known as the _incompressibility condition_. ^[A vector field $\underline{u}$
 satisfying $\nabla\cdot\underline{u}$ is known as a _solenoidal vector field_ or
-a _divergence-free vector field_.]{.aside}
+a _divergence-free vector field_.]

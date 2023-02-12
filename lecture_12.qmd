@@ -31,10 +31,11 @@ $$ {#eq-12.2}
 which holds for any differentiable vector field $\underline{u}$ and thus in
 particular for the velocity field. Using this, together with the definition of
 the material derivative, in the left-hand side of @eq-euler2b  gives
-$$
-\frac{D\underline{u}}{Dt} =\partial_t\underline{u}+(\underline{u}\cdot\nabla)\underline{u}
-=\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right)=- \nabla \left(\frac{p}{\rho} + \chi\right).
-$$ {#eq-12.3}
+$$\begin{split}
+\frac{D\underline{u}}{Dt} &=\partial_t\underline{u}+(\underline{u}\cdot\nabla)\underline{u}\\
+&=\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right)\\
+&=- \nabla \left(\frac{p}{\rho} + \chi\right).
+\end{split}$$ {#eq-12.3}
 This we can rewrite as
 $$
 \partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u} = - \nabla \left(\frac{p}{\rho} + \frac{u^2}{2} + \chi\right).
@@ -105,8 +106,7 @@ $$
 $$ {#eq-vortex1r}
 An example will make it easier to understand how to best think of vorticity
 
-\begin{example}
-{\rm
+::: {#exm-parallel}
 We consider the very simple flow $\underline{u}=(\alpha y, 0, 0)$ for some constant $\alpha>0$. This flow is parallel to the $x$ axis,
 with the magnitude of the velocity increasing with increasing $y$. The streamlines are simply straight horizontal lines parallel to the $x$ axis. 
 These are also the pathlines because this is a steady flow. So nothing flows in circles, so one might be tempted to guess that this is
@@ -119,8 +119,8 @@ So there is a non-zero vorticity -- the flow is not irrotational. To see this in
 If you want to do this in your bathtub, I recommend gluing two matches together to form a cross and place this on the water surface.
 If you now create a flow, this object may start to rotate. It will do so in the flow in this example because the upper end of the object 
 finds itself in an area of faster flow while the lower end is in an area of slower flow, so the object will rotate clockwise.
-}
-\end{example}
+
+:::
 
 
 ### The evolution of vorticity

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - 5&nbsp; Harmonic waves</title>
+<title>Waves and Fluids - 11&nbsp; Ideal fluid</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_06.html" rel="next">
-<link href="./lecture_04.html" rel="prev">
+<link href="./lecture_12.html" rel="next">
+<link href="./lecture_10.html" rel="prev">
 <link href="./logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,10 +84,10 @@ div.csl-indent {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Waves and Fluids - 5&nbsp; Harmonic waves">
+<meta property="og:title" content="Waves and Fluids - 11&nbsp; Ideal fluid">
 <meta property="og:description" content="Work in progress">
 <meta property="og:site-name" content="Waves and Fluids">
-<meta name="twitter:title" content="Waves and Fluids - 5&nbsp; Harmonic waves">
+<meta name="twitter:title" content="Waves and Fluids - 11&nbsp; Ideal fluid">
 <meta name="twitter:description" content="Work in progress">
 <meta name="twitter:card" content="summary">
 </head>
@@ -98,7 +98,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -162,7 +162,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -202,7 +202,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></a>
+  <a href="./lecture_11.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -226,17 +226,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#harmonic-waves" id="toc-harmonic-waves" class="nav-link active" data-scroll-target="#harmonic-waves"><span class="toc-section-number">5.1</span>  Harmonic waves</a></li>
-  <li><a href="#solving-pdes-with-harmonic-waves" id="toc-solving-pdes-with-harmonic-waves" class="nav-link" data-scroll-target="#solving-pdes-with-harmonic-waves"><span class="toc-section-number">5.2</span>  Solving PDEs with harmonic waves</a></li>
+  <li><a href="#the-euler-equations-for-an-ideal-fluid" id="toc-the-euler-equations-for-an-ideal-fluid" class="nav-link active" data-scroll-target="#the-euler-equations-for-an-ideal-fluid"><span class="toc-section-number">11.1</span>  The Euler equations for an ideal fluid</a></li>
+  <li><a href="#water-in-a-rotating-bucket" id="toc-water-in-a-rotating-bucket" class="nav-link" data-scroll-target="#water-in-a-rotating-bucket"><span class="toc-section-number">11.2</span>  Water in a rotating bucket</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_05.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_11.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-5" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></h1>
 </div>
 
 
@@ -251,101 +251,130 @@ div.csl-indent {
 
 </header>
 
-<p>You can find related material in the textbooks:</p>
+<p>You find content related to this lecture in the textbooks:</p>
 <ul>
-<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> section 3</li>
-<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> and Bridgeman section 1.7</li>
+<li><span class="citation" data-cites="batchelor">Batchelor (<a href="references.html#ref-batchelor" role="doc-biblioref">2000</a>)</span> section 2.2</li>
+<li><span class="citation" data-cites="acheson">Acheson (<a href="references.html#ref-acheson" role="doc-biblioref">1990</a>)</span> start of section 1.3</li>
 </ul>
-<section id="harmonic-waves" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="harmonic-waves"><span class="header-section-number">5.1</span> Harmonic waves</h2>
-<p>Harmonic waves are waves that are described by sines and cosines. A travelling harmonic wave can be written as <span id="eq-harmonic1"><span class="math display">\[
-y(x,t)=a \cos\left(kx - \omega t + \phi\right)
-\tag{5.1}\]</span></span> or <span id="eq-harmonic2"><span class="math display">\[
-y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
-\tag{5.2}\]</span></span> where <span class="math inline">\(a\)</span> is the amplitude, <span class="math inline">\(\hat{k}\)</span> the wave number, <span class="math inline">\(\nu\)</span> the frequency, <span class="math inline">\(\phi\)</span> the phase, and where <span id="eq-5.3"><span class="math display">\[
-k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
-\tag{5.3}\]</span></span> are the angular wave number and the angular frequency, respectively. Note that <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span> are used more often by mathematicians than <span class="math inline">\(\hat{k}\)</span> and <span class="math inline">\(\nu\)</span> and that the prefix `angular’ is often discarded.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="the-euler-equations-for-an-ideal-fluid" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="the-euler-equations-for-an-ideal-fluid"><span class="header-section-number">11.1</span> The Euler equations for an ideal fluid</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=23e652fe-156d-431f-8057-af790126dfa9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>Euler wrote down the partial differential equations describing an ideal fluid already in 1755. This was one of the first partial differential equations systems to be studied.</p>
+<p>An ideal fluid has two simplifying properties:</p>
+<ol type="1">
+<li><p>The density is constant throughout the fluid at all times, so the density that in a general fluid could be a function of space and time is a constant: <span class="math inline">\(\rho(\underline{x},t)=\rho\)</span>, i.e., <span id="eq-11.1"><span class="math display">\[
+\partial_t\rho=0=\nabla\rho.
+\tag{11.1}\]</span></span> This implies that also the material derivative is zero: <span id="eq-11.2"><span class="math display">\[
+\frac{D\rho}{Dt}=\partial_t\rho+\underline{u}\cdot\nabla\rho=0.
+\tag{11.2}\]</span></span> We had seen already that this implies that the fluid is incompressible: <span class="math inline">\(\nabla\cdot\underline{u}=0\)</span>. But the condition on an ideal fluid is stronger than incompressibility, because it demands that the density is not only constant as experienced by each fluid particle, but that it is also the same across different fluid particles.</p></li>
+<li><p>The force that the fluid exerts on any infinitesimal surface element is solely in the direction of the normal vector to the surface element. Thus this surface force contribution can be written as <span id="eq-11.3"><span class="math display">\[
+d\underline{F}^{(s)}=p\, \underline{n}\, dS
+\tag{11.3}\]</span></span> where <span class="math inline">\(p=p(\underline{x},t)\)</span> is called the <strong>pressure</strong>, <span class="math inline">\(\underline{n}\)</span> is the normal vector to the surface, and the factor of <span class="math inline">\(dS\)</span> expresses that the force is proportional to the area of the surface element.</p>
+<p>Thus in an ideal fluid there are no surface forces acting tangentially to the surface, also called shear forces. Such a fluid is also called <strong>inviscid</strong>. The opposite would be a <strong>viscous</strong> fluid. In reality every fluid has at least a little bit of viscosity, but in circumstances where these viscous forces are negligible compared to the other forces we can neglect them and treat the fluid as inviscid.</p></li>
+</ol>
+<p>The equation of motion is simply Newton’s equation: <span class="math inline">\(m\mathbf{a}=\underline{F}\)</span>. We consider a volume <span class="math inline">\(V\)</span> inside the fluid. We sum up the mass multiplied by the acceleration for each fluid particle inside the volume, which due to our continuity approximation becomes an integral of the density multiplied by the acceleration vector field <span class="math inline">\(D\underline{u}/Dt\)</span> over the volume <span class="math inline">\(V\)</span>: <span id="eq-11.4"><span class="math display">\[
+m\underline{a} = \int\limits_{V} \rho \, \frac{D\underline{u}}{Dt} \, dV .
+\tag{11.4}\]</span></span></p>
+<p>As discussed above, for an ideal fluid, the only force acting on the surface of the volume <span class="math inline">\(V\)</span> is the force due to the pressure in the surrounding fluid. The total force exerted on the volume <span class="math inline">\(V\)</span> is obtained by integrating the contributions from all infinitesimal surface elements: <span id="eq-11.5"><span class="math display">\[
+\underline{F}^{(s)} = -\oint\limits_{\partial V} p \, \underline{n} \, dS .
+%\quad \text{or, in components,} \quad  \underline{F} = -\oint\limits_{\partial V} p \, n_i \, dV \ \ \text{for} \ \ i=1,2,3.
+\tag{11.5}\]</span></span> The reason for the minus sign is that by convention <span class="math inline">\(\underline{n}\)</span> denotes the outwards normal, but we are interested in the force acting on the volume from the outside.</p>
+<p>We now use a form of the divergence theorem that you may not have met yet:</p>
+<div id="thm-div2" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 11.1 </strong></span>For any scalar function <span class="math inline">\(f(\underline{x})\)</span> <span id="eq-divergence_thrm2"><span class="math display">\[
+\oint\limits_{\partial V} f \, \underline{n} \, dS = \int\limits_{V} \nabla f \, dV.
+\tag{11.6}\]</span></span></p>
 </div>
-<div class="callout-caption-container flex-fill">
-Terminology
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The <span class="math inline">\(i\)</span>th component of the above vector equation can be obtained by setting <span class="math inline">\(\underline{F}=f\underline{e}_i\)</span> in the divergence theorem <a href="lecture_10.html#thm-div">Theorem&nbsp;<span>10.1</span></a>.</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><em>Frequency</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit time.</li>
-<li><em>Wave number</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit length.</li>
-<li><em>Period</em> <span class="math inline">\(=\)</span> time <span class="math inline">\(P\)</span> needed to complete one cycle (oscillation): <span id="eq-5.4"><span class="math display">\[
-P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
-\tag{5.4}\]</span></span></li>
-<li><em>Wave length</em> <span class="math inline">\(=\)</span> distance between two consecutive wave crests (peaks): <span id="eq-5.5"><span class="math display">\[
-\lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
-\tag{5.5}\]</span></span></li>
-<li><em>Wave speed</em> <span class="math inline">\(=\)</span> speed at which the wave is travelling: <span id="eq-5.6"><span class="math display">\[
-c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
-\tag{5.6}\]</span></span> (Sometimes, the wave speed is also called the <em>phase speed</em>.)</li>
-</ul>
-</div>
-</div>
-<p>The harmonic wave <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a> can be written as <span id="eq-harmonic3"><span class="math display">\[\begin{split}
-y(x,t)&amp;=a \cos\left(kx - \omega t + \phi\right) \\
-&amp;= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
-&amp;=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
-\end{split} \tag{5.7}\]</span></span> where we have included the phase factor <span class="math inline">\(e^{i\phi}\)</span> into the complex amplitude: <span class="math inline">\(A= a e^{i\phi}\)</span>.</p>
-<p>Consider now the complex function <span id="eq-harmonic4"><span class="math display">\[
-y(x,t)= A \, e^{i(kx-\omega(k) t)}
-\tag{5.8}\]</span></span> for any <span class="math inline">\(A\in\mathbb{C}\)</span>, any <span class="math inline">\(k\in\mathbb{R}\)</span> and some <span class="math inline">\(\omega(k)\)</span>. Substituting this into the wave equation gives us an equation for <span class="math inline">\(\omega(k)\)</span>: <span id="eq-5.9"><span class="math display">\[
-\partial_t^2 y =c^2 \partial_x^2 y  \quad
-\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
-\tag{5.9}\]</span></span> Therefore, if <span id="eq-5.10"><span class="math display">\[
-\omega(k) = \pm ck
-\tag{5.10}\]</span></span> then the complex function in <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> is a solution of the wave equation. We will refer to these complex solutions as <em>complex harmonic waves</em>. They are often more convenient to work with than their real counterpart in <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a>.</p>
-<p><a href="#eq-5.10">Eq.&nbsp;<span>5.10</span></a> is an example of a <em>dispersion relation</em>. It states that for the wave equation, <span class="math inline">\(\omega\)</span> is proportional to <span class="math inline">\(k\)</span>. But complex harmonic waves can also solve other PDEs, as we will see in the next subsection, and that will lead to more complicated dispersion relations.</p>
-</section>
-<section id="solving-pdes-with-harmonic-waves" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="solving-pdes-with-harmonic-waves"><span class="header-section-number">5.2</span> Solving PDEs with harmonic waves</h2>
+<p>Applying this to the expression for the surface force <span class="math inline">\(\underline{F}^{(s)}\)</span> by setting <span class="math inline">\(f=p\)</span> allows us to express the force as a volume integral: <span id="eq-11.7"><span class="math display">\[
+\underline{F}^{(s)} = -\int\limits_{V} \nabla p\, dV.
+\tag{11.7}\]</span></span></p>
+<p>We added the superscript <span class="math inline">\((s)\)</span> to the pressure force to indicate that this is a force acting on a surface – a so-called surface force. An ideal fluid can also be subject to other forces, called body forces, that act at every point in the fluid, like the gravitational force or possibly electromagnetic forces. We will here consider the gravitational force. We obtain the gravitational force acting on our volume <span class="math inline">\(V\)</span> by summing the gravitational force (mass times gravitational acceleration <span class="math inline">\(\underline{g}\)</span>) on all particles, which in our continuum approximation becomes an integral: <span id="eq-11.8"><span class="math display">\[
+\underline{F}^{(g)}=\int_V\rho\,\underline{g}\,dV.
+\tag{11.8}\]</span></span></p>
+<p>So, Newton’s equation <span class="math inline">\(m\underline{a}=\underline{F}\)</span> applied to our volume V of fluid takes the form <span id="eq-11.9"><span class="math display">\[
+\int\limits_{V} \rho \, \frac{D\underline{u}}{Dt} \, dV = -\int\limits_{V} \nabla p\, dV + \int_V\rho\,\underline{g}\,dV.
+\tag{11.9}\]</span></span> This must hold for any volume <span class="math inline">\(V\)</span>. Therefore, we conclude that <span id="eq-11.10"><span class="math display">\[
+\rho \, \frac{D\underline{u}}{Dt} = -\nabla p + \rho\,\underline{g}.
+\tag{11.10}\]</span></span> This equation, together with the incompressibility condition <a href="lecture_10.html#eq-conserv_mass6">Eq.&nbsp;<span>10.29</span></a> are called <em>Euler’s equations</em> for an ideal fluid.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Important
+Euler’s equations for an ideal fluid
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Any linear homogeneous PDE (in variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>) with constant coefficients has complex harmonic wave solutions <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> for some <span class="math inline">\(\omega(k)\)</span>.</p>
+<p><span id="eq-euler2"><span class="math display">\[\begin{split}
+\frac{D\underline{u}}{Dt} &amp;= -\frac{1}{\rho}\nabla p + \underline{g}\\
+\nabla\cdot\underline{u} &amp;= 0
+\end{split} \tag{11.11}\]</span></span></p>
 </div>
 </div>
-<div id="exm-8" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.1 </strong></span>Consider the damped string (with friction force proportional to velocity): <span id="eq-damped1"><span class="math display">\[
-  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
-  p&gt;0.
-\tag{5.11}\]</span></span> Substituting the complex harmonic wave from <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> into this equation, we obtain the dispersion relation <span id="eq-5.12"><span class="math display">\[
--\omega^2 y =- c^2 k^2 y +ip\,\omega y .
-\tag{5.12}\]</span></span> Cancelling the <span class="math inline">\(y\)</span> we obtain a quadratic equation for <span class="math inline">\(\omega^2\)</span> which has the complex solution <span id="eq-iw"><span class="math display">\[
-\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
-\tag{5.13}\]</span></span> Thus we have the following solution for the damped string: <span id="eq-dampedy"><span class="math display">\[\begin{split}
-y(x,t)&amp;= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
-&amp;=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
-\end{split} \tag{5.14}\]</span></span> The factor <span class="math inline">\(e^{-pt/2}\)</span> shows that we have a wave with exponentially decreasing amplitude. This is a consequence of the damping. The wave speed is now dependent on the wave number <span class="math inline">\(k\)</span>: <span id="eq-5.15"><span class="math display">\[
-c(k)=\sqrt{c^2  - p^2/(4k^2)}.
-\tag{5.15}\]</span></span> If we want to, we can get a real solution by taking the real part of the complex solution: <span id="eq-5.16"><span class="math display">\[
-\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
-\tag{5.16}\]</span></span> where <span class="math inline">\(a=\vert A\vert\)</span> and <span class="math inline">\(\phi=\arg(A)\)</span>.</p>
+</section>
+<section id="water-in-a-rotating-bucket" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="water-in-a-rotating-bucket"><span class="header-section-number">11.2</span> Water in a rotating bucket</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=71f7353e-6a20-43be-9591-af790126df68&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<div id="exm-bucket" class="theorem example">
+<p><span class="theorem-title"><strong>Example 11.1 </strong></span>We will now use the steady flow from Example <a href="lecture_10.html#exm-10_1">Example&nbsp;<span>10.1</span></a>: <span id="eq-11.12"><span class="math display">\[
+\underline{u}=(-y, x,0)
+\tag{11.12}\]</span></span> to illustrate the Euler equations. We have seen that this is a circular flow. This describes for example the flow in a rotating bucket of water. We now want to show that <span class="math inline">\(\underline{u}\)</span> satisfies the Euler equations and find the pressure <span class="math inline">\(p\)</span>. We will then see that Euler’s equations can tell us the shape of the surface of the water in the rotating bucket. You probably know from personal observation that you expect the surface to be higher towards the rim of the bucket than in the middle because the centrifugal force presses water outwards. We will easily find the exact shape.</p>
 </div>
-<p>Note that the imaginary part of <span class="math inline">\(\omega\)</span> produces the damping exponential and the real part of <span class="math inline">\(\omega\)</span> determines the wave speed.</p>
+<p>We have written Euler’s equations in vector notation. Let’s expand them in components. Let the <span class="math inline">\(z\)</span> axis be directed vertically up, then <span class="math inline">\(\underline{g}=(0,0,-g)\)</span>. The equations for the material derivatives of the components of <span class="math inline">\(\underline{u}\)</span> are. <span id="eq-euler3"><span class="math display">\[\begin{split}
+&amp;\partial_t u_x + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_x = -\frac{1}{\rho} \, \partial_x p ,\\
+&amp;\partial_t u_y + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_y = -\frac{1}{\rho} \, \partial_y p ,\\
+&amp;\partial_t u_z + \left(u_x \partial_x + u_y \partial_y + u_z \partial_z\right) u_z = -\frac{1}{\rho} \, \partial_z p - g.
+\end{split} \tag{11.13}\]</span></span> Also, we have the incompressibility condition <span id="eq-euler3d"><span class="math display">\[
+\partial_x u_x  + \partial_y u_y  + \partial_z u_z =0.
+\tag{11.14}\]</span></span> Thus, we have 4 equations for 4 unknowns: three components of the velocity, <span class="math inline">\(u_x\)</span>, <span class="math inline">\(u_y\)</span> and <span class="math inline">\(u_z\)</span>, and pressure, <span class="math inline">\(p\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The pressure cannot be uniquely determined from <a href="#eq-euler3">Eq.&nbsp;<span>11.13</span></a>, because if <span class="math inline">\(\underline{u}(\underline{x},t)\)</span> and <span class="math inline">\(p(\underline{x},t)\)</span> represent a solution, then <span class="math inline">\(\underline{u}(\underline{x},t)\)</span> and <span class="math inline">\(p(\underline{x},t)+f(t)\)</span> for arbitrary function <span class="math inline">\(f\)</span> is also a solution. To determine the pressure uniquely, we heed to impose some additional condition. For example, if we consider a flow in the whole space, we may require that the pressure at infinity is a given constant: <span class="math inline">\(p(\underline{x},t)\to p_0=const\)</span> as <span class="math inline">\(\vert\underline{x}\vert\to \infty\)</span>.</p>
+</div>
+</div>
+<p>First we check that the flow with <span class="math inline">\(\underline{u}=(-y,x,0)\)</span> is incompressible, i.e., that <a href="#eq-euler3d">Eq.&nbsp;<span>11.14</span></a> is satisfied. We find <span class="math display">\[
+\partial_x u_x  + \partial_y u_y  + \partial_z u_z
+=\partial_x (- y)  + \partial_y x  + \partial_z 0 =0.
+\]</span> So the flow is incompressible and thus has a chance to describe an ideal fluid.</p>
+<p>Substituting <span class="math inline">\(\underline{u}=(-y,x,0)\)</span> into <a href="#eq-euler3">Eq.&nbsp;<span>11.13</span></a>, most terms are zero and we get <span class="math display">\[
+\left\{\begin{array}{l}
+x \partial_y(- y) = -\frac{1}{\rho} \, \partial_x p ,  \\
+- y\partial_x\, x = -\frac{1}{\rho} \, \partial_y p ,   \\
+0 = -\frac{1}{\rho} \, \partial_z p - g \nonumber
+\end{array}\right. \quad \Rightarrow \quad
+\left\{\begin{array}{l}
+\partial_x p = \rho\,x,  \\
+\partial_y p = \rho\,y,  \\
+\partial_z p = -\rho \, g
+\end{array}\right.
+\]</span> We see that these equations for the pressure do indeed have a solution: <span class="math display">\[
+p=\rho \left(\frac{1}{2} \, (x^2 + y^2) - g z\right) +\text{ constant}.
+\]</span> This shows that this velocity field satisfies Euler’s equations and thus describes an ideal fluid with the given pressure.</p>
+<p>At the surface of the water in the bucket the pressure is constant – equal to the atmospheric pressure. From that we can deduce that <span class="math display">\[
+z = \frac{1}{2g}(x^2+y^2) +\text{ constant}.
+\]</span> Thus the surface of the water is a perfect paraboloid.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
-Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
+<div id="ref-acheson" class="csl-entry" role="doc-biblioentry">
+Acheson, D. J. 1990. <em>Elementary Fluid Dynamics</em>. Clarendon Press.
 </div>
-<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
-Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
+<div id="ref-batchelor" class="csl-entry" role="doc-biblioentry">
+Batchelor, G. K. 2000. <em>An Introduction to Fluid Dynamics</em>. Cambridge University Press.
 </div>
 </div>
 </section>
@@ -500,13 +529,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lecture_04.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span>
+      <a href="./lecture_10.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">How to describe fluids</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_06.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lecture_12.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

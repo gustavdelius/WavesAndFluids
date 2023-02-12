@@ -8,7 +8,7 @@
 
 <meta name="description" content="Work in progress">
 
-<title>Waves and Fluids - 5&nbsp; Harmonic waves</title>
+<title>Waves and Fluids - 12&nbsp; Bernoulli’s principle and vorticity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_06.html" rel="next">
-<link href="./lecture_04.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./lecture_11.html" rel="prev">
 <link href="./logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,10 +84,10 @@ div.csl-indent {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Waves and Fluids - 5&nbsp; Harmonic waves">
+<meta property="og:title" content="Waves and Fluids - 12&nbsp; Bernoulli’s principle and vorticity">
 <meta property="og:description" content="Work in progress">
 <meta property="og:site-name" content="Waves and Fluids">
-<meta name="twitter:title" content="Waves and Fluids - 5&nbsp; Harmonic waves">
+<meta name="twitter:title" content="Waves and Fluids - 12&nbsp; Bernoulli’s principle and vorticity">
 <meta name="twitter:description" content="Work in progress">
 <meta name="twitter:card" content="summary">
 </head>
@@ -98,7 +98,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -162,7 +162,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,7 +207,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></a>
+  <a href="./lecture_12.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></a>
   </div>
 </li>
       </ul>
@@ -226,17 +226,20 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#harmonic-waves" id="toc-harmonic-waves" class="nav-link active" data-scroll-target="#harmonic-waves"><span class="toc-section-number">5.1</span>  Harmonic waves</a></li>
-  <li><a href="#solving-pdes-with-harmonic-waves" id="toc-solving-pdes-with-harmonic-waves" class="nav-link" data-scroll-target="#solving-pdes-with-harmonic-waves"><span class="toc-section-number">5.2</span>  Solving PDEs with harmonic waves</a></li>
+  <li><a href="#bernoullis-principle" id="toc-bernoullis-principle" class="nav-link active" data-scroll-target="#bernoullis-principle"><span class="toc-section-number">12.1</span>  Bernoulli’s principle</a></li>
+  <li><a href="#vorticity" id="toc-vorticity" class="nav-link" data-scroll-target="#vorticity"><span class="toc-section-number">12.2</span>  Vorticity</a>
+  <ul class="collapse">
+  <li><a href="#the-evolution-of-vorticity" id="toc-the-evolution-of-vorticity" class="nav-link" data-scroll-target="#the-evolution-of-vorticity"><span class="toc-section-number">12.2.1</span>  The evolution of vorticity</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_05.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_12.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-5" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></h1>
 </div>
 
 
@@ -251,103 +254,106 @@ div.csl-indent {
 
 </header>
 
-<p>You can find related material in the textbooks:</p>
+<p>You find content related to this lecture in the textbooks:</p>
 <ul>
-<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> section 3</li>
-<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> and Bridgeman section 1.7</li>
+<li><span class="citation" data-cites="batchelor">Batchelor (<a href="references.html#ref-batchelor" role="doc-biblioref">2000</a>)</span> sections 1.3, 1.4, and 1.5</li>
 </ul>
-<section id="harmonic-waves" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="harmonic-waves"><span class="header-section-number">5.1</span> Harmonic waves</h2>
-<p>Harmonic waves are waves that are described by sines and cosines. A travelling harmonic wave can be written as <span id="eq-harmonic1"><span class="math display">\[
-y(x,t)=a \cos\left(kx - \omega t + \phi\right)
-\tag{5.1}\]</span></span> or <span id="eq-harmonic2"><span class="math display">\[
-y(x,t)=a \cos\left(2\pi(\hat{k}x - \nu t) + \phi\right)
-\tag{5.2}\]</span></span> where <span class="math inline">\(a\)</span> is the amplitude, <span class="math inline">\(\hat{k}\)</span> the wave number, <span class="math inline">\(\nu\)</span> the frequency, <span class="math inline">\(\phi\)</span> the phase, and where <span id="eq-5.3"><span class="math display">\[
-k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
-\tag{5.3}\]</span></span> are the angular wave number and the angular frequency, respectively. Note that <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span> are used more often by mathematicians than <span class="math inline">\(\hat{k}\)</span> and <span class="math inline">\(\nu\)</span> and that the prefix `angular’ is often discarded.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Terminology
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><em>Frequency</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit time.</li>
-<li><em>Wave number</em> <span class="math inline">\(=\)</span> number of cycles (oscillations) per unit length.</li>
-<li><em>Period</em> <span class="math inline">\(=\)</span> time <span class="math inline">\(P\)</span> needed to complete one cycle (oscillation): <span id="eq-5.4"><span class="math display">\[
-P=\frac{1}{\nu}=\frac{2\pi}{\omega}.
-\tag{5.4}\]</span></span></li>
-<li><em>Wave length</em> <span class="math inline">\(=\)</span> distance between two consecutive wave crests (peaks): <span id="eq-5.5"><span class="math display">\[
-\lambda = \frac{1}{\hat{k}}=\frac{2\pi}{k}.
-\tag{5.5}\]</span></span></li>
-<li><em>Wave speed</em> <span class="math inline">\(=\)</span> speed at which the wave is travelling: <span id="eq-5.6"><span class="math display">\[
-c = \frac{\lambda}{P}=\frac{\nu}{\hat{k}}=\frac{\omega}{k}.
-\tag{5.6}\]</span></span> (Sometimes, the wave speed is also called the <em>phase speed</em>.)</li>
-</ul>
-</div>
-</div>
-<p>The harmonic wave <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a> can be written as <span id="eq-harmonic3"><span class="math display">\[\begin{split}
-y(x,t)&amp;=a \cos\left(kx - \omega t + \phi\right) \\
-&amp;= \operatorname{Re}\left( a e^{i\phi} e^{i(kx-\omega t)}\right)\\
-&amp;=\operatorname{Re}\left( A e^{i(kx-\omega t)}\right),
-\end{split} \tag{5.7}\]</span></span> where we have included the phase factor <span class="math inline">\(e^{i\phi}\)</span> into the complex amplitude: <span class="math inline">\(A= a e^{i\phi}\)</span>.</p>
-<p>Consider now the complex function <span id="eq-harmonic4"><span class="math display">\[
-y(x,t)= A \, e^{i(kx-\omega(k) t)}
-\tag{5.8}\]</span></span> for any <span class="math inline">\(A\in\mathbb{C}\)</span>, any <span class="math inline">\(k\in\mathbb{R}\)</span> and some <span class="math inline">\(\omega(k)\)</span>. Substituting this into the wave equation gives us an equation for <span class="math inline">\(\omega(k)\)</span>: <span id="eq-5.9"><span class="math display">\[
-\partial_t^2 y =c^2 \partial_x^2 y  \quad
-\Rightarrow \quad -\omega^2 A =-c^2 k^2 A.
-\tag{5.9}\]</span></span> Therefore, if <span id="eq-5.10"><span class="math display">\[
-\omega(k) = \pm ck
-\tag{5.10}\]</span></span> then the complex function in <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> is a solution of the wave equation. We will refer to these complex solutions as <em>complex harmonic waves</em>. They are often more convenient to work with than their real counterpart in <a href="#eq-harmonic1">Eq.&nbsp;<span>5.1</span></a>.</p>
-<p><a href="#eq-5.10">Eq.&nbsp;<span>5.10</span></a> is an example of a <em>dispersion relation</em>. It states that for the wave equation, <span class="math inline">\(\omega\)</span> is proportional to <span class="math inline">\(k\)</span>. But complex harmonic waves can also solve other PDEs, as we will see in the next subsection, and that will lead to more complicated dispersion relations.</p>
+<p>Solving Euler’s equations is hard. It is therefore worthwhile to first try to derive consequences of the equations without actually solving them. So in this lecture we will use our vector calculus skills to manipulate Euler’s equations a bit until they reveal to us Bernoulli’s principle and the vorticity equation.</p>
+<section id="bernoullis-principle" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="bernoullis-principle"><span class="header-section-number">12.1</span> Bernoulli’s principle</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=22755b53-5770-402f-abc9-af7901271374&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>We will make two observations that allow us to rewrite the equations in new ways.</p>
+<ol type="1">
+<li><p>Because gravity is a conservative force, it can be written as minus the gradient of a potential: <span class="math inline">\(\underline{g}= -\nabla\chi\)</span>. In the simple case where gravitational force is constant and in the negative <span class="math inline">\(z\)</span> direction, <span class="math inline">\(\chi = g\,z\)</span> so that <span class="math inline">\(\underline{g} = -g\,\underline{e}_z\)</span>. Hence, <a href="lecture_11.html#eq-euler2">Eq.&nbsp;<span>11.11</span></a> can also be written as <span id="eq-euler2b"><span class="math display">\[
+\frac{D\underline{u}}{Dt} = - \nabla \left(\frac{p}{\rho} + \chi\right).
+\tag{12.1}\]</span></span></p></li>
+<li><p>We will use the vector calculus identity <span id="eq-12.2"><span class="math display">\[
+(\underline{u}\cdot\nabla)\underline{u} = (\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right),
+\tag{12.2}\]</span></span> which holds for any differentiable vector field <span class="math inline">\(\underline{u}\)</span> and thus in particular for the velocity field. Using this, together with the definition of the material derivative, in the left-hand side of <a href="#eq-euler2b">Eq.&nbsp;<span>12.1</span></a> gives <span id="eq-12.3"><span class="math display">\[\begin{split}
+\frac{D\underline{u}}{Dt} &amp;=\partial_t\underline{u}+(\underline{u}\cdot\nabla)\underline{u}\\
+&amp;=\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right)\\
+&amp;=- \nabla \left(\frac{p}{\rho} + \chi\right).
+\end{split} \tag{12.3}\]</span></span> This we can rewrite as <span id="eq-12.4"><span class="math display">\[
+\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u} = - \nabla \left(\frac{p}{\rho} + \frac{u^2}{2} + \chi\right).
+\tag{12.4}\]</span></span> In this form the Euler equation involves the curl of <span class="math inline">\(\underline{u}\)</span> which is known as the <strong>vorticity</strong> <span id="eq-vortex1"><span class="math display">\[
+\underline{\omega}=\operatorname{curl} \underline{u} = \nabla\times\underline{u}.
+\tag{12.5}\]</span></span> If we also introduce the function <span id="eq-12.6"><span class="math display">\[
+H=\frac{p}{\rho} + \frac{u^2}{2} + \chi,
+\tag{12.6}\]</span></span> sometimes known as Bernoulli’s integral, we can write the equation simply as <span id="eq-vortex2"><span class="math display">\[
+\partial_t\underline{u}+\underline{\omega}\times\underline{u} = - \nabla H.
+\tag{12.7}\]</span></span></p></li>
+</ol>
+This simplifies even further if we consider a steady steady flow, so that <span class="math inline">\(\partial_t\underline{u}=0\)</span>. Then <a href="#eq-vortex2">Eq.&nbsp;<span>12.7</span></a> simplifies to <span id="eq-bomh"><span class="math display">\[
+\underline{\omega}\times\underline{u}=-\nabla H.
+\tag{12.8}\]</span></span> To get rid of the vector product in this equation, we take the dot product with <span class="math inline">\(\underline{u}\)</span> on both sides: <span class="math display">\[
+\underline{u}\cdot(\underline{\omega}\times\underline{u})=-\underline{u}\cdot\nabla H.
+\]</span> On the left hand side the cross product <span class="math inline">\(\underline{\omega}\times\underline{u}\)</span> is orthogonal to <span class="math inline">\(\underline{u}\)</span> so that the dot product with <span class="math inline">\(\underline{u}\)</span> is zero. So the right-hand side is zero: <span class="math inline">\(\underline{u}\cdot\nabla H=0\)</span>. Together with the fact that for a steady flow <span class="math inline">\(\partial_t H\)</span> is zero, this shows that the material derivative of <span class="math inline">\(H\)</span> is zero: <span class="math display">\[
+\frac{DH}{Dt}=\partial_tH+\underline{u}\cdot\nabla H=0.
+\]</span> So <span class="math inline">\(H\)</span> does not change along pathlines or, which for steady flows is the same thing, along streamlines. This gives us
+<p>To keep <span class="math inline">\(H\)</span> constant, higher velocity must correspond to lower pressure, and vice versa.</p>
+<p>Next we restrict ourselves to flows where there is no vorticity, <span class="math inline">\(\underline{\omega} = 0\)</span>. Such flows are called <strong>irrotational</strong> flows. In this case <a href="#eq-bomh">Eq.&nbsp;<span>12.8</span></a> implies that <span class="math inline">\(\nabla H=0\)</span>, which together with <span class="math inline">\(\partial_t H=0\)</span> gives us</p>
+This theorem is used to explain the lift created by the airflow around an aerofoil: because the air flows faster along the top of the aerofoil than along the bottom, there is a lower pressure above the aerofoil than below. However this is not a complete explanation until we have answered to questions:
+<p>We’ll address the first question in the next section and the second question in the following lectures.</p>
 </section>
-<section id="solving-pdes-with-harmonic-waves" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="solving-pdes-with-harmonic-waves"><span class="header-section-number">5.2</span> Solving PDEs with harmonic waves</h2>
+<section id="vorticity" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="vorticity"><span class="header-section-number">12.2</span> Vorticity</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f5412fa6-acd1-4eeb-b643-af7901271341&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>The vorticity <span class="math inline">\(\underline{\omega}\)</span> of a flow with the velocity field <span class="math inline">\(\underline{u}\)</span> is defined as the of <span class="math inline">\(\underline{u}\)</span> (see Vector Calculus notes, p.&nbsp;26): <span id="eq-vortex1r"><span class="math display">\[
+\underline{\omega}=\operatorname{curl} \underline{u} = \nabla\times\underline{u}.
+\tag{12.9}\]</span></span> An example will make it easier to understand how to best think of vorticity</p>
+<div id="exm-parallel" class="theorem example">
+<p><span class="theorem-title"><strong>Example 12.1 </strong></span>We consider the very simple flow <span class="math inline">\(\underline{u}=(\alpha y, 0, 0)\)</span> for some constant <span class="math inline">\(\alpha&gt;0\)</span>. This flow is parallel to the <span class="math inline">\(x\)</span> axis, with the magnitude of the velocity increasing with increasing <span class="math inline">\(y\)</span>. The streamlines are simply straight horizontal lines parallel to the <span class="math inline">\(x\)</span> axis. These are also the pathlines because this is a steady flow. So nothing flows in circles, so one might be tempted to guess that this is an irrotational flow. However the calculation shows that <span class="math display">\[\begin{split}
+\underline{\omega}&amp;= \nabla\times\underline{u}=(\partial_y\underline{u}_z-\partial_z\underline{u}_y, \partial_z\underline{u}_x-\partial_x\underline{u}_z, \partial_x\underline{u}_y-\partial_y\underline{u}_x)\\
+&amp;=(0,0,-\partial_y\underline{u}_x)=(0,0,-\alpha)\neq \underline{z}.
+\end{split}\]</span> So there is a non-zero vorticity – the flow is not irrotational. To see this intuitively, imagine placing an extended object into the flow. If you want to do this in your bathtub, I recommend gluing two matches together to form a cross and place this on the water surface. If you now create a flow, this object may start to rotate. It will do so in the flow in this example because the upper end of the object finds itself in an area of faster flow while the lower end is in an area of slower flow, so the object will rotate clockwise.</p>
+</div>
+<section id="the-evolution-of-vorticity" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="the-evolution-of-vorticity"><span class="header-section-number">12.2.1</span> The evolution of vorticity</h3>
+<p>To derive an equation which governs the evolution of vorticity, we take the <span class="math inline">\(curl\)</span> of <a href="#eq-vortex2">Eq.&nbsp;<span>12.7</span></a> . <span class="math display">\[
+\nabla\times\partial_t\underline{u}+\nabla\times(\underline{\omega}\times\underline{u})=-\nabla\times\nabla H.
+\]</span> Using the fact that <span class="math inline">\(curl\)</span> of <span class="math inline">\(grad\)</span> is zero, we obtain <span id="eq-vortex3a"><span class="math display">\[
+\partial_t\underline{\omega} + \nabla\times(\underline{\omega}\times \underline{u}) = \underline{z}.
+\tag{12.10}\]</span></span> We will now use the general vector calculus identity <span class="math display">\[
+\nabla\times(\underline{a}\times\underline{b})=(\nabla\cdot\underline{b})\underline{a}+(\underline{b}\cdot\nabla)\underline{a}-(\nabla\cdot\underline{a})\underline{b}-(\underline{a}\cdot\nabla)\underline{b}
+\]</span> which holds for any two differentiable vector fields <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span>. Applying this with <span class="math inline">\(\underline{a}=\underline{\omega}\)</span> and <span class="math inline">\(\underline{b}=\underline{u}\)</span> gives <span class="math display">\[
+\partial_t\underline{\omega} + (\nabla\cdot\underline{u})\underline{\omega}+(\underline{u}\cdot\nabla)\underline{\omega}-(\nabla\cdot\underline{\omega})\underline{u}-(\underline{\omega}\cdot\nabla)\underline{u}= \underline{z}.
+\]</span> Using the incompressibility condition <span class="math inline">\(\nabla\cdot\underline{u}=0\)</span> and the fact that the <span class="math inline">\(div\)</span> of a <span class="math inline">\(curl\)</span> is zero and thus <span class="math inline">\(\nabla\cdot\underline{\omega}=0\)</span>, the above simplifies to <span id="eq-vortex3b"><span class="math display">\[
+\partial_t\underline{\omega} + (\underline{u}\cdot\nabla)\underline{\omega} = (\underline{\omega}\cdot\nabla)\underline{u}.
+\tag{12.11}\]</span></span> Using the definition of the material derivative we obtain the</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Important
+Vorticity equation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Any linear homogeneous PDE (in variables <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>) with constant coefficients has complex harmonic wave solutions <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> for some <span class="math inline">\(\omega(k)\)</span>.</p>
+<p><span id="eq-ve"><span class="math display">\[
+\frac{D\underline{\omega}}{Dt} = (\underline{\omega}\cdot\nabla)\underline{u}.
+\tag{12.12}\]</span></span></p>
 </div>
 </div>
-<div id="exm-8" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.1 </strong></span>Consider the damped string (with friction force proportional to velocity): <span id="eq-damped1"><span class="math display">\[
-  \partial_t^2 \, y= c^2 \, \partial_x^2 \, y - p\, \partial_t \, y\quad \text{where }\
-  p&gt;0.
-\tag{5.11}\]</span></span> Substituting the complex harmonic wave from <a href="#eq-harmonic4">Eq.&nbsp;<span>5.8</span></a> into this equation, we obtain the dispersion relation <span id="eq-5.12"><span class="math display">\[
--\omega^2 y =- c^2 k^2 y +ip\,\omega y .
-\tag{5.12}\]</span></span> Cancelling the <span class="math inline">\(y\)</span> we obtain a quadratic equation for <span class="math inline">\(\omega^2\)</span> which has the complex solution <span id="eq-iw"><span class="math display">\[
-\omega = -\frac{ip}{2}\pm \sqrt{c^2 k^2 - \frac{p^2}{4}}.
-\tag{5.13}\]</span></span> Thus we have the following solution for the damped string: <span id="eq-dampedy"><span class="math display">\[\begin{split}
-y(x,t)&amp;= A \, e^{i\left(kx+\frac{ip}{2}t\pm \sqrt{c^2 k^2 - \frac{p^2}{4}} t\right)} \\
-&amp;=A \, e^{-\frac{pt}{2}}e^{ik\left(x\pm \sqrt{c^2  - \frac{p^2}{4k^2}} t\right)}
-\end{split} \tag{5.14}\]</span></span> The factor <span class="math inline">\(e^{-pt/2}\)</span> shows that we have a wave with exponentially decreasing amplitude. This is a consequence of the damping. The wave speed is now dependent on the wave number <span class="math inline">\(k\)</span>: <span id="eq-5.15"><span class="math display">\[
-c(k)=\sqrt{c^2  - p^2/(4k^2)}.
-\tag{5.15}\]</span></span> If we want to, we can get a real solution by taking the real part of the complex solution: <span id="eq-5.16"><span class="math display">\[
-\operatorname{Re}(y(x,t))=a\, e^{-pt/2} \cos\left[k\left(x \pm t \, \sqrt{c^2  - p^2/(4k^2)}\right)+\phi\right]
-\tag{5.16}\]</span></span> where <span class="math inline">\(a=\vert A\vert\)</span> and <span class="math inline">\(\phi=\arg(A)\)</span>.</p>
-</div>
-<p>Note that the imaginary part of <span class="math inline">\(\omega\)</span> produces the damping exponential and the real part of <span class="math inline">\(\omega\)</span> determines the wave speed.</p>
+<p>Note that the pressure <span class="math inline">\(p\)</span> does not appear in the vorticity equation.</p>
+This simplifies for a 2D flow <span class="math inline">\(\underline{u}=(u_x(x,y,t), u_y(x,y,t),0)\)</span>. In the calculation of the vorticity most terms vanish leaving only <span class="math display">\[
+\underline{\omega}=\nabla\times\underline{u}=(0,0,\omega)~~~\text{ with } \omega = \partial_x u_y-\partial_y u_x.
+\]</span> Then <span class="math display">\[
+(\underline{\omega}\cdot\nabla)\underline{u} = \omega \, \partial_z \underline{u}=\underline{z}
+\]</span> because there is no <span class="math inline">\(z\)</span> dependence in the 2D flow. As a result, the vorticity equation <a href="#eq-ve">Eq.&nbsp;<span>12.12</span></a> ) reduces to <span id="eq-vortex4"><span class="math display">\[
+\frac{D\omega}{Dt}=0.
+\tag{12.13}\]</span></span> Thus:
+<p>If we assume that far away in front of the airfoil the air is still and thus described by a flow with no vorticity, then the vorticity stays zero along the paths of all the air molecules also as the aerofoil passes. Thus the entire flow is irrotational and we can apply Bernoulli’s theorem for irrotational flows to argue that the airfoil experiences a lift force. All we still need to establish is that the velocity is higher above the airfoil than below. That is going to occupy us for the next three lectures.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
-Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
-</div>
-<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
-Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
+<div id="ref-batchelor" class="csl-entry" role="doc-biblioentry">
+Batchelor, G. K. 2000. <em>An Introduction to Fluid Dynamics</em>. Cambridge University Press.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -500,13 +506,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lecture_04.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></span>
+      <a href="./lecture_11.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_06.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

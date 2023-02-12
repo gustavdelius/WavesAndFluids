@@ -47,7 +47,9 @@ book:
       - lecture_09.qmd
     - part: fluids.qmd
       chapters:
-      - lecture10.qmd
+      - lecture_10.qmd
+      - lecture_11.qmd
+      - lecture_12.qmd
     - references.qmd
 
 bibliography: references.bib

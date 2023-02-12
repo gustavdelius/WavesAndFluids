@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="419.7774"
+   height="419.7774"
+   id="svg2"
+   version="1.1">
+  <title
+     id="title3724">Wave Icon</title>
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Wave Icon</dc:title>
+        <dc:date>2015-03-28</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Urs Roesch</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>OpenClipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>wave</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>blue</rdf:li>
+            <rdf:li>water</rdf:li>
+            <rdf:li></rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>Wave icon created for t-shirt design</dc:description>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:504.85714722px;line-height:125%;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000080;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     x="2415.3311"
+     y="2662.3794"
+     id="text3969"><tspan
+       id="tspan3971"
+       x="2415.3311"
+       y="2662.3794"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif Bold';stroke:#0000ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" /><tspan
+       x="2415.3311"
+       y="3293.4512"
+       id="tspan3973" /></text>
+  <path
+     id="path4035"
+     d="M 209.8887,0 C 94.2311,0 0,94.2311 0,209.8887 c 0,115.6576 94.2311,209.8887 209.8887,209.8887 115.6576,0 209.8887,-94.2311 209.8887,-209.8887 C 419.7774,94.2311 325.5463,0 209.8887,0 Z m 0,44 c 89.0583,0 161.3273,69.5386 165.6797,157.4824 -16.4987,-4.6159 -33.6753,-13.5795 -52.8535,-22.6347 -20.9288,-9.8819 -45.1523,-20.043 -72.9375,-20.043 -27.7853,0 -52.0107,10.1611 -72.9395,20.043 -20.8196,9.8302 -39.2815,19.5653 -57.0762,23.7324 -18.5168,4.3361 -38.5663,3.3051 -56.541,-2.9062 -6.2986,-2.1767 -12.3943,-5.029 -18.1797,-8.4336 C 54.2591,108.2012 124.3183,44 209.8887,44 Z m 39.8887,158.8047 c 16.6055,0 34.9399,6.7586 54.1523,15.8301 19.3218,9.123 40.4051,20.8328 65.832,26.7871 0.704,0.1648 1.4093,0.3208 2.1153,0.4746 -1.4717,6.6943 -3.3461,13.2337 -5.5957,19.5938 -13.6718,-4.9567 -27.957,-12.2725 -43.5664,-19.6426 -20.9288,-9.8819 -45.1523,-20.043 -72.9375,-20.043 -27.7853,0 -52.0107,10.1611 -72.9395,20.043 -20.8196,9.8302 -39.2815,19.5653 -57.0762,23.7324 -18.5168,4.3361 -38.5663,3.3051 -56.541,-2.9062 -3.699,-1.2783 -7.3257,-2.7946 -10.8652,-4.5098 -2.3136,-7.0136 -4.1712,-14.2364 -5.543,-21.6348 0.678,0.2469 1.3547,0.4966 2.0371,0.7324 25.9751,8.9761 54.185,10.4263 80.9434,4.1602 25.4269,-5.9543 46.5103,-17.6641 65.832,-26.7871 19.2125,-9.0715 37.5468,-15.8301 54.1524,-15.8301 z m 0,67 c 16.6055,0 34.9399,6.7586 54.1523,15.8301 12.9628,6.1205 26.7265,13.398 42.0547,19.3281 -3.357,4.8064 -6.9571,9.429 -10.793,13.8418 -4.0763,-1.9552 -8.2172,-3.9459 -12.4765,-5.957 -20.9288,-9.8819 -45.1523,-20.043 -72.9375,-20.043 -27.7853,0 -52.0107,10.1611 -72.9395,20.043 -20.8196,9.8302 -39.2815,19.5653 -57.0762,23.7324 -4.727,1.1069 -9.555,1.859 -14.4218,2.2695 -8.6116,-6.9815 -16.5121,-14.8027 -23.5625,-23.3554 16.0072,1.6209 32.2624,0.6167 48.0156,-3.0723 25.4269,-5.9543 46.5103,-17.6641 65.832,-26.7871 19.2125,-9.0715 37.5468,-15.8301 54.1524,-15.8301 z m 0,67 c 15.0676,0 31.5668,5.5885 48.8457,13.3965 -25.6342,16.2033 -56.0512,25.5762 -88.7344,25.5762 -16.804,0 -33.0063,-2.4859 -48.2715,-7.0938 12.1586,-5.205 23.3535,-11.0182 34.0078,-16.0488 19.2125,-9.0715 37.5468,-15.8301 54.1524,-15.8301 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000080;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:44;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+</svg>

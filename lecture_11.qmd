@@ -115,7 +115,7 @@ This equation, together with the incompressibility condition
 @eq-conserv_mass6 are called _Euler's equations_ for an ideal fluid.
 
 ::: {.callout-important}
-###Euler's equations for an ideal fluid
+### Euler's equations for an ideal fluid
 $$\begin{split}
 \frac{D\underline{u}}{Dt} &= -\frac{1}{\rho}\nabla p + \underline{g}\\
 \nabla\cdot\underline{u} &= 0
