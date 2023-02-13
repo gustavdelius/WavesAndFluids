@@ -30,7 +30,7 @@ operator $\nabla^2$ as
 $$
 \partial_t^2 z - c^2 \nabla^2 z =0.
 $$ {#eq-9.3}
-It is well-known (see, e.g., Theorem 3.43 in the Calculus notes) that the
+It is well-known (see, e.g., Theorem 3.43 in the Spring 2020 Calculus notes or Theorem 4.6 in the Spring 2021 Calculus notes) that the
 Laplacian in polar coordinates is given by
 $$
 \nabla^2 = \partial_r^2 + \frac{1}{r}\, \partial_r + \frac{1}{r^2} \, \partial_{\theta}^2.
@@ -146,7 +146,7 @@ for $m\in\mathbb{N}$.
 Finally, combining the above with @eq-circular5 and @eq-circtheta, we obtain the
 following solutions (that satisfy the required boundary condition):
 $$\begin{split}
-Z_{nm}(r,\theta,t)=&J_m\left(k_{nm} \frac{r}{a}\right)
+Z_{nm}(r,\theta,t)=&J_n\left(k_{nm} \frac{r}{a}\right)
 \left(A_{nm}\sin(n\theta)+\cos(n\theta)\right)\\
 &\qquad\cdot \left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)
 \end{split}$${#eq-circular14}

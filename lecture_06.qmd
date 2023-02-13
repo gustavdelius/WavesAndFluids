@@ -13,6 +13,7 @@ You can find related material in the textbooks:
 
 - @baldock section 2.2
 - @coulson sections 18, 25, 30
+- @knobel chapter 15
 
 ## Energy density
 
