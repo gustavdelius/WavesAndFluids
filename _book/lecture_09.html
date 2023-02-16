@@ -249,6 +249,7 @@ div.csl-indent {
 <li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 7.5</li>
 <li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> sections 7 (eqs.(31) - (35)) and section 35</li>
 </ul>
+<p>The following video has some mistakes in it. These are corrected in these notes.</p>
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 <p>Let’s find normal mode solution for a circular membrane of radius <span class="math inline">\(a\)</span> with fixed boundary (see <a href="#fig-polar_co">Figure&nbsp;<span>9.1</span></a>). Mathematically, we need to solve the wave equation (<a href="lecture_08.html#eq-rectangular1">Eq.&nbsp;<span>8.1</span></a>) in the disc of radius <span class="math inline">\(a\)</span>, i.e.&nbsp;in region <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^2\vert r^2=x^2+y^2 &lt; a^2 \}\)</span>. It is convenient to use polar coordinates <span class="math inline">\((r,\theta)\)</span>, defined as (see <a href="#fig-polar_co">Figure&nbsp;<span>9.1</span></a>) <span id="eq-9.1"><span class="math display">\[
@@ -265,7 +266,7 @@ Z(r, \theta, t) = z\left(x(r,\theta), y(r, \theta),t\right),
 \tag{9.2}\]</span></span> i.e., <span class="math inline">\(Z(r, \theta, t)\)</span> is a solution of the wave equation in <span class="math inline">\(D\)</span>, expressed in terms of polar coordinates.</p>
 <p>We know that the wave equation can be written in vector notation using the Laplace operator <span class="math inline">\(\nabla^2\)</span> as <span id="eq-9.3"><span class="math display">\[
 \partial_t^2 z - c^2 \nabla^2 z =0.
-\tag{9.3}\]</span></span> It is well-known (see, e.g., Theorem 3.43 in the Calculus notes) that the Laplacian in polar coordinates is given by <span id="eq-9.4"><span class="math display">\[
+\tag{9.3}\]</span></span> It is well-known (see, e.g., Theorem 3.43 in the Spring 2020 Calculus notes or Theorem 4.6 in the Spring 2021 Calculus notes) that the Laplacian in polar coordinates is given by <span id="eq-9.4"><span class="math display">\[
 \nabla^2 = \partial_r^2 + \frac{1}{r}\, \partial_r + \frac{1}{r^2} \, \partial_{\theta}^2.
 \tag{9.4}\]</span></span> Therefore, the 2D wave equation in polar coordinates has the form <span id="eq-circular2"><span class="math display">\[
 \partial_t^2 Z - c^2
@@ -317,16 +318,20 @@ Z(a, \theta, t) =  0.
 <p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;9.2: Plot of the first four Bessel functions of the 1st kind.</figcaption><p></p>
 </figure>
 </div>
-<p>We denote the <span class="math inline">\(m\)</span>th zero of the <span class="math inline">\(n\)</span>th Bessel function of the 1st kind by <span class="math inline">\(k_{nm}\)</span>. We have <span class="math display">\[
-R(a)=0 \quad \Rightarrow \quad J_n(k\,a)=0  \quad \Rightarrow \quad k\,a=k_{nm}   \quad \Rightarrow \quad k=\frac{k_{nm}}{a}
-\]</span> for <span class="math inline">\(m\in\mathbb{N}\)</span>.</p>
+<p>We denote the <span class="math inline">\(m\)</span>th zero of the <span class="math inline">\(n\)</span>th Bessel function of the 1st kind by <span class="math inline">\(k_{nm}\)</span>. We have <span class="math display">\[\begin{split}
+R(a)=0 \quad &amp;\Rightarrow \quad J_n(k\,a)=0\\
+&amp;\Rightarrow \quad k\,a=k_{nm}\\
+&amp;\Rightarrow \quad k=\frac{k_{nm}}{a}
+\end{split}\]</span> for <span class="math inline">\(m\in\mathbb{N}\)</span>.</p>
 <p>Finally, combining the above with <a href="#eq-circular5">Eq.&nbsp;<span>9.12</span></a> and <a href="#eq-circtheta">Eq.&nbsp;<span>9.17</span></a>, we obtain the following solutions (that satisfy the required boundary condition): <span id="eq-circular14"><span class="math display">\[\begin{split}
-Z_{nm}(r,\theta,t)=&amp;J_m\left(k_{nm} \frac{r}{a}\right)
-\left(A_{nm}\sin(n\theta)+\cos(n\theta)\right)\\
-&amp;\qquad\cdot \left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)
-\end{split} \tag{9.21}\]</span></span> where <span class="math inline">\(n\in\mathbb{N}\cup\{0\}\)</span>, <span class="math inline">\(m\in\mathbb{N}\)</span> and <span class="math inline">\(A_{nm}\)</span>, <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> are arbitrary real constants. Solutions in the form <a href="#eq-circular14">Eq.&nbsp;<span>9.21</span></a> are the normal modes of vibrations of the circular membrane. Once normal modes are known, we can find a solution satisfying some initial conditions by using a linear combination of the normal modes <span id="eq-circular15"><span class="math display">\[
+Z_{nm}(r,\theta,t)=&amp;J_m\left(k_{nm} \frac{r}{a}\right)\\
+\cdot&amp;\Big[  \sin(n\theta)
+\left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)\\
+&amp;+\cos(n\theta)
+\left(\tilde{F}_{nm} \, \sin(k_{nm} c t) + \tilde{G}_{nm} \, \cos(k_{nm} c t)\right)\Big]
+\end{split} \tag{9.21}\]</span></span> where <span class="math inline">\(n\in\mathbb{N}\cup\{0\}\)</span>, <span class="math inline">\(m\in\mathbb{N}\)</span> and <span class="math inline">\(F_{nm}\)</span>, <span class="math inline">\(G_{nm}\)</span>, <span class="math inline">\(\tilde{F}_{nm}\)</span> and <span class="math inline">\(\tilde{G}_{nm}\)</span> are arbitrary real constants. Solutions in the form <a href="#eq-circular14">Eq.&nbsp;<span>9.21</span></a> are the normal modes of vibrations of the circular membrane. Once normal modes are known, we can find a solution satisfying some initial conditions by using a linear combination of the normal modes <span id="eq-circular15"><span class="math display">\[
 Z(r,\theta,t)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}Z_{nm}(r,\theta,t).
-\tag{9.22}\]</span></span> Note that constants <span class="math inline">\(A_{nm}\)</span>, <span class="math inline">\(F_{nm}\)</span> and <span class="math inline">\(G_{nm}\)</span> (in the formula for <span class="math inline">\(Z_{nm}\)</span> for each <span class="math inline">\(n,m\)</span>) are still arbitrary. To determine them, we need to substitute <a href="#eq-circular15">Eq.&nbsp;<span>9.22</span></a> into initial conditions. This will lead to the so-called Fourier-Bessel series. This is based on the identities <span id="eq-9.23"><span class="math display">\[
+\tag{9.22}\]</span></span> Note that constants <span class="math inline">\(F_{nm}\)</span>, <span class="math inline">\(G_{nm}\)</span>, <span class="math inline">\(\tilde{F}_{nm}\)</span> and <span class="math inline">\(\tilde{G}_{nm}\)</span> (in the formula for <span class="math inline">\(Z_{nm}\)</span> for each <span class="math inline">\(n,m\)</span>) are still arbitrary. To determine them, we need to substitute <a href="#eq-circular15">Eq.&nbsp;<span>9.22</span></a> into initial conditions. This will lead to the so-called Fourier-Bessel series. This is based on the identities <span id="eq-9.23"><span class="math display">\[
 \int_0^aJ_n\left(k_{nm}\frac{r}{a}\right)J_n\left(k_{nl}\frac{r}{a}\right)r\,dr
 =\delta_{ml}\frac{a^2}{2}\left(J_{n+1}(k_{nm})\right)^2.
 \tag{9.23}\]</span></span></p>

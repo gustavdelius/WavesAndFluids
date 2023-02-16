@@ -199,13 +199,13 @@ $\underline{u}(\underline{x}(t),t)$. To find acceleration of this fluid particle
 we need to differentiate the velocity with respect to time. Thus
 $$
 \underline{a}(\underline{x},t) =\frac{d\underline{u}(\underline{x}(t),t)}{dt}= \frac{D \underline{u}}{Dt}
-=\partial_t \underline{u} + (\underline{u}\cdot\nabla) \underline{u} .
+=\partial_t \underline{u} + (\underline{u}\cdot\underline{\nabla}) \underline{u} .
 $$ {#eq-10.17}
 
 If we calculate the acceleration in Example @exm-10_2 where
 $\underline{u}=(x,t,0)$ we get the acceleration
 $$\begin{split}
-\underline{a}(\underline{x},t) &=\frac{D \underline{u}}{Dt}=\partial_t \underline{u} + x\partial_x \underline{u} +t\partial_y \underline{u} +0\partial_y \underline{u} \\
+\underline{a}(\underline{x},t) &=\frac{D \underline{u}}{Dt}=\partial_t \underline{u} + x\,\partial_x \underline{u} +t\,\partial_y \underline{u} +0\,\partial_z \underline{u} \\
 &=(0,1,0)+x(1,0,0)=(x,1,0) .
 \end{split}$$ {#eq-10.18}
 

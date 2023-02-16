@@ -5,6 +5,8 @@ You find content related to this lecture in the textbooks:
 - @baldock section 7.5
 - @coulson sections 7 (eqs.(31) - (35)) and section 35
 
+The following video has some mistakes in it. These are corrected in these notes.
+
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Let's find normal mode solution for a circular membrane of radius $a$ with fixed
@@ -138,27 +140,32 @@ shown in @fig-bessel.
 
 We denote the $m$th zero of the $n$th Bessel function of the 1st kind by
 $k_{nm}$. We have
-$$
-R(a)=0 \quad \Rightarrow \quad J_n(k\,a)=0  \quad \Rightarrow \quad k\,a=k_{nm}   \quad \Rightarrow \quad k=\frac{k_{nm}}{a}
-$$
+$$\begin{split}
+R(a)=0 \quad &\Rightarrow \quad J_n(k\,a)=0\\
+&\Rightarrow \quad k\,a=k_{nm}\\
+&\Rightarrow \quad k=\frac{k_{nm}}{a}
+\end{split}$$
 for $m\in\mathbb{N}$. 
 
 Finally, combining the above with @eq-circular5 and @eq-circtheta, we obtain the
 following solutions (that satisfy the required boundary condition):
 $$\begin{split}
-Z_{nm}(r,\theta,t)=&J_n\left(k_{nm} \frac{r}{a}\right)
-\left(A_{nm}\sin(n\theta)+\cos(n\theta)\right)\\
-&\qquad\cdot \left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)
+Z_{nm}(r,\theta,t)=&J_m\left(k_{nm} \frac{r}{a}\right)\\
+\cdot&\Big[  \sin(n\theta)
+\left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)\\
+&+\cos(n\theta)
+\left(\tilde{F}_{nm} \, \sin(k_{nm} c t) + \tilde{G}_{nm} \, \cos(k_{nm} c t)\right)\Big]
 \end{split}$${#eq-circular14}
-where $n\in\mathbb{N}\cup\{0\}$, $m\in\mathbb{N}$ and $A_{nm}$, $F_{nm}$ and
-$G_{nm}$ are arbitrary real constants. Solutions in the form @eq-circular14 are
+where $n\in\mathbb{N}\cup\{0\}$, $m\in\mathbb{N}$ and $F_{nm}$, $G_{nm}$, $\tilde{F}_{nm}$ and
+$\tilde{G}_{nm}$ are arbitrary real constants. Solutions in the form @eq-circular14 are
 the normal modes of vibrations of the circular membrane. Once normal modes are
 known, we can find a solution satisfying some initial conditions by using a
 linear combination of the normal modes
 $$
 Z(r,\theta,t)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}Z_{nm}(r,\theta,t).
 $$ {#eq-circular15}
-Note that constants $A_{nm}$, $F_{nm}$ and $G_{nm}$ (in the formula for $Z_{nm}$
+Note that constants $F_{nm}$, $G_{nm}$, $\tilde{F}_{nm}$ and
+$\tilde{G}_{nm}$ (in the formula for $Z_{nm}$
 for each $n,m$) are still arbitrary. To determine them, we need to substitute
 @eq-circular15 into initial conditions. This will lead to the so-called
 Fourier-Bessel series. This is based on the identities
@@ -166,3 +173,4 @@ $$
 \int_0^aJ_n\left(k_{nm}\frac{r}{a}\right)J_n\left(k_{nl}\frac{r}{a}\right)r\,dr
 =\delta_{ml}\frac{a^2}{2}\left(J_{n+1}(k_{nm})\right)^2.
 $$ {#eq-9.23}
+
