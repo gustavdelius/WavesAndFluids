@@ -2,7 +2,27 @@
 
 Fluid dynamics studies the motion of fluids (gases and liquids, e.g. air or water).
 
+For us fluid dynamics provides a rich and fascinating area of study that draws
+upon many of the mathematical skills from your other modules, including
+calculus, vector calculus and functions of a complex variable. This part of the
+module will expose you to new important methods in mathematical modelling.
+
+The study of fluid dynamics
+also has a wide range of practical applications, including in the design of
+aircraft, ships, and other vehicles that must move through fluids. It is also
+important in understanding the behaviour of natural phenomena such as weather
+patterns, ocean currents, and the flow of blood in the human body.
+
 Fluid dynamics is a huge subject. In this introduction to the subject we will
 concentrate on ideal fluids, which we will define later. In spite of this
 restriction we will be able to understand some important phenomena, like the
 lift on an airplane wing or the surface waves on water.
+
+We have a strong research group in this department using fluid dynamics in
+mathematical biology. In your third and fourth year you will be able to take
+further module that go more deeply into the subject, and you could choose to use
+fluid dynamics in your final-year project. Fluid dynamics is an active area of
+research with many open questions and opportunities for new discoveries. If you
+are interested in pursuing graduate studies in mathematics or related fields you
+will find that fluid dynamics provides a rich and exciting area for research,
+often in collaboration across disciplinary boundaries.
