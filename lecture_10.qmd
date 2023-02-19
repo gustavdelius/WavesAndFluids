@@ -178,7 +178,13 @@ Note that this is different from the pathlines that we determined for @exm-10_2
 
 For steady flows ($\underline{u}=\underline{u}(\underline{x})$) streamlines
 coincide with pathlines, because @eq-streamline2 will be exactly the same as
-@eq-fluid_particle2, with $s=t$.
+@eq-fluid_particle2, with $s=t$. But in general pathlines and streamlines represent different quantities and should not be confused with each other. To summarise:
+
+__Pathlines__ are the paths traced out by individual fluid particles as they move through a flow field over a period of time. In other words, a pathline is the trajectory followed by a single fluid particle in the flow field, and it can be used to visualize the history of the particle's motion. Pathlines can be curved, twisted, or convoluted, and they can cross and intersect with each other.
+
+__Streamlines__, on the other hand, are imaginary lines that are everywhere tangent to the velocity vector of the flow at a given instant in time. In other words, they represent the instantaneous direction of fluid motion at every point in the flow field. Streamlines do not represent the paths of individual fluid particles, but rather they represent the direction of the flow at any given instant. Streamlines are useful to visualize the flow pattern of a fluid.
+
+
 
 ## Material derivative
 
