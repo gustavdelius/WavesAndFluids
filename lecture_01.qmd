@@ -38,7 +38,7 @@ position at time $t$ and position $x$ (see Fig. @fig-string1).
 
 ![A string stretched in the $x$-direction and vibrating in the $y$-direction.](string1.png){#fig-string1}
 
-The string is sufficiently simple, that we can understand it by pure thought. We
+The string is sufficiently simple so that we can understand it by pure thought. We
 will derive from first principles a PDE that describes its motion (the wave
 equation) and then solve it for various initial conditions. I find it amazing
 that this is possible.
@@ -47,7 +47,7 @@ To achieve this mathematical understanding we will need to make several
 simplifications and approximations. For example, we neglect that the string is
 made up of lots of individual atoms and instead we will pretend that the mass
 is spread out continuously along the string. This is known as the __continuum
-approximation__ and we will meet this again in the fluid dynamics.
+approximation__ and we will meet this again in the fluid dynamics part of this module.
 
 To derive the equation of motion of the string we first need to discuss the
 force acting on it which we will do in the next section. Then in the section
