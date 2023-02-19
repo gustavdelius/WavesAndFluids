@@ -4,20 +4,20 @@ You find content related to this lecture in the textbooks:
 
 - @coulson section 92
 
-Harmonic waves are not localised in $x$ (rather, they are periodic in $x$). However, it is possible to construct a localised \emph{wave packet}
+Harmonic waves are not localised in $x$. Instead they are periodic in $x$ and keep repeat infinitely. However, it is possible to construct a localised \emph{wave packet}
 by summing up harmonic waves with different wave numbers. So, let's consider the wave given by
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
 
-\noindent
-\emph{Gaussian wave packet:} Let
+## Gaussian wave packet
+Let
 $$
 A(k)=e^{-\frac{(k-k_0)^2}{2\sigma^2}}
 $$ {#eq-packet000}
 for some real $k_0$ and positive $\sigma$. This function has a single peak at
 $k=k_0$ and rapidly decays to zero away from it. The parameter $\sigma$ is
-approximately the `half width' of the peak. The sketch of this function is shown
+approximately the 'half width' of the peak. The sketch of this function is shown
 in @fig-gauss a).
 
 At $t=0$, we have
@@ -39,15 +39,17 @@ $$
 y(x,0)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 x^2}{2}} \,
 e^{ik_0 x} .
 $$ {#eq-packet3}
-The factor $e^{ik_0 x}$ represents a harmonic wave, the other factors represent a varying amplitude (the envelope of the wave).
-The graph of the real part of @eq-packet3 is shown in @fig-gauss b.
+The factor $e^{ik_0 x}$ represents a harmonic wave, the other factors represent
+a varying amplitude (the envelope of the wave). The graph of the real part of
+@eq-packet3 is shown in @fig-gauss b.
 
 ![Plot of the Gaussian amplitude function A(k) and the resulting Gaussian wave packet.](gauss.png){width=90% #fig-gauss}
 
 
-Note that the half width of the wave packet is $1/\sigma$, i.e. it is inversely proportional to the width of $A(k)$. This means that
-that a more localised wave corresponds to a broader range in $k$ and vice versa. This property has an important consequence in quantum mechanics --
-the uncertainty principle.
+Note that the half width of the wave packet is $1/\sigma$, i.e. it is inversely
+proportional to the width of $A(k)$. This means that that a more localised wave
+corresponds to a broader range in $k$ and vice versa. This property has an
+important consequence in quantum mechanics -- the uncertainty principle.
 
 ## Moving wave packets and group velocity
 
@@ -64,31 +66,39 @@ of $k_0$ will contribute to the integral given by @eq-packet00. With this in
 mind, we replace $\omega(k)$ with its Taylor expansion about $k=k_0$, keeping
 only two nonzero terms, i.e.
 $$
-\omega(k)=\omega_0 + \alpha (k-k_0) + O(\vert k-k_0\vert^2), \quad \omega_0=\omega(k_0), \quad \alpha = \frac{d\omega}{dk}(k_0).
+\omega(k)=\omega_0 + \alpha (k-k_0) + O(\vert k-k_0\vert^2),
+$$
+where
+$$
+\omega_0=\omega(k_0), \quad \alpha = \frac{d\omega}{dk}(k_0).
 $$
 Then @eq-packet00 with $A(k)$ given by @eq-packet00 yields
-\begin{eqnarray}
-y(x,t)&\approx& \int\limits_{-\infty}^{\infty}e^{-\frac{(k-k_0)^2}{2\sigma^2}+i(kx-\omega_0 t -\alpha(k-k_0)t)} \, dk 
-\nonumber \\&=&
-e^{-i(\omega_0-\alpha k_0 )t} \int\limits_{-\infty}^{\infty}e^{-\frac{(k-k_0)^2}{2\sigma^2}} \,  e^{ik(x-\alpha t)} \, dk .
-%&=&e^{i(k_0 x -\omega_0 t)} \int\limits_{-\infty}^{\infty}e^{-\frac{q^2}{2\sigma^2}} \,  e^{iq(x-\alpha t)} \, dq =
-%e^{i(k_0 x -\omega_0 t)} I(x-\alpha t).   \nonumber
-\end{eqnarray}
-We notice that the integral is similar to the one in @eq-packet0 , just with $x$ replaced by $x-\alpha t$,
-so we can reuse the result from the previous section. In view of @eq-packet3, we obtain
+$$\begin{split}
+y(x,t)&\approx \int_{-\infty}^{\infty}
+e^{-\frac{(k-k_0)^2}{2\sigma^2}+i(kx-\omega_0 t -\alpha(k-k_0)t)} \, dk \\
+&= e^{-i(\omega_0-\alpha k_0 )t} \int_{-\infty}^{\infty}
+e^{-\frac{(k-k_0)^2}{2\sigma^2}} \,  e^{ik(x-\alpha t)} \, dk .
+\end{split}$$
+We notice that the integral is similar to the one in @eq-packet0 , just with $x$
+replaced by $x-\alpha t$, so we can reuse the result from the previous section.
+In view of @eq-packet3, we obtain
 $$
 y(x,t)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 (x-\alpha t)^2}{2}}
 e^{i(k_0 x -\omega_0 t)}.
 $$ {#eq-packet3b}
-The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling
-with the wave speed $c_0=\omega_0/k_0$, while the other factors give us the envelope of the wave. Now, however,
-it propagates not with the wave speed $c_0$ but with the \emph{group velocity} $\alpha$:
+The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling with
+the wave speed $c_0=\omega_0/k_0$, while the other factors give us the envelope
+of the wave. Now, however, it propagates not with the wave speed $c_0$ but with
+the __group velocity__ $\alpha$ where
 $$
 \alpha=\frac{d\omega}{dk}(k_0).
 $$
-In general, the group velocity is different from the wave speed (it is equal to the wave speed only if there is no dispersion).
-The shape of the envelope will still remain the same. However, if we kept a quadratic term in the Taylor expansion of $\omega(k)$,
-it would lead to some changes in the shape of the wave packet, namely: the width of the Gaussian envelope  will increase with time, as you will discover in a homework problem.
+In general, the group velocity is different from the wave speed (it is equal to
+the wave speed only if there is no dispersion). The shape of the envelope will
+still remain the same. However, if we kept a quadratic term in the Taylor
+expansion of $\omega(k)$, it would lead to some changes in the shape of the wave
+packet, namely: the width of the Gaussian envelope  will increase with time, as
+you will discover in a homework problem.
 
 ## Dispersion
 We have derived  that the harmonic wave $\eta=A\cos(kx-\omega t)$ is
@@ -101,8 +111,8 @@ c = \frac{\omega}{k}=\pm\sqrt{\frac{g}{k}}=\pm\sqrt{\frac{g\lambda}{2\pi}}.
 $$
 So we see that longer waves move faster than shorter waves.
 
-A wave packet with wave numbers localised around $k$, as described in lecture [-@sec-6], moves with the
-group velocity
+A wave packet with wave numbers localised around $k$, as described in lecture
+[-@sec-6], moves with the group velocity
 $$
 c_g=\frac{d\omega}{dk}=\pm\frac12\sqrt{\frac{g}{k}}=\frac12 c.
 $$

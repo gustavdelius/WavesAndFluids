@@ -22,7 +22,7 @@ k= 2\pi\hat{k} \quad \text{and} \quad \omega = 2\pi \nu
 $$ {#eq-5.3}
 are the angular wave number and the angular frequency, respectively. Note that
 $k$ and $\omega$ are used more often by mathematicians than $\hat{k}$ and $\nu$
-and that the prefix `angular' is often discarded.
+and that the prefix 'angular' is often discarded.
 
 ::: {.callout-note}
 ### Terminology

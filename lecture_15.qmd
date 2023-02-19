@@ -93,8 +93,8 @@ expansion
 $$
 \frac{dw}{dz}=a_0+\frac{a_1}{z}+\frac{a_2}{z^2}+\cdots.
 $$ {#eq-15.11}
-(You can find a discussion of Laurent expansions in Definition 6.5 of your
-lecture notes from `Functions of a complex argument') We know that the velocity
+(You can find a discussion of Laurent expansions in your
+lecture notes from 'Functions of a complex argument'.) We know that the velocity
 far away from the aerofoil (which we will denote as $\underline{u}(\infty)$) has
 to be finite, and therefore the Laurent expansion of $dw/dz$ can not have any
 terms with positive powers of $z$. Far away from the aerofoil we have
@@ -145,18 +145,25 @@ reproduces the old result in @eq-magnus .
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=46c1c619-0459-4a00-ab17-af790127f7db&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-We currently have a flow around a cylindrical aerofoil. We want the flow around a less symmetrical shape that is rounded at the front but has a tip
-at the end. This is illustrated in @fig-conformal. We are going to use a conformal mapping that maps from one to the other. 
+From the previous lecture we have a flow around a cylindrical aerofoil. We want
+the flow around a less symmetrical shape that is rounded at the front but has a
+tip at the end. This is illustrated in @fig-conformal. We are going to use a
+conformal mapping that maps from one to the other.
 
 ![A conformal mapping $f$ from the region $D$ outside a disk $A$ to the region $\tilde{D}$ outside the cross section $\tilde{A}$ of an aerofoil.](conformal.png){width=90% #fig-conformal}
 
-Let $A$ be the cross section of a cylindrical aerofoil, i.e., a closed disc, with radius $R$, centred at $z=-\lambda$. Let $\tilde{A}$ be the desired cross section of the aerofoil.
-Then $D=\mathbb{C}\setminus A$ and $\tilde{D}=\mathbb{C}\setminus \tilde{A}$ are the regions outside the aerofoils. 
+Let $A$ be the cross section of a cylindrical aerofoil, i.e., a closed disc,
+with radius $R$, centred at $z=-\lambda$. Let $\tilde{A}$ be the desired cross
+section of the aerofoil. Then $D=\mathbb{C}\setminus A$ and
+$\tilde{D}=\mathbb{C}\setminus \tilde{A}$ are the regions outside the aerofoils.
 
-Let $f:D\to\tilde{D}$ be a holomorphic invertible function. View this as a map from the region in one complex plane to another, which we will
-refer to as the $z$ plane and the $\tilde{z}$ plane respectively, where
- $\tilde{z}=f[z]=\tilde{x}+i\tilde{y}$. We want to know what happens to the fluid flow under this map.
- We introduce the complex potential on $\tilde{D}$ to be everywhere identical to the complex potential at the corresponding point in $D$, i.e.,
+Let $f:D\to\tilde{D}$ be a holomorphic invertible function. View this as a map
+from the region in one complex plane to another, which we will refer to as the
+$z$ plane and the $\tilde{z}$ plane respectively, where
+$\tilde{z}=f(z)=\tilde{x}+i\tilde{y}$. We want to know what happens to the fluid
+flow under this map. We introduce the complex potential on $\tilde{D}$ to be
+everywhere identical to the complex potential at the corresponding point in $D$,
+i.e.,
 $$
  \tilde{w}(\tilde{z})=w(z)=w(f^{-1}(\tilde{z})).
 $$ {#eq-15.19}
@@ -178,7 +185,7 @@ where we used that the derivative of the inverse function $f^{-1}$ is the
 reciprocal of the derivative of the function $f$. Thus we find that the
 components of the velocity field are simply rescaled by $f'$ at every point.
  
-We now consider how angles behave under the mapping $f$. See @fig-angles or a
+We now consider how angles behave under the mapping $f$. See @fig-angles for a
 drawing illustrating the following discussion. We consider an infinitesimal line
 from some point $z_0$ to point $z_0+\delta z$ for some infinitesimally small
 $\delta z$. This gets mapped into a line from $\tilde{z}_0=f(z_0)$ to
@@ -193,7 +200,7 @@ gives
 $$
  \delta\tilde{z}=f(z_0+\delta z)=\frac{(\delta z)^m}{m!}f^{(m)}(z_0)+\text{ higher-order terms}.
 $$ {#eq-15.23}
-The higher-order terms can be neglected of infinitesimal $\delta z$. For the
+The higher-order terms can be neglected for infinitesimal $\delta z$. For the
 angle that the line segments make with the horizontal we find
 $$
  \operatorname{arg}(\delta \tilde{z})=m\,\operatorname{arg}(\delta z) + \operatorname{arg}(f^{(m)}(z_0)).
@@ -201,8 +208,8 @@ $$ {#eq-15.24}
  
 ![A figure illustrating the change in angle under the holomorphic mapping $f$.](angles.png){width=90% #fig-angles}
  
-Let's now consider a second infinitesimal line element from $z_0$ to $z_0+\delta z_2$, 
-which gets mapped into a line from $\tilde{z}_0$ to
+Let us now consider a second infinitesimal line element from $z_0$ to
+$z_0+\delta z_2$, which gets mapped into a line from $\tilde{z}_0$ to
 $\tilde{z}_0+\delta\tilde{z}_2$ and consider the angle
 $$
  \theta = \operatorname{arg}(\delta z_2) - \operatorname{arg}(\delta z)
@@ -273,10 +280,10 @@ we see that far away we have constant flow at an angle $\alpha$ to the horizonta
 $$
 \lim_{|z|\to\infty}\frac{dw}{dz}=a\,e^{-i\alpha}=a\cos\alpha-ia\sin\alpha=u_x(\infty)-iu_y(\infty).
 $$ {#eq-15.33}
-By calculating the contour integral over a contour surrounding the aerofoil  using Cauchy's residue theorem we find
-that the circulation is $\Gamma$.
+By calculating the contour integral along a contour surrounding the aerofoil  using Cauchy's residue theorem we find
+that the circulation is
 $$
-\oint_C\frac{dw}{dz}dz=2\pi i\left(-\dfrac{i\Gamma}{2\pi}\right)=\Gamma
+\oint_C\frac{dw}{dz}dz=2\pi i\left(-\dfrac{i\Gamma}{2\pi}\right)=\Gamma.
 $$ {#eq-15.34}
 
 We can now use @eq-uf  to find the velocity field after applying the conformal mapping $f$:
@@ -296,8 +303,8 @@ amount of circulation.
 We can therefore now use the Kutta-Joukowski theorem to determine the lift
 force:
 $$\begin{split}
-F_x&=\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(-\sin\alpha)\\
-F_y&=-\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(\cos\alpha)
+F_x&=\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(-\sin\alpha),\\
+F_y&=-\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(\cos\alpha).
 \end{split}
 $$ {#eq-15.37}
 
