@@ -50,6 +50,8 @@ book:
       - lecture_10.qmd
       - lecture_11.qmd
       - lecture_12.qmd
+      - lecture_13.qmd
+      - lecture_14.qmd 
     - references.qmd
 
 bibliography: references.bib
