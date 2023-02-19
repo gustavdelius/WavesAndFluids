@@ -12,8 +12,8 @@ You find content related to this lecture in the textbooks:
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6e399bc-7063-459e-8dd4-af79012559c6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-Fluids are considered as continuous media, i.e. any small volume element of a
-fluid (a `fluid particle') contains a huge number of molecules. Instead of
+Fluids are considered as continuous media. Because any small volume element of a
+fluid contains a huge number of molecules, instead of
 describing the location and velocity of all the individual molecules, we work
 with quantities which should be thought of as averages over very small
 neighbourhoods.
@@ -34,8 +34,24 @@ $\underline{x}=(x,y,z)$ is the position vector.
 
 We will sometimes be looking at particular simple kinds of flows:
 
-- Steady flow: $\partial_t\underline{u} =0$, i.e. $\underline{u}(\underline{x},t)=\underline{u}(\underline{x})$.
-- Two-dimensional (2D) flow: $\partial_z\underline{u} =0$ and $u_z=0$, i.e. $\underline{u}(\underline{x},t)=u_x(x,y,t)\underline{e}_x + u_y(x,y,t)\underline{e}_y=(u_x(x,y,t),u_y(x,y,t),0)$.
+::: {#def-steady}
+A __steady flow__ is a flow whose velocity field at every point is independent of time:
+$$
+\partial_t\underline{u} =0,~~ \text{ i.e., }~~ \underline{u}(\underline{x},t)=\underline{u}(\underline{x}).
+$$
+:::
+
+
+::: {#def-twodim}
+A __two-dimensional (2D) flow__ is a flow whose velocity field is independent of the third coordinate (which we will always choose to be the $z$ coordinate) and has no component in that third direction: 
+$$
+\partial_z\underline{u} =0 \text{ and }u_z=0,
+$$
+i.e.,
+$$
+\underline{u}(\underline{x},t)=u_x(x,y,t)\underline{e}_x + u_y(x,y,t)\underline{e}_y=(u_x(x,y,t),u_y(x,y,t),0).
+$$
+:::
 
 A vector field can be visualised by drawing vectors attached to different points
 in space. In the video lecture we work through the sketch of the velocity field
@@ -47,20 +63,26 @@ for the 2D flow $\underline{u}=(-y,x,0)$.
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=62d6326c-44c4-4609-8f0a-af79012559a2&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-We want to answer the question: given the velocity field $\underline{u}(\underline{x},t)$, how does a fluid particle (i.e. a very small volume element of the fluid or a small particle embedded in the fluid) move?
 
 ### Pathlines
 
+We want to answer the question: given the velocity field $\underline{u}(\underline{x},t)$, how does a fluid particle (i.e. a very small volume element of the fluid or a small particle embedded in the fluid) move?
+
 Let $\underline{x}(t)$ be the position of a fluid particle in the flow with the velocity
-$\underline{u}(\underline{x},t)$ at time $t$. Then it must satisfy the vector ODE
+$\underline{u}(\underline{x},t)$ at time $t$. Then it must satisfy the following vector ODE:
+
+::: {.callout-important appearance="simple"}
+### Pathline equation
 $$
 \frac{d\underline{x}(t)}{dt}=\underline{u}(\underline{x}(t),t).
 $$ {#eq-fluid_particle}
+:::
+
 Equivalently, we can write this vector ODE as a system of three scalar ODEs:
 $$\begin{split}
-\frac{dx(t)}{dt}&=u_x(x(t),y(t),z(t),t)\\
-\frac{dy(t)}{dt}&=u_y(x(t),y(t),z(t),t)\\
-\frac{dz(t)}{dt}&=u_z(x(t),y(t),z(t),t)
+\frac{dx(t)}{dt}&=u_x(x(t),y(t),z(t),t),\\
+\frac{dy(t)}{dt}&=u_y(x(t),y(t),z(t),t),\\
+\frac{dz(t)}{dt}&=u_z(x(t),y(t),z(t),t).
 \end{split}$$ {#eq-fluid_particle2}
 
 
@@ -126,11 +148,16 @@ $$ {#eq-10.9}
 where $\lambda$ is a nonzero scalar which may depend on both $\underline{x}$ and $t$.
 Clearly, there is a freedom in choosing $\lambda$. The simplest choice that we
 shall use from now on is $\lambda=1$. So, the streamlines are solutions of the
-vector ODE
+following vector ODE:
+
+::: {.callout-important appearance="simple"}
+### Streamline equation
 $$
 \frac{d\underline{x}(s)}{ds}=\underline{u}(\underline{x}(s),t)
 $$ {#eq-streamline1}
-or
+:::
+
+In components this equation becomes
 $$\begin{split}
 \frac{dx(s)}{ds}&=u_x(x(s),y(s),z(s),t),\\
 \frac{dy(s)}{ds}&=u_y(x(s),y(s),z(s),t),\\
@@ -161,7 +188,7 @@ Let $f(\underline{x},t)$ be some quantity of interest (e.g. a component of the
 velocity $\underline{u}$ or the density of the fluid $\rho$). The rate of change
 of $f$ at a fixed point in space (i.e. at fixed $\underline{x}$) is $\partial_t
 f(\underline{x},t)$. What is the rate of change of $f$ following the fluid (i.e.
-the rate of change of $f$ at a fixed fluid particle as it moves with the fluid)?
+the rate of change of $f$ at a given fluid particle as it moves with the fluid)?
 We denote this as $Df/Dt$ and will refer to it as the _material derivative_ of
 $f$. We have
 $$\begin{split}
@@ -170,12 +197,18 @@ $$\begin{split}
 &\qquad\qquad +\partial_y f(x,y,z,t)\, \frac{dy}{dt} +\partial_z f(x,y,z,t)\, \frac{dz}{dt}\\
 &=\partial_t f(x,y,z,t)+\partial_x f(x,y,z,t)\, u_x\\
 &\qquad\qquad  +\partial_y f(x,y,z,t)\, u_y +\partial_z f(x(t),y,z,t)\, u_z \\
-&=\partial_t f(\underline{x},t)+\underline{u}\cdot\nabla f(\underline{x},t). 
+&=\partial_t f(\underline{x},t)+\underline{u}\cdot\underline{\nabla} f(\underline{x},t). 
 \end{split}$$ {#eq-10.14}
 Thus, we have
+
+::: {.callout-important appearance="simple"}
+::: {#def-material}
+The __material derivative__ of a function $f(x,y,z,t)$ is
 $$
-\frac{Df}{Dt} = \partial_t f +\underline{u}\cdot\nabla f.
+\frac{Df}{Dt} = \partial_t f +\underline{u}\cdot\underline{\nabla} f.
 $$ {#eq-10.15}
+:::
+:::
 
 In particular, $Df/Dt=0$ means that quantity $f$ is a constant for each fluid
 particle.
@@ -195,12 +228,18 @@ We used the expression for $x(t)$ from @eq-fluid_particle5.
 ### Acceleration of a fluid particle
 
 The velocity of a fluid particle (whose position at time $t$ is $\underline{x}(t)$) is
-$\underline{u}(\underline{x}(t),t)$. To find acceleration of this fluid particle, $\underline{a}(\underline{x}(t),t)$,
+$\underline{u}(\underline{x}(t),t)$. To find the acceleration $\underline{a}(\underline{x}(t),t)$ of this fluid particle
 we need to differentiate the velocity with respect to time. Thus
+
+::: {.callout-important appearance="simple"}
+::: {#def-acceleration}
+The __acceleration__ experienced by a fluid particle is
 $$
-\underline{a}(\underline{x},t) =\frac{d\underline{u}(\underline{x}(t),t)}{dt}= \frac{D \underline{u}}{Dt}
+\underline{a}(\underline{x},t) = \frac{D \underline{u}}{Dt}
 =\partial_t \underline{u} + (\underline{u}\cdot\underline{\nabla}) \underline{u} .
 $$ {#eq-10.17}
+:::
+:::
 
 If we calculate the acceleration in Example @exm-10_2 where
 $\underline{u}=(x,t,0)$ we get the acceleration
@@ -254,44 +293,51 @@ Here the minus before the surface integral appears because $\underline{n}$ is ch
 the outward normal (so that the change of mass is negative if the fluid flows
 out of $V$).
 
+Now, we need to recall the divergence theorem (also known as  the
+Gauss-Ostrogradsky theorem) of Vector Calculus which we already used in @sec-energy-of-membrane when
+we discussed energy conservation in the example of the two-dimensional wave equation.
+
 ::: {#thm-div}
 ### Divergence theorem
 
-Now, we need to recall the divergence theorem (also known as  the
-Gauss-Ostrogradsky theorem) of Vector Calculus. If $V$ is a region in
+If $V$ is a region in
 $\mathbb{R}^3$ with boundary $\partial V$ and $\underline{F}(\underline{x})$ is a vector field defined in
 $V$, then
 $$
-\int\limits_{V} \nabla\cdot \underline{F} \, dV = \oint\limits_{\partial V} \underline{F}\cdot \underline{n} \, dS.
+\int\limits_{V} \underline{\nabla}\cdot \underline{F} \, dV = \oint\limits_{\partial V} \underline{F}\cdot \underline{n} \, dS.
 $$ {#eq-divergence_thrm1}
 :::
 
 Applying the divergence theorem to the surface integral on the right hand side
 of @eq-conserv_mass2, we obtain
 $$
-\int\limits_{V} \partial_t \rho \, dV = -\int\limits_{V} \nabla\cdot (\rho \, \underline{u}) \, dV,
+\int\limits_{V} \partial_t \rho \, dV = -\int\limits_{V} \underline{\nabla}\cdot (\rho \, \underline{u}) \, dV,
 $$ {#eq-10.23}
 which we can rewrite as
 $$
-\int\limits_{V} \left[\partial_t \rho + \nabla\cdot (\rho \, \underline{u})\right]\, dV = 0.
+\int\limits_{V} \left[\partial_t \rho + \underline{\nabla}\cdot (\rho \, \underline{u})\right]\, dV = 0.
 $$ {#eq-10.24}
-The last integral must be zero for any volume $V$. This is possible only if the
-integrand is zero. So, we conclude that
-$$
-\partial_t \rho + \nabla\cdot (\rho \, \underline{u}) =0 .
-$$ {#eq-conserv_mass3}
-@eq-conserv_mass3 is a conservation equation for the mass, which is also known
-as the _continuity equation_.
+The equation must hold for any volume $V$. This is possible only if the
+integrand is zero. Thus we have derived the conservation equation for the mass, which is also known
+as the continuity equation.
 
-Note that since $\nabla\cdot (\rho \, \underline{u})=
-\underline{u}\cdot\nabla\rho + \rho \, \nabla\cdot\underline{u}$, the equation
+::: {.callout-important}
+### Mass conservation equation
+$$
+\partial_t \rho + \underline{\nabla}\cdot (\rho \, \underline{u}) =0 .
+$$ {#eq-conserv_mass3}
+:::
+
+
+Note that since $\underline{\nabla}\cdot (\rho \, \underline{u})=
+\underline{u}\cdot\underline{\nabla}\rho + \rho \, \underline{\nabla}\cdot\underline{u}$, the equation
 of continuity can be written as
 $$
-\partial_t \rho + \underline{u}\cdot\nabla\rho + \rho \, \nabla\cdot\underline{u} =0
+\partial_t \rho + \underline{u}\cdot\underline{\nabla}\rho + \rho \, \underline{\nabla}\cdot\underline{u} =0
 $$ {#eq-conserv_mass4a}
 or
 $$
-\frac{D\rho}{Dt} + \rho\, \nabla\cdot\underline{u} =0 .
+\frac{D\rho}{Dt} + \rho\, \underline{\nabla}\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass4b}
 It the density of each fluid element remain constant as the fluid moves, i.e.
 $$
@@ -299,9 +345,19 @@ $$
 $$ {#eq-conserv_mass5}
 then it follows from @eq-conserv_mass4b that
 $$
-\nabla\cdot\underline{u} =0 .
+\underline{\nabla}\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass6}
-In this case, the fluid is called _incompressible_ and @eq-conserv_mass6 is
-known as the _incompressibility condition_. ^[A vector field $\underline{u}$
-satisfying $\nabla\cdot\underline{u}$ is known as a _solenoidal vector field_ or
-a _divergence-free vector field_.]
+
+::: {.callout-important appearance="simple"}
+::: {#def-incompressible}
+A fluid whose flow everywhere satisfies the _incompressibility condition_
+$$
+\underline{\nabla}\cdot\underline{u} =0 .
+$$ {#eq-conserv_mass6}
+is called __incompressible__.
+:::
+:::
+
+A vector field $\underline{u}$
+satisfying $\underline{\nabla}\cdot\underline{u}$ is known as a _solenoidal vector field_ or
+a _divergence-free vector field_.

@@ -24,8 +24,8 @@ At $t=0$, we have
 $$
 y(x,0)=\int\limits_{-\infty}^{\infty}e^{-\frac{(k-k_0)^2}{2\sigma^2}} \, e^{ikx} dk.
 $$ {#eq-packet0}
-To perform the integral we are going to use a trick called ``completing the
-square'' whereby we move all $k$ dependence into the square in the exponential.
+To perform the integral we are going to use a trick called "completing the
+square" whereby we move all $k$ dependence into the square in the exponential.
 So we rewrite the exponent as follows:
 $$
 -\frac{(k-k_0)^2}{2\sigma^2}+ikx = -\frac{(k-k_0-ix\sigma^2)^2}{2\sigma^2}+ik_0x-\frac{x^2\sigma^2}{2}.

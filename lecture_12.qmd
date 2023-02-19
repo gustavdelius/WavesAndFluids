@@ -4,6 +4,7 @@ You find content related to this lecture in the textbooks:
 
 - @batchelor sections 1.3, 1.4, and 1.5
 - @braithwaite section 3.1
+- @paterson section 10.4 and 10.2
 
 Solving Euler's equations is hard. It is therefore worthwhile to first try to
 derive consequences of the equations without actually solving them. So in this
@@ -14,145 +15,180 @@ bit until they reveal to us Bernoulli's principle and the vorticity equation.
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=22755b53-5770-402f-abc9-af7901271374&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-We will make two observations that allow us to rewrite the equations in new ways.
+In this section we will derive two theorems that make precise the principle
+discovered by Daniel Bernoulli in the 18th century that as the speed of a fluid
+increases, the pressure of the fluid decreases. This will later allow us to
+understand the origin of the lift force on an aerofoil, but of course has many
+other important practical applications.
 
-1) Because gravity is a conservative force, it can be written as minus the
-gradient of a potential: $\underline{g}= -\nabla\chi$. In the simple case where
-gravitational force is constant and in the negative $z$ direction,
-$\chi = g\,z$ so that $\underline{g} = -g\,\underline{e}_z$. Hence, @eq-euler2 can
-also be written as
+To facilitate the derivation of Bernoulli's theorems, we will make two observations that allow us to rewrite Euler's equations in new ways.
+
+1. Because gravity is a conservative force, it can be written as minus the
+gradient of a potential: $\underline{g}= -\underline{\nabla}\chi$. Hence,
+@eq-euler2 can also be written as
 $$
-\frac{D\underline{u}}{Dt} = - \nabla \left(\frac{p}{\rho} + \chi\right).
+\frac{D\underline{u}}{Dt} = - \underline{\nabla} \left(\frac{p}{\rho} + \chi\right).
 $$ {#eq-euler2b}
+In the simple case where gravitational force is constant and in the negative $z$
+direction, $\chi = g\,z$ so that $\underline{g} = -g\,\underline{e}_z$.
 
-2) We will use the vector calculus identity
+2. We will use the vector calculus identity
 $$
-(\underline{u}\cdot\nabla)\underline{u} = (\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right),
+(\underline{u}\cdot\underline{\nabla})\underline{u} = (\underline{\nabla}\times\underline{u})\times\underline{u}+\underline{\nabla}\left(\frac{u^2}{2}\right),
 $$ {#eq-12.2}
 which holds for any differentiable vector field $\underline{u}$ and thus in
 particular for the velocity field. Using this, together with the definition of
 the material derivative, in the left-hand side of @eq-euler2b  gives
 $$\begin{split}
-\frac{D\underline{u}}{Dt} &=\partial_t\underline{u}+(\underline{u}\cdot\nabla)\underline{u}\\
-&=\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u}+\nabla\left(\frac{u^2}{2}\right)\\
-&=- \nabla \left(\frac{p}{\rho} + \chi\right).
+\frac{D\underline{u}}{Dt} &=\partial_t\underline{u}+(\underline{u}\cdot\underline{\nabla})\underline{u}\\
+&=\partial_t\underline{u}+(\underline{\nabla}\times\underline{u})\times\underline{u}+\underline{\nabla}\left(\frac{u^2}{2}\right)\\
+&=- \underline{\nabla} \left(\frac{p}{\rho} + \chi\right).
 \end{split}$$ {#eq-12.3}
 This we can rewrite as
 $$
-\partial_t\underline{u}+(\nabla\times\underline{u})\times\underline{u} = - \nabla \left(\frac{p}{\rho} + \frac{u^2}{2} + \chi\right).
+\partial_t\underline{u}+(\underline{\nabla}\times\underline{u})\times\underline{u} = - \underline{\nabla} \left(\frac{p}{\rho} + \frac{u^2}{2} + \chi\right).
 $$ {#eq-12.4}
-In this form the Euler equation involves the curl of $\underline{u}$ which is known as the __vorticity__
+In this form the Euler equation involves the curl of $\underline{u}$ which is known as the _vorticity_
 $$
-\underline{\omega}=\operatorname{curl} \underline{u} = \nabla\times\underline{u}.
+\underline{\omega}=\operatorname{curl} \underline{u} = \underline{\nabla}\times\underline{u},
 $$ {#eq-vortex1}
-If we also introduce the function
+which we will study in more detail in the next section. If we also introduce the function
 $$
 H=\frac{p}{\rho} + \frac{u^2}{2} + \chi,
 $$ {#eq-12.6}
-sometimes known as Bernoulli's integral, we can write the equation simply as
+sometimes known as _Bernoulli's integral_, we can write Euler's equation simply as
 $$
-\partial_t\underline{u}+\underline{\omega}\times\underline{u} = - \nabla H.
+\partial_t\underline{u}+\underline{\omega}\times\underline{u} = - \underline{\nabla} H.
 $$ {#eq-vortex2}
 
 This simplifies even further if we consider a steady steady flow, so that
 $\partial_t\underline{u}=0$. Then @eq-vortex2  simplifies to
 $$
-\underline{\omega}\times\underline{u}=-\nabla H.
+\underline{\omega}\times\underline{u}=-\underline{\nabla} H.
 $$ {#eq-bomh}
 To get rid of the vector product in this equation, we take the dot product with
 $\underline{u}$ on both sides:
 $$
-\underline{u}\cdot(\underline{\omega}\times\underline{u})=-\underline{u}\cdot\nabla H.
-$$
+\underline{u}\cdot(\underline{\omega}\times\underline{u})=-\underline{u}\cdot\underline{\nabla} H.
+$$ {#eq-12.9}
 On the left hand side the cross product $\underline{\omega}\times\underline{u}$ is orthogonal to $\underline{u}$ so that the dot product with $\underline{u}$ is zero.
-So the right-hand side is zero: $\underline{u}\cdot\nabla H=0$. Together with the fact that for a steady flow $\partial_t H$ is zero, 
-this shows that the material derivative of $H$ is zero:
+So the left-hand side of the above equation is zero and we have 
 $$
-\frac{DH}{Dt}=\partial_tH+\underline{u}\cdot\nabla H=0.
-$$
-So $H$ does not change along pathlines or, which for steady flows is the same thing, along streamlines. This gives us
-\begin{tcolorbox}[title=Bernoulli's streamline theorem]
+\underline{u}\cdot\underline{\nabla} H=0.
+$$ {#eq-12.10}
+In words this says that the derivative of $H$ in the direction of the flow, i.e.,
+along streamlines, is zero, which gives:
+
+::: {.callout-important appearance="simple"}
+::: {#thm-streamline}
+### Bernoulli's streamline theorem
 If an ideal fluid is in steady flow then
-\[H=\frac{p}{\rho} + \frac{u^2}{2} + \chi\]
+$$
+H=\frac{p}{\rho} + \frac{u^2}{2} + \chi
+$$ {#eq-12.11}
 is constant along streamlines.
-\end{tcolorbox}
-To keep $H$ constant, higher velocity must correspond to lower pressure, and vice versa.
+:::
+:::
 
-Next we restrict ourselves to flows where there is no
-vorticity, $\underline{\omega} = 0$. Such flows are called __irrotational__ flows.
-In this case @eq-bomh  implies that $\nabla H=0$, which together with $\partial_t H=0$ gives us
+To keep $H$ constant, higher velocity must correspond to lower pressure, and vice versa. So we notice Bernoulli's principle. But notice that this is only true along each individual streamline. This theorem says nothing about how $H$
+varies between streamlines.
 
-\begin{tcolorbox}[title=Bernoulli's theorem for irrotational flow]
-If an ideal fluid is in steady irrotational flow then
-\[H=\frac{p}{\rho} + \frac{u^2}{2} + \chi\]
+Next we restrict ourselves to flows where there is no vorticity,
+$\underline{\omega} = 0$. Such flows are called __irrotational__ flows. In this
+case @eq-bomh  implies that $\underline{\nabla} H=0$, which together with
+$\partial_t H=0$ gives us
+
+::: {.callout-important appearance="simple"}
+::: {#thm-irrotational}
+### Bernoulli's theorem for irrotational flow]
+If an ideal fluid is in steady _irrotational_ flow then
+$$
+H=\frac{p}{\rho} + \frac{u^2}{2} + \chi
+$$ {#eq-12.12}
 is constant.
-\end{tcolorbox}
+:::
+:::
 
-This theorem is used to explain the lift created by the airflow around an aerofoil: because the air flows faster along the top of the
-aerofoil than along the bottom, there is a lower pressure above the aerofoil than below. However this is not a complete explanation
-until we have answered to questions:
-\begin{enumerate}
-\item Why is the flow irrotational?
-\item Why is the velocity higher along the top?
-\end{enumerate}
-We'll address the first question in the next section and the second question in the following lectures.
+This theorem determines the pressure in a steady, irrotational ideal fluid once
+the velocity is known.
+
+We can use this theorem to explain the lift created by the airflow
+around an aerofoil: because the air flows faster along the top of the aerofoil
+than along the bottom, there is a lower pressure above the aerofoil than below.
+However this is not a complete explanation until we have answered two questions:
+
+1. Why is the flow irrotational?
+
+2. Why is the velocity higher along the top?
+
+We'll address the first question in the next section and the second question in
+the following lectures.
 
 ## Vorticity
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f5412fa6-acd1-4eeb-b643-af7901271341&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-The vorticity $\underline{\omega}$ of a flow with the velocity field $\underline{u}$ is defined as the \emph{curl} of $\underline{u}$ (see Vector Calculus notes, p. 26):
+::: {#def-vorticity}
+The __vorticity__ $\underline{\omega}$ of a flow with the velocity field $\underline{u}$ is defined as the _curl_ of $\underline{u}$:
 $$
-\underline{\omega}=\operatorname{curl} \underline{u} = \nabla\times\underline{u}.
+\underline{\omega}=\operatorname{curl} \underline{u} = \underline{\nabla}\times\underline{u}.
 $$ {#eq-vortex1r}
-An example will make it easier to understand how to best think of vorticity
+:::
+
+An example will make it easier to understand how to best think of vorticity:
 
 ::: {#exm-parallel}
-We consider the very simple flow $\underline{u}=(\alpha y, 0, 0)$ for some constant $\alpha>0$. This flow is parallel to the $x$ axis,
-with the magnitude of the velocity increasing with increasing $y$. The streamlines are simply straight horizontal lines parallel to the $x$ axis. 
-These are also the pathlines because this is a steady flow. So nothing flows in circles, so one might be tempted to guess that this is
-an irrotational flow. However the calculation shows that
+We consider the very simple flow $\underline{u}=(\alpha y, 0, 0)$ for some
+constant $\alpha>0$. This flow is parallel to the $x$ axis, with the magnitude
+of the velocity increasing with increasing $y$. The streamlines are simply
+straight horizontal lines parallel to the $x$ axis. These are also the pathlines
+because this is a steady flow. So nothing flows in circles, so one might be
+tempted to guess that this is an irrotational flow. However the calculation
+shows that
 $$\begin{split}
-\underline{\omega}&= \nabla\times\underline{u}=(\partial_y\underline{u}_z-\partial_z\underline{u}_y, \partial_z\underline{u}_x-\partial_x\underline{u}_z, \partial_x\underline{u}_y-\partial_y\underline{u}_x)\\
-&=(0,0,-\partial_y\underline{u}_x)=(0,0,-\alpha)\neq \underline{z}.
-\end{split}$$
-So there is a non-zero vorticity -- the flow is not irrotational. To see this intuitively, imagine placing an extended object into the flow.
-If you want to do this in your bathtub, I recommend gluing two matches together to form a cross and place this on the water surface.
-If you now create a flow, this object may start to rotate. It will do so in the flow in this example because the upper end of the object 
-finds itself in an area of faster flow while the lower end is in an area of slower flow, so the object will rotate clockwise.
+\underline{\omega}&= \underline{\nabla}\times\underline{u}=(\partial_y\underline{u}_z-\partial_z\underline{u}_y, \partial_z\underline{u}_x-\partial_x\underline{u}_z, \partial_x\underline{u}_y-\partial_y\underline{u}_x)\\
+&=(0,0,-\partial_y\underline{u}_x)=(0,0,-\alpha)\neq \underline{0}.
+\end{split}$$ {#eq-12.14}
+So there is a non-zero vorticity -- the flow is not irrotational. To see this
+intuitively, imagine placing an extended object into the flow. If you want to do
+this in your bathtub, I recommend gluing two matches together to form a cross
+and place this on the water surface. If you now create a flow, this object may
+start to rotate. It will do so in the flow in this example because the upper end
+of the object finds itself in an area of faster flow while the lower end is in
+an area of slower flow, so the object will rotate clockwise.
 
 :::
 
 
 ### The evolution of vorticity
 
-To derive an equation which governs the evolution of vorticity, we take the $curl$ of @eq-vortex2 . 
+To derive an equation which governs the evolution of vorticity, we take the $curl$ of Euler's equation in the form given in @eq-vortex2. 
 $$
-\nabla\times\partial_t\underline{u}+\nabla\times(\underline{\omega}\times\underline{u})=-\nabla\times\nabla H.
-$$
+\underline{\nabla}\times\partial_t\underline{u}+\underline{\nabla}\times(\underline{\omega}\times\underline{u})=-\underline{\nabla}\times\underline{\nabla} H.
+$$ {#eq-12.15}
 Using the fact that $curl$ of $grad$ is zero, we obtain
 $$
-\partial_t\underline{\omega} + \nabla\times(\underline{\omega}\times \underline{u}) = \underline{z}.
+\partial_t\underline{\omega} + \underline{\nabla}\times(\underline{\omega}\times \underline{u}) = \underline{0}.
 $$ {#eq-vortex3a}
 We will now use the general vector calculus identity
 $$
-\nabla\times(\underline{a}\times\underline{b})=(\nabla\cdot\underline{b})\underline{a}+(\underline{b}\cdot\nabla)\underline{a}-(\nabla\cdot\underline{a})\underline{b}-(\underline{a}\cdot\nabla)\underline{b}
-$$
+\underline{\nabla}\times(\underline{a}\times\underline{b})=(\underline{\nabla}\cdot\underline{b})\underline{a}+(\underline{b}\cdot\underline{\nabla})\underline{a}-(\underline{\nabla}\cdot\underline{a})\underline{b}-(\underline{a}\cdot\underline{\nabla})\underline{b}
+$$ {#eq-12.17}
 which holds for any two differentiable vector fields $\underline{a}$ and $\underline{b}$. Applying this with $\underline{a}=\underline{\omega}$ and $\underline{b}=\underline{u}$ gives
 $$
-\partial_t\underline{\omega} + (\nabla\cdot\underline{u})\underline{\omega}+(\underline{u}\cdot\nabla)\underline{\omega}-(\nabla\cdot\underline{\omega})\underline{u}-(\underline{\omega}\cdot\nabla)\underline{u}= \underline{z}. 
-$$
-Using the incompressibility condition $\nabla\cdot\underline{u}=0$ and the fact that the $div$ of a $curl$ is zero and thus  $\nabla\cdot\underline{\omega}=0$,
+\partial_t\underline{\omega} + (\underline{\nabla}\cdot\underline{u})\underline{\omega}+(\underline{u}\cdot\underline{\nabla})\underline{\omega}-(\underline{\nabla}\cdot\underline{\omega})\underline{u}-(\underline{\omega}\cdot\underline{\nabla})\underline{u}= \underline{0}. 
+$$ {#eq-12.18}
+Using the incompressibility condition $\underline{\nabla}\cdot\underline{u}=0$ and the fact that the $div$ of a $curl$ is zero and thus  $\underline{\nabla}\cdot\underline{\omega}=0$,
 the above simplifies to
 $$
-\partial_t\underline{\omega} + (\underline{u}\cdot\nabla)\underline{\omega} = (\underline{\omega}\cdot\nabla)\underline{u}.
+\partial_t\underline{\omega} + (\underline{u}\cdot\underline{\nabla})\underline{\omega} = (\underline{\omega}\cdot\underline{\nabla})\underline{u}.
 $$ {#eq-vortex3b}
 Using the definition of the material derivative we obtain the
 
 ::: {.callout-important}
 ### Vorticity equation
 $$
-\frac{D\underline{\omega}}{Dt} = (\underline{\omega}\cdot\nabla)\underline{u}.
+\frac{D\underline{\omega}}{Dt} = (\underline{\omega}\cdot\underline{\nabla})\underline{u}.
 $$ {#eq-ve}
 :::
 
@@ -161,24 +197,36 @@ Note that the pressure $p$ does not appear in the vorticity equation.
 This simplifies for a 2D flow $\underline{u}=(u_x(x,y,t), u_y(x,y,t),0)$.
 In the calculation of the vorticity most terms vanish leaving only
 $$
-\underline{\omega}=\nabla\times\underline{u}=(0,0,\omega)~~~\text{ with } \omega = \partial_x u_y-\partial_y u_x.
-$$
+\underline{\omega}=\underline{\nabla}\times\underline{u}=(0,0,\omega)~~~\text{ with } \omega = \partial_x u_y-\partial_y u_x.
+$$ {#eq-12.21}
 Then
 $$
-(\underline{\omega}\cdot\nabla)\underline{u} = \omega \, \partial_z \underline{u}=\underline{z}
-$$
+(\underline{\omega}\cdot\underline{\nabla})\underline{u} = \omega \, \partial_z \underline{u}=\underline{0}
+$$ {#eq-12.22}
 because there is no $z$ dependence in the 2D flow.
 As a result, the vorticity equation @eq-ve ) reduces to
 $$
 \frac{D\omega}{Dt}=0.
 $$ {#eq-vortex4}
 Thus:
-\begin{tcolorbox}
-In a 2D flow, the vorticity of each fluid particle is conserved, i.e., the vorticity is constant on each pathline.
-\end{tcolorbox}
 
-If we assume that far away in front of the airfoil the air is still and thus described by a flow with no vorticity,
-then the vorticity stays zero along the paths of all the air molecules also as the aerofoil passes. Thus the entire flow
-is irrotational and we can apply Bernoulli's theorem for irrotational flows to argue that the airfoil experiences a lift force.
-All we still need to establish is that the velocity is higher above the airfoil than below. That is going to occupy us for the next
-three lectures.
+::: {.callout-important appearance="simple"}
+::: {#thm-vorticity}
+### Conservation of vorticity
+In a 2D flow, the vorticity of each fluid particle is conserved, i.e., the vorticity is constant along each pathline.
+:::
+:::
+
+This now allows us to answer our first question on the way to understanding the
+lift on an aerofoil. If we assume that far away in front of the aerofoil the air
+is still and thus described by a flow with no vorticity, then the vorticity
+stays zero along the paths of all the air molecules also as the aerofoil passes.
+Thus the entire flow is irrotational and we can apply Bernoulli's theorem for
+irrotational flows to argue that the aerofoil experiences a lift force. All we
+still need to establish is that the velocity is higher above the aerofoil than
+below. That is going to occupy us for the next three lectures.
+
+Vorticity is a fundamental concept in fluid dynamics that plays a critical role
+in determining the behaviour of a fluid flow. It is closely related to the
+formation of vortices, the conservation of angular momentum, and the formation
+of turbulence. We'll leave all of this for later modules.

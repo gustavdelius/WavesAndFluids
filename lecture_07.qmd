@@ -78,7 +78,7 @@ Sometimes, the Laplace operator is also denoted by $\Delta$ (i.e.  $\Delta =
 @eq-memb2 is the two-dimensional wave equation. Written in terms of the Laplace
 operator it easily generalises to any higher dimension.
 
-## Energy of membrane
+## Energy of membrane {#sec-energy-of-membrane}
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d8ad29a2-ab24-43c9-8050-af7901218c26&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
