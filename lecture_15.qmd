@@ -1,8 +1,10 @@
 # Why airplanes fly
-Our calculation of the lift on the rotating cylinder in the previous section was very specific to the particular example.
-In this section we will see that, by using complex analysis techniques, we can get an expression for the lift force that
-works more generally. The result turns out to be independent of the details of the flow and only involves the flow velocity 
-far from the aerofoil and the circulation around the aerofoil.
+Our calculation of the lift on the rotating cylinder in the previous section was
+very specific to the particular example. In this section we will see that, by
+using complex analysis techniques, we can get an expression for the lift force
+that works more generally. The result turns out to be independent of the details
+of the flow and only involves the flow velocity far from the aerofoil and the
+circulation around the aerofoil.
 
 You find content related to this lecture in the textbooks:
 
@@ -14,29 +16,40 @@ You find content related to this lecture in the textbooks:
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fc8eebf5-0440-4a46-abb9-af790127db86&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-Blasius theorem gives the following expression for the force $\underline{F}$ per unit length on an aerofoil in an incompressible,
-irrotational flow, described by a complex potential $w(z)$:
+::: {#thm-blasius}
+### Blasius theorem 
+The force $\underline{F}$ per unit length on an aerofoil in an incompressible,
+irrotational flow described by a complex potential $w(z)$ is given by
 $$
-F_x + i F_y = i\frac{\rho}{2}\oint_C\left(\frac{dw}{dz}\right)^2 dz,
+F_x - i F_y = i\frac{\rho}{2}\oint_C\left(\frac{dw}{dz}\right)^2 dz,
 $$ {#eq-15.1}
 where $C$ is any contour encircling the aerofoil.
-In this subsection we will derive this expression. For this purpose we first consider the force $d\underline{F}$ on an infinitesimal segment
- of length $dl$
-of the cross section of the aerofoil. In terms of the angle $\theta$ that it is indicated in @fig-segment we have
+:::
+
+In this subsection we will derive this expression. For this purpose we first
+consider the force $d\underline{F}$ on an infinitesimal segment of length $dl$
+of the cross section of the aerofoil. In terms of the angle $\theta$ that is
+indicated in @fig-segment we have
 $$
-F_x=p\cos\theta dl,~~~F_y=-p\sin\theta dl.
-$$ {#eq-15.2}
+dF_x = p\cos\theta\,dl,~~~dF_x = -p\sin\theta\,dl,
+$$
+and thus
+$$
+dF_x - i\, dF_y = p\,(\cos\theta + i\sin\theta)\,dl = p\,e^{i\theta} dl.
+$$ {#eq-15.2b}
+Notice how by reinterpreting the $x$-$y$ plane as the complex plane we can
+avoid having to deal with sines and cosines.
 
+![Force $d\underline{F}$ acting on an infinitesimal segment $dl$.](aerofoil_segment.png){width=80% #fig-segment}
 
-![Force acting on an infinitesimal segment.](aerofoil_segment.png){width=90% #fig-segment}
-
-For the velocity components we have
+The flow is tangential to the aerofoil, so the velocity components are
 $$
 u_x=|u|\sin\theta,~~~u_y=|u|\cos\theta.
 $$ {#eq-15.3}
 We can relate that to the derivative of the complex potential,
 $$
-\frac{dw}{dz} = u_x-i u_y=|u|\left(\sin\theta-i\cos\theta\right)=-i|u|e^{i\theta},
+\frac{dw}{dz} = u_x-i u_y
+=|u|\left(\sin\theta-i\cos\theta\right)=-i|u|e^{i\theta},
 $$ {#eq-15.4}
 and thus
 $$
@@ -50,16 +63,16 @@ We can use this in Bernoulli's theorem for irrotational flow (in the absence of 
 $$
 p =-\frac{\rho}{2}u^2+constant=\frac{\rho}{2}e^{-2i\theta}\left(\frac{dw}{dz}\right)^2+constant.
 $$ {#eq-15.7}
-The value of the constant is irrelevant because only pressure differences create forces. We get
+The value of the constant is irrelevant because only pressure differences create forces. Substituting this expression
 $$\begin{split}
-dF_x-idF_y&=p(\cos\theta+i\sin\theta)dl =p e^{i\theta}\,dl\\
+dF_x-i\,dF_y&=p(\cos\theta+i\sin\theta)dl =p e^{i\theta}\,dl\\
 &= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2e^{-i\theta}dl 
 = \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2(\cos\theta\,dl -i\sin\theta\,dl)\\
-&=i\,\frac{\rho}{2}\left(\frac{dw}{dz}\right)^2dz
+&=i\,\frac{\rho}{2}\left(\frac{dw}{dz}\right)^2dz.
 \end{split}$$ {#eq-15.8}
 where we used that
 $$
-dx=-\sin\theta\,dl,~~~dy=-\cos\theta\,dl,~~~dz=dx+i\,dy.
+dx=-\sin\theta\,dl,~~dy=-\cos\theta\,dl~\text{ and }~dz=dx+i\,dy.
 $$ {#eq-15.9}
 We can now integrate this along the aerofoil to get the total force on the aerofoil as
 $$
