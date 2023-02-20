@@ -345,11 +345,11 @@ or
 $$
 \frac{D\rho}{Dt} + \rho\, \underline{\nabla}\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass4b}
-It the density of each fluid element remain constant as the fluid moves, i.e.
+If the fluid is incompressible then the density of each fluid element must remain constant as the fluid moves, i.e.
 $$
-\frac{D\rho}{Dt} =0 ,
+\frac{D\rho}{Dt} =0.
 $$ {#eq-conserv_mass5}
-then it follows from @eq-conserv_mass4b that
+It then follows from @eq-conserv_mass4b that
 $$
 \underline{\nabla}\cdot\underline{u} =0 .
 $$ {#eq-conserv_mass6}
