@@ -298,12 +298,12 @@ div.csl-indent {
 </div>
 <div class="callout-body-container">
 <p>As you know from Vector Calculus, the velocity potential can be obtained from a line integral: <span id="eq-13.2"><span class="math display">\[
-\phi(\underline{x})=\int^{\underline{x}}\underline{u}(\tilde{\underline{x}})\cdot d\tilde{\underline{x}}.
+\phi(\underline{x})=\int_{\underline{0}}^{\underline{x}}\underline{u}(\tilde{\underline{x}})\cdot d\tilde{\underline{x}}.
 \tag{13.2}\]</span></span></p>
 </div>
 </div>
 </div>
-<p>Here we have not specified the starting point of the line integral because a change in the starting point only leads to a change in <span class="math inline">\(\phi\)</span> by a constant that does not contribute to the gradient of <span class="math inline">\(\phi\)</span>. It can thus can be chosen arbitrarily.</p>
+<p>Here we chose the origin <span class="math inline">\(\underline{0}\)</span> of our coordinate system as the starting point of the line integral. But we could have chosen any other starting point. A change in the starting point only leads to a change in <span class="math inline">\(\phi\)</span> by a constant and such a constant does not contribute to the gradient of <span class="math inline">\(\phi\)</span>.</p>
 <p>If the domain in which the velocity field <span class="math inline">\(\underline{u}\)</span> is defined is not simply connected, then <span class="math inline">\(\phi\)</span> may be multi-valued. We will see an example of that later in <a href="lecture_14.html#sec-circulation"><span>Section&nbsp;14.2</span></a>, but first we will look at a simple example to make sure we understand the line integral.</p>
 <div id="exm-ex14" class="theorem example">
 <p><span class="theorem-title"><strong>Example 13.1 </strong></span>Show that the velocity field, given by <span id="eq-13.3"><span class="math display">\[
@@ -311,10 +311,11 @@ div.csl-indent {
 \tag{13.3}\]</span></span> (where <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants), represents an irrotational flow and find the velocity potential.</p>
 </div>
 <div class="solution proof">
-<p><span class="proof-title"><em>Solution</em>. </span>First we check whether the flow is irrotational by calculating the vorticity <span id="eq-13.4"><span class="math display">\[
-\underline{\nabla}\times\underline{u}=(\partial_yu_z-\partial_zu_y,\partial_zu_x-\partial_xu_z,\partial_xu_y-\partial_yu_x)=(0,0,b-b)=\underline{0}.
-\tag{13.4}\]</span></span></p>
-<p>Then to calculate <span id="eq-13.5"><span class="math display">\[
+<p><span class="proof-title"><em>Solution</em>. </span>First we check whether the flow is irrotational by calculating the vorticity <span id="eq-13.4"><span class="math display">\[\begin{split}
+\underline{\nabla}\times\underline{u}&amp;=(\partial_yu_z-\partial_zu_y,\partial_zu_x-\partial_xu_z,\partial_xu_y-\partial_yu_x)\\
+&amp;=(0,0,b-b)=\underline{0}.
+\end{split} \tag{13.4}\]</span></span></p>
+<p>Then, to calculate <span id="eq-13.5"><span class="math display">\[
 \phi(\underline{x})=\int_{\underline{0}}^{\underline{x}} \underline{u}(\tilde{\underline{x}})\cdot d\tilde{\underline{x}}.
 \tag{13.5}\]</span></span> we choose the contour that consists of three straight lines: it starts from <span class="math inline">\((0,0,0)\)</span> and goes along the <span class="math inline">\(x\)</span> axis to <span class="math inline">\((x,0,0)\)</span>, then goes straight to <span class="math inline">\((x,y,0)\)</span> and then from there straight to <span class="math inline">\((x,y,z)\)</span>. This splits the integral into three bits: <span id="eq-13.6"><span class="math display">\[\begin{split}
 \phi(\underline{x})&amp;=\int_0^x u_x(\tilde{x},0,0)\,d\tilde x+\int_0^y u_y(x,\tilde{y},0)\,d\tilde y+\int_0^z u_y(x,y,\tilde{z})\,d\tilde z\\
@@ -360,9 +361,20 @@ bx+cy = \partial_y\phi,  \\
 </div>
 </div>
 </div>
-<p>The reason for the name is that a stream function is constant along streamlines. To check this we calculate the derivative of <span class="math inline">\(\psi\)</span> in the direction of a streamline, i.e., in the direction of the velocity field (recall that the velocity field is tangent to the streamlines). <span id="eq-13.12"><span class="math display">\[
+<p>The reason for the name lies in the following useful fact:</p>
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>A stream function is constant along streamlines.</p>
+</div>
+</div>
+</div>
+<p>To check this fact we calculate the derivative of <span class="math inline">\(\psi\)</span> in the direction of a streamline, i.e., in the direction of the velocity field (recall that the velocity field is tangent to the streamlines). <span id="eq-13.12"><span class="math display">\[
 \underline{u}\cdot\underline{\nabla}\psi=u_x\partial_x\psi+u_y\partial_y\psi=u_x(-u_y)+u_yu_x=0.
-\tag{13.12}\]</span></span> Thus the stream function gives an easy way to obtain streamlines: they are the lines along which the streamline is constant.</p>
+\tag{13.12}\]</span></span> Thus the stream function gives an easy way to obtain streamlines: they are the lines along which the stream function is constant.</p>
 <div class="callout-note callout callout-style-simple">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -370,7 +382,7 @@ bx+cy = \partial_y\phi,  \\
 </div>
 <div class="callout-body-container">
 <p>We can find <span class="math inline">\(\psi\)</span> from the following two-dimensional line integral: <span id="eq-lipsi"><span class="math display">\[
-\psi(x,y)=\int^{(x,y)}(-u_y,u_x)\cdot d\underline{x}.
+\psi(x,y)=\int_{(0,0)}^{(x,y)}(-u_y,u_x)\cdot d\underline{x}.
 \tag{13.13}\]</span></span></p>
 </div>
 </div>
@@ -390,7 +402,7 @@ y=\frac{c}{a}\frac{1}{x}.
 <h2 data-number="13.3" class="anchored" data-anchor-id="complex-potential"><span class="header-section-number">13.3</span> Complex potential</h2>
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0b5d12d7-0887-4858-8467-af790127432b&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-<p>Now we consider flows <span class="math inline">\(\underline{u}\)</span> that are irrotational and incompressible and two-dimensional, so they can be described by both a velocity potential as <span class="math inline">\(\underline{u}=\underline{\nabla}\phi\)</span> and by a stream function as <span class="math inline">\(\underline{u}=\underline{\nabla}\times(\psi\underline{e}_x)\)</span>. In components this gives <span id="eq-13.16"><span class="math display">\[\begin{split}
+<p>Now we consider flows <span class="math inline">\(\underline{u}\)</span> that are irrotational and incompressible and two-dimensional, so they can be described by both a velocity potential <span class="math inline">\(\phi\)</span> as <span class="math inline">\(\underline{u}=\underline{\nabla}\phi\)</span> and by a stream function <span class="math inline">\(\psi\)</span> as <span class="math inline">\(\underline{u}=\underline{\nabla}\times(\psi\underline{e}_x)\)</span>. In components this gives <span id="eq-13.16"><span class="math display">\[\begin{split}
 u_x&amp;=\partial_x\phi=\partial_y\psi,\\
 u_y&amp;=\partial_y\phi=-\partial_x\psi.
 \end{split} \tag{13.16}\]</span></span> You will recognise these as the Cauchy-Riemann equations. They tell us that the function <span class="math inline">\(w=\phi+i\psi\)</span> is a holomorphic function of <span class="math inline">\(z=x+iy\)</span>. This function is known as the complex potential.</p>
@@ -409,9 +421,11 @@ w(\underline{x},t)=\phi(\underline{x},t)+i\psi(\underline{x},t).
 </div>
 </div>
 <p>Note that here we are identifying the <span class="math inline">\(x-y\)</span> plane with the complex plane and use <span class="math inline">\(z\)</span> to denote the complex number in that plane. This has nothing to do with the <span class="math inline">\(z\)</span> coordinate that we used when discussing 3-dimensional flows. While in general it is a bad idea to use the same letter in the same module for different things, it is just so conventional to use the letter <span class="math inline">\(z\)</span> both for the third Cartesian coordinate as well as for complex numbers that it is excusable in this case.</p>
-<p>To extract the velocity field from the complex potential, we just need to differentiate: <span id="eq-13.18"><span class="math display">\[
-\frac{dw}{dz} = \partial_x w= \partial_x (\phi+i\psi)=\partial_x\phi+i\partial_x\psi=u_x-iu_y.
-\tag{13.18}\]</span></span> Thus</p>
+<p>To extract the velocity field from the complex potential, we just need to differentiate: <span id="eq-13.18"><span class="math display">\[\begin{split}
+\frac{dw}{dz} &amp;= \partial_x w= \partial_x (\phi+i\psi)\\
+&amp;=\partial_x\phi+i\partial_x\psi=u_x-iu_y.
+\end{split} \tag{13.18}\]</span></span> If you are wondering why <span class="math inline">\(dw/dz = \partial_x w\)</span>, remind yourself of what is special about holomorphic functions: The derivative at any point does not depend on the direction from which we approach the point.</p>
+<p>So we can extract the velocity components from the real and imaginary parts of the derivative of the complex potential:</p>
 <div class="callout-note callout callout-style-simple">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
