@@ -104,7 +104,7 @@ $$
 \Theta(\theta) = A\sin(n \theta)+B\cos(n \theta)
 $$ {#eq-circtheta}
 for arbitrary constants $A$ and $B$. 
-We impose the \emph{periodicity} condition
+We impose the _periodicity_ condition
 $$
 \Theta(\theta+2\pi) = \Theta(\theta) \quad \text{for all} \ \ \theta.
 $$

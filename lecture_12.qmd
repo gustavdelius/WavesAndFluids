@@ -100,7 +100,7 @@ $\partial_t H=0$ gives us
 
 ::: {.callout-important appearance="simple"}
 ::: {#thm-irrotational}
-### Bernoulli's theorem for irrotational flow]
+### Bernoulli's theorem for irrotational flow
 If an ideal fluid is in steady _irrotational_ flow then
 $$
 H=\frac{p}{\rho} + \frac{u^2}{2} + \chi

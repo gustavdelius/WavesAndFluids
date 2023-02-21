@@ -4,14 +4,14 @@ You find content related to this lecture in the textbooks:
 
 - @coulson section 92
 
-Harmonic waves are not localised in $x$ (rather, they are periodic in $x$). However, it is possible to construct a localised \emph{wave packet}
+Harmonic waves are not localised in $x$ (rather, they are periodic in $x$). However, it is possible to construct a localised _wave packet_
 by summing up harmonic waves with different wave numbers. So, let's consider the wave given by
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
 
 \noindent
-\emph{Gaussian wave packet:} Let
+__Gaussian wave packet:__ Let
 $$
 A(k)=e^{-\frac{(k-k_0)^2}{2\sigma^2}}
 $$ {#eq-packet000}
@@ -82,7 +82,7 @@ e^{i(k_0 x -\omega_0 t)}.
 $$ {#eq-packet3b}
 The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling
 with the wave speed $c_0=\omega_0/k_0$, while the other factors give us the envelope of the wave. Now, however,
-it propagates not with the wave speed $c_0$ but with the \emph{group velocity} $\alpha$:
+it propagates not with the wave speed $c_0$ but with the _group velocity_ $\alpha$:
 $$
 \alpha=\frac{d\omega}{dk}(k_0).
 $$
