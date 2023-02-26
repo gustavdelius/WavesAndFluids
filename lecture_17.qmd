@@ -105,3 +105,60 @@ This holds if $|k\, \eta|\ll 1$ which in turn holds if $|k\,A|\ll 1$.
 I leave it up to you to go through the approximations
 that we made in @sec-dyn to verify that they too are good
 when $|k\,A|\ll 1$.
+
+## Circular waves
+
+You will have observed that when you drop a pebble into a pond, this creates waves that travel outwards from the disturbance with circular wave crests. We can easily find the solutions describing such circular waves by switching to polar coordinates $r$, $\theta$ for the $x$-$z$ plane such that $x=r\cos\theta$ and $z=r\sin\theta$.
+
+The circular waves we are looking for look the same in all directions, so we
+will be looking for solutions for the velocity potential $\phi$ and the surface function $\eta$ that are independent of the $\theta$ coordinate:
+$$
+\phi = \phi(r,y,t),~~~\eta = \eta(r,t).
+$$
+
+The Laplace equation for the velocity potential $\phi$ then becomes
+$$
+0 = \nabla^2\phi=\frac{1}{r}\partial_r^2(r\phi)+\partial_y^2\phi.
+$$ {#eq-Lpolar}
+
+Introducing again the distance $d$ from the surface, $d(r,y,t)=y-\eta(r,t)$,
+the kinematic surface condition in these coordinates is
+$$\begin{split}
+\frac{Dd}{Dt}&=\partial_td+\underline{u}\cdot\underline{\nabla} d=\partial_td+u_r\partial_r d+u_y\partial_y d\\
+&=-\partial_t\eta-u_r\partial_r \eta+u_y=0.
+\end{split}
+$$ {#eq-Kpolar}
+After linearisation this reduces to
+$$
+\partial_t\eta(r,t)=u_y(r,0,t).
+$$ {#eq-Kpolar}
+This is the same as in the case of Carthesian coordinates, just with $r$ taking
+the place of $x$. Similarly the linearised dynamic surface condition becomes
+$$
+\partial_t\phi(r,0,t)=-g\eta(r,t).
+$$ {#eq-Dpolar}
+Thus the only difference between the problem of circular waves compared to
+the problem of plane waves we studied earlier is that the $\partial_x^2\phi$ term in the
+Laplace equation has been replaced by $1/r \partial_r^2(r\phi)$. This motivates
+us to make the modified Ansatz
+$$
+\phi(r,y,t) = f(y)\frac{1}{r}\sin(kr-\omega t).
+$$
+Substituting this into the Laplace equation -@eq-Lpolar again gives the
+equation $f''-k^2f$ and imposing that the solution must stay finite as
+$y\to-\infty$ singles out the solution $f(y)=D\,e^{ky}$ for some constant $D$.
+Thus
+$$
+\phi(r,y,t)=D e^{ky}\frac{1}{r}\sin(kx-\omega t)
+$$
+
+Substituting this velocity potential into the dynamical surface condition -@eq-Dpolar gives
+$$
+\eta(r,t)=\frac{\omega\,D}{g}\frac{1}{r}\cos(kr-\omega t)
+$$
+and then the kinematic surface condition -@eq-Kpolar gives the dispersion
+relation
+$$
+\omega = \sqrt{k\,g}.
+$$
+This is identical to the dispersion relation for the plane wave solution.

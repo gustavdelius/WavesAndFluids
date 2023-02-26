@@ -1,4 +1,4 @@
-# Surface waves 1
+# Surface waves 1 {#sec-16}
 
 We will now look at an example that combines the two topics of this module: waves and fluids. We will look at the waves on the surface of water.
 As waves move over the surface, of course the fluid below the surface needs to rearrange, so the shape of the wave and the flow of the fluid are
@@ -127,7 +127,7 @@ This is the linearised kinematic surface condition that we will use.
 
 Similarly we linearise the dynamic surface condition to
 $$
-\partial_t\phi(y,0,t)=-g\eta(x,t).
+\partial_t\phi(x,0,t)=-g\eta(x,t).
 $$ {#eq-Dl}
 
 ## Harmonic travelling wave solution

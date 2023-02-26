@@ -12,6 +12,13 @@ let's consider the wave given by
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
+Note how we are integrating over all wave numbers from $-\infty$ to $\infty$.
+There is of course no guarantee that such an integral would give a finite
+result unless the coefficient function $A(k)$ is chosen carefully to fall off
+sufficiently quickly towards positive and negative infinity. Rather than 
+discussing the general theory, which you may already have met in a module on
+functional analysis, we are going to look at the most important example: the
+Gaussian wave packet.
 
 ## Gaussian wave packet
 Let
@@ -23,11 +30,12 @@ $k=k_0$ and rapidly decays to zero away from it. The parameter $\sigma$ is
 approximately the 'half width' of the peak. The sketch of this function is shown
 in @fig-gauss a).
 
-At $t=0$, we have
+To understand what this wave packet looks like in space, we first look at $t=0$,
+where we have
 $$
 y(x,0)=\int\limits_{-\infty}^{\infty}e^{-\frac{(k-k_0)^2}{2\sigma^2}} \, e^{ikx} dk.
 $$ {#eq-packet0}
-To perform the integral we are going to use a trick called "completing the
+To perform the integral we use a trick called "completing the
 square" whereby we move all $k$ dependence into the square in the exponential.
 So we rewrite the exponent as follows:
 $$
@@ -39,7 +47,7 @@ y(x,0)=e^{-\frac{x^2\sigma^2}{2}}e^{ik_0x}\int\limits_{-\infty}^{\infty}\exp\lef
 $$ {#eq-packet1}
 The integral over the Gaussian simply gives $\sqrt{2\pi}\sigma$, so that we have the solution
 $$
-y(x,0)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 x^2}{2}} \,
+y(x,0)=\sqrt{2\pi} \, \sigma \, \exp\left(-\frac{\sigma^2 x^2}{2}\right)
 e^{ik_0 x} .
 $$ {#eq-packet3}
 The factor $e^{ik_0 x}$ represents a harmonic wave, the other factors represent
@@ -86,38 +94,44 @@ We notice that the integral is similar to the one in @eq-packet0 , just with $x$
 replaced by $x-\alpha t$, so we can reuse the result from the previous section.
 In view of @eq-packet3, we obtain
 $$
-y(x,t)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 (x-\alpha t)^2}{2}}
+y(x,t)\approx\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 (x-\alpha t)^2}{2}}
 e^{i(k_0 x -\omega_0 t)}.
 $$ {#eq-packet3b}
-<<<<<<< HEAD
-The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling with
-the wave speed $c_0=\omega_0/k_0$, while the other factors give us the envelope
-of the wave. Now, however, it propagates not with the wave speed $c_0$ but with
-the __group velocity__ $\alpha$ where
-$$
-\alpha=\frac{d\omega}{dk}(k_0).
-$$
-In general, the group velocity is different from the wave speed (it is equal to
-the wave speed only if there is no dispersion). The shape of the envelope will
-still remain the same. However, if we kept a quadratic term in the Taylor
-expansion of $\omega(k)$, it would lead to some changes in the shape of the wave
-packet, namely: the width of the Gaussian envelope  will increase with time, as
-you will discover in a homework problem.
 
-## Dispersion
-We have derived  that the harmonic wave $\eta=A\cos(kx-\omega t)$ is
-a solution if $\omega=\pm\sqrt{g\,k}$. This relation between the
-angular frequency $\omega$ and the angular wave number $k$ is
-called the dispersion relation. It implies that the wave moves with the
-wave speed (also known as phase velocity)
+The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling with
+the wave speed $c=\omega_0/k_0$, while the other factors give us the envelope
+of the wave. Now, however, that envelope propagates not with the wave speed $c$ but with
+the __group velocity__ $c_g$ where
+$$
+c_g=\alpha=\frac{d\omega}{dk}(k_0).
+$$
+In general, the group velocity is different from the wave speed. It is equal to
+the wave speed only if there is no dispersion. 
+
+In the wave packet in @eq-packet3b the shape of the envelope does not change
+over time as the wave packet travels through space. However, if we keep the
+quadratic term in the Taylor expansion of $\omega(k)$, we see that there are
+some changes in the shape of the wave packet over time. The width of the
+Gaussian envelope  will increase with time.
+
+## Strange experiences of a water strider
+
+Imagine a water strider sitting on the surface of a pond (a water strider is an insect that is light enough to be able to sit on water). It sees a wave packet approaching
+
+We have derived in @sec-16 that the harmonic wave $\eta=A\cos(kx-\omega t)$ is
+a solution describing a surface wave if $\omega=\pm\sqrt{g\,k}$. The wave moves with the
+wave speed
 $$
 c = \frac{\omega}{k}=\pm\sqrt{\frac{g}{k}}=\pm\sqrt{\frac{g\lambda}{2\pi}}.
 $$
-So we see that longer waves move faster than shorter waves.
+We see that longer waves move faster than shorter waves.
 
-A wave packet with wave numbers localised around $k$, as described in lecture
-[-@sec-6], moves with the group velocity
+We observed in the previous subsection that a wave packet with wave numbers 
+localised around wave number $k$ moves with the group velocity
 $$
 c_g=\frac{d\omega}{dk}=\pm\frac12\sqrt{\frac{g}{k}}=\frac12 c.
 $$
 So for water waves the group velocity is half the phase velocity.
+
+## The uncertainty principle
+
