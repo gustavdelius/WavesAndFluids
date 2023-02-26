@@ -4,8 +4,11 @@ You find content related to this lecture in the textbooks:
 
 - @coulson section 92
 
-Harmonic waves are not localised in $x$. Instead they are periodic in $x$ and keep repeat infinitely. However, it is possible to construct a localised \emph{wave packet}
-by summing up harmonic waves with different wave numbers. So, let's consider the wave given by
+
+Harmonic waves are not localised in $x$. Instead they are periodic in $x$ and
+keep repeating infinitely. However, it is possible to construct a localised
+_wave packet_ by summing up harmonic waves with different wave numbers. So,
+let's consider the wave given by
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
@@ -86,6 +89,7 @@ $$
 y(x,t)=\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 (x-\alpha t)^2}{2}}
 e^{i(k_0 x -\omega_0 t)}.
 $$ {#eq-packet3b}
+<<<<<<< HEAD
 The factor $e^{i(k_0 x -\omega_0 t)}$ represents a harmonic wave travelling with
 the wave speed $c_0=\omega_0/k_0$, while the other factors give us the envelope
 of the wave. Now, however, it propagates not with the wave speed $c_0$ but with
