@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Work in progress">
+
+<title>Waves and Fluids - 15&nbsp; Why airplanes fly</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./lecture_16.html" rel="next">
+<link href="./lecture_14.html" rel="prev">
+<link href="./logo.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Waves and Fluids - 15&nbsp; Why airplanes fly">
+<meta property="og:description" content="Work in progress">
+<meta property="og:site-name" content="Waves and Fluids">
+<meta name="twitter:title" content="Waves and Fluids - 15&nbsp; Why airplanes fly">
+<meta name="twitter:description" content="Work in progress">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Why airplanes fly</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Waves and Fluids</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://maths.york.ac.uk/moodle/course/view.php?id=2497" title="Moodle page" class="sidebar-tool px-1"><i class="bi bi-mortarboard-fill"></i></a>
+    <a href="https://forms.gle/w17c19vWnM7wpLpz7" title="Submit a correction" class="sidebar-tool px-1"><i class="bi bi-bug-fill"></i></a>
+    <a href="https://github.com/gustavdelius/WavesAndFluids/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="./Waves-and-Fluids.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./waves.html" class="sidebar-item-text sidebar-link">Waves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Boundaries and Interfaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bernoulli’s solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonic waves</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Energy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Two-dimensional waves</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Waves on rectangular domain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Waves on circular domain</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./fluids.html" class="sidebar-item-text sidebar-link">Fluids</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">How to describe fluids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ideal fluid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bernoulli’s principle and vorticity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_13.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Velocity potential, stream function, and complex potential</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_14.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Flow around a cylinder, circulation, and the Magnus effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_15.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Why airplanes fly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_16.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Surface waves 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#blasius-theorem" id="toc-blasius-theorem" class="nav-link active" data-scroll-target="#blasius-theorem"><span class="toc-section-number">15.1</span>  Blasius theorem</a></li>
+  <li><a href="#kutta-joukowski-lift-theorem" id="toc-kutta-joukowski-lift-theorem" class="nav-link" data-scroll-target="#kutta-joukowski-lift-theorem"><span class="toc-section-number">15.2</span>  Kutta-Joukowski lift theorem</a></li>
+  <li><a href="#conformal-mappings" id="toc-conformal-mappings" class="nav-link" data-scroll-target="#conformal-mappings"><span class="toc-section-number">15.3</span>  Conformal mappings</a></li>
+  <li><a href="#joukouwski-mapping" id="toc-joukouwski-mapping" class="nav-link" data-scroll-target="#joukouwski-mapping"><span class="toc-section-number">15.4</span>  Joukouwski mapping</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_15.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Why airplanes fly</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Our calculation of the lift on the rotating cylinder in the previous section was very specific to the particular example. In this section we will see that, by using complex analysis techniques, we can get an expression for the lift force that works more generally. The result turns out to be independent of the details of the flow and only involves the flow velocity far from the aerofoil and the circulation around the aerofoil.</p>
+<p>You will not be examined on the material in this section. But I hope that it shows you a nice example of how powerful advanced mathematics (complex analysis in this case) can be when brought to bear on an applied problem (the lift on an airplane wing in this case).</p>
+<p>You find content related to this lecture in the textbooks:</p>
+<ul>
+<li><span class="citation" data-cites="acheson">Acheson (<a href="references.html#ref-acheson" role="doc-biblioref">1990</a>)</span> sections 4.6 to 4.11</li>
+<li><span class="citation" data-cites="batchelor">Batchelor (<a href="references.html#ref-batchelor" role="doc-biblioref">2000</a>)</span> section 6.6</li>
+<li><span class="citation" data-cites="paterson">Paterson (<a href="references.html#ref-paterson" role="doc-biblioref">1983</a>)</span> sections 16.5 and chapter 17</li>
+</ul>
+<section id="blasius-theorem" class="level2 page-columns page-full" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="blasius-theorem"><span class="header-section-number">15.1</span> Blasius theorem</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=fc8eebf5-0440-4a46-abb9-af790127db86&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<div id="thm-blasius" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 15.1 (Blasius theorem) </strong></span>The force <span class="math inline">\(\underline{F}\)</span> per unit length on an aerofoil in an incompressible, irrotational flow described by a complex potential <span class="math inline">\(w(z)\)</span> is given by <span id="eq-15.1"><span class="math display">\[
+F_x - i F_y = i\frac{\rho}{2}\oint_C\left(\frac{dw}{dz}\right)^2 dz,
+\tag{15.1}\]</span></span> where <span class="math inline">\(C\)</span> is any contour encircling the aerofoil.</p>
+</div>
+<p>In this subsection we will derive this expression. For this purpose we first consider the force <span class="math inline">\(d\underline{F}\)</span> on an infinitesimal segment of length <span class="math inline">\(dl\)</span> of the cross section of the aerofoil. In terms of the angle <span class="math inline">\(\theta\)</span> that is indicated in <a href="#fig-segment">Figure&nbsp;<span>15.1</span></a> we have <span class="math display">\[
+dF_x = p\cos\theta\,dl,~~~dF_x = -p\sin\theta\,dl,
+\]</span> and thus <span id="eq-15.2b"><span class="math display">\[
+dF_x - i\, dF_y = p\,(\cos\theta + i\sin\theta)\,dl = p\,e^{i\theta} dl.
+\tag{15.2}\]</span></span> Notice how by reinterpreting the <span class="math inline">\(x\)</span>-<span class="math inline">\(y\)</span> plane as the complex plane we can avoid having to deal with sines and cosines.</p>
+<div id="fig-segment" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="aerofoil_segment.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;15.1: Force <span class="math inline">\(d\underline{F}\)</span> acting on an infinitesimal segment <span class="math inline">\(dl\)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>The flow is tangential to the aerofoil, so the velocity components are <span id="eq-15.3"><span class="math display">\[
+u_x=|u|\sin\theta,~~~u_y=|u|\cos\theta.
+\tag{15.3}\]</span></span> We can relate that to the derivative of the complex potential, <span id="eq-15.4"><span class="math display">\[
+\frac{dw}{dz} = u_x-i u_y
+=|u|\left(\sin\theta-i\cos\theta\right)=-i|u|e^{i\theta},
+\tag{15.4}\]</span></span> and thus <span id="eq-15.5"><span class="math display">\[
+|u|=ie^{-i\theta}\frac{dw}{dz}.
+\tag{15.5}\]</span></span> This makes it easy to calculate <span id="eq-15.6"><span class="math display">\[
+u^2=-e^{-2i\theta}\left(\frac{dw}{dz}\right)^2.
+\tag{15.6}\]</span></span> We can use this in Bernoulli’s theorem for irrotational flow (in the absence of body forces) to find the pressure <span id="eq-15.7"><span class="math display">\[
+p =-\frac{\rho}{2}u^2+constant=\frac{\rho}{2}e^{-2i\theta}\left(\frac{dw}{dz}\right)^2+constant.
+\tag{15.7}\]</span></span> The value of the constant is irrelevant because only pressure differences create forces. Substituting this expression <span id="eq-15.8"><span class="math display">\[\begin{split}
+dF_x-i\,dF_y&amp;=p(\cos\theta+i\sin\theta)dl =p e^{i\theta}\,dl\\
+&amp;= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2e^{-i\theta}dl
+= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2(\cos\theta\,dl -i\sin\theta\,dl)\\
+&amp;=i\,\frac{\rho}{2}\left(\frac{dw}{dz}\right)^2dz.
+\end{split} \tag{15.8}\]</span></span> where we used that <span id="eq-15.9"><span class="math display">\[
+dx=-\sin\theta\,dl,~~dy=-\cos\theta\,dl~\text{ and }~dz=dx+i\,dy.
+\tag{15.9}\]</span></span> We can now integrate this along the aerofoil to get the total force on the aerofoil as <span id="eq-15.10"><span class="math display">\[
+F_x-iF_y=i\,\frac{\rho}{2}\oint_C\left(\frac{dw}{dz}\right)^2dz.
+\tag{15.10}\]</span></span> Because we are integrating a holomorphic function, the result will be the same no matter which contour <span class="math inline">\(C\)</span> we are using, as long as it encircles the aerofoil once in a counterclockwise direction. We have thus derived Blasius’ theorem.</p>
+</section>
+<section id="kutta-joukowski-lift-theorem" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="kutta-joukowski-lift-theorem"><span class="header-section-number">15.2</span> Kutta-Joukowski lift theorem</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c4830f0c-6356-4f16-ab8d-af790127db50&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>We now simplify the expression for the force acting on an aerofoil that we derived in the previous subsection even further by considering the Laurent expansion <span id="eq-15.11"><span class="math display">\[
+\frac{dw}{dz}=a_0+\frac{a_1}{z}+\frac{a_2}{z^2}+\cdots.
+\tag{15.11}\]</span></span> (You can find a discussion of Laurent expansions in your lecture notes from ‘Functions of a complex argument’.) We know that the velocity far away from the aerofoil (which we will denote as <span class="math inline">\(\underline{u}(\infty)\)</span>) has to be finite, and therefore the Laurent expansion of <span class="math inline">\(dw/dz\)</span> can not have any terms with positive powers of <span class="math inline">\(z\)</span>. Far away from the aerofoil we have <span id="eq-15.12"><span class="math display">\[
+\lim_{|z|\to\infty}\frac{dw}{dz}= a_0=u_x(\infty)-i\,u_y(\infty).
+\tag{15.12}\]</span></span> We also get the Laurent expansion <span id="eq-15.13"><span class="math display">\[
+\left(\frac{dw}{dz}\right)^2dz=a_0^2+\frac{2a_0a_1}{z}+\frac{a_1^2+2a_0a_2}{z^2}+\dots.
+\tag{15.13}\]</span></span> Using this in Blasius theorem and using Cauchy’s residue theorem gives us <span id="eq-fxy"><span class="math display">\[
+F_x-iF_y=i\,\frac{\rho}{2}\oint_C\left(\frac{dw}{dz}\right)^2dz=-2\pi\rho\, a_0\,a_1.
+\tag{15.14}\]</span></span> We get <span class="math inline">\(a_1\)</span> from the contour integral of <span class="math inline">\(dw/dz\)</span>: <span id="eq-15.15"><span class="math display">\[\begin{split}
+2\pi i a_1&amp;=\oint_C\frac{dw}{dz}dz=\oint_C(u_x-i\,u_y)(dx+i\,dy)\\
+&amp;=\oint(u_xdx+u_ydy)+\oint_C(iu_xdy-iu_ydx)\\
+&amp;=\oint_C\underline{u}\cdot d\underline{x}+i\oint_C\underline{\nabla}\psi\cdot d\underline{x}.
+\end{split} \tag{15.15}\]</span></span> The second term vanishes. To see this consider integrating along the aerofoil. Because the flow follows the surface of the aerofoil, this means that that surface is a streamline. Thus the streamfunction <span class="math inline">\(\psi\)</span> is constant along the contour, hence <span class="math inline">\(\underline{\nabla}\psi\cdot d\underline{x}=0\)</span>. The remaining first term is just the circulation <span class="math inline">\(\Gamma\)</span>. Hence we have that <span id="eq-15.16"><span class="math display">\[
+a_1=\frac{\Gamma}{2\pi i}.
+\tag{15.16}\]</span></span> Substituting our results for <span class="math inline">\(a_0\)</span> and <span class="math inline">\(a_1\)</span> into <a href="#eq-fxy">Eq.&nbsp;<span>15.14</span></a> gives <span id="eq-15.17"><span class="math display">\[
+F_x-iF_y=i\rho(u_x(\infty)-i u_y(\infty))\Gamma,
+\tag{15.17}\]</span></span> from which we can extract the real and imaginary parts to get our final result: <span id="eq-15.18"><span class="math display">\[
+F_x=\rho\,\Gamma u_y(\infty),~~~F_y=-\rho\,\Gamma u_x(\infty).
+\tag{15.18}\]</span></span> As promised, the forces depend only on the circulation and the velocity far away from the aerofoil.</p>
+<p>Let us check that this reproduces the results from <a href="lecture_14.html#sec-magnus"><span>Section&nbsp;14.3</span></a> on the Magnus effect. There we had <span class="math inline">\(u_y(\infty)=0\)</span> and thus <span class="math inline">\(F_x=0\)</span>. Thus there is no drag force. (In the real world of course there is drag, which will be created by the turbulent wake behind the cylinder, but we are not modelling that.) We also had <span class="math inline">\(u_x(\infty)=a\)</span> and <span class="math inline">\(\Gamma=-2\pi b\)</span> so that <span class="math inline">\(F_y=2\pi\rho a b\)</span>, which reproduces the old result in <a href="lecture_14.html#eq-magnus">Eq.&nbsp;<span>14.19</span></a> .</p>
+</section>
+<section id="conformal-mappings" class="level2 page-columns page-full" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="conformal-mappings"><span class="header-section-number">15.3</span> Conformal mappings</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=46c1c619-0459-4a00-ab17-af790127f7db&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>From the previous lecture we have a flow around a cylindrical aerofoil. We want the flow around a less symmetrical shape that is rounded at the front but has a tip at the end. This is illustrated in <a href="#fig-conformal">Figure&nbsp;<span>15.2</span></a>. We are going to use a conformal mapping that maps from one to the other.</p>
+<div id="fig-conformal" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="conformal.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;15.2: A conformal mapping <span class="math inline">\(f\)</span> from the region <span class="math inline">\(D\)</span> outside a disk <span class="math inline">\(A\)</span> to the region <span class="math inline">\(\tilde{D}\)</span> outside the cross section <span class="math inline">\(\tilde{A}\)</span> of an aerofoil.</figcaption><p></p>
+</figure>
+</div>
+<p>Let <span class="math inline">\(A\)</span> be the cross section of a cylindrical aerofoil, i.e., a closed disc, with radius <span class="math inline">\(R\)</span>, centred at <span class="math inline">\(z=-\lambda\)</span>. Let <span class="math inline">\(\tilde{A}\)</span> be the desired cross section of the aerofoil. Then <span class="math inline">\(D=\mathbb{C}\setminus A\)</span> and <span class="math inline">\(\tilde{D}=\mathbb{C}\setminus \tilde{A}\)</span> are the regions outside the aerofoils.</p>
+<p>Let <span class="math inline">\(f:D\to\tilde{D}\)</span> be a holomorphic invertible function. View this as a map from the region in one complex plane to another, which we will refer to as the <span class="math inline">\(z\)</span> plane and the <span class="math inline">\(\tilde{z}\)</span> plane respectively, where <span class="math inline">\(\tilde{z}=f(z)=\tilde{x}+i\tilde{y}\)</span>. We want to know what happens to the fluid flow under this map. We introduce the complex potential on <span class="math inline">\(\tilde{D}\)</span> to be everywhere identical to the complex potential at the corresponding point in <span class="math inline">\(D\)</span>, i.e., <span id="eq-15.19"><span class="math display">\[
+\tilde{w}(\tilde{z})=w(z)=w(f^{-1}(\tilde{z})).
+\tag{15.19}\]</span></span> This is a holomorphic function on <span class="math inline">\(\tilde{D}\)</span>. It gives us the vector potential <span class="math inline">\(\tilde{\phi}\)</span> and the stream function <span class="math inline">\(\tilde{\psi}\)</span> on <span class="math inline">\(\tilde{D}\)</span> as usual: <span id="eq-15.20"><span class="math display">\[
+\tilde{w}(\tilde{z})=\tilde{\phi}(\tilde{x},\tilde{y})+i\tilde{\psi}(\tilde{x},\tilde{y}).
+\tag{15.20}\]</span></span> Because the stream function <span class="math inline">\(\tilde{\psi}(\tilde{z})\)</span> on <span class="math inline">\(\tilde{D}\)</span> takes the same values as the original stream function <span class="math inline">\(\psi\)</span> on the corresponding point on <span class="math inline">\(D\)</span>, the stream lines on <span class="math inline">\(D\)</span> get mapped by <span class="math inline">\(f\)</span> to streamlines on <span class="math inline">\(\tilde{D}\)</span>. We can find the mapped velocity field on <span class="math inline">\(\tilde{D}\)</span> from the complex potential <span class="math inline">\(\tilde{w}\)</span> as <span id="eq-uf"><span class="math display">\[
+\frac{d\tilde{w}}{d\tilde{z}}=\tilde{u}_x-i\tilde{u}_y=\frac{d}{d\tilde{z}}w\left(f^{-1}(\tilde{z})\right)=\frac{dw}{dz}\frac{df^{-1}(\tilde{z})}{d\tilde{z}}
+=\frac{dw/dz}{f'},
+\tag{15.21}\]</span></span> where we used that the derivative of the inverse function <span class="math inline">\(f^{-1}\)</span> is the reciprocal of the derivative of the function <span class="math inline">\(f\)</span>. Thus we find that the components of the velocity field are simply rescaled by <span class="math inline">\(f'\)</span> at every point.</p>
+<p>We now consider how angles behave under the mapping <span class="math inline">\(f\)</span>. See <a href="#fig-angles">Figure&nbsp;<span>15.3</span></a> for a drawing illustrating the following discussion. We consider an infinitesimal line from some point <span class="math inline">\(z_0\)</span> to point <span class="math inline">\(z_0+\delta z\)</span> for some infinitesimally small <span class="math inline">\(\delta z\)</span>. This gets mapped into a line from <span class="math inline">\(\tilde{z}_0=f(z_0)\)</span> to <span id="eq-15.22"><span class="math display">\[\begin{split}
+\tilde{z}_0+\delta\tilde{z}&amp;=f(z_0+\delta z)\\
+&amp;=f(z_0)+\delta z\,f'(z_0)+\frac{(\delta z)^2}{2}f''(z_0)+\\
+&amp;\qquad\cdots
++\frac{(\delta z)^n}{n!}f^{(n)}(z_0)+\cdots
+\end{split} \tag{15.22}\]</span></span> In the case where <span class="math inline">\(f^{(n)}(z_0)=0\)</span> for all <span class="math inline">\(n&lt;m\)</span> and <span class="math inline">\(f^{(m)}(z_0)\neq 0\)</span> this gives <span id="eq-15.23"><span class="math display">\[
+\delta\tilde{z}=f(z_0+\delta z)=\frac{(\delta z)^m}{m!}f^{(m)}(z_0)+\text{ higher-order terms}.
+\tag{15.23}\]</span></span> The higher-order terms can be neglected for infinitesimal <span class="math inline">\(\delta z\)</span>. For the angle that the line segments make with the horizontal we find <span id="eq-15.24"><span class="math display">\[
+\operatorname{arg}(\delta \tilde{z})=m\,\operatorname{arg}(\delta z) + \operatorname{arg}(f^{(m)}(z_0)).
+\tag{15.24}\]</span></span></p>
+<div id="fig-angles" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="angles.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;15.3: A figure illustrating the change in angle under the holomorphic mapping <span class="math inline">\(f\)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>Let us now consider a second infinitesimal line element from <span class="math inline">\(z_0\)</span> to <span class="math inline">\(z_0+\delta z_2\)</span>, which gets mapped into a line from <span class="math inline">\(\tilde{z}_0\)</span> to <span class="math inline">\(\tilde{z}_0+\delta\tilde{z}_2\)</span> and consider the angle <span id="eq-15.25"><span class="math display">\[
+\theta = \operatorname{arg}(\delta z_2) - \operatorname{arg}(\delta z)
+\tag{15.25}\]</span></span> between them. This gets mapped to <span id="eq-mtheta"><span class="math display">\[
+\tilde{\theta} = \operatorname{arg}(\delta  \tilde{z}_2) - \operatorname{arg}(\delta  \tilde{z})
+=m\,\operatorname{arg}(\delta z_2) - m\,\operatorname{arg}(\delta z)=m\,\theta.
+\tag{15.26}\]</span></span> Thus the angle is multiplied by the integer <span class="math inline">\(m\)</span>. But <span class="math inline">\(f'(z)\neq 0\)</span> for all <span class="math inline">\(z\)</span> in <span class="math inline">\(D\)</span> because otherwise <span class="math inline">\(f\)</span> would not be invertible. Hence <span class="math inline">\(m=1\)</span> and all angles are preserved. This is why such mappings by holomorphic invertible functions are called <strong>conformal mappings</strong>.</p>
+</section>
+<section id="joukouwski-mapping" class="level2 page-columns page-full" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="joukouwski-mapping"><span class="header-section-number">15.4</span> Joukouwski mapping</h2>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e6d96b10-ba14-488f-a2bd-af790127f7bc&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>We want the aerofoil to have a cusp at the trailing edge, see Figure <a href="#fig-conformal">Figure&nbsp;<span>15.2</span></a>. We will see soon why that is important. At the cusp the angle between the upper and lower surfaces of the aerofoil is <span class="math inline">\(2\pi\)</span>. In the original cylindrical aerofoil the angle is everywhere equal to <span class="math inline">\(\pi\)</span>. So we need to choose a conformal map <span class="math inline">\(f\)</span> that, when extended to the surface of the aerofoil, has a vanishing derivative at the point <span class="math inline">\(c=R-\lambda\)</span> but a non-vanishing second derivative, <span id="eq-fc1"><span class="math display">\[
+f'(c)=0~~~\text{ and }~~~f''(c)\neq 0,
+\tag{15.27}\]</span></span> because then, according to <a href="#eq-mtheta">Eq.&nbsp;<span>15.26</span></a> , the angles at <span class="math inline">\(z=c\)</span> are doubled.</p>
+<p>We also want the conformal mapping to not affect the flow far away from the aerofoil. We know from <a href="#eq-uf">Eq.&nbsp;<span>15.21</span></a> that the velocity is scaled by a factor of <span class="math inline">\(f'\)</span>, so we need <span id="eq-fc2"><span class="math display">\[
+\lim_{|z|\to\infty}f'(z)=1.
+\tag{15.28}\]</span></span></p>
+<p>A function <span class="math inline">\(f\)</span> that satisfies the conditions in <a href="#eq-fc1">Eq.&nbsp;<span>15.27</span></a> and <a href="#eq-fc2">Eq.&nbsp;<span>15.28</span></a> is <span id="eq-15.29"><span class="math display">\[
+f(z)=z-\frac{c^2}{z}.
+\tag{15.29}\]</span></span> It is holomorphic on <span class="math inline">\(D\)</span> because the poles at <span class="math inline">\(z=\pm c\)</span> are not in <span class="math inline">\(D\)</span>. The point <span class="math inline">\(z=-c\)</span> lies inside the aerofoil and the point <span class="math inline">\(z=c\)</span> on its surface.</p>
+<p>We now start with the flow around the cylinder discussed in the section on the Magnus effect, described by the complex potential <span id="eq-15.30"><span class="math display">\[
+w(z)=a\left(z+\frac{R^2}{z}\right)+ib\log z.
+\tag{15.30}\]</span></span> We rotate everything by an angle <span class="math inline">\(\alpha\)</span> counterclockwise and shift the centre of the cylinder to the left by <span class="math inline">\(\lambda\)</span> . This is achieved by replacing <span class="math inline">\(z\)</span> by <span class="math inline">\((z+\lambda)e^{-i\alpha}\)</span>. We also make the argument of the logarithm dimensionless by dividing by <span class="math inline">\(R\)</span>, see discussion in section <a href="lecture_14.html#sec-units"><span>Section&nbsp;14.4</span></a>. This thus gives the flow on the left in <a href="#fig-jou">Figure&nbsp;<span>15.4</span></a>.</p>
+<div id="fig-jou" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="joukowski.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;15.4: The Joukowski mapping <span class="math inline">\(f\)</span> maps the flow around the cylinder to the flow around the aerofoil.</figcaption><p></p>
+</figure>
+</div>
+<p>We set <span class="math inline">\(b=-\Gamma/(2\pi R)\)</span>. So we use <span id="eq-15.31"><span class="math display">\[
+w(z)=a\left((z+\lambda)e^{-i\alpha}+\frac{R^2}{z+\lambda}e^{i\alpha}\right)-\frac{i\Gamma}{2\pi R}\log\frac{z+\lambda}{R}.
+\tag{15.31}\]</span></span> From the derivative of this complex potential <span id="eq-15.32"><span class="math display">\[
+\frac{dw}{dz}=a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}
+\tag{15.32}\]</span></span> we see that far away we have constant flow at an angle <span class="math inline">\(\alpha\)</span> to the horizontal: <span id="eq-15.33"><span class="math display">\[
+\lim_{|z|\to\infty}\frac{dw}{dz}=a\,e^{-i\alpha}=a\cos\alpha-ia\sin\alpha=u_x(\infty)-iu_y(\infty).
+\tag{15.33}\]</span></span> By calculating the contour integral along a contour surrounding the aerofoil using Cauchy’s residue theorem we find that the circulation is <span id="eq-15.34"><span class="math display">\[
+\oint_C\frac{dw}{dz}dz=2\pi i\left(-\dfrac{i\Gamma}{2\pi}\right)=\Gamma.
+\tag{15.34}\]</span></span></p>
+<p>We can now use <a href="#eq-uf">Eq.&nbsp;<span>15.21</span></a> to find the velocity field after applying the conformal mapping <span class="math inline">\(f\)</span>: <span id="eq-15.35"><span class="math display">\[
+\frac{d\tilde{w}}{d\tilde{z}}=\frac{dw/dz}{f'}
+=\frac{a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}}
+{1-\dfrac{(R-\lambda)^2}{z^2}}.
+\tag{15.35}\]</span></span> We note that due to the zero of the denominator at <span class="math inline">\(z=R-\lambda\)</span> the velocity is infinite at that point unless the numerator vanishes at that point, i.e., unless <span id="eq-15.36"><span class="math display">\[
+\Gamma = -4\pi a R\sin\alpha.
+\tag{15.36}\]</span></span> The cusp at the rear of the aerofoil forces the airflow to have this particular amount of circulation.</p>
+<p>We can therefore now use the Kutta-Joukowski theorem to determine the lift force: <span id="eq-15.37"><span class="math display">\[\begin{split}
+F_x&amp;=\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(-\sin\alpha),\\
+F_y&amp;=-\rho\Gamma u_y(\infty)=4\pi\rho \,a^2\, R\sin\alpha(\cos\alpha).
+\end{split}
+\tag{15.37}\]</span></span></p>
+<p>We used the fact that the mapping did not change the velocity far away and did not change the circulation because <span class="math inline">\(\tilde{w}(\tilde{z})=w(z)\)</span> and thus <span id="eq-15.38"><span class="math display">\[
+\oint_C \frac{d\tilde{w}}{d\tilde{z}}d\tilde{z}=\oint_{f^{-1}(C)}\frac{dw}{dz}dz=\Gamma,
+\tag{15.38}\]</span></span> due to the fact that the contour <span class="math inline">\(f^{-1}(C)\)</span> also surrounds the cylinder in the counterclockwise direction.</p>
+<p>We have thus found that the lift force is acting at an angle <span class="math inline">\(\alpha\)</span> to the vertical and has a magnitude of <span id="eq-15.39"><span class="math display">\[
+4\pi\rho \,a^2\, R\sin\alpha.
+\tag{15.39}\]</span></span></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-acheson" class="csl-entry" role="doc-biblioentry">
+Acheson, D. J. 1990. <em>Elementary Fluid Dynamics</em>. Clarendon Press.
+</div>
+<div id="ref-batchelor" class="csl-entry" role="doc-biblioentry">
+Batchelor, G. K. 2000. <em>An Introduction to Fluid Dynamics</em>. Cambridge University Press.
+</div>
+<div id="ref-paterson" class="csl-entry" role="doc-biblioentry">
+Paterson, A. R. 1983. <em>A First Course in Fluid Dynamics</em>. Cambridge ; New York: Cambridge University Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lecture_14.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Flow around a cylinder, circulation, and the Magnus effect</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./lecture_16.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Surface waves 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
