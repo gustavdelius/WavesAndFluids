@@ -7,6 +7,7 @@ coupled.
 You find content related to this lecture in the textbooks:
 
 - @acheson section 3.2
+- @baldock sections 10.1, 10.2 and 10.3.1
 - @paterson sections 13.1 - 13.3
 - @braithwaite section 5.1
 
