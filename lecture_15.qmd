@@ -32,7 +32,7 @@ of the cross section of the aerofoil. In terms of the angle $\theta$ that is
 indicated in @fig-segment we have
 $$
 dF_x = p\cos\theta\,dl,~~~dF_x = -p\sin\theta\,dl,
-$$
+$$ {#eq-15.2}
 and thus
 $$
 dF_x - i\, dF_y = p\,(\cos\theta + i\sin\theta)\,dl = p\,e^{i\theta} dl.
@@ -66,8 +66,8 @@ $$ {#eq-15.7}
 The value of the constant is irrelevant because only pressure differences create forces. Substituting this expression
 $$\begin{split}
 dF_x-i\,dF_y&=p(\cos\theta+i\sin\theta)dl =p e^{i\theta}\,dl\\
-&= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2e^{-i\theta}dl 
-= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2(\cos\theta\,dl -i\sin\theta\,dl)\\
+&= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2e^{-i\theta}dl \\
+&= \frac{\rho}{2}\left(\frac{dw}{dz}\right)^2(\cos\theta\,dl -i\sin\theta\,dl)\\
 &=i\,\frac{\rho}{2}\left(\frac{dw}{dz}\right)^2dz.
 \end{split}$$ {#eq-15.8}
 where we used that
@@ -177,10 +177,13 @@ same values as the original stream function $\psi$ on the corresponding point on
 $D$, the stream lines on $D$ get mapped by $f$ to streamlines on $\tilde{D}$. We
 can find the mapped velocity field on $\tilde{D}$ from the complex potential
 $\tilde{w}$ as
-$$
- \frac{d\tilde{w}}{d\tilde{z}}=\tilde{u}_x-i\tilde{u}_y=\frac{d}{d\tilde{z}}w\left(f^{-1}(\tilde{z})\right)=\frac{dw}{dz}\frac{df^{-1}(\tilde{z})}{d\tilde{z}}
+$$\begin{split}
+ \frac{d\tilde{w}}{d\tilde{z}}
+ &=\tilde{u}_x-i\tilde{u}_y
+ =\frac{d}{d\tilde{z}}w\left(f^{-1}(\tilde{z})\right)\\
+ &=\frac{dw}{dz}\frac{df^{-1}(\tilde{z})}{d\tilde{z}}
  =\frac{dw/dz}{f'},
-$$ {#eq-uf}
+\end{split}$$ {#eq-uf}
 where we used that the derivative of the inverse function $f^{-1}$ is the
 reciprocal of the derivative of the function $f$. Thus we find that the
 components of the velocity field are simply rescaled by $f'$ at every point.
@@ -215,10 +218,10 @@ $$
  \theta = \operatorname{arg}(\delta z_2) - \operatorname{arg}(\delta z)
 $$ {#eq-15.25}
 between them. This gets mapped to
-$$
- \tilde{\theta} = \operatorname{arg}(\delta  \tilde{z}_2) - \operatorname{arg}(\delta  \tilde{z})
- =m\,\operatorname{arg}(\delta z_2) - m\,\operatorname{arg}(\delta z)=m\,\theta.
-$$ {#eq-mtheta}
+$$\begin{split}
+ \tilde{\theta} &= \operatorname{arg}(\delta  \tilde{z}_2) - \operatorname{arg}(\delta  \tilde{z})\\
+& =m\,\operatorname{arg}(\delta z_2) - m\,\operatorname{arg}(\delta z)=m\,\theta.
+\end{split}$$ {#eq-mtheta}
 Thus the angle is multiplied by the integer $m$. But $f'(z)\neq 0$ for all $z$
 in $D$ because otherwise $f$ would not be invertible. Hence $m=1$ and all angles
 are preserved. This is why such mappings by holomorphic invertible functions are
@@ -277,9 +280,11 @@ $$
 \frac{dw}{dz}=a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}
 $$ {#eq-15.32}
 we see that far away we have constant flow at an angle $\alpha$ to the horizontal:
-$$
-\lim_{|z|\to\infty}\frac{dw}{dz}=a\,e^{-i\alpha}=a\cos\alpha-ia\sin\alpha=u_x(\infty)-iu_y(\infty).
-$$ {#eq-15.33}
+$$\begin{split}
+\lim_{|z|\to\infty}\frac{dw}{dz}
+&=a\,e^{-i\alpha}=a\cos\alpha-ia\sin\alpha\\
+&=u_x(\infty)-iu_y(\infty).
+\end{split}$$ {#eq-15.33}
 By calculating the contour integral along a contour surrounding the aerofoil  using Cauchy's residue theorem we find
 that the circulation is
 $$
@@ -287,11 +292,12 @@ $$
 $$ {#eq-15.34}
 
 We can now use @eq-uf  to find the velocity field after applying the conformal mapping $f$:
-$$
- \frac{d\tilde{w}}{d\tilde{z}}=\frac{dw/dz}{f'}
- =\frac{a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}}
+$$\begin{split}
+ \frac{d\tilde{w}}{d\tilde{z}}
+ &=\frac{dw/dz}{f'}\\
+ &=\frac{a\left(e^{-i\alpha}-\dfrac{R^2}{(z+\lambda)^2}e^{i\alpha}\right)-\dfrac{i\Gamma}{2\pi}\dfrac{1}{z+\lambda}}
  {1-\dfrac{(R-\lambda)^2}{z^2}}.
-$$ {#eq-15.35}
+\end{split}$$ {#eq-15.35}
 We note that due to the zero of the denominator at $z=R-\lambda$ the velocity is infinite at that point unless the numerator
 vanishes at that point, i.e., unless
 $$
