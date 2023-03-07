@@ -31,7 +31,7 @@ consider the force $d\underline{F}$ on an infinitesimal segment of length $dl$
 of the cross section of the aerofoil. In terms of the angle $\theta$ that is
 indicated in @fig-segment we have
 $$
-dF_x = p\cos\theta\,dl,~~~dF_x = -p\sin\theta\,dl,
+dF_x = p\cos\theta\,dl,~~~dF_y = -p\sin\theta\,dl,
 $$ {#eq-15.2}
 and thus
 $$
