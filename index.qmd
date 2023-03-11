@@ -12,8 +12,12 @@ If you want to print these notes you should download the [pdf version](Waves-and
 
 :::
 
-The material in this module consists of two topics: Waves and Fluids. We will spend the first half of the term on Waves and the second half on Fluids. The topics are linked by the fact that both use partial differential equations to describe real-world phenomena in space and time. Of course they share this feature with a large part of Applied Mathematics. So you will meet the ideas and methods introduced in this module again and again in future Applied Mathematics modules. In some sense, the actual subject matter of this module is less important than the way of thinking that it introduces.
+This module consists of two topics: Waves and Fluids. In the first half of the term, we will focus on Waves, while in the second half, we will delve into Fluids. The topics are interconnected by their use of partial differential equations to describe real-world phenomena in space and time.
 
-The module is meant to prepare you for going out into the world and confronting new phenomena with the power of mathematics, not only in physics, but in biology, ecology, medicine, sociology, economics, and other areas. There will be many modules in the third and fourth year of you studies that will deepen that ability.
+An alternative title for this module could be "Introduction to Continuum Dynamics". It is designed to introduce you to the mathematical modeling and analysis of the behaviour of materials that are treated as continua, or continuous media. Unlike Newtonian Dynamics and Classical Dynamics, which deal with individual particles, Continuum Dynamics deals with emergent phenomena created by the interaction of large numbers of particles. It employs mathematical tools such as partial differential equations.
+
+The concepts and methods presented in Continuum Dynamics form the basis of a large part of Applied Mathematics. You will encounter them again in future Applied Mathematics modules, and they are also used in fields such as biology, ecology, medicine, sociology, and economics. The examples presented in this module are less important than the way of thinking they introduce.
+
+The goal of this module is to equip you with the skills and knowledge to apply mathematics to new phenomena in the real world. In your third and fourth year, you will have the opportunity to deepen this ability through various modules.
 
 Throughout this module, we shall use SI units: length is measured in meters (m), time in seconds (s), mass in kilograms (kg).

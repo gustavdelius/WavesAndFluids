@@ -154,3 +154,5 @@ $$\begin{split}
 $$ {#eq-finitestr8}
 Thus we know how to determine the constants $F_k$ and $G_k$ in the general
 solution @eq-finitestr4 so as to satisfy given initial conditions.
+
+The method of separation of variables that we have used in this lecture to solve the wave equation is a powerful technique that can be used to solve a wide range of partial differential equations beyond the wave equation. The idea behind this method is to assume that the solution of a partial differential equation can be expressed as a product of two functions, one depending only on the spatial variables and the other only on the temporal variables. This reduces the partial differential equation to a set of ordinary differential equations, which can be solved independently. You will encounter this method repeatedly, in fluid mechanics, quantum mechanics, mathematical ecology and epidemiology and many other fields.

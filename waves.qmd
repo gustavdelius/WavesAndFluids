@@ -1,24 +1,11 @@
 # Waves
 
-Waves are so fundamentally important because waves are the only way
-information can propagate in this universe. 
-Some waves that propagate information are obvious:
-sound waves, light and radio waves, electric waves travelling along our neurons.
-Others are less obvious: even if I communicate with you by shooting a particle
-at you, this is described by a wave, as you will learn in quantum mechanics.
-Gravitational effects are communicated via gravitational waves.
+Waves play a fundamental role in our universe, as they are the only means by which information can propagate through space and time. Some examples of waves that carry information are well-known, such as sound waves, light waves, radio waves, and the electrical waves that travel along our neurons. Other examples are less obvious, such as the waves that describe the motion of particles in quantum mechanics and the gravitational waves that convey the effects of gravity.
 
-Because waves propagate at a finite speed, also information can only propagate
-at that wave speed. This has profound impacts, as you know from the theory of
-special relativity. For example, we can look far back into the past because some of
-the light waves emitted shortly after the big bang 16 billion years ago are only
-now arriving here, strongly red-shifted and thus detectable as microwaves.
+Because waves travel at a finite speed, information can only propagate at the speed of the wave. This has profound implications, as we see in the theory of special relativity. For instance, we can observe distant events in the past because some of the light waves that were emitted soon after the Big Bang, roughly 16 billion years ago, are only now reaching us. These waves are strongly red-shifted and detectable as microwaves.
 
-Studying waves is also of great practical importance. They play an important
-part in our technological world. Improvements in our understanding of how to
-generate and control electromagnetic waves, for example, has led to radio, radar
-and mobile phones. Understanding how a pest propagates in the form of an
-invasion wave into so-far uninfected territory allows us to prepare adequate
-interventions. Understanding how density waves form in traffic flow, leading to
-traffic jams, allows us to design interventions that lead to smoother traffic
-flow.
+The study of waves is not only important from a theoretical perspective, but also from a practical standpoint. Waves play a vital role in our modern technological world. Advances in our understanding of how to generate and control electromagnetic waves have led to the development of essential technologies such as radio, radar, and mobile phones.
+
+Furthermore, understanding how waves propagate can also help us prepare for and prevent potential threats. For instance, studying how pests spread in the form of invasion waves into previously uninfected areas can help us develop effective interventions to prevent their spread. Similarly, understanding how density waves form in traffic flow and lead to traffic jams can help us design interventions to improve traffic flow and reduce congestion.
+
+By studying waves, we can gain insights into the underlying mechanisms that govern a wide range of phenomena, from the behaviour of subatomic particles to the dynamics of traffic flow. These insights can be applied in various fields, including engineering, medicine, and environmental science. By deepening our understanding of waves, we can continue to make advancements in technology and address real-world challenges in a more effective manner.

@@ -8,14 +8,13 @@ book:
   subtitle: "Lecture notes for Spring 2023"
   author: "Gustav Delius"
   date: today
-  abstract: |
+  description: |
     In this module we will explore the dynamics of continuous media, 
     focusing on elementary fluid dynamics and the motion of waves. This lays 
     the foundations for the full development of fluid dynamics in years 3 and 4, 
     as well as for modules on electromagnetism and quantum mechanics. The 
     mathematical techniques of vector calculus are employed and further 
     developed, as are Fourier methods and methods from complex analysis.
-  description: Work in progress
   downloads: pdf
   repo-url: https://github.com/gustavdelius/WavesAndFluids/
   repo-branch: master
@@ -51,7 +50,11 @@ book:
       - lecture_11.qmd
       - lecture_12.qmd
       - lecture_13.qmd
-      - lecture_14.qmd 
+      - lecture_14.qmd
+      - lecture_15.qmd
+      - lecture_16.qmd
+      - lecture_17.qmd
+      - lecture_18.qmd
     - references.qmd
 
 bibliography: references.bib

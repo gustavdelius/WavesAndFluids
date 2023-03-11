@@ -6,6 +6,9 @@ that works more generally. The result turns out to be independent of the details
 of the flow and only involves the flow velocity far from the aerofoil and the
 circulation around the aerofoil.
 
+You will not be examined on the material in this section. But I hope that it
+shows you a nice example of how powerful advanced mathematics (complex analysis in this case) can be when brought to bear on an applied problem (the lift on an airplane wing in this case).
+
 You find content related to this lecture in the textbooks:
 
 - @acheson sections 4.6 to 4.11
