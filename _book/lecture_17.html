@@ -8,7 +8,7 @@
 
 <meta name="description" content="In this module we will explore the dynamics of continuous media, focusing on elementary fluid dynamics and the motion of waves. This lays the foundations for the full development of fluid dynamics in years 3 and 4, as well as for modules on electromagnetism and quantum mechanics. The mathematical techniques of vector calculus are employed and further developed, as are Fourier methods and methods from complex analysis.">
 
-<title>Waves and Fluids - 1&nbsp; Deriving the wave equation for a string</title>
+<title>Waves and Fluids - 17&nbsp; Surface waves 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lecture_02.html" rel="next">
-<link href="./waves.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./lecture_16.html" rel="prev">
 <link href="./logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,23 +84,23 @@ div.csl-indent {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Waves and Fluids - 1&nbsp; Deriving the wave equation for a string">
+<meta property="og:title" content="Waves and Fluids - 17&nbsp; Surface waves 2">
 <meta property="og:description" content="In this module we will explore the dynamics of continuous media, 
 focusing on elementary fluid dynamics and the motion of waves.">
 <meta property="og:site-name" content="Waves and Fluids">
-<meta name="twitter:title" content="Waves and Fluids - 1&nbsp; Deriving the wave equation for a string">
+<meta name="twitter:title" content="Waves and Fluids - 17&nbsp; Surface waves 2">
 <meta name="twitter:description" content="In this module we will explore the dynamics of continuous media, 
 focusing on elementary fluid dynamics and the motion of waves.">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surface waves 2</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -144,7 +144,7 @@ focusing on elementary fluid dynamics and the motion of waves.">
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
+  <a href="./lecture_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,7 +234,7 @@ focusing on elementary fluid dynamics and the motion of waves.">
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_17.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surface waves 2</span></a>
+  <a href="./lecture_17.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surface waves 2</span></a>
   </div>
 </li>
       </ul>
@@ -253,19 +253,18 @@ focusing on elementary fluid dynamics and the motion of waves.">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-waves-on-a-string" id="toc-why-waves-on-a-string" class="nav-link active" data-scroll-target="#why-waves-on-a-string"><span class="toc-section-number">1.1</span>  Why waves on a string?</a></li>
-  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="toc-section-number">1.2</span>  Linearized tension force</a></li>
-  <li><a href="#wave-equation-from-newtons-2nd-law" id="toc-wave-equation-from-newtons-2nd-law" class="nav-link" data-scroll-target="#wave-equation-from-newtons-2nd-law"><span class="toc-section-number">1.3</span>  Wave equation from Newton’s 2nd law</a></li>
-  <li><a href="#checking-dimensions" id="toc-checking-dimensions" class="nav-link" data-scroll-target="#checking-dimensions"><span class="toc-section-number">1.4</span>  Checking dimensions</a></li>
+  <li><a href="#pathlines" id="toc-pathlines" class="nav-link active" data-scroll-target="#pathlines"><span class="toc-section-number">17.1</span>  Pathlines</a></li>
+  <li><a href="#validity-of-linear-approximation" id="toc-validity-of-linear-approximation" class="nav-link" data-scroll-target="#validity-of-linear-approximation"><span class="toc-section-number">17.2</span>  Validity of linear approximation</a></li>
+  <li><a href="#circular-waves" id="toc-circular-waves" class="nav-link" data-scroll-target="#circular-waves"><span class="toc-section-number">17.3</span>  Circular waves</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_01.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_17.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-1" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deriving the wave equation for a string</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surface waves 2</span></h1>
 </div>
 
 
@@ -280,74 +279,94 @@ focusing on elementary fluid dynamics and the motion of waves.">
 
 </header>
 
+<p>In this lecture we want to study the wave solution that we derived in the previous lecture. We will first look at the paths that the particles in the fluid follow. Then we will investigate under what condition the linear approximation that we made to simplify the surface conditions is valid. Finally we look at the dispersion in the surface waves.</p>
 <p>You find content related to this lecture in the textbooks:</p>
 <ul>
-<li><span class="citation" data-cites="knobel">Knobel (<a href="references.html#ref-knobel" role="doc-biblioref">1999</a>)</span> chapter 7</li>
-<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> sections 17 and 19</li>
-<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 1.10.3</li>
-<li><span class="citation" data-cites="simmons">Simmons (<a href="references.html#ref-simmons" role="doc-biblioref">1972</a>)</span> section 40</li>
+<li><span class="citation" data-cites="acheson">Acheson (<a href="references.html#ref-acheson" role="doc-biblioref">1990</a>)</span> sections 3.2 and 3.3</li>
+<li><span class="citation" data-cites="baldock">Baldock and Bridgeman (<a href="references.html#ref-baldock" role="doc-biblioref">1983</a>)</span> section 10.3</li>
+<li><span class="citation" data-cites="paterson">Paterson (<a href="references.html#ref-paterson" role="doc-biblioref">1983</a>)</span> section 13.3</li>
 </ul>
-<section id="why-waves-on-a-string" class="level2 page-columns page-full" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="why-waves-on-a-string"><span class="header-section-number">1.1</span> Why waves on a string?</h2>
-<p>The great diversity of waves in nature means that we need to choose some concrete wave phenomenon to concentrate on to start our investigation. In this module we will concentrate on the waves on a string (think of a guitar string) and generalise to waves on a membrane (think of the membrane of a drum). By studying this in detail you will develop the intuition and the skills that will allow you to understand other wave phenomena later. We’ll come back to waves at the end of the part on Fluid Dynamics when we study waves on the surface of a fluid.</p>
-<p>Personally I like studying vibrating strings because they are at the foundation of superstring theory. This is a “Theory of Everything” that posits that elementary particles are actually tiny strings, with different vibrational states corresponding to different elementary particles. As a Ph.D.&nbsp;student I showed how, if these strings move in certain higher-dimensional group supermanifolds, they behave like the elementary particles of our standard model of particle physics, including the chiral fermions. If we ignore the bit about group supermanifolds for the moment, the maths behind string theory is no more complicated than the maths we will discuss in this module and the partner module on quantum mechanics.</p>
-<p>We consider a flexible, elastic string of linear density <span class="math inline">\(\rho\)</span> (mass per unit length), which undergoes small <em>transverse</em> vibrations. (For example, it can be a guitar string.) The transverse vibrations mean that the displacements of each small element of the string is perpendicular to its length. We assume that the string does not move <em>longitudinally</em> (i.e.&nbsp;parallel to its length). Let <span class="math inline">\(y(x, t)\)</span> be its displacement from equilibrium position at time <span class="math inline">\(t\)</span> and position <span class="math inline">\(x\)</span> (see Fig. <a href="#fig-string1">Figure&nbsp;<span>1.1</span></a>).</p>
-<div id="fig-string1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="string1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;1.1: A string stretched in the <span class="math inline">\(x\)</span>-direction and vibrating in the <span class="math inline">\(y\)</span>-direction.</figcaption><p></p>
-</figure>
-</div>
-<p>The string is sufficiently simple so that we can understand it by pure thought. We will derive from first principles a PDE that describes its motion (the wave equation) and then solve it for various initial conditions. I find it amazing that this is possible.</p>
-<p>To achieve this mathematical understanding we will need to make several simplifications and approximations. For example, we neglect that the string is made up of lots of individual atoms and instead we will pretend that the mass is spread out continuously along the string. This is known as the <strong>continuum approximation</strong> and we will meet this again in the fluid dynamics part of this module.</p>
-<p>To derive the equation of motion of the string we first need to discuss the force acting on it which we will do in the next section. Then in the section after that we can plug this into Newton’s second law and out pops the wave equation. Along the way we will make approximations that allow us to linearise the equations.</p>
+<section id="pathlines" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="pathlines"><span class="header-section-number">17.1</span> Pathlines</h2>
+<p>From the velocity potential <span class="math inline">\(\phi\)</span> in <a href="lecture_16.html#eq-wavephi">Eq.&nbsp;<span>16.22</span></a> we can read off the components of the velocity field as <span id="eq-wu"><span class="math display">\[\begin{split}
+u_x&amp;=\partial_x\phi=A\omega e^{k\,y}\cos(kx-\omega t),\\
+u_y&amp;=\partial_y\phi=A\omega e^{k\,y}\sin(kx-\omega t).
+\end{split} \tag{17.1}\]</span></span> The factor of <span class="math inline">\(e^{k\,y}\)</span> shows us that the velocity decreases exponentially with depth.</p>
+<p>We want to understand how the fluid particles move, i.e., we want to determine the pathlines. These satisfy <span id="eq-pl1"><span class="math display">\[
+\frac{\underline{x}(t)}{dt}=\underline{u}(\underline{x}(t),t).
+\tag{17.2}\]</span></span> Unfortunately these nonlinear equations are too complicated to solve analytically. So we linearise. We know from experience that, while the waves on the surface move over long distances, the particles in the fluid are not swept away with the wave but only move up and down and forth and back a little bit. So we write the position of the particle as <span id="eq-17.3"><span class="math display">\[
+\underline{x}(t)=\bar{\underline{x}}+\hat{\underline{x}}(t),
+\tag{17.3}\]</span></span> where <span class="math inline">\(\bar{\underline{x}}\)</span> is the mean position and the <span class="math inline">\(\hat{\underline{x}}\)</span> are assumed to be small. Substituting this into <a href="#eq-pl1">Eq.&nbsp;<span>17.2</span></a> and looking at the components gives <span id="eq-17.4"><span class="math display">\[\begin{split}
+\frac{d\hat{x}}{dt}&amp;\approx A\omega e^{k\,\bar{y}}\cos(k\bar{x}-\omega t),\\
+\frac{d\hat{y}}{dt}&amp;\approx A\omega e^{k\,\bar{y}}\sin(k\bar{x}-\omega t).
+\end{split} \tag{17.4}\]</span></span> This is easy to integrate to <span id="eq-17.5"><span class="math display">\[\begin{split}
+\hat{x}&amp;\approx -A e^{k\,\bar{y}}\sin(k\bar{x}-\omega t),\\
+\hat{y}&amp;\approx A e^{k\,\bar{y}}\cos(k\bar{x}-\omega t).
+\end{split} \tag{17.5}\]</span></span> This describes motion counterclockwise around a circle of radius <span class="math inline">\(A e^{k\,\bar{y}}\)</span> around the mean position. When that radius is small, the pathlines are close to perfect circles. Closer to the surface where the radius gets bigger the circle will get deformed a bit.</p>
 </section>
-<section id="sec-1.1" class="level2 page-columns page-full" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.2</span> Linearized tension force</h2>
-<p>We consider a small segment of the string between any two points <span class="math inline">\(x\)</span> and at <span class="math inline">\(x+\delta x\)</span> as shown in Fig. <a href="#fig-string2">Figure&nbsp;<span>1.2</span></a>. We want to determine the force that is acting on this segment, so that we can later determine its motion using Newton’s second law. We will concentrate on only the tension force of the string and ignore less important effects like gravity, friction, or stiffness.</p>
-<p>We assume that the tension force <span class="math inline">\(\boldsymbol{T}(x)\)</span> has constant magnitude throughout the string: <span class="math inline">\(|\boldsymbol{T}(x)|=T\)</span>. However its direction varies along the string, because it always acts in the tangential direction. At interior points the tension force pulling to one side will balance that pulling in the other direction. The net tension force on the segment will thus be determined by the tension forces at its ends. We have drawn these forces schematically in Figure <a href="#fig-string2">Figure&nbsp;<span>1.2</span></a> where we have also split them into their <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components.</p>
-<div id="fig-string2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="string2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;1.2: The tension forces acting on a segment of the string between <span class="math inline">\(x\)</span> and <span class="math inline">\(x+\delta x\)</span>.</figcaption><p></p>
-</figure>
-</div>
-<p>The total force acting on the segment is <span id="eq-1"><span class="math display">\[\boldsymbol{F} = \boldsymbol{T}(x+\delta x)-\boldsymbol{T}(x). \tag{1.1}\]</span></span> We first consider the <span class="math inline">\(y\)</span> component <span id="eq-2"><span class="math display">\[T_y(x) = T\sin\theta(x), \tag{1.2}\]</span></span> where <span class="math inline">\(\theta(x)\)</span> is the angle that the string makes with the horizontal at <span class="math inline">\(x\)</span>. The slope of the string at <span class="math inline">\(x\)</span> is <span id="eq-3"><span class="math display">\[\frac{\partial y}{\partial x} = \tan\theta(x). \tag{1.3}\]</span></span> We are now going to simplify the expressions by assuming that the slope and thus <span class="math inline">\(\theta\)</span> is small, <span class="math inline">\(\theta&lt;&lt;1\)</span>. Then, by Taylor expansion, <span id="eq-4"><span class="math display">\[\sin\theta = \theta + O(\theta^3), ~~~\tan\theta = \theta + O(\theta^2). \tag{1.4}\]</span></span> We ignore all terms that are higher order in <span class="math inline">\(\theta\)</span>. This is known as the linear approximation. It is done very often, because it leads to linear equations that are so much easier to solve. So <span id="eq-fy"><span class="math display">\[\begin{split}
-F_y&amp;=T_y(x+\delta x) - T_y(x) \\
-&amp;= T\sin\theta(x+\delta x) -T\sin\theta(x)\\
-&amp;\approx T\left(\theta(x+\delta x)-\theta(x)\right).
-\end{split} \tag{1.5}\]</span></span> We do another Taylor expansion and ignore higher-order terms in <span class="math inline">\(\delta x\)</span>, which is fine because we want to look at only an infinitesimally small segment of string. <span id="eq-6"><span class="math display">\[\begin{split}\theta(x+\delta x)&amp;=\theta(x)+\delta x\frac{\partial\theta}{\partial x}+O(\delta x)^2\\
-&amp;\approx \theta(x)+\delta x\frac{\partial\theta}{\partial x}.\end{split} \tag{1.6}\]</span></span> Substituting this into <a href="#eq-fy">Eq.&nbsp;<span>1.5</span></a> gives <span id="eq-7"><span class="math display">\[F_y\approx T \delta x\frac{\partial\theta}{\partial x}. \tag{1.7}\]</span></span> We would like to express this in terms of <span class="math inline">\(y\)</span> instead of <span class="math inline">\(\theta\)</span>, which we can do by observing that <span id="eq-8"><span class="math display">\[\theta\approx\tan\theta=\frac{\partial y}{\partial x}, \tag{1.8}\]</span></span> so we finally have <span id="eq-9"><span class="math display">\[F_y\approx T\,\delta x\,\frac{\partial^2 y}{\partial x^2}. \tag{1.9}\]</span></span></p>
-<p>We deal with the <span class="math inline">\(x\)</span> component of the force similarly, using the Taylor expansion of <span class="math inline">\(\cos\theta=1+O(\theta^2)\)</span>: <span id="eq-10"><span class="math display">\[\begin{split}F_x&amp;=T_x(x+\delta x)-T_x(x)\\
-&amp;=T\cos\theta(x+\delta x)-T\cos\theta(x)\\
-&amp;\approx T-T=0.\end{split} \tag{1.10}\]</span></span> So in our approximation of small slope, there is no movement in the <span class="math inline">\(x\)</span> direction. The string vibrates purely transversally.</p>
+<section id="validity-of-linear-approximation" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="validity-of-linear-approximation"><span class="header-section-number">17.2</span> Validity of linear approximation</h2>
+<p>Now that we have the solutions to the linearised surface conditions we can check under what circumstances the linearisation was a good approximation. For example in <a href="lecture_16.html#eq-Kl1">Eq.&nbsp;<span>16.9</span></a> we dropped the term <span class="math inline">\(u_x\partial_x\eta\)</span>. This is a good approximation only if the dropped term is much smaller in magnitude than the terms that remain. So we need <span id="eq-17.6"><span class="math display">\[
+|u_x\partial_x\eta|\ll|u_y|.
+\tag{17.6}\]</span></span> Substituting our solutions from <a href="#eq-wu">Eq.&nbsp;<span>17.1</span></a> and <a href="lecture_16.html#eq-seta">Eq.&nbsp;<span>16.21</span></a> gives <span id="eq-17.7"><span class="math display">\[
+|A\omega e^{k\,\eta}\cos(kx-\omega t)A\,k\sin(kx-\omega t)|
+\ll|A\omega e^{k\,\eta}\sin(kx-\omega t)|.
+\tag{17.7}\]</span></span> We can cancel a sin from both sides. The factors of cosine can be dropped because it only takes values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. So, after cancellations, the condition becomes <span id="eq-17.8"><span class="math display">\[
+|A\,k|\ll 1.
+\tag{17.8}\]</span></span> Written in terms of the wavelength <span class="math inline">\(\lambda\)</span> this becomes <span id="eq-17.9"><span class="math display">\[
+A\ll\frac{\lambda}{2\pi}.
+\tag{17.9}\]</span></span> So the amplitude of the wave must be small compared to its wavelength. This turns out to be exactly the same condition that we also needed in our linearisation while deriving the equation for waves on a string in lecture <a href="lecture_01.html"><span>1</span></a>.</p>
+<p>We made other approximations while we linearised the surface conditions and we need to check whether they too are valid under the same circumstances. For example we replaced <span class="math inline">\(u_y(x,\eta,t)\)</span> by <span class="math inline">\(u_y(x,0,t)\)</span>. This is a good approximation if <span id="eq-17.10"><span class="math display">\[
+|u_y(x,\eta,t)-u_y(x,0,t)|\ll|u_y(x,0,t)|.
+\tag{17.10}\]</span></span> Substituting our solution gives <span id="eq-17.11"><span class="math display">\[
+|A\omega \left(e^{k\,\eta}-1\right)\sin(kx-\omega t)|
+\ll|A\omega \sin(kx-\omega t)|,
+\tag{17.11}\]</span></span> which simplifies to <span id="eq-17.12"><span class="math display">\[
+\left|e^{k\,\eta}-1\right|\ll1.
+\tag{17.12}\]</span></span> This holds if <span class="math inline">\(|k\, \eta|\ll 1\)</span> which in turn holds if <span class="math inline">\(|k\,A|\ll 1\)</span>.</p>
+<p>I leave it up to you to go through the approximations that we made in <a href="lecture_16.html#sec-dyn"><span>Section&nbsp;16.1.2</span></a> to verify that they too are good when <span class="math inline">\(|k\,A|\ll 1\)</span>.</p>
 </section>
-<section id="wave-equation-from-newtons-2nd-law" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="wave-equation-from-newtons-2nd-law"><span class="header-section-number">1.3</span> Wave equation from Newton’s 2nd law</h2>
-<p>To determine the motion in the <span class="math inline">\(y\)</span> direction we use Newton’s second law <span id="eq-11"><span class="math display">\[m a_y = F_y, \tag{1.11}\]</span></span> where <span class="math inline">\(a_y\)</span> is the acceleration in the <span class="math inline">\(y\)</span> direction, <span id="eq-12"><span class="math display">\[a_y=\frac{\partial^2 y}{\partial t^2} \tag{1.12}\]</span></span> and <span class="math inline">\(m\)</span> is the mass of the infinitesimal segment which is obtained as the density times the length, <span id="eq-13"><span class="math display">\[m=\rho \delta x. \tag{1.13}\]</span></span> We assume that density <span class="math inline">\(\rho\)</span> is constant along the string. Plugging this together with our expression for <span class="math inline">\(F_y\)</span> into Newton’s second law gives <span id="eq-14"><span class="math display">\[\rho\delta x\frac{\partial^2 y}{\partial t^2}=T\delta x\frac{\partial^2 y}{\partial x^2}. \tag{1.14}\]</span></span> We can cancel the <span class="math inline">\(\delta x\)</span> and divide by <span class="math inline">\(\rho\)</span> which finally gives us the wave equation <span id="eq-15"><span class="math display">\[\frac{\partial^2 y}{\partial t^2}=c^2\frac{\partial^2 y}{\partial x^2} \tag{1.15}\]</span></span> with <strong>wave speed</strong> <span id="eq-16"><span class="math display">\[c=\sqrt{\frac{T}{\rho}}. \tag{1.16}\]</span></span> Why we call the constant <span class="math inline">\(c\)</span> the wave speed will become clear in the next lecture.</p>
-</section>
-<section id="checking-dimensions" class="level2 page-columns page-full" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="checking-dimensions"><span class="header-section-number">1.4</span> Checking dimensions</h2>
-<p>After having derived an equation, it is always wise to check that its dimensions work out correctly.</p>
-<div class="page-columns page-full"><p>We use square brackets to denote the dimension of a quantity. So <span class="math inline">\([y]=L\)</span> says that <span class="math inline">\(y\)</span> has dimension of length, <span class="math inline">\([m]=M\)</span> says that <span class="math inline">\(m\)</span> has dimension of mass, and <span class="math inline">\([t]=T\)</span> says that <span class="math inline">\(t\)</span> has dimension of time. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The dimension of both sides of an equation has to agree, so <span id="eq-17"><span class="math display">\[\left[\frac{\partial^2 y}{\partial t^2}\right]=\frac{L}{T^2}=[c^2]\left[\frac{\partial^2 y}{\partial x^2}\right]=[c^2]\frac{1}{L}. \tag{1.17}\]</span></span> This shows that <span class="math inline">\([c]=L/T\)</span>, so it has the dimension of a velocity. Because <span class="math inline">\(T\)</span> is a force we have <span class="math inline">\([T]=ML/T^2\)</span>. The density <span class="math inline">\(\rho\)</span> has <span class="math inline">\([\rho]=M/L\)</span>. So <span id="eq-18"><span class="math display">\[[c]=\left[\sqrt{\frac{T}{\rho}}\right]=\sqrt{\frac{ML/T^2}{M/L}}=\sqrt{\frac{L^2}{T^2}}=\frac{L}{T}. \tag{1.18}\]</span></span> This completes our check of the dimensions.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Note the conflict of notation where we used <span class="math inline">\(T\)</span> for the tension force while it is also the conventional symbol for the dimension of time. Such conflicts happen from time to time – the context determines the meaning of the symbol.</p></li></div></div>
+<section id="circular-waves" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="circular-waves"><span class="header-section-number">17.3</span> Circular waves</h2>
+<p>You will have observed that when you drop a pebble into a pond, this creates waves that travel outwards from the disturbance with circular wave crests. We can easily find the solutions describing such circular waves by switching to polar coordinates <span class="math inline">\(r\)</span>, <span class="math inline">\(\theta\)</span> for the <span class="math inline">\(x\)</span>-<span class="math inline">\(z\)</span> plane such that <span class="math inline">\(x=r\cos\theta\)</span> and <span class="math inline">\(z=r\sin\theta\)</span>.</p>
+<p>The circular waves we are looking for look the same in all directions, so we will be looking for solutions for the velocity potential <span class="math inline">\(\phi\)</span> and the surface function <span class="math inline">\(\eta\)</span> that are independent of the <span class="math inline">\(\theta\)</span> coordinate: <span class="math display">\[
+\phi = \phi(r,y,t),~~~\eta = \eta(r,t).
+\]</span></p>
+<p>The Laplace equation for the velocity potential <span class="math inline">\(\phi\)</span> then becomes <span id="eq-Lpolar"><span class="math display">\[
+0 = \nabla^2\phi=\frac{1}{r}\partial_r^2(r\phi)+\partial_y^2\phi.
+\tag{17.13}\]</span></span></p>
+<p>Introducing again the distance <span class="math inline">\(d\)</span> from the surface, <span class="math inline">\(d(r,y,t)=y-\eta(r,t)\)</span>, the kinematic surface condition in these coordinates is <span id="eq-Kpolar"><span class="math display">\[\begin{split}
+\frac{Dd}{Dt}&amp;=\partial_td+\underline{u}\cdot\underline{\nabla} d=\partial_td+u_r\partial_r d+u_y\partial_y d\\
+&amp;=-\partial_t\eta-u_r\partial_r \eta+u_y=0.
+\end{split}
+\tag{17.14}\]</span></span> After linearisation this reduces to <span id="eq-Kpolar"><span class="math display">\[
+\partial_t\eta(r,t)=u_y(r,0,t).
+\tag{17.15}\]</span></span> This is the same as in the case of Carthesian coordinates, just with <span class="math inline">\(r\)</span> taking the place of <span class="math inline">\(x\)</span>. Similarly the linearised dynamic surface condition becomes <span id="eq-Dpolar"><span class="math display">\[
+\partial_t\phi(r,0,t)=-g\eta(r,t).
+\tag{17.16}\]</span></span> Thus the only difference between the problem of circular waves compared to the problem of plane waves we studied earlier is that the <span class="math inline">\(\partial_x^2\phi\)</span> term in the Laplace equation has been replaced by <span class="math inline">\(1/r \partial_r^2(r\phi)\)</span>. This motivates us to make the modified Ansatz <span class="math display">\[
+\phi(r,y,t) = f(y)\frac{1}{r}\sin(kr-\omega t).
+\]</span> Substituting this into the Laplace equation -<a href="#eq-Lpolar">Eq.&nbsp;<span>17.13</span></a> again gives the equation <span class="math inline">\(f''-k^2f\)</span> and imposing that the solution must stay finite as <span class="math inline">\(y\to-\infty\)</span> singles out the solution <span class="math inline">\(f(y)=D\,e^{ky}\)</span> for some constant <span class="math inline">\(D\)</span>. Thus <span class="math display">\[
+\phi(r,y,t)=D e^{ky}\frac{1}{r}\sin(kx-\omega t)
+\]</span></p>
+<p>Substituting this velocity potential into the dynamical surface condition -<a href="#eq-Dpolar">Eq.&nbsp;<span>17.16</span></a> gives <span class="math display">\[
+\eta(r,t)=\frac{\omega\,D}{g}\frac{1}{r}\cos(kr-\omega t)
+\]</span> and then the kinematic surface condition -<a href="#eq-Kpolar">Eq.&nbsp;<span>17.15</span></a> gives the dispersion relation <span class="math display">\[
+\omega = \sqrt{k\,g}.
+\]</span> This is identical to the dispersion relation for the plane wave solution.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-acheson" class="csl-entry" role="doc-biblioentry">
+Acheson, D. J. 1990. <em>Elementary Fluid Dynamics</em>. Clarendon Press.
+</div>
 <div id="ref-baldock" class="csl-entry" role="doc-biblioentry">
 Baldock, G. R., and T. Bridgeman. 1983. <em>The Mathematical Theory of Wave Motion</em>. John Wiley &amp; Sons, Incorporated. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21193625390001381</a>.
 </div>
-<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
-Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
-</div>
-<div id="ref-knobel" class="csl-entry" role="doc-biblioentry">
-Knobel, Roger A. 1999. <em>An Introduction to the Mathematical Theory of Waves</em>. <span>UK</span> ed. edition. Providence, R.I: American Mathematical Society. <a href="https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo">https://ebookcentral.proquest.com/lib/york-ebooks/detail.action?docID=5295398&amp;pq-origsite=primo</a>.
-</div>
-<div id="ref-simmons" class="csl-entry" role="doc-biblioentry">
-Simmons, George F. 1972. <em>Differential Equations with Applications and Historical Notes</em>. 3rd ed. <span>CRC</span> Press. <a href="https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons">https://www-taylorfrancis-com.libproxy.york.ac.uk/books/edit/10.1201/9781315371825/differential-equations-applications-historical-notes-george-simmons</a>.
+<div id="ref-paterson" class="csl-entry" role="doc-biblioentry">
+Paterson, A. R. 1983. <em>A First Course in Fluid Dynamics</em>. Cambridge ; New York: Cambridge University Press.
 </div>
 </div>
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -499,13 +518,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./waves.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Waves</span>
+      <a href="./lecture_16.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Surface waves 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lecture_02.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">d’Alembert’s solution</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
