@@ -69,9 +69,11 @@ $$
 \partial_{\xi} \partial_{\eta} y = 0 .
 $$ {#eq-waveeq7}
 
+While here we have seen that the method of characteristics simplifies the wave equation, its applications extend far beyond this specific example. The method of characteristics can be used to solve a wide range of partial differential equations that arise in various areas of applied mathematics, including fluid dynamics. It can also be used to study the behaviour of complex systems, such as traffic flow, chemical reactions, and population dynamics. The key idea behind the method of characteristics is to transform a partial differential equation into a system of ordinary differential equations along characteristic curves, which can then be solved using standard techniques.
+
 ## General solution of wave equation
 
-The wave equation in light-cone variables is really easy to solve. First, we
+The wave equation in characteristic coordinates is really easy to solve. First, we
 integrate  @eq-waveeq7 in the variable $\xi$:
 $$\begin{split}
 \int \partial_{\xi} \partial_{\eta} y(\xi,\eta) \, d\xi &= 0\\

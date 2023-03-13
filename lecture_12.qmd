@@ -204,7 +204,7 @@ $$
 (\underline{\omega}\cdot\underline{\nabla})\underline{u} = \omega \, \partial_z \underline{u}=\underline{0}
 $$ {#eq-12.22}
 because there is no $z$ dependence in the 2D flow.
-As a result, the vorticity equation @eq-ve ) reduces to
+As a result, the vorticity equation @eq-ve reduces to
 $$
 \frac{D\omega}{Dt}=0.
 $$ {#eq-vortex4}

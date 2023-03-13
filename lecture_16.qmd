@@ -36,8 +36,10 @@ We describe the water as an ideal fluid. In particular we treat water as incompr
 $$
 \underline{\nabla}\cdot\underline{u}=\underline{\nabla}\cdot\underline{\nabla}\phi=\underline{\nabla}^2\phi=\partial_x^2\phi+\partial_y^2\phi=0.
 $$ {#eq-L}
-This is the Laplace equation. Of course, finding solutions to the Laplace
-equation is easy. We have seen that the real part of any holomorphic function
+
+This is the Laplace equation. The Laplace equation has many other applications in both pure and applied mathematics. Solutions of the Laplace equation are known as _harmonic functions_. You will meet them again in many other modules.
+
+We have seen that the real part of any holomorphic function
 satisfies the Laplace equation. But we are looking not for an arbitrary
 incompressible flow  but one that fits the wave on its surface. This means that
 next we need to write down equations that couple the shape of the surface

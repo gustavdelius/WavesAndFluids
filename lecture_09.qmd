@@ -5,7 +5,9 @@ You find content related to this lecture in the textbooks:
 - @baldock section 7.5
 - @coulson sections 7 (eqs.(31) - (35)) and section 35
 
+::: {.content-visible unless-format="pdf"}
 The following video has some mistakes in it. These are corrected in these notes.
+:::
 
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1bc7a507-41c3-4d23-8580-af7901248b54&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
