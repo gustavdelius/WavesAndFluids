@@ -6,9 +6,10 @@ You find content related to this lecture in the textbooks:
 
 
 Harmonic waves are not localised in $x$. Instead they are periodic in $x$ and
-keep repeating infinitely. However, it is possible to construct a localised
-_wave packet_ by summing up harmonic waves with different wave numbers. So,
-let's consider the wave given by
+and have an infinite number of crests and troughs. However, if you have ever thrown a pebble into a pond, you will know that real-world waves are not like that. Instead you will see packets with a finite number of crests and troughs moving away from the place where you dropped the pebble.
+
+It is possible to construct a localised
+_wave packet_ by summing up harmonic waves with different wave numbers. Consider the wave given by
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
