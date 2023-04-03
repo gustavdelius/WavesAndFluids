@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gustav Delius">
-<meta name="dcterms.date" content="2023-04-03">
 <meta name="description" content="In this module we will explore the dynamics of continuous media, focusing on elementary fluid dynamics and the motion of waves. This lays the foundations for the full development of fluid dynamics in years 3 and 4, as well as for modules on electromagnetism and quantum mechanics. The mathematical techniques of vector calculus are employed and further developed, as are Fourier methods and methods from complex analysis.">
 
-<title>Waves and Fluids</title>
+<title>Waves and Fluids - 18&nbsp; Wave packets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +21,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -33,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./waves.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./lecture_17.html" rel="prev">
 <link href="./logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -64,24 +82,25 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Waves and Fluids">
+<meta property="og:title" content="Waves and Fluids - 18&nbsp; Wave packets">
 <meta property="og:description" content="In this module we will explore the dynamics of continuous media, 
 focusing on elementary fluid dynamics and the motion of waves.">
 <meta property="og:site-name" content="Waves and Fluids">
-<meta name="twitter:title" content="Waves and Fluids">
+<meta name="twitter:title" content="Waves and Fluids - 18&nbsp; Wave packets">
 <meta name="twitter:description" content="In this module we will explore the dynamics of continuous media, 
 focusing on elementary fluid dynamics and the motion of waves.">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Waves and Fluids</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wave packets</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -112,7 +131,7 @@ focusing on elementary fluid dynamics and the motion of waves.">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -220,7 +239,7 @@ focusing on elementary fluid dynamics and the motion of waves.">
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_18.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wave packets</span></a>
+  <a href="./lecture_18.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wave packets</span></a>
   </div>
 </li>
       </ul>
@@ -239,41 +258,25 @@ focusing on elementary fluid dynamics and the motion of waves.">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#gaussian-wave-packet" id="toc-gaussian-wave-packet" class="nav-link active" data-scroll-target="#gaussian-wave-packet"><span class="toc-section-number">18.1</span>  Gaussian wave packet</a></li>
+  <li><a href="#moving-wave-packets-and-group-velocity" id="toc-moving-wave-packets-and-group-velocity" class="nav-link" data-scroll-target="#moving-wave-packets-and-group-velocity"><span class="toc-section-number">18.2</span>  Moving wave packets and group velocity</a></li>
+  <li><a href="#strange-experiences-of-a-water-strider" id="toc-strange-experiences-of-a-water-strider" class="nav-link" data-scroll-target="#strange-experiences-of-a-water-strider"><span class="toc-section-number">18.3</span>  Strange experiences of a water strider</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gustavdelius/WavesAndFluids/edit/master/lecture_18.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Waves and Fluids</h1>
-<p class="subtitle lead">Lecture notes for Spring 2023</p>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wave packets</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>In this module we will explore the dynamics of continuous media, focusing on elementary fluid dynamics and the motion of waves. This lays the foundations for the full development of fluid dynamics in years 3 and 4, as well as for modules on electromagnetism and quantum mechanics. The mathematical techniques of vector calculus are employed and further developed, as are Fourier methods and methods from complex analysis.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gustav Delius </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 3, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -281,20 +284,77 @@ focusing on elementary fluid dynamics and the motion of waves.">
 
 </header>
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>These are the lecture notes for Waves and Fluids, part of the 2nd year Applied Maths module at the University of York in Spring 2023. Each chapter in these notes corresponds to one lecture.</p>
-<p>These notes will be periodically revised. Whenever you spot something that is not quite right, please email me at <a href="mailto:gustav.delius@york.ac.uk">gustav.delius@york.ac.uk</a> or submit your correction in the correction form at <a href="https://forms.gle/w17c19vWnM7wpLpz7" class="uri">https://forms.gle/w17c19vWnM7wpLpz7</a>.</p>
-<div>
-<p>If you want to print these notes you should download the <a href="Waves-and-Fluids.pdf">pdf version</a>.</p>
+<p>You find content related to this lecture in the textbooks:</p>
+<ul>
+<li><span class="citation" data-cites="coulson">Coulson and Jeffrey (<a href="references.html#ref-coulson" role="doc-biblioref">1977</a>)</span> section 92</li>
+</ul>
+<p>Harmonic waves are not localised in <span class="math inline">\(x\)</span>. Instead they are periodic in <span class="math inline">\(x\)</span> and and have an infinite number of crests and troughs. However, if you have ever thrown a pebble into a pond, you will know that real-world waves are not like that. Instead you will see packets with a finite number of crests and troughs moving away from the place where you dropped the pebble.</p>
+<p>We will use the <a href="./lecture_04.html#standing-waves-and-superposition">principle of superposition</a> that we already discussed in lecture 4 that tells us that the sum of waves of a linear wave equation is also a solution. We have already found an uncountable family of harmonic plane wave solutions to the wave equation, parametrized by the wave number <span class="math inline">\(k\)</span>. We will use the <a href="./lecture_05.html">harmonic plane waves in the complex exponential notation</a> that we introduced in lecture 5: <span class="math display">\[
+y(x,t)=Ae^{i(kx-\omega(k)t)}.
+\]</span> The superposition principle allows us not only to add a finite or countable number of solutions to obtain a new solution but it also allows us to integrate together an uncountable number of solutions by integrating rather than summing. It turns out that this makes it possible to construct a localised <em>wave packet</em>.</p>
+<p>So we look at solutions where we give an amplitude <span class="math inline">\(A(k)\)</span> to the harmonic wave with wave number <span class="math inline">\(k\)</span> and then integrate over all wave numbers from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>: <span id="eq-packet00"><span class="math display">\[
+y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
+\tag{18.1}\]</span></span> This is again a solution. There is of course no guarantee that such an integral gives a finite result unless the coefficient function <span class="math inline">\(A(k)\)</span> is chosen carefully to fall off sufficiently quickly towards positive and negative infinity. Rather than discussing the general theory, which you may meet in a future module on functional analysis, we are going to look at the most important example: the Gaussian wave packet.</p>
+<section id="gaussian-wave-packet" class="level2 page-columns page-full" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="gaussian-wave-packet"><span class="header-section-number">18.1</span> Gaussian wave packet</h2>
+<p>Let the amplitude function <span class="math inline">\(A(k)\)</span> be given by the Gaussian function <span id="eq-packet000"><span class="math display">\[
+A(k)=e^{-\frac{(k-k_0)^2}{2\sigma^2}}
+\tag{18.2}\]</span></span> for some real <span class="math inline">\(k_0\)</span> and positive <span class="math inline">\(\sigma\)</span>. This function has a single peak at <span class="math inline">\(k=k_0\)</span> and rapidly decays to zero away from it. The parameter <span class="math inline">\(\sigma\)</span> is approximately the ‘half width’ of the peak. The sketch of this function is shown in <a href="#fig-gauss">Figure&nbsp;<span>18.1</span></a> a).</p>
+<p>To understand what this wave packet looks like in space, we first look at <span class="math inline">\(t=0\)</span>, where we have <span id="eq-packet0"><span class="math display">\[
+y(x,0)=\int\limits_{-\infty}^{\infty}e^{-\frac{(k-k_0)^2}{2\sigma^2}} \, e^{ikx} dk.
+\tag{18.3}\]</span></span> To perform the integral we use a trick called “completing the square” whereby we move all <span class="math inline">\(k\)</span> dependence into the square in the exponential. So we rewrite the exponent as follows: <span class="math display">\[
+-\frac{(k-k_0)^2}{2\sigma^2}+ikx = -\frac{(k-k_0-ix\sigma^2)^2}{2\sigma^2}+ik_0x-\frac{x^2\sigma^2}{2}.
+\]</span> Using this in <a href="#eq-packet0">Eq.&nbsp;<span>18.3</span></a> gives <span id="eq-packet1"><span class="math display">\[
+y(x,0)=e^{-\frac{x^2\sigma^2}{2}}e^{ik_0x}\int\limits_{-\infty}^{\infty}\exp\left(-\frac{(k-k_0-ix\sigma^2)^2}{2\sigma^2}\right) \,  dk.
+\tag{18.4}\]</span></span> The integral over the Gaussian simply gives <span class="math inline">\(\sqrt{2\pi}\sigma\)</span>, so that we have the solution <span id="eq-packet3"><span class="math display">\[
+y(x,0)=\sqrt{2\pi} \, \sigma \, \exp\left(-\frac{\sigma^2 x^2}{2}\right)
+e^{ik_0 x} .
+\tag{18.5}\]</span></span> The factor <span class="math inline">\(e^{ik_0 x}\)</span> represents a harmonic wave, the other factors represent a varying amplitude (the envelope of the wave). The graph of the real part of <a href="#eq-packet3">Eq.&nbsp;<span>18.5</span></a> is shown in <a href="#fig-gauss">Figure&nbsp;<span>18.1</span></a> b.</p>
+<div id="fig-gauss" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="gauss.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;18.1: Plot of the Gaussian amplitude function A(k) and the resulting Gaussian wave packet.</figcaption><p></p>
+</figure>
 </div>
-<p>This module consists of two topics: Waves and Fluids. In the first half of the term, we will focus on Waves, while in the second half, we will delve into Fluids. The topics are interconnected by their use of partial differential equations to describe real-world phenomena in space and time.</p>
-<p>An alternative title for this module could be “Introduction to Continuum Dynamics”. It is designed to introduce you to the mathematical modeling and analysis of the behaviour of materials that are treated as continua, or continuous media. Unlike Newtonian Dynamics and Classical Dynamics, which deal with individual particles, Continuum Dynamics deals with emergent phenomena created by the interaction of large numbers of particles. It employs mathematical tools such as partial differential equations.</p>
-<p>The concepts and methods presented in Continuum Dynamics form the basis of a large part of Applied Mathematics. You will encounter them again in future Applied Mathematics modules, and they are also used in fields such as biology, ecology, medicine, sociology, and economics. The examples presented in this module are less important than the way of thinking they introduce.</p>
-<p>The goal of this module is to equip you with the skills and knowledge to apply mathematics to new phenomena in the real world. In your third and fourth year, you will have the opportunity to deepen this ability through various modules.</p>
-<p>Throughout this module, we shall use SI units: length is measured in meters (m), time in seconds (s), mass in kilograms (kg).</p>
+<p>Note that the half width of the wave packet is <span class="math inline">\(1/\sigma\)</span>, i.e.&nbsp;it is inversely proportional to the width of <span class="math inline">\(A(k)\)</span>. This means that that a more localised wave corresponds to a broader range in <span class="math inline">\(k\)</span> and vice versa. This property has an important consequence in quantum mechanics – the uncertainty principle.</p>
+</section>
+<section id="moving-wave-packets-and-group-velocity" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="moving-wave-packets-and-group-velocity"><span class="header-section-number">18.2</span> Moving wave packets and group velocity</h2>
+<p>If we have the standard wave equation, so that <span class="math inline">\(\omega(k) = c\,k\)</span> with a constant <span class="math inline">\(c\)</span> (no dispersion), then, according to <a href="#eq-packet00">Eq.&nbsp;<span>18.1</span></a>, we have <span class="math inline">\(y(x,t)=f(x-ct)\)</span> where <span class="math inline">\(f(x)=y(x,0)\)</span> is given by <a href="#eq-packet3">Eq.&nbsp;<span>18.5</span></a>. Thus, if there is no dispersion, the wave packet propagates with the (constant) wave speed <span class="math inline">\(c\)</span> without changing its initial form.</p>
+<p>The situation becomes more interesting if there is dispersion, i.e., if <span class="math inline">\(\omega(k)/k\)</span> depends on <span class="math inline">\(k\)</span>. If we assume that <span class="math inline">\(A(k)\)</span> is well localised, i.e. <span class="math inline">\(\sigma\)</span> is sufficiently small, then only values of <span class="math inline">\(k\)</span> in a small neighbourhood of <span class="math inline">\(k_0\)</span> will contribute to the integral given by <a href="#eq-packet00">Eq.&nbsp;<span>18.1</span></a>. With this in mind, we replace <span class="math inline">\(\omega(k)\)</span> with its Taylor expansion about <span class="math inline">\(k=k_0\)</span>, keeping only two nonzero terms, i.e. <span class="math display">\[
+\omega(k)=\omega_0 + \alpha (k-k_0) + O(\vert k-k_0\vert^2),
+\]</span> where <span class="math display">\[
+\omega_0=\omega(k_0), \quad \alpha = \frac{d\omega}{dk}(k_0).
+\]</span> Then <a href="#eq-packet00">Eq.&nbsp;<span>18.1</span></a> with <span class="math inline">\(A(k)\)</span> given by <a href="#eq-packet00">Eq.&nbsp;<span>18.1</span></a> yields <span class="math display">\[\begin{split}
+y(x,t)&amp;\approx \int_{-\infty}^{\infty}
+e^{-\frac{(k-k_0)^2}{2\sigma^2}+i(kx-\omega_0 t -\alpha(k-k_0)t)} \, dk \\
+&amp;= e^{-i(\omega_0-\alpha k_0 )t} \int_{-\infty}^{\infty}
+e^{-\frac{(k-k_0)^2}{2\sigma^2}} \,  e^{ik(x-\alpha t)} \, dk .
+\end{split}\]</span> We notice that the integral is similar to the one in <a href="#eq-packet0">Eq.&nbsp;<span>18.3</span></a> , just with <span class="math inline">\(x\)</span> replaced by <span class="math inline">\(x-\alpha t\)</span>, so we can reuse the result from the previous section. In view of <a href="#eq-packet3">Eq.&nbsp;<span>18.5</span></a>, we obtain <span id="eq-packet3b"><span class="math display">\[
+y(x,t)\approx\sqrt{2\pi} \, \sigma \, e^{-\frac{\sigma^2 (x-\alpha t)^2}{2}}
+e^{i(k_0 x -\omega_0 t)}.
+\tag{18.6}\]</span></span></p>
+<p>The factor <span class="math inline">\(e^{i(k_0 x -\omega_0 t)}\)</span> represents a harmonic wave travelling with the wave speed <span class="math inline">\(c=\omega_0/k_0\)</span>, while the other factors give us the envelope of the wave. Now, however, that envelope propagates not with the wave speed <span class="math inline">\(c\)</span> but with the <strong>group velocity</strong> <span class="math inline">\(c_g\)</span> where <span class="math display">\[
+c_g=\alpha=\frac{d\omega}{dk}(k_0).
+\]</span> In general, the group velocity is different from the wave speed. It is equal to the wave speed only if there is no dispersion.</p>
+<p>In the wave packet in <a href="#eq-packet3b">Eq.&nbsp;<span>18.6</span></a> the shape of the envelope does not change over time as the wave packet travels through space. However, if we keep the quadratic term in the Taylor expansion of <span class="math inline">\(\omega(k)\)</span>, we see that there are some changes in the shape of the wave packet over time. The width of the Gaussian envelope will increase with time.</p>
+</section>
+<section id="strange-experiences-of-a-water-strider" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="strange-experiences-of-a-water-strider"><span class="header-section-number">18.3</span> Strange experiences of a water strider</h2>
+<p>Imagine a water strider sitting on the surface of a pond (a water strider is an insect that is light enough to be able to sit on water). It sees a wave packet approaching, say with 6 noticeable wave crests. How often do you think the water strider will move up and down as that packet with its 6 wave crests moves past? The answer is 12! We’ll now derive this.</p>
+<p>We have derived in <a href="lecture_16.html"><span>Chapter&nbsp;16</span></a> that the harmonic wave <span class="math inline">\(\eta=A\cos(kx-\omega t)\)</span> is a solution describing a surface wave if <span class="math inline">\(\omega=\pm\sqrt{g\,k}\)</span>. The wave moves with the wave speed <span class="math display">\[
+c = \frac{\omega}{k}=\pm\sqrt{\frac{g}{k}}=\pm\sqrt{\frac{g\lambda}{2\pi}}.
+\]</span> We see that longer waves move faster than shorter waves.</p>
+<p>We observed in the previous subsection that a wave packet with wave numbers localised around wave number <span class="math inline">\(k\)</span> moves with the group velocity. We can now calculate this group velocity for our surface waves: <span class="math display">\[
+c_g=\frac{d\omega}{dk}=\pm\frac12\sqrt{\frac{g}{k}}=\frac12 c.
+\]</span> So for water waves the group velocity is half the phase velocity. This explains why the water strider moves up an down twice as often as one would have expected by looking at a snapshot of the wave packet.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-coulson" class="csl-entry" role="doc-biblioentry">
+Coulson, C. A., and Alan Jeffrey. 1977. <em>Waves: A Mathematical Approach to the Common Types of Wave Motion</em>. 2nd Revised edition edition. London: Longman Higher Education. <a href="https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381">https://yorsearch.york.ac.uk/permalink/f/1d5jm03/44YORK_ALMA_DS21201100890001381</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -447,10 +507,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./lecture_17.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surface waves 2</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./waves.html" class="pagination-link">
-        <span class="nav-page-text">Waves</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -54,6 +54,7 @@ book:
       - lecture_15.qmd
       - lecture_16.qmd
       - lecture_17.qmd
+      - lecture_18.qmd
     - references.qmd
 
 bibliography: references.bib

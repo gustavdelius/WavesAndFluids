@@ -1,4 +1,4 @@
-## Wave packets and dispersion
+## Wave packets
 
 You find content related to this lecture in the textbooks:
 
@@ -8,21 +8,32 @@ You find content related to this lecture in the textbooks:
 Harmonic waves are not localised in $x$. Instead they are periodic in $x$ and
 and have an infinite number of crests and troughs. However, if you have ever thrown a pebble into a pond, you will know that real-world waves are not like that. Instead you will see packets with a finite number of crests and troughs moving away from the place where you dropped the pebble.
 
-It is possible to construct a localised
-_wave packet_ by summing up harmonic waves with different wave numbers. Consider the wave given by
+We will use the [principle of superposition](lecture_04.qmd#standing-waves-and-superposition) that we already discussed in lecture 4
+that tells us that the sum of waves
+of a linear wave equation is also a solution. We have already found an uncountable family of harmonic plane wave solutions to the wave equation, parametrized by the wave number $k$. We will use the [harmonic plane waves in the complex exponential notation](lecture_05.qmd) that we introduced in lecture 5:
+$$
+y(x,t)=Ae^{i(kx-\omega(k)t)}.
+$$
+The superposition principle allows us not only to add a finite or countable number of solutions
+to obtain a new solution but it also allows us to integrate together an uncountable number of solutions
+by integrating rather than summing.
+It turns out that this makes it possible to construct a localised
+_wave packet_. 
+
+So we look at solutions where we give an amplitude $A(k)$ to the harmonic wave with wave number $k$ and then  integrate over all wave numbers from $-\infty$ to $\infty$:
 $$
 y(x,t)=\int\limits_{-\infty}^{\infty}A(k) e^{i(kx - \omega(k)t)} dk.
 $$ {#eq-packet00}
-Note how we are integrating over all wave numbers from $-\infty$ to $\infty$.
-There is of course no guarantee that such an integral would give a finite
+This is again a solution.
+There is of course no guarantee that such an integral gives a finite
 result unless the coefficient function $A(k)$ is chosen carefully to fall off
 sufficiently quickly towards positive and negative infinity. Rather than 
-discussing the general theory, which you may already have met in a module on
+discussing the general theory, which you may meet in a future module on
 functional analysis, we are going to look at the most important example: the
 Gaussian wave packet.
 
 ## Gaussian wave packet
-Let
+Let the amplitude function $A(k)$ be given by the Gaussian function
 $$
 A(k)=e^{-\frac{(k-k_0)^2}{2\sigma^2}}
 $$ {#eq-packet000}
@@ -117,7 +128,7 @@ Gaussian envelope  will increase with time.
 
 ## Strange experiences of a water strider
 
-Imagine a water strider sitting on the surface of a pond (a water strider is an insect that is light enough to be able to sit on water). It sees a wave packet approaching
+Imagine a water strider sitting on the surface of a pond (a water strider is an insect that is light enough to be able to sit on water). It sees a wave packet approaching, say with 6 noticeable wave crests. How often do you think the water strider will move up and down as that packet with its 6 wave crests moves past? The answer is 12! We'll now derive this.
 
 We have derived in @sec-16 that the harmonic wave $\eta=A\cos(kx-\omega t)$ is
 a solution describing a surface wave if $\omega=\pm\sqrt{g\,k}$. The wave moves with the
@@ -128,11 +139,13 @@ $$
 We see that longer waves move faster than shorter waves.
 
 We observed in the previous subsection that a wave packet with wave numbers 
-localised around wave number $k$ moves with the group velocity
+localised around wave number $k$ moves with the group velocity. We can now
+calculate this group velocity for our surface waves:
 $$
 c_g=\frac{d\omega}{dk}=\pm\frac12\sqrt{\frac{g}{k}}=\frac12 c.
 $$
-So for water waves the group velocity is half the phase velocity.
+So for water waves the group velocity is half the phase velocity. This 
+explains why the water strider moves up an down twice as often as one would
+have expected by looking at a snapshot of the wave packet.
 
-## The uncertainty principle
 
