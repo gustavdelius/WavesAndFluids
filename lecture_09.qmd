@@ -156,7 +156,7 @@ Z_{nm}(r,\theta,t)=&J_m\left(k_{nm} \frac{r}{a}\right)\\
 \cdot&\Big[  \sin(n\theta)
 \left(F_{nm} \, \sin\left(\frac{k_{nm}}{a} c t\right) + G_{nm} \, \cos\left(\frac{k_{nm}}{a} c t\right)\right)\\
 &+\cos(n\theta)
-\left(\tilde{F}_{nm} \, \sin\left(\frac{k_{nm}}{a} c t\right) + \tilde{G}_{nm} \, \left(\frac{k_{nm}}{a} c t\right)\right)\Big]
+\left(\tilde{F}_{nm} \, \sin\left(\frac{k_{nm}}{a} c t\right) + \tilde{G}_{nm} \, \cos\left(\frac{k_{nm}}{a} c t\right)\right)\Big]
 \end{split}$${#eq-circular14}
 where $n\in\mathbb{N}\cup\{0\}$, $m\in\mathbb{N}$ and $F_{nm}$, $G_{nm}$, $\tilde{F}_{nm}$ and
 $\tilde{G}_{nm}$ are arbitrary real constants. Solutions in the form @eq-circular14 are
