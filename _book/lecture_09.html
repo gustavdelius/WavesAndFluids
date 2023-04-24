@@ -360,9 +360,9 @@ R(a)=0 \quad &amp;\Rightarrow \quad J_n(k\,a)=0\\
 <p>Finally, combining the above with <a href="#eq-circular5">Eq.&nbsp;<span>9.12</span></a> and <a href="#eq-circtheta">Eq.&nbsp;<span>9.17</span></a>, we obtain the following solutions (that satisfy the required boundary condition): <span id="eq-circular14"><span class="math display">\[\begin{split}
 Z_{nm}(r,\theta,t)=&amp;J_m\left(k_{nm} \frac{r}{a}\right)\\
 \cdot&amp;\Big[  \sin(n\theta)
-\left(F_{nm} \, \sin(k_{nm} c t) + G_{nm} \, \cos(k_{nm} c t)\right)\\
+\left(F_{nm} \, \sin\left(\frac{k_{nm}}{a} c t\right) + G_{nm} \, \cos\left(\frac{k_{nm}}{a} c t\right)\right)\\
 &amp;+\cos(n\theta)
-\left(\tilde{F}_{nm} \, \sin(k_{nm} c t) + \tilde{G}_{nm} \, \cos(k_{nm} c t)\right)\Big]
+\left(\tilde{F}_{nm} \, \sin\left(\frac{k_{nm}}{a} c t\right) + \tilde{G}_{nm} \, \left(\frac{k_{nm}}{a} c t\right)\right)\Big]
 \end{split} \tag{9.21}\]</span></span> where <span class="math inline">\(n\in\mathbb{N}\cup\{0\}\)</span>, <span class="math inline">\(m\in\mathbb{N}\)</span> and <span class="math inline">\(F_{nm}\)</span>, <span class="math inline">\(G_{nm}\)</span>, <span class="math inline">\(\tilde{F}_{nm}\)</span> and <span class="math inline">\(\tilde{G}_{nm}\)</span> are arbitrary real constants. Solutions in the form <a href="#eq-circular14">Eq.&nbsp;<span>9.21</span></a> are the normal modes of vibrations of the circular membrane. Once normal modes are known, we can find a solution satisfying some initial conditions by using a linear combination of the normal modes <span id="eq-circular15"><span class="math display">\[
 Z(r,\theta,t)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}Z_{nm}(r,\theta,t).
 \tag{9.22}\]</span></span> Note that constants <span class="math inline">\(F_{nm}\)</span>, <span class="math inline">\(G_{nm}\)</span>, <span class="math inline">\(\tilde{F}_{nm}\)</span> and <span class="math inline">\(\tilde{G}_{nm}\)</span> (in the formula for <span class="math inline">\(Z_{nm}\)</span> for each <span class="math inline">\(n,m\)</span>) are still arbitrary. To determine them, we need to substitute <a href="#eq-circular15">Eq.&nbsp;<span>9.22</span></a> into initial conditions. This will lead to the so-called Fourier-Bessel series. This is based on the identities <span id="eq-9.23"><span class="math display">\[
